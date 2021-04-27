@@ -1,6 +1,6 @@
 import os
-
-from flask import Flask
+from flask import Flask, render_template
+from flask_login import login_required
 
 
 def create_app(test_config=None):
@@ -8,7 +8,7 @@ def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY='dev',
-        DATABASE=os.path.join(app.instance_path, 'SQLAdventures.sqlite'),
+        USER_DATABASE=os.path.join(app.instance_path, 'user_db.sqlite'),
     )
 
     if test_config is None:
@@ -24,9 +24,17 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    # a simple page that says hello
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World!'
+    # init the db
+    from . import user_db
+    user_db.init_app(app)
+
+    # init the login manager
+    from . import auth
+    auth.init_auth()
+
+    @login_required
+    @app.route('/')
+    def index():
+        return render_template('index.html')
 
     return app
