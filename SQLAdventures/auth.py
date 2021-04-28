@@ -3,12 +3,11 @@ from flask import current_app
 import sqlite3
 
 
-def init_auth():
+def init_auth(app):
     login_manager = LoginManager()
-    #login_manager.init_app(current_app)
+    login_manager.init_app(app)
 
     @login_manager.user_loader
     def load_user(user_id):
         return
-
 

@@ -8,7 +8,7 @@ def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY='dev',
-        USER_DATABASE=os.path.join(app.instance_path, 'user_db.sqlite'),
+        DATABASE=os.path.join(app.instance_path, 'user_db.sqlite'),
     )
 
     if test_config is None:
@@ -25,12 +25,12 @@ def create_app(test_config=None):
         pass
 
     # init the db
-    from . import user_db
-    user_db.init_app(app)
+    from . import db
+    db.init_app(app)
 
     # init the login manager
     from . import auth
-    auth.init_auth()
+    auth.init_auth(app)
 
     @login_required
     @app.route('/')

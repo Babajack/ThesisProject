@@ -28,7 +28,7 @@ def get_player_db():
 
 
 # close the connection to the db
-def close_user_db():
+def close_user_db(e=None):
     db = g.pop('user_db', None)
 
     if db is not None:
@@ -36,7 +36,7 @@ def close_user_db():
 
 
 # close the connection to db of the current player
-def close_player_db():
+def close_player_db(e=None):
     db = g.pop('player_db', None)
 
     if db is not None:
@@ -60,7 +60,7 @@ def init_player_db():
 
 
 # register the command to init the db from command line
-@click.command('init-user_db')
+@click.command('init-user-db')
 @with_appcontext
 def init_db_command():
     init_user_db()
@@ -69,8 +69,8 @@ def init_db_command():
 
 # used in init file to register some functionality
 def init_app(app):
-    # let the app close the connection after getting a response
+    # close connection to db after application context is popped
     app.teardown_appcontext(close_user_db)
-    app.teardown_appcontext(close_player_db())
-    # register the command
+    app.teardown_appcontext(close_player_db)
+    # register the command to init the user db
     app.cli.add_command(init_db_command)
