@@ -5,45 +5,72 @@ from flask import current_app, g
 from flask.cli import with_appcontext
 
 
-# open a connection to the db
-def get_db():
-    if 'db' not in g:
-        g.db = sqlite3.connect(
+# open a connection to the user db
+def get_user_db():
+    if 'user_db' not in g:
+        g.user_db = sqlite3.connect(
             current_app.config['USER_DATABASE'],
             detect_types=sqlite3.PARSE_DECLTYPES
         )
-        g.db.row_factory = sqlite3.Row
+        g.user_db.row_factory = sqlite3.Row
+    return g.user_db
 
-    return g.db
+
+# open a connection to the db of the current player
+def get_player_db():
+    if 'player_db' not in g:
+        g.player_db = sqlite3.connect(
+            current_app.config['PLAYER_DATABASE'],
+            detect_types=sqlite3.PARSE_DECLTYPES
+        )
+        g.player_db.row_factory = sqlite3.Row
+    return g.player_db
 
 
 # close the connection to the db
-def close_db(e=None):
-    db = g.pop('db', None)
+def close_user_db():
+    db = g.pop('user_db', None)
 
     if db is not None:
         db.close()
 
 
-# init the db (only used from command line to create the database)
-def init_db():
-    db = get_db()
+# close the connection to db of the current player
+def close_player_db():
+    db = g.pop('player_db', None)
+
+    if db is not None:
+        db.close()
+
+
+# init the user db (only used from command line to create the database)
+def init_user_db():
+    db = get_user_db()
 
     with current_app.open_resource('user_schema.sql') as f:
+        db.executescript(f.read().decode('utf8'))
+        
+
+# init the db of the current player
+def init_player_db():
+    db = get_player_db()
+
+    with current_app.open_resource('player_schema.sql') as f:
         db.executescript(f.read().decode('utf8'))
 
 
 # register the command to init the db from command line
-@click.command('init-db')
+@click.command('init-user_db')
 @with_appcontext
 def init_db_command():
-    init_db()
-    click.echo('Initialized the database.')
+    init_user_db()
+    click.echo('Initialized the user database.')
 
 
-# used in init file
+# used in init file to register some functionality
 def init_app(app):
     # let the app close the connection after getting a response
-    app.teardown_appcontext(close_db)
+    app.teardown_appcontext(close_user_db)
+    app.teardown_appcontext(close_player_db())
     # register the command
     app.cli.add_command(init_db_command)
