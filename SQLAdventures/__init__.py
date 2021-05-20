@@ -1,14 +1,15 @@
 import os
 from flask import Flask, render_template
-from flask_login import login_required
 
 
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
+    player_db_path = app.instance_path + "\\players\\"
     app.config.from_mapping(
         SECRET_KEY='dev',
-        DATABASE=os.path.join(app.instance_path, 'user_db.sqlite'),
+        USER_DATABASE=os.path.join(app.instance_path, 'user_db.sqlite'),
+        PLAYER_DATABASE=player_db_path
     )
 
     if test_config is None:
@@ -24,17 +25,26 @@ def create_app(test_config=None):
     except OSError:
         pass
 
+    try:
+        os.makedirs(player_db_path)
+    except OSError:
+        pass
+
     # init the db
     from . import db
     db.init_app(app)
 
-    # init the login manager
     from . import auth
-    auth.init_auth(app)
+    app.register_blueprint(auth.bp)
 
-    @login_required
     @app.route('/')
+    @auth.login_required
     def index():
         return render_template('index.html')
+
+    @app.route('/quests')
+    @auth.login_required
+    def quests():
+        return render_template('quests.html')
 
     return app

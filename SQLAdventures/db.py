@@ -1,7 +1,7 @@
 import sqlite3
 
 import click
-from flask import current_app, g
+from flask import current_app, g, session
 from flask.cli import with_appcontext
 
 
@@ -19,8 +19,9 @@ def get_user_db():
 # open a connection to the db of the current player
 def get_player_db():
     if 'player_db' not in g:
+        test = current_app.config['PLAYER_DATABASE'] + session['username'] + '.sqlite'
         g.player_db = sqlite3.connect(
-            current_app.config['PLAYER_DATABASE'],
+            current_app.config['PLAYER_DATABASE'] + session['username'] + '.sqlite',
             detect_types=sqlite3.PARSE_DECLTYPES
         )
         g.player_db.row_factory = sqlite3.Row

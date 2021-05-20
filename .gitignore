@@ -13,6 +13,7 @@ dist/
 build/
 *.egg-info/
 
-start_server.bat
+/start_server.bat
 
 .idea
+/start_server_debugger.bat
