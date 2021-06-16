@@ -8,7 +8,7 @@
 {% macro createQuestline(category) %}
     {% for i in range(questfile[category]|length) %}
         {% if i < user[category] %}
-            <div class="jumbotron"> {{ questfile[category][i]['Name'] }} </div>
+            <div class="card p-3 mt-2" style="background-color: darkgray"> <b>{{ questfile[category][i]['Name'] }}</b> </div>
         {% endif %}
     {% endfor %}
 {% endmacro %}
