@@ -1,8 +1,10 @@
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, g
+import json
 
 
 def create_app(test_config=None):
+
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
     player_db_path = app.instance_path + "\\players\\"
@@ -45,6 +47,14 @@ def create_app(test_config=None):
     @app.route('/quests')
     @auth.login_required
     def quests():
-        return render_template('quests.html')
+        quest_file = os.path.join(app.static_folder, 'data', 'quests.json')
+
+        #
+        user_db = db.get_user_db()
+        user_db.execute('update user set SIMPLE = 5')
+        user_db.commit()
+        #
+
+        return render_template('quests/quests.html', questfile=json.load(open(quest_file)), user=g.user)
 
     return app

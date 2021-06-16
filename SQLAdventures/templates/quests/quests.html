@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% block title %}- Quests {% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/quests.css') }}">
+{% endblock %}
+
+{% macro createQuestline(category) %}
+    {% for i in range(questfile[category]|length) %}
+        {% if i < user[category] %}
+            <div class="jumbotron"> {{ questfile[category][i]['Name'] }} </div>
+        {% endif %}
+    {% endfor %}
+{% endmacro %}
+
+{% block body %}
+    <div class="container-fluid" style="background-color: gray">
+        <div class="row vh-100">
+            <div class="col-5">
+                <h1 class="pt-4" style="text-align: center; color: white"> Questbuch </h1>
+                <div class="accordion pt-4" id="questbook">
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <button class="btn collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseOne">
+                                    <h4> Einfache Selects </h4>
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="collapseOne" class="collapse" data-parent="#questbook">
+                            <div class="card-body">
+                                {{ createQuestline('Simple') }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <button class="btn collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseTwo">
+                                    <h4> Aggregate </h4>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" data-parent="#questbook">
+                            <div class="card-body">
+                                {{ createQuestline('Aggregates') }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <button class="btn collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseThree">
+                                    <h4> Joins </h4>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" data-parent="#questbook">
+                            <div class="card-body">
+                                {{ createQuestline('Joins') }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <button class="btn collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseFour">
+                                    <h4> Sub-Queries </h4>
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="collapseFour" class="collapse" data-parent="#questbook">
+                            <div class="card-body">
+                                {{ createQuestline('SubQueries') }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <button class="btn collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseFive">
+                                    <h4> Mengenoperationen </h4>
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="collapseFive" class="collapse" data-parent="#questbook">
+                            <div class="card-body">
+                                {{ createQuestline('SetOperations') }}
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <button class="btn collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseSix">
+                                    <h4> Komplexe Queries </h4>
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="collapseSix" class="collapse" data-parent="#questbook">
+                            <div class="card-body">
+                                {{ createQuestline('Complex') }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-7">
+                <h1 id="detailsTitle" class="pt-4" style="text-align: center; visibility: visible; color: white">
+                    Details </h1>
+                <div class="jumbotron mt-4">
+                    test
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block quests_active %}active{% endblock %}

@@ -48,7 +48,7 @@ def close_player_db(e=None):
 def init_user_db():
     db = get_user_db()
 
-    with current_app.open_resource('user_schema.sql') as f:
+    with current_app.open_resource('schema.sql') as f:
         db.executescript(f.read().decode('utf8'))
         
 

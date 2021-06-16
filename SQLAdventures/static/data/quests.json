@@ -1,0 +1,85 @@
+{
+  "Simple": [
+
+    {
+      "Name": "quest1",
+      "Description": "test1",
+      "Dialog": [
+        {
+          "Actor": "",
+          "Position": "",
+          "Text": "",
+          "BlockUser": 1
+        },
+        {
+          "Actor": "",
+          "Position": "",
+          "Text": "",
+          "BlockUser": 0
+        }
+      ],
+      "Query": ""
+    },
+
+
+    {
+      "Name": "quest2",
+      "Description": "test2",
+      "Dialog": [
+        {
+          "Actor": "",
+          "Position": "",
+          "Text": "",
+          "BlockUser": 1
+        },
+        {
+          "Actor": "",
+          "Position": "",
+          "Text": "",
+          "BlockUser": 0
+        }
+      ],
+      "Query": ""
+    },
+
+
+    {
+      "Name": "quest2",
+      "Description": "test2",
+      "Dialog": [
+        {
+          "Actor": "",
+          "Position": "",
+          "Text": "",
+          "BlockUser": 1
+        },
+        {
+          "Actor": "",
+          "Position": "",
+          "Text": "",
+          "BlockUser": 0
+        }
+      ],
+      "Query": ""
+    }
+  ],
+
+
+
+
+  "Aggregates": [
+    {
+      "Name": "quest1a",
+      "Description": "test1a",
+      "Dialog": [
+        {
+          "Actor": "",
+          "Position": "",
+          "Text": "",
+          "BlockUser": 0
+        }
+      ],
+      "Query": ""
+    }
+  ]
+}
