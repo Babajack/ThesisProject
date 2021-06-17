@@ -8,14 +8,29 @@
 {% macro createQuestline(category) %}
     {% for i in range(questfile[category]|length) %}
         {% if i < user[category] %}
-            <div class="card p-3 mt-2" style="background-color: darkgray"> <b>{{ questfile[category][i]['Name'] }}</b> </div>
+            <button type="button" id="{{ category + i|string }}" class="col-12 btn p-3 mt-4"
+                    style="background-color: darkgray"><b>{{ questfile[category][i]['Title'] }}</b>
+            </button>
+
+            <script>
+                $(document).ready(function () {
+                    $("#{{ category + i|string }}").click(function () {
+                        $('.card-body button').css('background-color', 'darkgray')
+                        $(this).css('background-color', 'lightslategray')
+                        $("#Details").show();
+                        $("#DetailsTitle").text('{{ questfile[category][i]['Title'] }}');
+                        $("#DetailsDescription").text('{{ questfile[category][i]['Description'] }}');
+                    });
+                });
+            </script>
+
         {% endif %}
     {% endfor %}
 {% endmacro %}
 
 {% block body %}
-    <div class="container-fluid" style="background-color: gray">
-        <div class="row vh-100">
+    <div class="container-fluid">
+        <div class="row">
             <div class="col-5">
                 <h1 class="pt-4" style="text-align: center; color: white"> Questbuch </h1>
                 <div class="accordion pt-4" id="questbook">
@@ -91,7 +106,7 @@
                             <h5 class="mb-0">
                                 <button class="btn collapsed" type="button" data-toggle="collapse"
                                         data-target="#collapseFive">
-                                    <h4> Mengenoperationen </h4>
+                                    <h4> Mengen-Operationen </h4>
                                 </button>
                             </h5>
                         </div>
@@ -123,11 +138,18 @@
                 </div>
             </div>
 
-            <div class="col-7">
-                <h1 id="detailsTitle" class="pt-4" style="text-align: center; visibility: visible; color: white">
-                    Details </h1>
-                <div class="jumbotron mt-4">
-                    test
+            <div id="Details" class="col-7" style="display: none">
+
+                <h1 class="pt-4" style="text-align: center; color: white; visibility: hidden"> Questdetails </h1>
+
+                <div class="row jumbotron mx-5 mt-5 justify-content-center">
+                    <h3 id="DetailsTitle" class="col-12" style="text-align: center"> Title </h3>
+                    <hr class="col-12" />
+                    <span id="DetailsDescription" class="col-12 mt-3" style="font-size: x-large"> Description </span>
+                    <button type="button" class="mt-5 btn col-12"
+                            style="font-size: 30px; font-weight: bold; background-color: lightslategray"> Quest
+                        starten!
+                    </button>
                 </div>
             </div>
         </div>

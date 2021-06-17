@@ -2,8 +2,8 @@
   "Simple": [
 
     {
-      "Name": "quest1",
-      "Description": "test1",
+      "Title": "Quest 1",
+      "Description": "dies ist eine lange ebschrieiasid sdiff aids fioadsfoijads iofadsiofjad siofja dsif asdfiodsajfoadsjfdsa fodioas fdsasdas asdas as das das da sda sd fdadsfadsf ads fdsfadsfdsaf ",
       "Dialog": [
         {
           "Actor": "",
@@ -23,7 +23,7 @@
 
 
     {
-      "Name": "quest2",
+      "Title": "quest2",
       "Description": "test2",
       "Dialog": [
         {
@@ -44,8 +44,8 @@
 
 
     {
-      "Name": "quest2",
-      "Description": "test2",
+      "Title": "quest3",
+      "Description": "test3",
       "Dialog": [
         {
           "Actor": "",
@@ -69,7 +69,7 @@
 
   "Aggregates": [
     {
-      "Name": "quest1a",
+      "Title": "quest1a",
       "Description": "test1a",
       "Dialog": [
         {
