@@ -2,12 +2,12 @@
 {% block title %}- Quests {% endblock %}
 
 {% block head %}
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/quests.css') }}">
+
 {% endblock %}
 
 {% macro createQuestline(category) %}
     {% for i in range(questfile[category]|length) %}
-        {% if i < user[category] %}
+        {% if i < g.user[category] %}
             <button type="button" id="{{ category + i|string }}" class="col-12 btn p-3 mt-4"
                     style="background-color: darkgray"><b>{{ questfile[category][i]['Title'] }}</b>
             </button>
@@ -20,6 +20,8 @@
                         $("#Details").show();
                         $("#DetailsTitle").text('{{ questfile[category][i]['Title'] }}');
                         $("#DetailsDescription").text('{{ questfile[category][i]['Description'] }}');
+                        $("#QuestSubmitButton").val('{{ category + " " + i|string }}')
+
                     });
                 });
             </script>
@@ -144,12 +146,18 @@
 
                 <div class="row jumbotron mx-5 mt-5 justify-content-center">
                     <h3 id="DetailsTitle" class="col-12" style="text-align: center"> Title </h3>
-                    <hr class="col-12" />
+                    <hr class="col-12"/>
                     <span id="DetailsDescription" class="col-12 mt-3" style="font-size: x-large"> Description </span>
-                    <button type="button" class="mt-5 btn col-12"
-                            style="font-size: 30px; font-weight: bold; background-color: lightslategray"> Quest
-                        starten!
-                    </button>
+
+
+                    <form class="mt-5 btn col-10" method="post">
+                        <button id="QuestSubmitButton" name="QuestSubmitButton" value="" type="submit"
+                                class="mt-5 btn col-10"
+                                style="font-size: 30px; font-weight: bold; background-color: lightslategray;"> Quest
+                            starten!
+                        </button>
+                    </form>
+
                 </div>
             </div>
         </div>

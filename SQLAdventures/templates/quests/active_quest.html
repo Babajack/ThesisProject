@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}- Login {% endblock %}
+
+{% block navigation %}
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark static-top">
+    <div class="container">
+        <span class="navbar-brand"> SQL Adventures </span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> Neustarten </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('quests.questbook') }}">Zurück</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-6 jumbotron p-4 mt-4">
+                <h4> Aufgabe: Finde alle Tiere aufsteigend sortiert nach ihrem Namen! </h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <img class="img-fluid" src="{{ url_for('static', filename='/images/prinzessin_test.png') }}" alt="">
+            </div>
+            <div class="col-6">
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

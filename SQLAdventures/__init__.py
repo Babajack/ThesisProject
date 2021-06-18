@@ -1,6 +1,5 @@
 import os
-from flask import Flask, render_template, g
-import json
+from flask import Flask, render_template
 
 
 def create_app(test_config=None):
@@ -44,17 +43,7 @@ def create_app(test_config=None):
     def index():
         return render_template('index.html')
 
-    @app.route('/quests')
-    @auth.login_required
-    def quests():
-        quest_file = os.path.join(app.static_folder, 'data', 'quests.json')
-
-        #
-        user_db = db.get_user_db()
-        user_db.execute('update user set SIMPLE = 5')
-        user_db.commit()
-        #
-
-        return render_template('quests/quests.html', questfile=json.load(open(quest_file)), user=g.user)
+    from . import quests
+    app.register_blueprint(quests.bp)
 
     return app
