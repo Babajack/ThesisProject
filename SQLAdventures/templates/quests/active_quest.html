@@ -1,33 +1,65 @@
 {% extends 'base.html' %}
 {% block title %}- Login {% endblock %}
 
+{% block head %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.js"
+            integrity="sha512-i9pd5Q6ntCp6LwSgAZDzsrsOlE8SN+H5E0T5oumSXWQz5l1Oc4Kb5ZrXASfyjjqtc6Mg6xWbu+ePbbmiEPJlDg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.css"
+          integrity="sha512-xIf9AdJauwKIVtrVRZ0i4nHP61Ogx9fSRAkCLecmE2dL/U8ioWpDvFCAy4dcfecN72HHB9+7FfQj3aiO68aaaw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/sql/sql.min.js"
+            integrity="sha512-dfObApt1XdGl62IJLrjbIOc9QtnRORA5TCwdnJkSj6C/KjwMz2L/Sc4WlcrgAuWoY+n5xTf6NMMojoUOlgwjug=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/addon/display/placeholder.min.js"
+            integrity="sha512-RO2holrH2sTvI9eanK0s+luhPF+J7sdzmk0lMosgrSaUSEjRUfyFiSaERSXHPcIJfQNqeVermdLvQRqUe4sSIQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/active_quest.css') }}">
+{% endblock %}
+
 {% block navigation %}
     <nav class="navbar navbar-expand-md navbar-dark bg-dark static-top">
-    <div class="container">
-        <span class="navbar-brand"> SQL Adventures </span>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#"> Neustarten </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('quests.questbook') }}">Zurück</a>
-                </li>
-            </ul>
+        <div class="container">
+            <span class="navbar-brand"> SQL Adventures </span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> Neustarten </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('quests.questbook') }}">Zurück</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 {% endblock %}
 
 {% block body %}
     <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-6 jumbotron p-4 mt-4">
-                <h4> Aufgabe: Finde alle Tiere aufsteigend sortiert nach ihrem Namen! </h4>
+        {#<div class="row justify-content-center">
+            <div id="Task" class="col-6 jumbotron p-4 mt-4">
+                <h4> Aufgabe: {{ quest_data['Task'] }} </h4>
+                <h5 id="Hint"> Hinweis: {{ quest_data['Hint'] }} </h5>
+            </div>
+        </div>#}
+        <div class="row">
+            <div class="col-3 align-self-end">
+                <div id="bubble-left" class="speech-bubble p-2 mb-3"> lange text jdf kdsf dsfj dsfjklas klds jasd
+                    fkljadsfjdsaklf dsajfkljds kdsjafjds klfjdsaf jds
+                </div>
+            </div>
+            <div id="Task" class="col-6 jumbotron p-4 mt-4">
+                <h4> Aufgabe: {{ quest_data['Task'] }} </h4>
+                <h5 id="Hint"> Hinweis: {{ quest_data['Hint'] }} </h5>
+            </div>
+            <div class="col-3 align-self-end">
+                <div id="bubble-right" class="speech-bubble p-2 mb-3"> Wie bitte?</div>
             </div>
         </div>
         <div class="row">
@@ -35,9 +67,34 @@
                 <img class="img-fluid" src="{{ url_for('static', filename='/images/prinzessin_test.png') }}" alt="">
             </div>
             <div class="col-6">
+                <div class="jumbotron">
 
+                </div>
             </div>
+            <div class="col-3">
+                <img class="img-fluid" src="{{ url_for('static', filename='/images/prinzessin_test.png') }}" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <form>
+                    <label for="code"></label><textarea id="code" name="code"
+                                                        placeholder="SQL Code hier eintippen..."></textarea>
+                </form>
+
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        let editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+                            lineNumbers: true,
+                            mode: "text/x-sql"
+                        });
+                    })
+                </script>
+            </div>
+            <div class="col-3"></div>
         </div>
     </div>
 {% endblock %}
+
 

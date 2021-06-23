@@ -4,10 +4,10 @@ CREATE TABLE user (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   username TEXT UNIQUE NOT NULL,
   password TEXT NOT NULL,
-  Simple INTEGER DEFAULT 1,
-  Aggregates INTEGER DEFAULT 1,
+  'Einfache Selects' INTEGER DEFAULT 1,
+  Aggregate INTEGER DEFAULT 1,
   Joins INTEGER DEFAULT 1,
-  SubQueries INTEGER DEFAULT 1,
-  SetOperations INTEGER DEFAULT 1,
-  Complex INTEGER DEFAULT 1
+  'Sub-Queries' INTEGER DEFAULT 1,
+  'Mengen-Operationen' INTEGER DEFAULT 1,
+  'Komplexe Queries' INTEGER DEFAULT 1
 );

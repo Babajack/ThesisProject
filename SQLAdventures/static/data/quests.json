@@ -1,18 +1,20 @@
 {
-  "Simple": [
+  "Einfache Selects": [
 
     {
       "Title": "Quest 1 - Ankunft auf dem Bauernhof",
       "Description": "Der Bauer Manfred lebt schon seit vielen Jahren auf seinem Bauernhof und hat jede Menge zu tun. Bei ihm kannst du deine SQL-Grundlagen verbessern.",
+      "Task": "Finde alle Tiere aufsteigend sortiert nach ihrem Namen!",
+      "Hint": "Test Hint",
       "Dialog": [
         {
-          "Actor": "",
+          "Picture": "prinzessin_test.png",
           "Position": "",
           "Text": "",
           "BlockUser": 1
         },
         {
-          "Actor": "",
+          "Picture": "",
           "Position": "",
           "Text": "",
           "BlockUser": 0
@@ -67,7 +69,7 @@
 
 
 
-  "Aggregates": [
+  "Aggregate": [
     {
       "Title": "quest1a",
       "Description": "test1a",

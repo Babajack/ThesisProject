@@ -37,13 +37,16 @@ def quest():
         # show error or smth
         pass
 
-    quest_file = os.path.join(current_app.static_folder, 'data', 'quests.json')
-    quest_data = json.load(open(quest_file))
+    quest_data = os.path.join(current_app.static_folder, 'data', 'quests.json')
+    quest_data = json.load(open(quest_data))
 
     # current_quest = [ quest_category, quest_number ]
-    current_quest = str.split(session['current_quest'])
+    data = str(session['current_quest'])
+    quest_name = data.rstrip('0123456789')
+    quest_number = int(data[len(quest_name):])
+
     # find the relevant quest
-    quest_data = quest_data[current_quest[0]][int(current_quest[1]) - 1]
+    quest_data = quest_data[quest_name][quest_number]
 
     # get the expected result
     result = db.get_player_db().execute(quest_data['Query']).fetchall()

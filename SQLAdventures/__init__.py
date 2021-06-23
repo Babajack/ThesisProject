@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, g, url_for
 
 
 def create_app(test_config=None):
@@ -32,18 +32,19 @@ def create_app(test_config=None):
         pass
 
     # init the db
-    from . import db
+    from SQLAdventures import db
     db.init_app(app)
 
-    from . import auth
+    from SQLAdventures import auth
     app.register_blueprint(auth.bp)
 
     @app.route('/')
     @auth.login_required
     def index():
+        test = g.user
         return render_template('index.html')
 
-    from . import quests
+    from SQLAdventures import quests
     app.register_blueprint(quests.bp)
 
     return app

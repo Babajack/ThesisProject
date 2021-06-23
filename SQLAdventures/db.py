@@ -18,9 +18,9 @@ def get_user_db():
 
 # open a connection to the db of the current player
 def get_player_db():
-    if 'player_db' not in g:
+    if 'player_db' not in g and g.user is not None:
         g.player_db = sqlite3.connect(
-            current_app.config['PLAYER_DATABASE'] + session['username'] + '.sqlite',
+            current_app.config['PLAYER_DATABASE'] + g.user['username'] + '.sqlite',
             detect_types=sqlite3.PARSE_DECLTYPES
         )
         g.player_db.row_factory = sqlite3.Row
