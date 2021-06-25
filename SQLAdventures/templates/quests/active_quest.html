@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}- Login {% endblock %}
+{% block title %}- aktive Quest {% endblock %}
 
 {% block head %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.js"
@@ -14,6 +14,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/addon/display/placeholder.min.js"
             integrity="sha512-RO2holrH2sTvI9eanK0s+luhPF+J7sdzmk0lMosgrSaUSEjRUfyFiSaERSXHPcIJfQNqeVermdLvQRqUe4sSIQ=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="{{ url_for('static', filename='scripts/active_quest.js') }}"></script>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/active_quest.css') }}">
 {% endblock %}
@@ -49,50 +51,50 @@
             </div>
         </div>#}
         <div class="row">
-            <div class="col-3 align-self-end">
-                <div id="bubble-left" class="speech-bubble p-2 mb-3"> lange text jdf kdsf dsfj dsfjklas klds jasd
-                    fkljadsfjdsaklf dsajfkljds kdsjafjds klfjdsaf jds
-                </div>
+            <div class="col-3">
+
             </div>
             <div id="Task" class="col-6 jumbotron p-4 mt-4">
                 <h4> Aufgabe: {{ quest_data['Task'] }} </h4>
-                <h5 id="Hint"> Hinweis: {{ quest_data['Hint'] }} </h5>
+                <h6 id="Hint"> Hinweis: {{ quest_data['Hint'] }} </h6>
             </div>
-            <div class="col-3 align-self-end">
-                <div id="bubble-right" class="speech-bubble p-2 mb-3"> Wie bitte?</div>
+            <div class="col-3">
+
             </div>
         </div>
         <div class="row">
-            <div class="col-3">
-                <img class="img-fluid" src="{{ url_for('static', filename='/images/prinzessin_test.png') }}" alt="">
+            <div class="col-3 align-self-end text-center">
+                <div id="bubble-left" class="speech-bubble p-2 mb-3"> lange text jdf kdsf dsfj dsfjklas klds jasd
+                    fkljadsfjdsaklf dsajfkljds kdsjafjds klfjdsaf jds lange text jdf kdsf dsfj dsfjklas klds jasd
+                    fkljadsfjdsaklf dsajfkljds kdsjafjds klfjdsaf jds
+                </div>
+                <img class="img-fluid" src="{{ url_for('static', filename='/images/Bauer.png') }}" alt="">
             </div>
-            <div class="col-6">
+            <div class="col-6 align-self-end">
                 <div class="jumbotron">
-
+                    <span id="response"></span>
                 </div>
             </div>
-            <div class="col-3">
-                <img class="img-fluid" src="{{ url_for('static', filename='/images/prinzessin_test.png') }}" alt="">
+            <div class="col-3 align-self-end text-center">
+                <div id="bubble-right" class="speech-bubble p-2 mb-3"> Wie bitte?</div>
+                <img class="img-fluid" src="{{ url_for('static', filename='/images/Bauer.png') }}" alt="">
             </div>
         </div>
         <div class="row">
             <div class="col-3"></div>
             <div class="col-6">
-                <form>
+                <form class="mb-3">
                     <label for="code"></label><textarea id="code" name="code"
                                                         placeholder="SQL Code hier eintippen..."></textarea>
                 </form>
-
-                <script type="text/javascript">
-                    $(document).ready(function () {
-                        let editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-                            lineNumbers: true,
-                            mode: "text/x-sql"
-                        });
-                    })
-                </script>
             </div>
-            <div class="col-3"></div>
+            <div class="col-3 align-self-end mb-3">
+                <button id="SQLSubmitButton" name="SQLSubmitButton" type="submit"
+                        class="btn"
+                        style="font-size: 30px; font-weight: bold; background-color: #343a40; color: white">
+                    SQL abschicken!
+                </button>
+            </div>
         </div>
     </div>
 {% endblock %}

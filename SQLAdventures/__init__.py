@@ -10,7 +10,8 @@ def create_app(test_config=None):
     app.config.from_mapping(
         SECRET_KEY='dev',
         USER_DATABASE=os.path.join(app.instance_path, 'user_db.sqlite'),
-        PLAYER_DATABASE=player_db_path
+        PLAYER_DATABASE=player_db_path,
+        JSON_SORT_KEYS=False
     )
 
     if test_config is None:

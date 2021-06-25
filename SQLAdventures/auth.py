@@ -9,7 +9,7 @@ from SQLAdventures.db import get_user_db, get_player_db, init_player_db
 bp = Blueprint('auth', __name__, url_prefix='/auth')
 
 
-@bp.route('/register', methods=('GET', 'POST'))
+@bp.route('/register', methods=['GET', 'POST'])
 def register():
     error = None
     if request.method == 'POST':
@@ -41,11 +41,11 @@ def register():
                 'SELECT * FROM user WHERE username = ?', (username,)
             ).fetchone()
             session.clear()
-            session['username'] = user['username']
+
             session['user_id'] = user['id']
 
             # create new database file for new player
-            init_player_db()
+            init_player_db(user['username'])
 
             return redirect(url_for('index'))
 
@@ -54,7 +54,7 @@ def register():
     return render_template('auth/register.html', error=error)
 
 
-@bp.route('/login', methods=('GET', 'POST'))
+@bp.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
     if request.method == 'POST':

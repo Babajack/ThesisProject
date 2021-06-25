@@ -1,7 +1,7 @@
 import json
 import os
 
-from flask import Blueprint, render_template, request, session, url_for, current_app, redirect, g
+from flask import Blueprint, render_template, request, session, url_for, current_app, redirect, g, jsonify
 
 from SQLAdventures import auth, db
 from SQLAdventures.db import get_user_db, get_player_db, init_player_db
@@ -9,13 +9,24 @@ from SQLAdventures.db import get_user_db, get_player_db, init_player_db
 bp = Blueprint('quests', __name__, url_prefix='/quests')
 
 
-@bp.route('/questbook', methods=('GET', 'POST'))
+@bp.route('/questbook', methods=['GET', 'POST'])
 @auth.login_required
 def questbook():
     if request.method == 'POST':
         # user wants to start a quest
-        # store the selected quest nr
-        session['current_quest'] = request.form['QuestSubmitButton']
+
+        # find the quest file
+        quest_data = os.path.join(current_app.static_folder, 'data', 'quests.json')
+        quest_data = json.load(open(quest_data))
+
+        # preprocess file name
+        current_quest = str(request.form['QuestSubmitButton'])
+        quest_name = current_quest.rstrip('0123456789')
+        quest_number = int(current_quest[len(quest_name):])
+
+        # find the relevant quest
+        session['quest_data'] = quest_data[quest_name][quest_number]
+
         return redirect(url_for('quests.quest'))
 
     quest_file = os.path.join(current_app.static_folder, 'data', 'quests.json')
@@ -33,22 +44,32 @@ def questbook():
 @bp.route('/quest')
 @auth.login_required
 def quest():
-    if session['current_quest'] is None:
-        # show error or smth
+    if session.get('quest_data') is None:
+        # TODO show error or smth
         pass
 
-    quest_data = os.path.join(current_app.static_folder, 'data', 'quests.json')
-    quest_data = json.load(open(quest_data))
-
-    # current_quest = [ quest_category, quest_number ]
-    data = str(session['current_quest'])
-    quest_name = data.rstrip('0123456789')
-    quest_number = int(data[len(quest_name):])
-
-    # find the relevant quest
-    quest_data = quest_data[quest_name][quest_number]
-
     # get the expected result
-    result = db.get_player_db().execute(quest_data['Query']).fetchall()
+    #result = db.get_player_db(g.user['username']).execute(session.get('quest_data')['Query']).fetchall()
 
-    return render_template('quests/active_quest.html', quest_data=quest_data)
+    return render_template('quests/active_quest.html', quest_data=session.get('quest_data'))
+
+
+@bp.route('/query', methods=['POST'])
+@auth.login_required
+def validate_query():
+    # request = query and highlighted-sql-keywords
+    user_input = request.get_json()
+    keywords = user_input['keywords']
+    query = user_input['query']
+
+    # TODO check query if keywords are unlocked
+
+    # import re
+    # blacklist = ['delete', 'drop', 'update']
+    # for word in blacklist:
+    #     if re.search(word, query, re.IGNORECASE):
+    #         return jsonify({'error': ''})
+
+    result = db.validate_user_query(query)
+
+    return jsonify(result)

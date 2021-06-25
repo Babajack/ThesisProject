@@ -25,3 +25,7 @@
 }
 
 .CodeMirror pre.CodeMirror-placeholder { color: #999; }
+
+img {
+	/*max-width: 300px !important;*/
+}

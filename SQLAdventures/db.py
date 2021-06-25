@@ -17,10 +17,10 @@ def get_user_db():
 
 
 # open a connection to the db of the current player
-def get_player_db():
-    if 'player_db' not in g and g.user is not None:
+def get_player_db(username):
+    if 'player_db' not in g:
         g.player_db = sqlite3.connect(
-            current_app.config['PLAYER_DATABASE'] + g.user['username'] + '.sqlite',
+            current_app.config['PLAYER_DATABASE'] + username + '.sqlite',
             detect_types=sqlite3.PARSE_DECLTYPES
         )
         g.player_db.row_factory = sqlite3.Row
@@ -49,11 +49,11 @@ def init_user_db():
 
     with current_app.open_resource('schema.sql') as f:
         db.executescript(f.read().decode('utf8'))
-        
+
 
 # init the db of the current player
-def init_player_db():
-    db = get_player_db()
+def init_player_db(username):
+    db = get_player_db(username)
 
     with current_app.open_resource('player_schema.sql') as f:
         db.executescript(f.read().decode('utf8'))
@@ -74,3 +74,14 @@ def init_app(app):
     app.teardown_appcontext(close_player_db)
     # register the command to init the user db
     app.cli.add_command(init_db_command)
+
+
+def validate_user_query(query: str):
+    # TODO check
+    try:
+        result = [dict(row) for row in get_player_db(g.user['username']).execute(query).fetchall()]
+        if not result:
+            return {'Error': 'result table is empty!'}
+        return result
+    except sqlite3.Error as err:
+        return {'Error': str(err.args)}
