@@ -56,7 +56,7 @@ $(document).ready(function () {
                         tableHead = "<thead> <tr> " + tableHead + " </tr> </thead>"
                         tableBody = "<tbody> " + tableBody + " </tbody>"
 
-                        let table = "<table class='table overflow-auto'>" + tableHead + tableBody + "</table>"
+                        let table = "<table class='table table-striped'>" + tableHead + tableBody + "</table>"
 
                         // update the screen
                         $("#response").html(table)
