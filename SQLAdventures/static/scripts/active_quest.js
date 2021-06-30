@@ -28,7 +28,7 @@ $(document).ready(function () {
                     // check if query returns error, if not show the result table
                     if ('Error' in resultData) {
                         // display error
-                        $("#response").text(resultData['Error'])
+                        $("#response").html(resultData['Error'])
                     } else {
 
                         /* --- create the html table from sql data --- */

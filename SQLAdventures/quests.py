@@ -4,7 +4,6 @@ import os
 from flask import Blueprint, render_template, request, session, url_for, current_app, redirect, g, jsonify
 
 from SQLAdventures import auth, db
-from SQLAdventures.db import get_user_db, get_player_db, init_player_db
 
 bp = Blueprint('quests', __name__, url_prefix='/quests')
 
@@ -38,7 +37,8 @@ def questbook():
     # user_db.commit()
     #
 
-    return render_template('quests/quests.html', questfile=json.load(open(quest_file)))
+    return render_template('quests/quests.html', questfile=json.load(open(quest_file)),
+                           user_categories=current_app.config['USER_CATEGORIES'])
 
 
 @bp.route('/quest')
@@ -49,7 +49,7 @@ def quest():
         pass
 
     # get the expected result
-    #result = db.get_player_db(g.user['username']).execute(session.get('quest_data')['Query']).fetchall()
+    # result = db.get_player_db(g.user['username']).execute(session.get('quest_data')['Query']).fetchall()
 
     return render_template('quests/active_quest.html', quest_data=session.get('quest_data'))
 
@@ -61,15 +61,15 @@ def validate_query():
     user_input = request.get_json()
     keywords = user_input['keywords']
     query = user_input['query']
+    user_id = g.user['id']
 
-    # TODO check query if keywords are unlocked
+    result = db.validate_user_query(user_id, query, keywords)
 
-    # import re
-    # blacklist = ['delete', 'drop', 'update']
-    # for word in blacklist:
-    #     if re.search(word, query, re.IGNORECASE):
-    #         return jsonify({'error': ''})
-
-    result = db.validate_user_query(query)
+    # check for correct result
+    if (session.get('quest_data')) is not None:
+        expected_result = [dict(row) for row in
+                           db.get_player_db(user_id).execute(session.get('quest_data')['Query']).fetchall()]
+        # TODO implement better query comparison
+        is_correct = result == expected_result #not any(x != y for x, y in zip(result, expected_result))
 
     return jsonify(result)

@@ -9,5 +9,6 @@ CREATE TABLE user (
   Joins INTEGER DEFAULT 1,
   'Sub-Queries' INTEGER DEFAULT 1,
   'Mengen-Operationen' INTEGER DEFAULT 1,
-  'Komplexe Queries' INTEGER DEFAULT 1
+  'Komplexe Queries' INTEGER DEFAULT 1,
+  Keywords VARCHAR DEFAULT '["SELECT", "FROM", "WHERE"]'
 );
