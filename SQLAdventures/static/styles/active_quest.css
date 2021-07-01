@@ -36,9 +36,9 @@ body {
 }
 
 #main-content {
-	height: calc(100vh - 56px - 240px);
+	height: calc(100vh - 56px - 252px);
 }
 
 #main-row {
-	height: calc(100vh - 56px - 240px - 168px);
+	height: calc(100vh - 56px - 252px - 180px);
 }

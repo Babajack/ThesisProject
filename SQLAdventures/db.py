@@ -78,41 +78,18 @@ def init_app(app: Flask):
     app.cli.add_command(init_db_command)
 
 
-# validates the user-specific query
-# checks for sql-errors, empty tables and unlocked-keywords
-# return a fitting error message or result table
-def validate_user_query(user_id: int, query: str, keywords: list[str]) -> Union[dict, list[dict]]:
-    # TODO check
-
-    # validate keywords
-    for keyword in keywords:
-        if keyword.upper() not in get_user_keywords(user_id):
-            return {'Error': '<b style="color:#708">' + keyword + '</b>' + ' ist noch nicht freigeschaltet!'}
-
-    # validate sql
-    try:
-        result = [dict(row) for row in get_player_db(g.user['id']).execute(query).fetchall()]
-        if not result:
-            return {'Error': 'Die Ergebnistabelle ist leer!'}
-
-        # TODO validate result
-        return result
-    except sqlite3.Error as err:
-        # TODO wrap error
-        return {'Error': str(err.args)}
-
-
 # return a list of unlocked keywords of the user with id = user_id
 def get_user_keywords(user_id: int) -> list[str]:
     return json.loads(get_user(user_id)['Keywords'])
 
 
-# add a unlocked keyword to the users keyword-list
+# add an unlocked keyword to the users keyword-list
 def add_user_keyword(user_id: int, keyword: str):
     current = get_user_keywords(user_id)
-    current.append(keyword)
-    get_user_db().execute('UPDATE user SET Keywords = ? WHERE id = ?', (current, user_id))
-    get_user_db().commit()
+    if keyword not in current:
+        current.append(keyword)
+        get_user_db().execute('UPDATE user SET Keywords = ? WHERE id = ?', (json.dumps(current), user_id))
+        get_user_db().commit()
 
 
 # return user with id = user_id

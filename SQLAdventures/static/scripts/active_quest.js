@@ -24,27 +24,26 @@ $(document).ready(function () {
                 contentType: "application/json",
                 dataType: 'json',
                 success: function (resultData) {
+                    $("#feedback").css('visibility', 'invisible')
 
                     // check if query returns error, if not show the result table
                     if ('Error' in resultData) {
                         // display error
-                        $("#response").html(resultData['Error'])
+                        $("#feedback").css('visibility', 'visible')
+                            .css('background-color', 'red')
+                            .html(resultData['Error'])
                     } else {
 
                         /* --- create the html table from sql data --- */
                         let tableHead = "";
                         let tableBody = ""
 
-
                         for (let key in resultData[0]) {
                             tableHead += "<th> " + key + " </th>"
                         }
 
-                        /*Object.keys(resultData[0]).forEach(function (key) {
-                            tableHead += "<th> " + key + " </th>"
-                        })*/
-
-                        for (let i = 0; i < resultData.length; i++) {
+                        // last entry in resultData shows if task is solved
+                        for (let i = 0; i < resultData.length - 1; i++) {
                             tableBody.concat("<tr> ")
                             let row = resultData[i]
                             for (let key in row) {
@@ -60,6 +59,33 @@ $(document).ready(function () {
 
                         // update the screen
                         $("#response").html(table)
+
+                        // display if result is correct or not
+                        if (resultData[resultData.length - 1].hasOwnProperty('result')) {
+                            let result = resultData[resultData.length - 1]['result']
+                            if (result) {
+                                $("#feedback").css('visibility', 'visible')
+                                    .css('background-color', 'green')
+                                    .html('<span class="fa fa-star checked"></span> Aufgabe gelöst! <span class="fa fa-star checked"></span>');
+
+                                $('#SQLSubmitButton').off('click');
+
+                                $('#SQLSubmitButton').css('background-color', 'green').text('Zum Questbuch').click(function () {
+                                    $.ajax({
+                                        url: '/quests/questbook',
+                                        type: 'GET',
+                                        success: function (data) {
+                                            window.location.href = this.url
+                                        }
+                                    });
+                                });
+                            } else {
+                                $("#feedback").css('visibility', 'visible')
+                                    .css('background-color', 'orange')
+                                    .html('Das Ergebnis ist nicht korrekt')
+                            }
+                        }
+
                     }
 
 

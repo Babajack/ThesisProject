@@ -20,7 +20,8 @@
           "BlockUser": 0
         }
       ],
-      "Query": "select * from tiere"
+      "Query": "select * from tiere",
+      "Keyword": "ON"
     },
 
 

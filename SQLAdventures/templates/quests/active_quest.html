@@ -61,7 +61,7 @@
                 <div id="bubble-left" class="speech-bubble p-2 mb-3 mx-5"> lange text jdf kdsf dsfj dsfjklas klds jasd
                     select * from tiere select * from tiere select * from tiereselect * from tiere select *
                 </div>
-                <img class="img-fluid" src="{{ url_for('static', filename='/images/Bauer.png') }}" alt="">
+                <img id="image-left" class="img-fluid" src="{{ url_for('static', filename='/images/Bauer.png') }}" alt="">
             </div>
             <div class="col-6 m-0 p-0" style="height: 100%; overflow-y: auto">
                 <div id="response" style="background: #FFFFFF">
@@ -70,14 +70,20 @@
             </div>
             <div class="col-3 text-center align-self-end">
                 <div id="bubble-right" class="speech-bubble p-2 mb-3 mx-5">select * from tiere</div>
-                <img class="img-fluid" src="{{ url_for('static', filename='/images/Bauer.png') }}" alt="">
+                <img id="image-right" class="img-fluid" src="{{ url_for('static', filename='/images/Bauer.png') }}" alt="">
             </div>
         </div>
     </div>
     <div class="container-fluid">
-        <div class="row overflow-auto">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <div id="feedback" class="jumbotron p-1 m-0" style="visibility: hidden; font-weight: bold; text-align: center"> feedback-text </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-3 align-self-end"></div>
             <div class="col-6 align-self-end">
+
                 <form class="mb-3">
                     <label for="code"></label><textarea id="code" name="code"
                                                         placeholder="SQL Code hier eintippen..."></textarea>

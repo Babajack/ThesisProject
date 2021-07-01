@@ -63,13 +63,43 @@ def validate_query():
     query = user_input['query']
     user_id = g.user['id']
 
-    result = db.validate_user_query(user_id, query, keywords)
+    # check for valid SQL
+
+    # validate keywords
+    for keyword in keywords:
+        if keyword.upper() not in db.get_user_keywords(user_id):
+            return jsonify({'Error': '<b style="color:#708">' + keyword + '</b>' + ' ist noch nicht freigeschaltet!'})
+
+    # validate sql
+    import sqlite3
+    try:
+        result = [dict(row) for row in db.get_player_db(g.user['id']).execute(query).fetchall()]
+
+        # check for empty result
+        if not result:
+            return jsonify({'Error': 'Die Ergebnistabelle ist leer!'})
+
+    # check for errors
+    except sqlite3.Error as err:
+        # TODO wrap error
+        return jsonify({'Error': str(err.args)})
 
     # check for correct result
-    if (session.get('quest_data')) is not None:
+    if session.get('quest_data') is not None:
         expected_result = [dict(row) for row in
                            db.get_player_db(user_id).execute(session.get('quest_data')['Query']).fetchall()]
         # TODO implement better query comparison
-        is_correct = result == expected_result #not any(x != y for x, y in zip(result, expected_result))
+        is_correct = result == expected_result  # not any(x != y for x, y in zip(result, expected_result))
+        if is_correct:
+            result.append({'result': True})
+
+            # check if user unlocked a new keyword
+            if session.get('Keyword'):
+                db.add_user_keyword(user_id, session.get('Keyword'))
+
+            # TODO check if user increased his level
+
+        else:
+            result.append({'result': False})
 
     return jsonify(result)
