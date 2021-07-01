@@ -12,7 +12,7 @@ def create_app(test_config=None):
         USER_DATABASE=os.path.join(app.instance_path, 'user_db.sqlite'),
         PLAYER_DATABASE=player_db_path,
         JSON_SORT_KEYS=False,
-        USER_CATEGORIES=['Einfache Selects', 'Aggregate', 'Joins',
+        USER_CATEGORIES=['Tutorial', 'Einfache Selects', 'Aggregate', 'Joins',
                          'Sub-Queries', 'Mengen-Operationen', 'Komplexe Queries']
     )
 

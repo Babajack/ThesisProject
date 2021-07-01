@@ -4,11 +4,12 @@ CREATE TABLE user (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   username TEXT UNIQUE NOT NULL,
   password TEXT NOT NULL,
-  'Einfache Selects' INTEGER DEFAULT 1,
-  Aggregate INTEGER DEFAULT 1,
-  Joins INTEGER DEFAULT 1,
-  'Sub-Queries' INTEGER DEFAULT 1,
-  'Mengen-Operationen' INTEGER DEFAULT 1,
-  'Komplexe Queries' INTEGER DEFAULT 1,
+  Tutorial INTEGER DEFAULT 0,
+  'Einfache Selects' INTEGER DEFAULT 0,
+  Aggregate INTEGER DEFAULT 0,
+  Joins INTEGER DEFAULT 0,
+  'Sub-Queries' INTEGER DEFAULT 0,
+  'Mengen-Operationen' INTEGER DEFAULT 0,
+  'Komplexe Queries' INTEGER DEFAULT 0,
   Keywords VARCHAR DEFAULT '["SELECT", "FROM", "WHERE"]'
 );

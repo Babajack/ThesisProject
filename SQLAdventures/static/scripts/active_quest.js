@@ -1,10 +1,14 @@
 $(document).ready(function () {
+
+    // load codemirror sql editor
     let editor = CodeMirror.fromTextArea(document.getElementById("code"), {
         lineNumbers: true,
         mode: "text/x-sql",
         matchBrackets: true
     });
 
+
+    // ------- handle user query -------
 
     $("#SQLSubmitButton").click(function () {
 
@@ -64,9 +68,13 @@ $(document).ready(function () {
                         if (resultData[resultData.length - 1].hasOwnProperty('result')) {
                             let result = resultData[resultData.length - 1]['result']
                             if (result) {
+
+                                // task is solved -> update display
                                 $("#feedback").css('visibility', 'visible')
                                     .css('background-color', 'green')
                                     .html('<span class="fa fa-star checked"></span> Aufgabe gelöst! <span class="fa fa-star checked"></span>');
+
+                                $('#navbar-buttons').hide();
 
                                 $('#SQLSubmitButton').off('click');
 
@@ -79,7 +87,18 @@ $(document).ready(function () {
                                         }
                                     });
                                 });
+
+                                // unlocked new keyword -> show modal
+                                if (resultData[resultData.length - 1].hasOwnProperty('unlocked')) {
+                                    let unlocked = resultData[resultData.length - 1]['unlocked']
+                                    $('#unlocked-keyword-text').html('Glückwunsch! Du hast <b style="color:#708">' + unlocked + '</b> freigeschaltet!' +
+                                    '\n Schau im Wiki vorbei für mehr Infos.')
+                                    $('#unlocked-keyword').modal();
+
+                                }
+
                             } else {
+                                // task is not solved TODO update counter or smth/ show hints
                                 $("#feedback").css('visibility', 'visible')
                                     .css('background-color', 'orange')
                                     .html('Das Ergebnis ist nicht korrekt')

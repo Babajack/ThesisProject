@@ -21,10 +21,12 @@ def questbook():
         # preprocess file name
         current_quest = str(request.form['QuestSubmitButton'])
         quest_name = current_quest.rstrip('0123456789')
-        quest_number = int(current_quest[len(quest_name):])
+        quest_id = int(current_quest[len(quest_name):])
 
         # find the relevant quest
-        session['quest_data'] = quest_data[quest_name][quest_number]
+        for q in quest_data[quest_name]:
+            if q['ID'] == quest_id:
+                session['quest_data'] = q
 
         return redirect(url_for('quests.quest'))
 
@@ -91,11 +93,14 @@ def validate_query():
         # TODO implement better query comparison
         is_correct = result == expected_result  # not any(x != y for x, y in zip(result, expected_result))
         if is_correct:
-            result.append({'result': True})
 
             # check if user unlocked a new keyword
-            if session.get('Keyword'):
-                db.add_user_keyword(user_id, session.get('Keyword'))
+            keyword = session.get('quest_data')['Keyword']
+            if keyword:
+                if db.add_user_keyword(user_id, session.get('quest_data')['Keyword']):
+                    result.append({'result': True, 'unlocked': keyword})
+                else:
+                    result.append({'result': True})
 
             # TODO check if user increased his level
 
