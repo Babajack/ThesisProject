@@ -1,0 +1,6 @@
+Quests:
+	
+	Einfache Selects:
+		1. select * from tiere where name = 'Berta'
+		2. select * from tiere order by name
+		3. select * from tiere where name like '%A'
