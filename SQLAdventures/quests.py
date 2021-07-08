@@ -93,8 +93,36 @@ def validate_query():
         for query in session.get('quest_data')['ResultQueries']:
             expected_result = [dict(row) for row in
                                db.get_player_db(user_id).execute(query).fetchall()]
-            # compare results
-            is_correct = result == expected_result  # not any(x != y for x, y in zip(result, expected_result))
+
+            # compare rows based on values
+            is_correct = True
+            # check for different size of rows
+            if len(expected_result) != len(result):
+                is_correct = False
+            # check if order is important
+            elif session.get('quest_data')['OrderedResult']:
+                for i in range(len(expected_result)):
+                    for expected_value in expected_result[i].values():
+                        if expected_value not in result[i].values():
+                            is_correct = False
+            else:
+                # check if expected rows are somewhere in the result
+                for expected_row in expected_result:
+                    for row in result:
+                        for expected_value in expected_row.values():
+                            if expected_value not in row.values():
+                                # go to next row
+                                break
+                        else:
+                            # row found -> go to next expected row
+                            break
+                        # row not found -> go to next row
+                        continue
+                    # expected row not found
+                    else:
+                        is_correct = False
+                        break
+
             if is_correct:
                 # check if user unlocked a new keyword
                 keywords = session.get('quest_data')['UnlockedKeywords']

@@ -1,6 +1,10 @@
 Quests:
 	
-	Einfache Selects:
+	Selects:
 		1. select * from tiere where name = 'Berta'
-		2. select * from tiere order by name
-		3. select * from tiere where name like '%A'
+		2. select * from tiere order by name -> order by
+		3. select * from tiere order by length(name) desc, name -> length desc asc
+		4. select * from tiere where name like 'A%' -> like
+		5. select * from tiere where wert between 400 and 600 -> between and
+		6. select sum(wert) from tiere -> sum avg count
+		7. select avg(wert) from tiere group by tierart -> group by

@@ -5,10 +5,10 @@ CREATE TABLE tiere
     nummer  INTEGER PRIMARY KEY AUTOINCREMENT,
     name    TEXT    NOT NULL,
     tierart TEXT    NOT NULL,
-    preis   INTEGER NOT NULL
+    wert   INTEGER NOT NULL
 );
 
-INSERT INTO tiere (name, tierart, preis)
+INSERT INTO tiere (name, tierart, wert)
 VALUES ('Berta', 'Kuh', 1500),
        ('Emma', 'Huhn', 10),
        ('Tina', 'Huhn', 9),
@@ -19,7 +19,7 @@ VALUES ('Berta', 'Kuh', 1500),
        ('Heike', 'Schaf', 220),
        ('Anna', 'Kuh', 1450),
        ('Doris', 'Huhn', 11),
-       ('Bianca', 'Kuh', 1700),
+       ('Bianca', 'Kuh', 900),
        ('Miss Piggy', 'Schwein', 500),
        ('Agata', 'Huhn', 15),
        ('Ferkel', 'Schwein', 300),

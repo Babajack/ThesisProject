@@ -1,5 +1,5 @@
 {
-  "Einfache Selects": [
+  "Selects": [
 
     {
       "Difficulty": 0,
@@ -14,9 +14,11 @@
       "TableInfo": [
         {
           "Tabelle": "tiere",
-          "Spalten": "nummer, name, tierart, preis"
+          "Spalten": "nummer, name, tierart, wert"
         }
       ],
+      "OrderedResult": true,
+      "AlterTable": false,
       "ResultQueries": [
         "select * from tiere order by name",
         "select name from tiere order by name"
@@ -102,9 +104,10 @@
       "TableInfo": [
         {
           "Tabelle": "tiere",
-          "Spalten": "nummer, name, tierart, preis"
+          "Spalten": "nummer, name, tierart, wert"
         }
       ],
+      "OrderedResult": false,
       "ResultQueries": [
         "select * from tiere order by name",
         "select name from tiere order by name"

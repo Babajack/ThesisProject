@@ -13,7 +13,7 @@ def create_app(test_config=None):
         PLAYER_DATABASE=player_db_path,
         JSON_SORT_KEYS=False,
         JSON_AS_ASCII=False,
-        USER_CATEGORIES=['Tutorial', 'Einfache Selects', 'Aggregate', 'Joins',
+        USER_CATEGORIES=['Tutorial', 'Selects', 'Joins',
                          'Sub-Queries', 'Mengen-Operationen', 'Komplexe Queries']
     )
 
