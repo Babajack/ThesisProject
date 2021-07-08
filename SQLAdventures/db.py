@@ -1,12 +1,14 @@
+import json
 import sqlite3
+from typing import Union
 
 import click
-from flask import current_app, g, session
+from flask import current_app, g, session, Flask
 from flask.cli import with_appcontext
 
 
 # open a connection to the user db
-def get_user_db():
+def get_user_db() -> sqlite3.Connection:
     if 'user_db' not in g:
         g.user_db = sqlite3.connect(
             current_app.config['USER_DATABASE'],
@@ -17,11 +19,10 @@ def get_user_db():
 
 
 # open a connection to the db of the current player
-def get_player_db():
+def get_player_db(user_id: int) -> sqlite3.Connection:
     if 'player_db' not in g:
-        test = current_app.config['PLAYER_DATABASE'] + session['username'] + '.sqlite'
         g.player_db = sqlite3.connect(
-            current_app.config['PLAYER_DATABASE'] + session['username'] + '.sqlite',
+            current_app.config['PLAYER_DATABASE'] + str(user_id) + '.sqlite',
             detect_types=sqlite3.PARSE_DECLTYPES
         )
         g.player_db.row_factory = sqlite3.Row
@@ -48,13 +49,13 @@ def close_player_db(e=None):
 def init_user_db():
     db = get_user_db()
 
-    with current_app.open_resource('user_schema.sql') as f:
+    with current_app.open_resource('schema.sql') as f:
         db.executescript(f.read().decode('utf8'))
-        
+
 
 # init the db of the current player
-def init_player_db():
-    db = get_player_db()
+def init_player_db(user_id: int):
+    db = get_player_db(user_id)
 
     with current_app.open_resource('player_schema.sql') as f:
         db.executescript(f.read().decode('utf8'))
@@ -69,9 +70,38 @@ def init_db_command():
 
 
 # used in init file to register some functionality
-def init_app(app):
+def init_app(app: Flask):
     # close connection to db after application context is popped
     app.teardown_appcontext(close_user_db)
     app.teardown_appcontext(close_player_db)
     # register the command to init the user db
     app.cli.add_command(init_db_command)
+
+
+# return a list of unlocked keywords of the user with id = user_id
+def get_user_keywords(user_id: int) -> list[str]:
+    return json.loads(get_user(user_id)['Keywords'])
+
+
+# add unlocked keywords to the users keyword-list
+def add_user_keywords(user_id: int, unlocked_keywords_list: list[str]) -> bool:
+    current = get_user_keywords(user_id)
+    success = False
+    # example: unlocked_keywords_list = ["INNER JOIN", "LEFT OUTER JOIN"]
+    for keywords_elem in unlocked_keywords_list:
+        for keyword in keywords_elem.split():
+            if keyword not in current:
+                current.append(keyword.upper())
+                success = True
+    if success:
+        get_user_db().execute('UPDATE user SET Keywords = ? WHERE id = ?', (json.dumps(current), user_id))
+        get_user_db().commit()
+
+    return success
+
+
+# return user with id = user_id
+def get_user(user_id: int) -> sqlite3.Row:
+    return get_user_db().execute(
+        'SELECT * FROM user WHERE id = ?', (user_id,)
+    ).fetchone()

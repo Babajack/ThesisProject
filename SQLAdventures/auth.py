@@ -1,16 +1,15 @@
 import functools
 
-from flask import (
-    Blueprint, flash, g, redirect, render_template, request, session, url_for
-)
+from flask import Blueprint, flash, g, redirect, render_template, request, session, url_for
+
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from SQLAdventures.db import get_user_db, get_player_db, init_player_db
+from SQLAdventures.db import get_user_db, get_player_db, init_player_db, get_user
 
 bp = Blueprint('auth', __name__, url_prefix='/auth')
 
 
-@bp.route('/register', methods=('GET', 'POST'))
+@bp.route('/register', methods=['GET', 'POST'])
 def register():
     error = None
     if request.method == 'POST':
@@ -42,11 +41,11 @@ def register():
                 'SELECT * FROM user WHERE username = ?', (username,)
             ).fetchone()
             session.clear()
-            session['username'] = user['username']
+
             session['user_id'] = user['id']
 
             # create new database file for new player
-            init_player_db()
+            init_player_db(user['id'])
 
             return redirect(url_for('index'))
 
@@ -55,7 +54,7 @@ def register():
     return render_template('auth/register.html', error=error)
 
 
-@bp.route('/login', methods=('GET', 'POST'))
+@bp.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
     if request.method == 'POST':
@@ -92,9 +91,7 @@ def load_logged_in_user():
     if user_id is None:
         g.user = None
     else:
-        g.user = get_user_db().execute(
-            'SELECT * FROM user WHERE id = ?', (user_id,)
-        ).fetchone()
+        g.user = get_user(user_id)
 
 
 def login_required(view):

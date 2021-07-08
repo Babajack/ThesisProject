@@ -1,15 +1,20 @@
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, g, url_for
 
 
 def create_app(test_config=None):
+
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
     player_db_path = app.instance_path + "\\players\\"
     app.config.from_mapping(
         SECRET_KEY='dev',
         USER_DATABASE=os.path.join(app.instance_path, 'user_db.sqlite'),
-        PLAYER_DATABASE=player_db_path
+        PLAYER_DATABASE=player_db_path,
+        JSON_SORT_KEYS=False,
+        JSON_AS_ASCII=False,
+        USER_CATEGORIES=['Tutorial', 'Einfache Selects', 'Aggregate', 'Joins',
+                         'Sub-Queries', 'Mengen-Operationen', 'Komplexe Queries']
     )
 
     if test_config is None:
@@ -31,10 +36,10 @@ def create_app(test_config=None):
         pass
 
     # init the db
-    from . import db
+    from SQLAdventures import db
     db.init_app(app)
 
-    from . import auth
+    from SQLAdventures import auth
     app.register_blueprint(auth.bp)
 
     @app.route('/')
@@ -42,9 +47,7 @@ def create_app(test_config=None):
     def index():
         return render_template('index.html')
 
-    @app.route('/quests')
-    @auth.login_required
-    def quests():
-        return render_template('quests.html')
+    from SQLAdventures import quests
+    app.register_blueprint(quests.bp)
 
     return app

@@ -1,0 +1,136 @@
+{
+  "Einfache Selects": [
+
+    {
+      "Difficulty": 0,
+      "Title": "Quest 1 - Ankunft auf dem Bauernhof",
+      "Description": "Der Bauer Manfred lebt schon seit vielen Jahren auf seinem Bauernhof und hat jede Menge zu tun. Bei ihm kannst du deine SQL-Grundlagen verbessern.",
+      "Task": "Finde alle Tiere sortiert nach ihrem Namen!",
+      "Hint": "Test Hint",
+      "UnlockedKeywords": [
+        "INNER JOIN",
+        "OUTER JOIN"
+      ],
+      "TableInfo": [
+        {
+          "Tabelle": "tiere",
+          "Spalten": "nummer, name, tierart, preis"
+        }
+      ],
+      "ResultQueries": [
+        "select * from tiere order by name",
+        "select name from tiere order by name"
+      ],
+      "Intro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Servus! Ich bin Manfred."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ich hab' gehört du suchst nach der Prinzessin?"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ich glaub' die ist hier vorbeigekommen."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Hah! Wär' ich etwas jünger, würd' ich glatt mit auf die Suche gehen!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Aber da war ein ziemlich übel aussehender Kerl dabei."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Bevor du gehst, solltest du dich erst vorbereiten und deine SQL Fähigkeiten verbessern."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Das trifft sich doch gut! Hilf mir doch bitte ein bisschen auf dem Hof aus."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Wenn alles erledigt ist, sag' ich dir auch wohin die Prinzessin verschwunden ist."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ich hab' hier ne Menge Tiere auf dem Hof und hab ein bisschen den Überblick verloren."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Zeig mir doch mal bitte alle meine Tiere, aber nach Namen sortiert!",
+          "HTML": "Zeig mir doch mal bitte alle meine Tiere, aber <b> nach Namen sortiert! </b>"
+        }
+      ],
+      "Outro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Sehr gut gemacht!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Hier gibt es bestimmt noch mehr zu tun..."
+        }
+      ]
+    },
+
+
+    {
+      "Difficulty": 0,
+      "Title": "Quest 1 - Ankunft auf dem Bauernhof",
+      "Description": "Der Bauer Manfred lebt schon seit vielen Jahren auf seinem Bauernhof und hat jede Menge zu tun. Bei ihm kannst du deine SQL-Grundlagen verbessern.",
+      "Task": "Finde alle Tiere sortiert nach ihrem Namen!",
+      "Hint": "Test Hint",
+      "UnlockedKeywords": [
+        "INNER JOIN",
+        "OUTER JOIN"
+      ],
+      "TableInfo": [
+        {
+          "Tabelle": "tiere",
+          "Spalten": "nummer, name, tierart, preis"
+        }
+      ],
+      "ResultQueries": [
+        "select * from tiere order by name",
+        "select name from tiere order by name"
+      ],
+      "Intro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Servus! Ich bin Manfred."
+        }
+      ],
+      "Outro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Sehr gut gemacht!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Hier gibt es bestimmt noch mehr zu tun..."
+        }
+      ]
+    }
+
+  ]
+
+
+}

@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% block title %}- Quests {% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+{% macro createQuestbook() %}
+    {% for category in g.user.keys() %}
+        {% if category in user_categories %}
+            <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <button class="btn collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapse{{ category|replace(" ", "") }}">
+                                    <h4> {{ category }} </h4>
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="collapse{{ category|replace(" ", "") }}" class="collapse" data-parent="#questbook">
+                            <div class="card-body">
+                                {{ createQuestline(category) }}
+                            </div>
+                        </div>
+                    </div>
+        {% endif %}
+    {%  endfor %}
+{% endmacro %}
+
+{% macro createQuestline(category) %}
+    {% for i in range(questfile[category]|length)  %}
+        {% if questfile[category][i]['Difficulty'] <= g.user[category] %}
+            <button type="button" id="{{ category|replace(" ", "") + i|string }}" class="col-12 btn p-3 mt-4"
+                    style="background-color: darkgray"><b>{{ questfile[category][i]['Title'] }}</b>
+            </button>
+
+            <script>
+                $(document).ready(function () {
+                    $("#{{ category|replace(" ", "") + i|string }}").click(function () {
+                        $('.card-body button').css('background-color', 'darkgray')
+                        $(this).css('background-color', 'lightslategray')
+                        $("#Details").show();
+                        $("#DetailsTitle").text('{{ questfile[category][i]['Title'] }}');
+                        $("#DetailsDescription").text('{{ questfile[category][i]['Description'] }}');
+                        $("#QuestSubmitButton").val('{{ category + i|string }}')
+
+                    });
+                });
+            </script>
+
+        {% endif %}
+    {% endfor %}
+{% endmacro %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-5">
+                <h1 class="pt-4" style="text-align: center; color: white"> Questbuch </h1>
+                <div class="accordion pt-4" id="questbook">
+                    {{ createQuestbook() }}
+                </div>
+            </div>
+
+
+            <div id="Details" class="col-7" style="display: none">
+
+                <h1 class="pt-4" style="text-align: center; color: white; visibility: hidden"> Questdetails </h1>
+
+                <div class="row jumbotron mx-5 mt-5 justify-content-center">
+                    <h3 id="DetailsTitle" class="col-12" style="text-align: center"> Title </h3>
+                    <hr class="col-12"/>
+                    <span id="DetailsDescription" class="col-12 mt-3" style="font-size: x-large"> Description </span>
+
+
+                    <form class="mt-5 btn col-10" method="post">
+                        <button id="QuestSubmitButton" name="QuestSubmitButton" value="" type="submit"
+                                class="mt-5 btn col-10"
+                                style="font-size: 30px; font-weight: bold; background-color: lightslategray;"> Quest
+                            starten!
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block quests_active %}active{% endblock %}
