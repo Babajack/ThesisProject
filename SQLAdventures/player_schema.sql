@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS tiere;
 
 CREATE TABLE tiere
 (
-    id      INTEGER PRIMARY KEY AUTOINCREMENT,
+    nummer  INTEGER PRIMARY KEY AUTOINCREMENT,
     name    TEXT    NOT NULL,
     tierart TEXT    NOT NULL,
     preis   INTEGER NOT NULL

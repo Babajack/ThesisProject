@@ -2,6 +2,7 @@
 {% block title %}- aktive Quest {% endblock %}
 
 {% block head %}
+    <!-- CodeMirror (text editor with sql mode) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.js"
             integrity="sha512-i9pd5Q6ntCp6LwSgAZDzsrsOlE8SN+H5E0T5oumSXWQz5l1Oc4Kb5ZrXASfyjjqtc6Mg6xWbu+ePbbmiEPJlDg=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -14,8 +15,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/addon/display/placeholder.min.js"
             integrity="sha512-RO2holrH2sTvI9eanK0s+luhPF+J7sdzmk0lMosgrSaUSEjRUfyFiSaERSXHPcIJfQNqeVermdLvQRqUe4sSIQ=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <script src="{{ url_for('static', filename='scripts/active_quest.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='scripts/active_quest.js') }}"></script>
+    <script type="text/javascript">
+        loadQuestProcedure({{ quest_data|tojson|safe }})
+    </script>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/active_quest.css') }}">
 {% endblock %}
@@ -31,7 +34,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul id="navbar-buttons" class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"> Neustarten </a>
+                        <a class="nav-link" href="{{ url_for('quests.quest') }}"> Neustarten </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('quests.questbook') }}">Zurück</a>
@@ -51,17 +54,17 @@
             </div>
         </div>#}
         <div class="row justify-content-center">
-            <div id="Task" class="col-6 jumbotron p-4 mt-4">
+            <div id="Task" class="col-6 jumbotron p-4 mt-4" style="visibility: hidden">
                 <h4> Aufgabe: {{ quest_data['Task'] }} </h4>
                 <h6 id="Hint" style="display: none"> Hinweis: {{ quest_data['Hint'] }} </h6>
             </div>
         </div>
         <div id="main-row" class="row">
             <div class="col-3 text-center align-self-end">
-                <div id="bubble-left" class="speech-bubble p-2 mb-3 mx-5"> lange text jdf kdsf dsfj dsfjklas klds jasd
-                    select * from tiere select * from tiere select * from tiereselect * from tiere select *
+                <div id="bubble-left" class="speech-bubble p-2 mb-3 mx-5" style="display: none">
+                    text-left
                 </div>
-                <img id="image-left" class="img-fluid" src="{{ url_for('static', filename='/images/Bauer.png') }}"
+                <img id="image-left" class="img-fluid" src="" style="display: none"
                      alt="">
             </div>
             <div class="col-6 m-0 p-0" style="height: 100%; overflow-y: auto">
@@ -70,8 +73,10 @@
                 </div>
             </div>
             <div class="col-3 text-center align-self-end">
-                <div id="bubble-right" class="speech-bubble p-2 mb-3 mx-5">select * from tiere</div>
-                <img id="image-right" class="img-fluid" src="{{ url_for('static', filename='/images/Bauer.png') }}"
+                <div id="bubble-right" class="speech-bubble p-2 mb-3 mx-5" style="display: none">
+                    text-right
+                </div>
+                <img id="image-right" class="img-fluid" src="" style="display: none"
                      alt="">
             </div>
         </div>
@@ -85,19 +90,38 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-3 align-self-end"></div>
-            <div class="col-6 align-self-end">
+            <div class="col-3 mt-auto">
+                <div id="TableInfo" style="background-color: #FFFFFF; display: none">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col"> Tabellen</th>
+                            <th scope="col"> Spalten</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for entry in quest_data['TableInfo'] %}
+                            <tr>
+                                <td> {{ entry['Tabelle'] }} </td>
+                                <td> {{ entry['Spalten'] }} </td>
+                            </tr>
 
-                <form class="mb-3">
-                    <label for="code"></label><textarea id="code" name="code"
-                                                        placeholder="SQL Code hier eintippen..."></textarea>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-6 align-self-end mb-3">
+                <form>
+                    <label for="code"></label>
+                    <textarea id="code" name="code" placeholder="weiter klicken..."></textarea>
                 </form>
             </div>
             <div class="col-3 align-self-end mb-3">
                 <button id="SQLSubmitButton" name="SQLSubmitButton" type="submit"
                         class="btn"
                         style="font-size: 30px; font-weight: bold; background-color: #343a40; color: white">
-                    SQL abschicken!
+                    Weiter
                 </button>
             </div>
         </div>

@@ -83,18 +83,19 @@ def get_user_keywords(user_id: int) -> list[str]:
     return json.loads(get_user(user_id)['Keywords'])
 
 
-# add an unlocked keyword to the users keyword-list
-def add_user_keyword(user_id: int, keyword: str) -> bool:
+# add unlocked keywords to the users keyword-list
+def add_user_keywords(user_id: int, unlocked_keywords_list: list[str]) -> bool:
     current = get_user_keywords(user_id)
-    keywords = keyword.split()
     success = False
-    for keyword in keywords:
-        if keyword not in current:
-            current.append(keyword)
-            get_user_db().execute('UPDATE user SET Keywords = ? WHERE id = ?', (json.dumps(current), user_id))
-            get_user_db().commit()
-            success = True
-            current = get_user_keywords(user_id)
+    # example: unlocked_keywords_list = ["INNER JOIN", "LEFT OUTER JOIN"]
+    for keywords_elem in unlocked_keywords_list:
+        for keyword in keywords_elem.split():
+            if keyword not in current:
+                current.append(keyword.upper())
+                success = True
+    if success:
+        get_user_db().execute('UPDATE user SET Keywords = ? WHERE id = ?', (json.dumps(current), user_id))
+        get_user_db().commit()
 
     return success
 

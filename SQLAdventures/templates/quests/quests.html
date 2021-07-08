@@ -29,21 +29,21 @@
 {% endmacro %}
 
 {% macro createQuestline(category) %}
-    {% for quest_data in questfile[category] %}
-        {% if quest_data['Difficulty'] <= g.user[category] %}
-            <button type="button" id="{{ category|replace(" ", "") + quest_data['ID']|string }}" class="col-12 btn p-3 mt-4"
-                    style="background-color: darkgray"><b>{{ quest_data['Title'] }}</b>
+    {% for i in range(questfile[category]|length)  %}
+        {% if questfile[category][i]['Difficulty'] <= g.user[category] %}
+            <button type="button" id="{{ category|replace(" ", "") + i|string }}" class="col-12 btn p-3 mt-4"
+                    style="background-color: darkgray"><b>{{ questfile[category][i]['Title'] }}</b>
             </button>
 
             <script>
                 $(document).ready(function () {
-                    $("#{{ category|replace(" ", "") + quest_data['ID']|string }}").click(function () {
+                    $("#{{ category|replace(" ", "") + i|string }}").click(function () {
                         $('.card-body button').css('background-color', 'darkgray')
                         $(this).css('background-color', 'lightslategray')
                         $("#Details").show();
-                        $("#DetailsTitle").text('{{ quest_data['Title'] }}');
-                        $("#DetailsDescription").text('{{ quest_data['Description'] }}');
-                        $("#QuestSubmitButton").val('{{ category + quest_data['ID']|string }}')
+                        $("#DetailsTitle").text('{{ questfile[category][i]['Title'] }}');
+                        $("#DetailsDescription").text('{{ questfile[category][i]['Description'] }}');
+                        $("#QuestSubmitButton").val('{{ category + i|string }}')
 
                     });
                 });
