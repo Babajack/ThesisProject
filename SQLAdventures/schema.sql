@@ -10,5 +10,6 @@ CREATE TABLE user (
   'Sub-Queries' INTEGER DEFAULT 0,
   'Mengen-Operationen' INTEGER DEFAULT 0,
   'Komplexe Queries' INTEGER DEFAULT 0,
-  Keywords VARCHAR DEFAULT '["SELECT", "FROM", "WHERE", "ORDER", "BY"]'
+  Keywords VARCHAR DEFAULT '["SELECT", "FROM", "WHERE"]',
+  CompletedQuests VARCHAR DEFAULT '[]'
 );

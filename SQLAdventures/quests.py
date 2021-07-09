@@ -16,9 +16,9 @@ def questbook():
 
         # preprocess file name
         # example: quest_info = SimpleSelects0
-        quest_info = str(request.form['QuestSubmitButton'])
-        quest_name = quest_info.rstrip('0123456789')
-        quest_nr = int(quest_info[len(quest_name):])
+        quest_id = str(request.form['QuestSubmitButton'])
+        quest_name = quest_id.rstrip('0123456789')
+        quest_nr = int(quest_id[len(quest_name):])
 
         # find the quest file
         quest_data = os.path.join(current_app.static_folder, 'data', 'quests.json')
@@ -30,6 +30,7 @@ def questbook():
         for i in range(len(selected_quest_line)):
             if i == quest_nr:
                 session['quest_data'] = selected_quest_line[i]
+                session['quest_id'] = quest_id
 
         return redirect(url_for('quests.quest'))
 
@@ -132,7 +133,9 @@ def validate_query():
                     else:
                         result.append({'result': True})
 
-                # TODO check if user increased his level
+                # check if user completed a new quest and increased his level
+                if db.add_completed_quest(user_id, session.get('quest_id')):
+                    db.increase_category_level(user_id, session.get('quest_id').rstrip('0123456789'))
 
                 return jsonify(result)
 

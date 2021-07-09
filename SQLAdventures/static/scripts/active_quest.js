@@ -170,7 +170,7 @@ function loadQuestProcedure(data) {
                                                 for (let i = 1; i < unlockedKeywords.length; i++) {
                                                     keywords_string = keywords_string + " und " + b_open + unlockedKeywords[i] + b_close
                                                 }
-                                                $('#unlocked-keyword-text').html('Glückwunsch! Du hast ' + keywords_string + ' freigeschaltet!' +
+                                                $('#unlocked-keyword-text').html('Du hast ' + keywords_string + ' freigeschaltet!' +
                                                     '\n Schau im Lexikon vorbei für mehr Infos.')
                                                 $('#unlocked-keyword').modal();
 

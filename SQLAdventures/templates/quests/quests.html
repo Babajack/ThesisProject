@@ -32,7 +32,7 @@
     {% for i in range(questfile[category]|length)  %}
         {% if questfile[category][i]['Difficulty'] <= g.user[category] %}
             <button type="button" id="{{ category|replace(" ", "") + i|string }}" class="col-12 btn p-3 mt-4"
-                    style="background-color: darkgray"><b>{{ questfile[category][i]['Title'] }}</b>
+                    style="background-color: darkgray"><b>{{ questfile[category][i]['Title'] }} {% if category + i|string in g.user['CompletedQuests'] %} <span class="fa fa-star checked"></span> {% endif %} </b>
             </button>
 
             <script>

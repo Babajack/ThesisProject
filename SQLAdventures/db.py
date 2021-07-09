@@ -78,21 +78,21 @@ def init_app(app: Flask):
     app.cli.add_command(init_db_command)
 
 
-# return a list of unlocked keywords of the user with id = user_id
+# return a list of the users unlocked keywords
 def get_user_keywords(user_id: int) -> list[str]:
     return json.loads(get_user(user_id)['Keywords'])
 
 
 # add unlocked keywords to the users keyword-list
+# return true if the new keyword was now unlocked, false if the keyword was unlocked already
 def add_user_keywords(user_id: int, unlocked_keywords_list: list[str]) -> bool:
     current = get_user_keywords(user_id)
     success = False
     # example: unlocked_keywords_list = ["INNER JOIN", "LEFT OUTER JOIN"]
     for keywords_elem in unlocked_keywords_list:
-        for keyword in keywords_elem.split():
-            if keyword not in current:
-                current.append(keyword.upper())
-                success = True
+        if keywords_elem not in current:
+            current.append(keywords_elem.upper())
+            success = True
     if success:
         get_user_db().execute('UPDATE user SET Keywords = ? WHERE id = ?', (json.dumps(current), user_id))
         get_user_db().commit()
@@ -100,8 +100,30 @@ def add_user_keywords(user_id: int, unlocked_keywords_list: list[str]) -> bool:
     return success
 
 
+# return a list of the users completed quests
+def get_completed_quests(user_id: int) -> list[str]:
+    return json.loads(get_user(user_id)['CompletedQuests'])
+
+
+# add a completed quest to the users completed quest list
+# return true if a new quest was completed, false if the quest was completed already
+def add_completed_quest(user_id: int, completed_quest_id: str) -> bool:
+    current = get_completed_quests(user_id)
+    if completed_quest_id not in current:
+        current.append(completed_quest_id)
+        get_user_db().execute('UPDATE user SET CompletedQuests = ? WHERE id = ?', (json.dumps(current), user_id))
+        get_user_db().commit()
+        return True
+    return False
+
+
 # return user with id = user_id
 def get_user(user_id: int) -> sqlite3.Row:
     return get_user_db().execute(
         'SELECT * FROM user WHERE id = ?', (user_id,)
     ).fetchone()
+
+
+def increase_category_level(user_id: int, category: str):
+    get_user_db().execute('UPDATE user SET %s = %s + 1 WHERE id = ?' % (category, category), (user_id,))
+    get_user_db().commit()
