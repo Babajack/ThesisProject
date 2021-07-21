@@ -45,11 +45,9 @@ def register():
             session['user_id'] = user['id']
 
             # create new database file for new player
-            init_player_db(user['id'])
+            init_player_db(user['username'])
 
             return redirect(url_for('index'))
-
-        #flash(error)
 
     return render_template('auth/register.html', error=error)
 

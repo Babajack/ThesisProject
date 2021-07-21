@@ -19,10 +19,10 @@ def get_user_db() -> sqlite3.Connection:
 
 
 # open a connection to the db of the current player
-def get_player_db(user_id: int) -> sqlite3.Connection:
+def get_player_db(username: str) -> sqlite3.Connection:
     if 'player_db' not in g:
         g.player_db = sqlite3.connect(
-            current_app.config['PLAYER_DATABASE'] + str(user_id) + '.sqlite',
+            current_app.config['PLAYER_DATABASE'] + username + '.sqlite',
             detect_types=sqlite3.PARSE_DECLTYPES
         )
         g.player_db.row_factory = sqlite3.Row
@@ -54,8 +54,8 @@ def init_user_db():
 
 
 # init the db of the current player
-def init_player_db(user_id: int):
-    db = get_player_db(user_id)
+def init_player_db(username: str):
+    db = get_player_db(username)
 
     with current_app.open_resource('player_schema.sql') as f:
         db.executescript(f.read().decode('utf8'))

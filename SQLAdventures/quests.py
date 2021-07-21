@@ -76,7 +76,7 @@ def validate_query():
     # validate sql
     import sqlite3
     try:
-        result = [dict(row) for row in db.get_player_db(g.user['id']).execute(query).fetchall()]
+        result = [dict(row) for row in db.get_player_db(g.user['username']).execute(query).fetchall()]
 
         # check for empty result
         if not result:
@@ -92,7 +92,7 @@ def validate_query():
         # check for possible result queries if user found an accepted result
         for query in session.get('quest_data')['ResultQueries']:
             expected_result = [dict(row) for row in
-                               db.get_player_db(user_id).execute(query).fetchall()]
+                               db.get_player_db(g.user['username']).execute(query).fetchall()]
 
             # compare rows based on values
             is_correct = True
