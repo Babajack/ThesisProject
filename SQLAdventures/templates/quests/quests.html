@@ -1,38 +1,38 @@
 {% extends 'base.html' %}
 {% block title %}- Quests {% endblock %}
 
-{% block head %}
-
-{% endblock %}
+{% block head %} {% endblock %}
 
 {% macro createQuestbook() %}
     {% for category in g.user.keys() %}
         {% if category in user_categories %}
             <div class="card">
-                        <div class="card-header">
-                            <h5 class="mb-0">
-                                <button class="btn collapsed" type="button" data-toggle="collapse"
-                                        data-target="#collapse{{ category|replace(" ", "") }}">
-                                    <h4> {{ category }} </h4>
-                                </button>
-                            </h5>
-                        </div>
+                <div class="card-header">
+                    <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapse{{ category|replace(" ", "") }}">
+                        <h4> {{ category }} </h4>
+                    </button>
+                </div>
 
-                        <div id="collapse{{ category|replace(" ", "") }}" class="collapse" data-parent="#questbook">
-                            <div class="card-body">
-                                {{ createQuestline(category) }}
-                            </div>
-                        </div>
+                <div id="collapse{{ category|replace(" ", "") }}" class="collapse" data-parent="#questbook">
+                    <div class="card-body">
+                        {{ createQuestline(category) }}
                     </div>
+                </div>
+            </div>
         {% endif %}
-    {%  endfor %}
+    {% endfor %}
 {% endmacro %}
 
 {% macro createQuestline(category) %}
-    {% for i in range(questfile[category]|length)  %}
+    {% for i in range(questfile[category]|length) %}
         {% if questfile[category][i]['Difficulty'] <= g.user[category] %}
-            <button type="button" id="{{ category|replace(" ", "") + i|string }}" class="col-12 btn p-3 mt-4"
-                    style="background-color: darkgray"><b>{{ questfile[category][i]['Title'] }} {% if category + i|string in g.user['CompletedQuests'] %} <span class="fa fa-star checked"></span> {% endif %} </b>
+            <button type="button" id="{{ category|replace(" ", "") + i|string }}"
+                    class='{{ "col-12 btn p-3" if i == 0 else "col-12 btn p-3 mt-4" }}'
+                    style="background-color: darkgray">
+                <b>{{ questfile[category][i]['Title'] }}
+                    {% if category + i|string in g.user['CompletedQuests'] %}
+                        <span class="fa fa-star checked"></span> {% endif %} </b>
             </button>
 
             <script>

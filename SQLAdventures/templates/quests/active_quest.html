@@ -17,7 +17,7 @@
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='scripts/active_quest.js') }}"></script>
     <script type="text/javascript">
-        loadQuestProcedure({{ quest_data|tojson|safe }}, {{ user['username']|tojson|safe }})
+        loadQuestProcedure({{ quest_data|tojson|safe }}, {{ g.user.username|tojson|safe }})
     </script>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/active_quest.css') }}">
@@ -47,12 +47,6 @@
 
 {% block body %}
     <div id="main-content" class="container-fluid">
-        {#<div class="row justify-content-center">
-            <div id="Task" class="col-6 jumbotron p-4 mt-4">
-                <h4> Aufgabe: {{ quest_data['Task'] }} </h4>
-                <h5 id="Hint"> Hinweis: {{ quest_data['Hint'] }} </h5>
-            </div>
-        </div>#}
         <div class="row justify-content-center">
             <div id="Task" class="col-6 jumbotron p-4 mt-4" style="visibility: hidden">
                 <h4> Aufgabe: {{ quest_data['Task'] }} </h4>

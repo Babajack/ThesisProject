@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block title %}- Lexikon {% endblock %}
+
+{% block head %} {% endblock %}
+
+{% macro createLexicon() %}
+    {% for keyword in keywords %}
+        {% if keyword in lexicon %}
+            <button type="button" id="{{ keyword|replace(" ", "") }}" class="col-12 btn p-3 mt-4"
+                    style="background-color: darkgray">
+                <b> {{ keyword }} </b>
+            </button>
+
+            <script>
+                $(document).ready(function () {
+                    $("#{{ keyword|replace(" ", "") }}").click(function () {
+                        $('.card-body button').css('background-color', 'darkgray')
+                        $(this).css('background-color', 'lightslategray')
+                        $("#Details").show();
+                        $("#DetailsTitle").html('{{ keyword }}');
+                        $("#DetailsDescription").html('{{ lexicon[keyword]['Description'] }}');
+                        // add example
+
+                    });
+                });
+            </script>
+
+        {% endif %}
+    {% endfor %}
+{% endmacro %}
+
+{% block navigation %}
+    {% if menu %}
+        {{ super() }}
+    {% else %}
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark static-top">
+            <div class="container">
+                <span class="navbar-brand"> SQL Adventures </span>
+            </div>
+        </nav>
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3">
+                <h1 class="pt-4" style="text-align: center; color: white"> Lexikon </h1>
+                <div class="btn-group-vertical pt-4" id="lexicon">
+                    {{ createLexicon() }}
+                </div>
+            </div>
+
+
+            <div id="Details" class="col-9" style="display: none">
+
+                <h1 class="pt-4" style="text-align: center; color: white; visibility: hidden"> Lexicondetails </h1>
+
+                <div class="row jumbotron mx-5 mt-5 justify-content-center">
+                    <h3 id="DetailsTitle" class="col-12" style="text-align: center"> Title </h3>
+                    <hr class="col-12"/>
+
+                    <span id="DetailsDescription" class="col-12 mt-3" style="font-size: x-large"> Description </span>
+                    <hr class="col-12"/>
+
+                    <label for="example1"></label>
+                    <textarea id="example1" style="visibility: hidden"></textarea>
+
+                    <label for="example2"></label>
+                    <textarea id="example2" style="visibility: hidden"></textarea>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block lexicon_active %}active{% endblock %}
+

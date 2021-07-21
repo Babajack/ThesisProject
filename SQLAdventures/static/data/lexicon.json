@@ -1,0 +1,12 @@
+{
+  "SELECT": {
+    "Description": "Mit dem <b style='color:#708'>SELECT</b> Statement können Daten aus einer Datenbank ausgewählt und angezeigt werden. Dabei wird zuerst definiert, welche Spalten angezeigt werden sollen. Danach kann mit Hilfe des <b style='color:#708'>FROM</b> Statements definiert werden, von welcher Tabelle Daten gelesen werden sollen. Mit <b style='color:#708'>SELECT</b> * werden alle verfügbaren Spalten angezeigt.",
+    "Example1": "SELECT spalte1, spalte2 FROM tabelle_name",
+    "Example2": "SELECT * FROM tabelle_name"
+  },
+  "WHERE": {
+    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
+    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
+    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+  }
+}

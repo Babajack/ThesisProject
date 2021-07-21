@@ -54,7 +54,7 @@ def quest():
         pass
 
     # load current quest
-    return render_template('quests/active_quest.html', quest_data=session.get('quest_data'), user=g.user)
+    return render_template('quests/active_quest.html', quest_data=session.get('quest_data'))
 
 
 @bp.route('/query', methods=['POST'])

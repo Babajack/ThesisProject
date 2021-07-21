@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, g, url_for
+from flask import Flask, render_template, g, url_for, request
 
 
 def create_app(test_config=None):
@@ -46,6 +46,9 @@ def create_app(test_config=None):
     @auth.login_required
     def index():
         return render_template('index.html')
+
+    from SQLAdventures import lexicon
+    app.register_blueprint(lexicon.bp)
 
     from SQLAdventures import quests
     app.register_blueprint(quests.bp)
