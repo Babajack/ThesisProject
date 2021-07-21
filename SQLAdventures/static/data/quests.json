@@ -4,29 +4,33 @@
       "Difficulty": 0,
       "Title": "Ankunft auf dem Bauernhof",
       "Description": "Der Bauer Manfred lebt schon seit vielen Jahren auf seinem Bauernhof und hat jede Menge zu tun. Bei ihm kannst du deine SQL-Grundlagen verbessern und er kann dir bestimmt bei der Suche nach der Prinzessin weiterhelfen.",
-      "Task": "Finde alle Tiere sortiert nach ihrem Namen!",
-      "Hint": "Test Hint",
+      "Task": "Finde das Tier mit dem Namen Berta!",
+      "Hint": "Gib alle Spalten aus. Schau im Lexikon nach, falls du etwas vergessen hast.",
       "UnlockedKeywords": [
-        "INNER JOIN",
-        "OUTER JOIN"
+        "ORDER BY"
       ],
       "TableInfo": [
         {
           "Tabelle": "tiere",
-          "Spalten": "Nummer, Name, Tierart, Wert"
+          "Spalten": "nummer, name, tierart, wert"
         }
       ],
       "OrderedResult": true,
       "AlterTable": false,
       "ResultQueries": [
-        "select * from tiere order by name",
-        "select name from tiere order by name"
+        "select * from tiere where name = 'Berta'"
       ],
       "Intro": [
         {
           "Picture": "Bauer.png",
           "Position": "left",
           "Text": "Servus! Ich bin Manfred."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Du musst username sein!",
+          "HTML": "Du musst <b>username</b> sein!"
         },
         {
           "Picture": "Bauer.png",
@@ -66,101 +70,70 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Ich hab' hier ne Menge Tiere auf dem Hof und hab ein bisschen den Überblick verloren."
-        },
-        {
-          "Picture": "Bauer.png",
-          "Position": "left",
-          "Text": "Zeig mir doch mal bitte alle meine Tiere, aber nach Namen sortiert!",
-          "HTML": "Zeig mir doch mal bitte alle meine Tiere, aber <b> nach Namen sortiert! </b>"
+          "Text": "Aber zuallererst: Wo ist denn meine Berta??",
+          "HTML": "Aber zuallererst: Wo ist denn meine <b>Berta</b>??"
         }
       ],
       "Outro": [
         {
-          "Picture": "Bauer.png",
-          "Position": "left",
-          "Text": "Sehr gut gemacht!"
+          "Picture": "Kuh.png",
+          "Position": "right",
+          "Text": "Muuuh!!"
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Hier gibt es bestimmt noch mehr zu tun..."
+          "Text": "Ahh da ist sie ja! Danke für deine Hilfe."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Hier gibt es aber noch mehr zu tun!"
         }
       ]
     },
+
     {
       "Difficulty": 1,
-      "Title": "Quest 1 - Ankunft auf dem Bauernhof",
-      "Description": "Der Bauer Manfred lebt schon seit vielen Jahren auf seinem Bauernhof und hat jede Menge zu tun. Bei ihm kannst du deine SQL-Grundlagen verbessern.",
+      "Title": "Ein erster Überblick",
+      "Description": "Der Bauer Manfred hat noch viele Aufgaben für dich. Was ist es diesmal?",
       "Task": "Finde alle Tiere sortiert nach ihrem Namen!",
-      "Hint": "Test Hint",
+      "Hint": "Gib alle Spalten aus. Schau im Lexikon nach, falls du etwas vergessen hast.",
       "UnlockedKeywords": [
-        "INNER JOIN",
-        "OUTER JOIN"
+        "DISTINCT"
       ],
       "TableInfo": [
         {
           "Tabelle": "tiere",
-          "Spalten": "Nummer, Name, Tierart, Wert"
+          "Spalten": "nummer, name, tierart, wert"
         }
       ],
       "OrderedResult": true,
       "AlterTable": false,
       "ResultQueries": [
-        "select * from tiere order by name",
-        "select name from tiere order by name"
+        "select * from tiere order by name"
       ],
       "Intro": [
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Servus! Ich bin Manfred."
+          "Text": "So dann lass uns doch mit dem Training beginnen!"
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Ich hab' gehört du suchst nach der Prinzessin?"
+          "Text": "Es gibt hier eine Menge Tiere auf dem Hof."
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Ich glaub' die ist hier vorbeigekommen."
+          "Text": "Ich hab ein bisschen den Überblick verloren..."
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Hah! Wär' ich etwas jünger, würd' ich glatt mit auf die Suche gehen!"
-        },
-        {
-          "Picture": "Bauer.png",
-          "Position": "left",
-          "Text": "Aber da war ein ziemlich übel aussehender Kerl dabei."
-        },
-        {
-          "Picture": "Bauer.png",
-          "Position": "left",
-          "Text": "Bevor du gehst, solltest du dich erst vorbereiten und deine SQL Fähigkeiten verbessern."
-        },
-        {
-          "Picture": "Bauer.png",
-          "Position": "left",
-          "Text": "Das trifft sich doch gut! Hilf mir doch bitte ein bisschen auf dem Hof aus."
-        },
-        {
-          "Picture": "Bauer.png",
-          "Position": "left",
-          "Text": "Wenn alles erledigt ist, sag' ich dir auch wohin die Prinzessin verschwunden ist."
-        },
-        {
-          "Picture": "Bauer.png",
-          "Position": "left",
-          "Text": "Ich hab' hier ne Menge Tiere auf dem Hof und hab ein bisschen den Überblick verloren."
-        },
-        {
-          "Picture": "Bauer.png",
-          "Position": "left",
-          "Text": "Zeig mir doch mal bitte alle meine Tiere, aber nach Namen sortiert!",
-          "HTML": "Zeig mir doch mal bitte alle meine Tiere, aber <b> nach Namen sortiert! </b>"
+          "Text": "Zeig mir doch mal bitte alle Tiere, sortiert nach ihrem Namen!",
+          "HTML": "Zeig mir doch mal bitte alle Tiere, <b>sortiert nach ihrem Namen</b>!"
         }
       ],
       "Outro": [
@@ -172,83 +145,59 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Hier gibt es bestimmt noch mehr zu tun..."
+          "Text": "Wie du siehst, hat jedes Tier eine Nummer, einen Namen, eine Tierart und einen Wert."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Die Nummer ist wichtig, damit man das jeweilige Tier genau identifizieren kann."
         }
       ]
     },
+
+
     {
       "Difficulty": 2,
-      "Title": "Quest 1 - Ankunft auf dem Bauernhof",
-      "Description": "Der Bauer Manfred lebt schon seit vielen Jahren auf seinem Bauernhof und hat jede Menge zu tun. Bei ihm kannst du deine SQL-Grundlagen verbessern.",
-      "Task": "Finde alle Tiere sortiert nach ihrem Namen!",
-      "Hint": "Test Hint",
+      "Title": "Zu viele Informationen",
+      "Description": "Manfred zeigt dir weitere wichtige SQL Tricks auf deinem Weg zur Prinzessin.",
+      "Task": "Finde alle Tiernamen!",
+      "Hint": "Gib jeden Namen nur einmal aus.",
       "UnlockedKeywords": [
-        "INNER JOIN",
-        "OUTER JOIN"
+        "LENGTH", "ASC", "DESC"
       ],
       "TableInfo": [
         {
           "Tabelle": "tiere",
-          "Spalten": "Nummer, Name, Tierart, Wert"
+          "Spalten": "nummer, name, tierart, wert"
         }
       ],
-      "OrderedResult": true,
+      "OrderedResult": false,
       "AlterTable": false,
       "ResultQueries": [
-        "select * from tiere order by name",
-        "select name from tiere order by name"
+        "select distinct name from tiere"
       ],
       "Intro": [
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Servus! Ich bin Manfred."
+          "Text": "Oh hallo, da bist du ja wieder!"
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Ich hab' gehört du suchst nach der Prinzessin?"
+          "Text": "Hm ich glaube, du musst noch ein paar weitere Begriffe kennenlernen, bevor du die Prinzessin finden kannst."
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Ich glaub' die ist hier vorbeigekommen."
+          "Text": "Zeig mir doch mal bitte alle Namen, die ich meinen Tieren gegeben habe!",
+          "HTML": "Zeig mir doch mal bitte alle <b>Namen</b>, die ich meinen Tieren gegeben habe!"
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Hah! Wär' ich etwas jünger, würd' ich glatt mit auf die Suche gehen!"
-        },
-        {
-          "Picture": "Bauer.png",
-          "Position": "left",
-          "Text": "Aber da war ein ziemlich übel aussehender Kerl dabei."
-        },
-        {
-          "Picture": "Bauer.png",
-          "Position": "left",
-          "Text": "Bevor du gehst, solltest du dich erst vorbereiten und deine SQL Fähigkeiten verbessern."
-        },
-        {
-          "Picture": "Bauer.png",
-          "Position": "left",
-          "Text": "Das trifft sich doch gut! Hilf mir doch bitte ein bisschen auf dem Hof aus."
-        },
-        {
-          "Picture": "Bauer.png",
-          "Position": "left",
-          "Text": "Wenn alles erledigt ist, sag' ich dir auch wohin die Prinzessin verschwunden ist."
-        },
-        {
-          "Picture": "Bauer.png",
-          "Position": "left",
-          "Text": "Ich hab' hier ne Menge Tiere auf dem Hof und hab ein bisschen den Überblick verloren."
-        },
-        {
-          "Picture": "Bauer.png",
-          "Position": "left",
-          "Text": "Zeig mir doch mal bitte alle meine Tiere, aber nach Namen sortiert!",
-          "HTML": "Zeig mir doch mal bitte alle meine Tiere, aber <b> nach Namen sortiert! </b>"
+          "Text": "Jeder Name bitte nur einmal.",
+          "HTML": "Jeder Name bitte nur <b>einmal</b>."
         }
       ],
       "Outro": [
@@ -256,11 +205,187 @@
           "Picture": "Bauer.png",
           "Position": "left",
           "Text": "Sehr gut gemacht!"
+        }
+      ]
+    },
+
+
+
+    {
+      "Difficulty": 3,
+      "Title": "Der Unruhestifter",
+      "Description": "Manfred gerät in ernsthafte Schwierigkeiten. Kannst du ihm helfen seinen Hof zu retten?",
+      "Task": "Finde alle Tiere absteigend sortiert nach der Länge ihres Namens und alphabetisch nach Name!",
+      "Hint": "Gib alle Spalten aus. Sortiere erst nach Länge, dann nach dem Namen.",
+      "UnlockedKeywords": [
+        "LIKE"
+      ],
+      "TableInfo": [
+        {
+          "Tabelle": "tiere",
+          "Spalten": "nummer, name, tierart, wert"
+        }
+      ],
+      "OrderedResult": true,
+      "AlterTable": false,
+      "ResultQueries": [
+        "select * from tiere order by length(name) desc, name"
+      ],
+      "Intro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Guten Tag!"
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Hier gibt es bestimmt noch mehr zu tun..."
+          "Text": "Oh? Da ist jemand an der Tür?"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Ist das hier der Hof A-38?"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Wie bitte?"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Ist das hier der Hof von Manfred? Ich bin Dieter von der Steuerfahndung."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Oje! Ja ich bin Manfred und das ist mein Hof. Was gibt es denn?"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Ich mache eine komplette Prüfung und schaue, ob Sie den landesweiten Gesetzen des Königs entsprechen!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "A-Aber hier hat doch alles seine Ordnung."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Das werden wir sehen. Bitte zeigen Sie mir zunächst alle Tiere, aber bitte sortieren Sie nach der Länge des Namens. Und alphabetisch sortieren bitte."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ich brauche hilfe!"
+        }
+      ],
+      "Outro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Soso, das sind ja einige Tiere."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Danke username!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Es muss einiges geprüft werden!"
+        }
+      ]
+    },
+
+
+
+    {
+      "Difficulty": 4,
+      "Title": "Überprüfungen",
+      "Description": "Die Stuerfahndung ist zu Besuch bei Manfred. Kannst du ihm helfen, dass er alles unbeschadet übersteht?",
+      "Task": "Finde alle Tiere, deren Name mit 'A' beginnt",
+      "Hint": "Gib alle Spalten aus. Schau im Lexikon nach, wenn du etwas nachlesen musst.",
+      "UnlockedKeywords": [
+        "BETWEEN", "AND", "OR"
+      ],
+      "TableInfo": [
+        {
+          "Tabelle": "tiere",
+          "Spalten": "nummer, name, tierart, wert"
+        }
+      ],
+      "OrderedResult": true,
+      "AlterTable": false,
+      "ResultQueries": [
+        "select * from tiere where name like 'A%'"
+      ],
+      "Intro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "So, es gibt noch ein paar Dinge, die geprüft werden müssen."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Was denn noch?"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Nur nicht so ungeduldig. Hier muss alles seine Ordnung haben. Und ich prüfe dies."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Im Gesetzbuch des Königs steht, dass jeder Bauernhof nur 4 Tiere mit einem A als Anfangsbuchstaben im Namen haben darf."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Was ist denn das für ein Gesetz??"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Ich mache die Gesetze nicht. Ich muss mir aber die Tiere einzeln ansehen."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "username, kannst du mir helfen?"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Also? Welche Tiere mit A als Anfangsbuchstaben im Namen?"
+        }
+      ],
+      "Outro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Oh! Das ist ein Tier zu viel. Das kommt auf meine Liste."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Hier werden wir später ein paar Änderungen vornehmen müssen!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Wieso gibt es hier eigentlich so viele Anna's?"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ich weiß es nicht... Meine Frau Anna hat allen Tieren Namen gegeben."
         }
       ]
     }

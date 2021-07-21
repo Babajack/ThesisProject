@@ -2,13 +2,13 @@ DROP TABLE IF EXISTS tiere;
 
 CREATE TABLE tiere
 (
-    Nummer  INTEGER PRIMARY KEY AUTOINCREMENT,
-    Name    TEXT    NOT NULL,
-    Tierart TEXT    NOT NULL,
-    Wert   INTEGER NOT NULL
+    nummer  INTEGER PRIMARY KEY AUTOINCREMENT,
+    name    TEXT    NOT NULL,
+    tierart TEXT    NOT NULL,
+    wert   INTEGER NOT NULL
 );
 
-INSERT INTO tiere (Name, Tierart, Wert)
+INSERT INTO tiere (name, tierart, wert)
 VALUES ('Berta', 'Kuh', 1500),
        ('Emma', 'Huhn', 10),
        ('Tina', 'Huhn', 9),

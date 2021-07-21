@@ -1,10 +1,10 @@
-select * from tiere where name = 'Berta'
-select * from tiere order by name -> order by
-select distinct name from tiere oder by name
-select * from tiere order by length(name) desc, name -> length desc asc
-select * from tiere where name like 'A%' -> like
-select * from tiere where wert between 400 and 600 -> between and
-select sum(wert) from tiere -> sum avg count
-select round(avg(wert), 2) from tiere group by tierart -> group by round
-select name, count(*) as Anzahl from tiere group by name having Anzahl > 1 -> having
+0select * from tiere where name = 'Berta'
+1select * from tiere order by name -> order by
+2select distinct name from tiere oder by name -> distinct
+3select * from tiere order by length(name) desc, name -> length desc asc
+4select * from tiere where name like 'A%' -> like
+5select * from tiere where wert between 400 and 600 -> between and
+6select sum(wert) from tiere -> sum avg count
+7select round(avg(wert), 2) from tiere group by tierart -> group by round
+8select name, count(*) as Anzahl from tiere group by name having Anzahl > 1 -> having
 

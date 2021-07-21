@@ -1,9 +1,10 @@
-function loadQuestProcedure(data) {
+function loadQuestProcedure(data, username) {
     let skipped = false
     let taskFinished = false
     let introCounter = 0
     let outroCounter = 0
     let currentTalkerPos
+    let hasUnlockedKeywords = false
 
     $(document).ready(function () {
 
@@ -170,10 +171,10 @@ function loadQuestProcedure(data) {
                                                 for (let i = 1; i < unlockedKeywords.length; i++) {
                                                     keywords_string = keywords_string + " und " + b_open + unlockedKeywords[i] + b_close
                                                 }
-                                                $('#unlocked-keyword-text').html('Du hast ' + keywords_string + ' freigeschaltet!' +
+                                                $('#unlocked-keywords-text').html('Du hast ' + keywords_string + ' freigeschaltet!' +
                                                     '\n Schau im Lexikon vorbei für mehr Infos.')
-                                                $('#unlocked-keyword').modal();
-
+                                                // set flag to show modal at the end
+                                                hasUnlockedKeywords = true
                                             }
 
                                         } else {
@@ -199,6 +200,9 @@ function loadQuestProcedure(data) {
             // if text is last one of outro and animation finished -> enable go back button
             function animateText(text, html, elementId, isLastOne) {
                 $('#' + elementId).text('').show()
+                text = text.replace("username", username)
+                if (html !== undefined)
+                    html = html.replace("username", username)
                 type(0, 35, text, elementId)
 
                 function type(i, speed, text, elementId) {
@@ -215,13 +219,28 @@ function loadQuestProcedure(data) {
                         } else if (isLastOne && taskFinished) {
                             // outro is finished -> enable go back button
                             $('#SQLSubmitButton').css('background-color', 'green').text('Zum Questbuch').click(function () {
-                                $.ajax({
-                                    url: '/quests/questbook',
-                                    type: 'GET',
-                                    success: function (data) {
-                                        window.location.href = this.url
-                                    }
-                                });
+                                // if user has unlocked new keywords -> show modal first
+                                // else go back to questbook
+                                if (hasUnlockedKeywords) {
+                                    $('#unlocked-keywords_modal').modal();
+                                    $('#unlocked-keywords_modal').on('hidden.bs.modal', function () {
+                                        $.ajax({
+                                            url: '/quests/questbook',
+                                            type: 'GET',
+                                            success: function (data) {
+                                                window.location.href = this.url
+                                            }
+                                        });
+                                    })
+                                } else {
+                                    $.ajax({
+                                        url: '/quests/questbook',
+                                        type: 'GET',
+                                        success: function (data) {
+                                            window.location.href = this.url
+                                        }
+                                    });
+                                }
                             });
                         }
                         return

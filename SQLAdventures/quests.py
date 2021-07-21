@@ -11,6 +11,12 @@ bp = Blueprint('quests', __name__, url_prefix='/quests')
 @bp.route('/questbook', methods=['GET', 'POST'])
 @auth.login_required
 def questbook():
+
+    # find the quest file
+    quest_data = os.path.join(current_app.static_folder, 'data', 'quests.json')
+    with open(quest_data, encoding='utf-8') as quest_data:
+        quest_data = json.load(quest_data)
+
     if request.method == 'POST':
         # user wants to start a quest
 
@@ -19,11 +25,6 @@ def questbook():
         quest_id = str(request.form['QuestSubmitButton'])
         quest_name = quest_id.rstrip('0123456789')
         quest_nr = int(quest_id[len(quest_name):])
-
-        # find the quest file
-        quest_data = os.path.join(current_app.static_folder, 'data', 'quests.json')
-        with open(quest_data, encoding='utf-8') as quest_data:
-            quest_data = json.load(quest_data)
 
         # find the relevant quest
         selected_quest_line = quest_data[quest_name]
@@ -34,8 +35,6 @@ def questbook():
 
         return redirect(url_for('quests.quest'))
 
-    quest_file = os.path.join(current_app.static_folder, 'data', 'quests.json')
-
     # -- set user stats for testing --
     # user_db = db.get_user_db()
     #
@@ -43,7 +42,7 @@ def questbook():
     # user_db.commit()
     #
 
-    return render_template('quests/quests.html', questfile=json.load(open(quest_file)),
+    return render_template('quests/quests.html', questfile=quest_data,
                            user_categories=current_app.config['USER_CATEGORIES'])
 
 
@@ -55,7 +54,7 @@ def quest():
         pass
 
     # load current quest
-    return render_template('quests/active_quest.html', quest_data=session.get('quest_data'))
+    return render_template('quests/active_quest.html', quest_data=session.get('quest_data'), user=g.user)
 
 
 @bp.route('/query', methods=['POST'])
