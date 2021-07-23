@@ -70,8 +70,8 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Aber zuallererst: Wo ist denn meine Berta??",
-          "HTML": "Aber zuallererst: Wo ist denn meine <b>Berta</b>??"
+          "Text": "Aber zuallererst: Wo ist denn meine Berta?",
+          "HTML": "Aber zuallererst: Wo ist denn meine <b>Berta</b>?"
         }
       ],
       "Outro": [

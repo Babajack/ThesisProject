@@ -35,13 +35,6 @@ def questbook():
 
         return redirect(url_for('quests.quest'))
 
-    # -- set user stats for testing --
-    # user_db = db.get_user_db()
-    #
-    # user_db.execute('update user set Simple = 5 where id = ?', (g.user['id'],))
-    # user_db.commit()
-    #
-
     return render_template('quests/quests.html', questfile=quest_data,
                            user_categories=current_app.config['USER_CATEGORIES'])
 

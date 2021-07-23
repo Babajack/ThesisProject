@@ -45,6 +45,18 @@ def create_app(test_config=None):
     @app.route('/')
     @auth.login_required
     def index():
+
+        # -- set user stats for testing --
+        # user_db = db.get_user_db()
+        #
+        # user_db.execute('update user set Simple = 5 where id = ?', (g.user['id'],))
+        # user_db.commit()
+        db.add_user_keywords(g.user['id'], ['DISTINCT', 'LENGTH', 'DESC', 'ASC', 'LIKE', 'BETWEEN',
+                                            'AND', 'SUM', 'ASG', 'COUNT', 'GROUP BY', 'ROUND',
+                                            'HAVING', 'JOIN', 'INNER JOIN', 'RIGHT JOIN', 'LEFT JOIN',
+                                            'CROSS JOIN', 'SEMI JOIN'])
+        # --------------------------------
+
         return render_template('index.html')
 
     from SQLAdventures import lexicon

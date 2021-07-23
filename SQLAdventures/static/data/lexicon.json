@@ -8,5 +8,100 @@
     "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
     "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
     "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+  },
+  "DISTINCT": {
+    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
+    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
+    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+  },
+  "ORDER BY": {
+    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
+    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
+    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+  },
+  "LENGTH": {
+    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
+    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
+    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+  },
+  "ASC": {
+    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
+    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
+    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+  },
+  "DESC": {
+    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
+    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
+    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+  },
+  "LIKE": {
+    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
+    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
+    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+  },
+  "BETWEEN": {
+    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
+    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
+    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+  },
+  "AND": {
+    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
+    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
+    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+  },
+  "SUM": {
+    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
+    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
+    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+  },
+  "AVG": {
+    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
+    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
+    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+  },
+  "COUNT": {
+    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
+    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
+    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+  },
+  "GROUP BY": {
+    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
+    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
+    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+  },
+  "ROUND": {
+    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
+    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
+    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+  },
+  "JOIN": {
+    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
+    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
+    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+  },
+  "INNER JOIN": {
+    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
+    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
+    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+  },
+  "LEFT JOIN": {
+    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
+    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
+    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+  },
+  "RIGHT JOIN": {
+    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
+    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
+    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+  },
+  "CROSS JOIN": {
+    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
+    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
+    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+  },
+  "SEMI JOIN": {
+    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
+    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
+    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
   }
 }

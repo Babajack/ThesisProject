@@ -1,36 +1,82 @@
 {% extends 'base.html' %}
 {% block title %}- Lexikon {% endblock %}
 
-{% block head %} {% endblock %}
+{% block head %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.js"
+            integrity="sha512-i9pd5Q6ntCp6LwSgAZDzsrsOlE8SN+H5E0T5oumSXWQz5l1Oc4Kb5ZrXASfyjjqtc6Mg6xWbu+ePbbmiEPJlDg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.css"
+          integrity="sha512-xIf9AdJauwKIVtrVRZ0i4nHP61Ogx9fSRAkCLecmE2dL/U8ioWpDvFCAy4dcfecN72HHB9+7FfQj3aiO68aaaw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/sql/sql.min.js"
+            integrity="sha512-dfObApt1XdGl62IJLrjbIOc9QtnRORA5TCwdnJkSj6C/KjwMz2L/Sc4WlcrgAuWoY+n5xTf6NMMojoUOlgwjug=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/addon/display/placeholder.min.js"
+            integrity="sha512-RO2holrH2sTvI9eanK0s+luhPF+J7sdzmk0lMosgrSaUSEjRUfyFiSaERSXHPcIJfQNqeVermdLvQRqUe4sSIQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='scripts/lexicon.js') }}"></script>
+
+{% endblock %}
 
 {% macro createLexicon() %}
-    {% for keyword in keywords %}
-        {% if keyword in lexicon %}
-            <button type="button" id="{{ keyword|replace(" ", "") }}" class="col-12 btn p-3 mt-4"
-                    style="background-color: darkgray">
-                <b> {{ keyword }} </b>
-            </button>
+    <div class="col-12" style="height: 100%; overflow-y: auto">
+        <div class="btn-group-vertical pt-4 col-12" id="lexicon">
+            {% for keyword in keywords %}
+                {% if keyword in lexicon %}
+                    <button type="button" id="{{ keyword|replace(" ", "") }}" class="col-12 btn p-1 mt-2"
+                            style="background-color: darkgray">
+                        <b> {{ keyword }} </b>
+                    </button>
 
-            <script>
-                $(document).ready(function () {
-                    $("#{{ keyword|replace(" ", "") }}").click(function () {
-                        $('.card-body button').css('background-color', 'darkgray')
-                        $(this).css('background-color', 'lightslategray')
-                        $("#Details").show();
-                        $("#DetailsTitle").html('{{ keyword }}');
-                        $("#DetailsDescription").html('{{ lexicon[keyword]['Description'] }}');
-                        // add example
+                    <script>
+                        $(document).ready(function () {
+                            $("#{{ keyword|replace(" ", "") }}").click(function () {
+                                $('.btn-group-vertical button').css('background-color', 'darkgray')
+                                $(this).css('background-color', 'lightslategray')
+                                $("#Details").show();
+                                $("#DetailsTitle").html('{{ keyword }}');
+                                let html = "{{ lexicon[keyword]['Description']|safe }}"
+                                $("#DetailsDescription").html(html);
+                                // add example
 
-                    });
-                });
-            </script>
+                                $.getScript('/static/scripts/load-custom-sql-keywords.js', function () {
 
-        {% endif %}
-    {% endfor %}
+                                    {% if 'Example1' in lexicon[keyword] %}
+                                        let example1 = CodeMirror.fromTextArea(document.getElementById("example1"), {
+                                            lineNumbers: true,
+                                            mode: "text/x-sqlite",
+                                            matchBrackets: true,
+                                            readOnly: 'nocursor'
+                                        });
+                                        let value = "{{ lexicon[keyword]['Example1']|safe }}"
+                                        example1.setValue(value)
+                                        $('#example1').css('visibility', 'visible')
+                                    {% endif %}
+
+                                    {#{% if 'Example1' in lexicon[keyword] %}
+                                        let example2 = CodeMirror.fromTextArea(document.getElementById("example2"), {
+                                            lineNumbers: true,
+                                            mode: "text/x-sqlite",
+                                            matchBrackets: true,
+                                            readOnly: 'nocursor'
+                                        });
+                                        example2.setValue('{{ lexicon[keyword]['Example2']|safe }}')
+                                        $('#example2').css('visibility', 'visible')
+                                    {% endif %}#}
+                                })
+
+                            });
+                        });
+                    </script>
+
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
 {% endmacro %}
 
 {% block navigation %}
-    {% if menu %}
+    {% if menu == 'True' %}
         {{ super() }}
     {% else %}
         <nav class="navbar navbar-expand-md navbar-dark bg-dark static-top">
@@ -44,11 +90,9 @@
 {% block body %}
     <div class="container-fluid">
         <div class="row">
-            <div class="col-3">
+            <div class="col-3" style="max-height: calc(100vh - 56px - 100px)">
                 <h1 class="pt-4" style="text-align: center; color: white"> Lexikon </h1>
-                <div class="btn-group-vertical pt-4" id="lexicon">
-                    {{ createLexicon() }}
-                </div>
+                {{ createLexicon() }}
             </div>
 
 
@@ -63,11 +107,15 @@
                     <span id="DetailsDescription" class="col-12 mt-3" style="font-size: x-large"> Description </span>
                     <hr class="col-12"/>
 
-                    <label for="example1"></label>
-                    <textarea id="example1" style="visibility: hidden"></textarea>
 
-                    <label for="example2"></label>
-                    <textarea id="example2" style="visibility: hidden"></textarea>
+                        <div class="col-6">
+                            <label for="example1"></label>
+                            <textarea id="example1" style="visibility: hidden"></textarea>
+                        </div>
+                        <div class="col-6">
+                            <label for="example2"></label>
+                            <textarea id="example2" style="visibility: hidden"></textarea>
+                        </div>
 
                 </div>
             </div>

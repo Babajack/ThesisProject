@@ -94,7 +94,7 @@ def add_user_keywords(user_id: int, unlocked_keywords_list: list[str]) -> bool:
             current.append(keywords_elem.upper())
             success = True
     if success:
-        current.sort()
+        #current.sort()
         get_user_db().execute('UPDATE user SET Keywords = ? WHERE id = ?', (json.dumps(current), user_id))
         get_user_db().commit()
 

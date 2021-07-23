@@ -4,24 +4,26 @@
 {% block head %} {% endblock %}
 
 {% macro createQuestbook() %}
-    {% for category in g.user.keys() %}
-        {% if category in user_categories %}
-            <div class="card">
-                <div class="card-header">
-                    <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
-                            data-target="#collapse{{ category|replace(" ", "") }}">
-                        <h4> {{ category }} </h4>
-                    </button>
-                </div>
+    <div class="accordion pt-4" id="questbook">
+        {% for category in g.user.keys() %}
+            {% if category in user_categories %}
+                <div class="card">
+                    <div class="card-header">
+                        <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapse{{ category|replace(" ", "") }}">
+                            <h4> {{ category }} </h4>
+                        </button>
+                    </div>
 
-                <div id="collapse{{ category|replace(" ", "") }}" class="collapse" data-parent="#questbook">
-                    <div class="card-body">
-                        {{ createQuestline(category) }}
+                    <div id="collapse{{ category|replace(" ", "") }}" class="collapse" data-parent="#questbook">
+                        <div class="card-body">
+                            {{ createQuestline(category) }}
+                        </div>
                     </div>
                 </div>
-            </div>
-        {% endif %}
-    {% endfor %}
+            {% endif %}
+        {% endfor %}
+    </div>
 {% endmacro %}
 
 {% macro createQuestline(category) %}
@@ -58,12 +60,8 @@
         <div class="row">
             <div class="col-5">
                 <h1 class="pt-4" style="text-align: center; color: white"> Questbuch </h1>
-                <div class="accordion pt-4" id="questbook">
-                    {{ createQuestbook() }}
-                </div>
+                {{ createQuestbook() }}
             </div>
-
-
             <div id="Details" class="col-7" style="display: none">
 
                 <h1 class="pt-4" style="text-align: center; color: white; visibility: hidden"> Questdetails </h1>
@@ -72,7 +70,6 @@
                     <h3 id="DetailsTitle" class="col-12" style="text-align: center"> Title </h3>
                     <hr class="col-12"/>
                     <span id="DetailsDescription" class="col-12 mt-3" style="font-size: x-large"> Description </span>
-
 
                     <form class="mt-5 btn col-10" method="post">
                         <button id="QuestSubmitButton" name="QuestSubmitButton" value="" type="submit"
