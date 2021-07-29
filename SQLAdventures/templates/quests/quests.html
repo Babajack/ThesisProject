@@ -7,7 +7,7 @@
     <div class="accordion pt-4" id="questbook">
         {% for category in g.user.keys() %}
             {% if category in user_categories %}
-                <div class="card">
+                <div class="card" style="background-color: lightgray">
                     <div class="card-header">
                         <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
                                 data-target="#collapse{{ category|replace(" ", "") }}">
@@ -50,7 +50,8 @@
                     });
                 });
             </script>
-
+        {% elif i == 0 %}
+            <h6> Noch nicht freigeschaltet! </h6>
         {% endif %}
     {% endfor %}
 {% endmacro %}

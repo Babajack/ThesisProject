@@ -1,107 +1,85 @@
 {
   "SELECT": {
-    "Description": "Mit dem <b style='color:#708'>SELECT</b> Statement können Daten aus einer Datenbank ausgewählt und angezeigt werden. Dabei wird zuerst definiert, welche Spalten angezeigt werden sollen. Danach kann mit Hilfe des <b style='color:#708'>FROM</b> Statements definiert werden, von welcher Tabelle Daten gelesen werden sollen. Mit <b style='color:#708'>SELECT</b> * werden alle verfügbaren Spalten angezeigt.",
-    "Example1": "SELECT spalte1, spalte2 FROM tabelle_name",
-    "Example2": "SELECT * FROM tabelle_name"
+    "Description": "Mit dem <b style='color:#708'>SELECT</b> Begriff können Daten aus einer Datenbank ausgewählt und angezeigt werden. Dabei muss zuerst festgelegt werden, welche Spalten angezeigt werden sollen. Danach kann mit Hilfe des <b style='color:#708'>FROM</b> Begriffs definiert werden, von welcher Tabelle die Daten gelesen werden sollen. Mit <b style='color:#708'>SELECT</b> * werden alle verfügbaren Spalten angezeigt.",
+    "Example1": "SELECT spalte1, spalte2 \\nFROM tabelle_name",
+    "Example2": "SELECT * \\nFROM tabelle_name"
   },
   "WHERE": {
-    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
-    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
-    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+    "Description": "Mit dem <b style='color:#708'>WHERE</b> Begriff können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
+    "Example1": "SELECT land \\nFROM europa \\nWHERE einwohnerzahl < 500000",
+    "Example2": "SELECT land \\nFROM europa \\nWHERE land='Deutschland'"
   },
   "DISTINCT": {
-    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
-    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
-    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+    "Description": "Der <b style='color:#708'>SELECT DISTINCT</b> Begriff wird verwendet, um identische Werte nur einmal anzeigen zu lassen. Damit wird erreicht, dass man die unterschiedlichen Werte sieht und somit keine doppelten Einträge hat.",
+    "Example1": "SELECT DISTINCT stadt \\nFROM europa \\nWHERE land='Deutschland'"
   },
   "ORDER BY": {
-    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
-    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
-    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+    "Description": "Mit dem <b style='color:#708'>ORDER BY</b> Begriff können Daten sortiert werden. Mit <b style='color:#708'>ASC</b> wird aufsteigend und mit <b style='color:#708'>DESC</b> absteigend sortiert. Wird die Sortierungsreihenfolge nicht festgelegt, wird aufsteigend sortiert.",
+    "Example1": "SELECT land \\nFROM europa \\nORDER BY einwohnerzahl",
+    "Example2": "SELECT land \\nFROM europa \\nORDER BY einwohnerzahl DESC"
   },
   "LENGTH": {
-    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
-    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
-    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
-  },
-  "ASC": {
-    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
-    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
-    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
-  },
-  "DESC": {
-    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
-    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
-    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+    "Description": "Mit der <b style='color:#708'>LENGTH</b> Funktion wird die Länge eines Strings berechnet.",
+    "Example1": "SELECT land, LENGTH(land) \\nFROM europa",
+    "Example2": "SELECT land \\nFROM europa \\nWHERE LENGTH(land) > 10"
   },
   "LIKE": {
-    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
-    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
-    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+    "Description": "Mit dem <b style='color:#708'>LIKE</b> Begriff kann mit einer <b style='color:#708'>WHERE</b> Klausel nach bestimmten Mustern gefiltert werden. Somit werden z.B. nur die Werte ausgegeben, die dieses Muster erfüllen. Als Muster muss ein Wort verwendet werden, wobei ein '<b>%</b>' und/oder ein '<b>_</b>' eingebaut werden kann. Das %-Zeichen steht hierbei für eine beliebig lange Kombination von Buchstaben (inklusive 0 Buchstaben). Das _-Zeichen steht für genau einen beliebigen Buchstaben.",
+    "Example1": "SELECT land \\nFROM europa \\nWHERE land LIKE '%land' \\n/* Es werden alle Länder ausgegeben, die mit -land enden. */",
+    "Example2": "SELECT land \\nFROM europa \\nWHERE land LIKE '___land' \\n/* Es werden alle Länder ausgegeben, \\ndie drei Buchstaben haben und dann auf -land enden. */"
   },
   "BETWEEN": {
-    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
-    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
-    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+    "Description": "Mit dem <b style='color:#708'>BETWEEN</b> Begriff werden nur Daten in einem festgelegten Bereich selektiert. Dazu werden Start und Ende des Bereichs gewählt. Dabei sind Start-Wert und End-Wert inklusiv. Alternativ lässt sich <b style='color:#708'>BETWEEN</b> auch durch eine Kombination von >= und <= ausdrücken.",
+    "Example1": "SELECT land \\nFROM europa \\nWHERE einwohnerzahl BETWEEN 1000000 AND 2000000",
+    "Example2": "SELECT land \\nFROM europa \\nWHERE einwohnerzahl >= 1000000 AND einwohnerzahl <= 2000000"
   },
   "AND": {
-    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
-    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
-    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+    "Description": "Der <b style='color:#708'>AND</b> Operator kann in einer <b style='color:#708'>WHERE</b> Klausel verwendet werde, um Bedingungen zu verknüpfen. Hier werden nur die Reihen angezeigt, bei denen alle durch <b style='color:#708'>AND</b> verbundene Bedingungen wahr sind.",
+    "Example1": "SELECT spalte1 \\nFROM tabelle_name \\nWHERE bedingung1 AND bedingung2 AND bedingung3",
+    "Example2": "SELECT * \\nFROM europa \\nWHERE land LIKE '%land' AND einwohnerzahl > 10000000"
   },
-  "SUM": {
-    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
-    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
-    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+  "OR": {
+    "Description": "Der <b style='color:#708'>OR</b> Operator kann in einer <b style='color:#708'>WHERE</b> Klausel verwendet werde, um Bedingungen zu verknüpfen. Hier werden nur die Reihen angezeigt, bei denen mindestens eine durch <b style='color:#708'>OR</b> verbundene Bedingungen wahr ist.",
+    "Example1": "SELECT spalte1 \\nFROM tabelle_name \\nWHERE bedingung1 OR bedingung2 OR bedingung3",
+    "Example2": "SELECT * \\nFROM europa \\nWHERE land LIKE '%land' OR einwohnerzahl > 10000000"
   },
-  "AVG": {
-    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
-    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
-    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+  "NOT": {
+    "Description": "Der <b style='color:#708'>NOT</b> Operator kann in einer <b style='color:#708'>WHERE</b> Klausel verwendet werde, um Bedingungen zu negieren. Hier werden nur die Reihen angezeigt, bei denen die durch <b style='color:#708'>NOT</b> verbundene Bedingungen <b> nicht </b> wahr ist.",
+    "Example1": "SELECT spalte1 \\nFROM tabelle_name \\nWHERE NOT bedingung1",
+    "Example2": "SELECT * \\nFROM europa \\nWHERE land NOT LIKE '%land'"
   },
   "COUNT": {
-    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
-    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
-    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+    "Description": "Mit der <b style='color:#708'>COUNT</b> Aggregatsfunktion wird die Anzahl der gefundenen Reihen ausgegeben.",
+    "Example1": "SELECT COUNT(land) \\nFROM europa \\nWHERE einwohnerzahl<5000000",
+    "Example2": "SELECT COUNT(*) \\nFROM europa"
+  },
+  "AVG": {
+    "Description": "Mit der <b style='color:#708'>AVG</b> Aggregatsfunktion wird der Durchschnittswert der gefundenen numerischen Spalte ausgegeben.",
+    "Example1": "SELECT AVG(einwohnerzahl) \\nFROM europa \\nWHERE land LIKE '%land'",
+    "Example2": "SELECT AVG(einwohnerzahl) \\nFROM europa"
+  },
+  "SUM": {
+    "Description": "Mit der <b style='color:#708'>SUM</b> Aggregatsfunktion wird die Summe der gefundenen numerischen Spalte ausgegeben.",
+    "Example1": "SELECT SUM(einwohnerzahl) \\nFROM europa \\nWHERE land LIKE '%land'",
+    "Example2": "SELECT SUM(einwohnerzahl) \\nFROM europa"
   },
   "GROUP BY": {
-    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
-    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
-    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+    "Description": "Mit dem <b style='color:#708'>GROUP BY</b> Begriff werden Reihen nach einer gewählten Spalte gruppiert. <b style='color:#708'>GROUP BY</b> wird dabei meistens in Kombination mit einer Aggregatsfunktion wie z.B. <b style='color:#708'>COUNT</b> benutzt, um hier eine Anzahl pro Gruppierung auszudrücken wie beispielsweise die Anzahl der Länder pro Kontinent.",
+    "Example1": "SELECT kontinent, COUNT(land) \\nFROM erde \\nGROUP BY kontinent \\nORDER BY kontinent",
+    "Example2": "SELECT kontinent, SUM(einwohnerzahl) \\nFROM erde \\nGROUP BY kontinent"
   },
   "ROUND": {
-    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
-    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
-    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+    "Description": "Mit der <b style='color:#708'>ROUND</b> Funktion können Werte gerundet werden. Dabei kann angegeben werden, auf wie viele Nachkommastellen gerundet werden soll. Standartmäßig wird auf 0 Nachkommastellen gerundet.",
+    "Example1": "SELECT land, ROUND(flaeche) \\nFROM erde",
+    "Example2": "SELECT land, ROUND(flaeche, 2) \\nFROM erde"
   },
-  "JOIN": {
-    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
-    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
-    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+  "HAVING": {
+    "Description": "Mit dem <b style='color:#708'>HAVING</b> Begriff können Daten nach einer Aggregation und Gruppierung nochmal gefiltert werden. <b style='color:#708'>HAVING</b> verhält sich dabei ähnlich wie eine <b style='color:#708'>WHERE</b> Klausel.",
+    "Example1": "SELECT kontinent, COUNT(land) \\nFROM erde \\nGROUP BY kontinent \\nHAVING COUNT(land) < 15 \\nORDER BY kontinent",
+    "Example2": "SELECT kontinent, SUM(einwohnerzahl) \\nFROM erde \\nGROUP BY kontinent \\nHAVING SUM(einwohnerzahl) > 2000000000"
   },
-  "INNER JOIN": {
-    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
-    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
-    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
-  },
-  "LEFT JOIN": {
-    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
-    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
-    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
-  },
-  "RIGHT JOIN": {
-    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
-    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
-    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
-  },
-  "CROSS JOIN": {
-    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
-    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
-    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
-  },
-  "SEMI JOIN": {
-    "Description": "Mit dem <b style='color:#708'>WHERE</b> Statement können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
-    "Example1": "SELECT land FROM europa \nWHERE einwohnerzahl<500000",
-    "Example2": "SELECT land FROM europa \nWHERE land='Deutschland'"
+  "AS": {
+    "Description": "Mit dem <b style='color:#708'>AS</b> Begriff können den Zeilen temporär neue Namen gegeben werden. <b style='color:#708'>AS</b> wird meistens verwendet, damit die Ergebnistabelle mit eventuell unleserlichen Spalten (z.B. durch Funktionen) übersichtlicher wird.",
+    "Example1": "SELECT COUNT(*) AS Anzahl \\nFROM tabelle_name"
   }
 }

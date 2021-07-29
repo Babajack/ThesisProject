@@ -1,10 +1,28 @@
 0select * from tiere where name = 'Berta'
-1select * from tiere order by name -> order by
+1select * from tiere order by name -> order by desc asc
 2select distinct name from tiere oder by name -> distinct
-3select * from tiere order by length(name) desc, name -> length desc asc
+3select * from tiere order by length(name) desc, name -> length 
 4select * from tiere where name like 'A%' -> like
-5select * from tiere where wert between 400 and 600 -> between and
+5select * from tiere where wert between 400 and 600 -> between and or not
 6select sum(wert) from tiere -> sum avg count
 7select round(avg(wert), 2) from tiere group by tierart -> group by round
 8select name, count(*) as Anzahl from tiere group by name having Anzahl > 1 -> having
 
+- delete tier zwischen 400 und 600, update tiername anna, 
+
+
+ideen:
+- select einträge mit max und min wert (subquery)
+select * from tiere
+where wert = (select max(wert) from tiere)
+or wert = (select min(wert) from tiere)
+
+- select wert summe von schwein und kuh
+select sum(wert) from tiere
+where tierart='Schwein'
+or tierart = 'Kuh'
+
+- select wert summe von schwein und kuh
+select sum(wert) from tiere
+where tierart='Schwein'
+or tierart = 'Kuh'

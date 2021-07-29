@@ -85,20 +85,20 @@ def get_user_keywords(user_id: int) -> list[str]:
 
 # add unlocked keywords to the users keyword-list
 # return true if the new keyword was now unlocked, false if the keyword was unlocked already
-def add_user_keywords(user_id: int, unlocked_keywords_list: list[str]) -> bool:
+def add_user_keywords(user_id: int, unlocked_keywords_list: list[str]) -> list[str]:
     current = get_user_keywords(user_id)
-    success = False
+    new_keywords = []
     # example: unlocked_keywords_list = ["INNER JOIN", "LEFT OUTER JOIN"]
     for keywords_elem in unlocked_keywords_list:
         if keywords_elem not in current:
             current.append(keywords_elem.upper())
-            success = True
-    if success:
+            new_keywords.append(keywords_elem.upper())
+    if new_keywords:
         #current.sort()
         get_user_db().execute('UPDATE user SET Keywords = ? WHERE id = ?', (json.dumps(current), user_id))
         get_user_db().commit()
 
-    return success
+    return new_keywords
 
 
 # return a list of the users completed quests
@@ -126,5 +126,7 @@ def get_user(user_id: int) -> sqlite3.Row:
 
 
 def increase_category_level(user_id: int, category: str):
-    get_user_db().execute('UPDATE user SET %s = %s + 1 WHERE id = ?' % (category, category), (user_id,))
+    query = 'UPDATE user SET ' + '\"' + category + '\" = ' + '\"' + category + '\" + 1 WHERE id = ' + str(user_id)
+    # query = "UPDATE user SET %s = %s + 1 WHERE id = %d" % (category, category, user_id)
+    get_user_db().execute(query)
     get_user_db().commit()

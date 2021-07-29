@@ -4,10 +4,10 @@
       "Difficulty": 0,
       "Title": "Ankunft auf dem Bauernhof",
       "Description": "Der Bauer Manfred lebt schon seit vielen Jahren auf seinem Bauernhof und hat jede Menge zu tun. Bei ihm kannst du deine SQL-Grundlagen verbessern und er kann dir bestimmt bei der Suche nach der Prinzessin weiterhelfen.",
-      "Task": "Finde das Tier mit dem Namen Berta!",
+      "Task": "Finde alle Infos über das Tier mit dem Namen Berta!",
       "Hint": "Gib alle Spalten aus. Schau im Lexikon nach, falls du etwas vergessen hast.",
       "UnlockedKeywords": [
-        "ORDER BY"
+        "ORDER BY", "ASC", "DESC"
       ],
       "TableInfo": [
         {
@@ -97,7 +97,7 @@
       "Difficulty": 1,
       "Title": "Ein erster Überblick",
       "Description": "Der Bauer Manfred hat noch viele Aufgaben für dich. Was ist es diesmal?",
-      "Task": "Finde alle Tiere sortiert nach ihrem Namen!",
+      "Task": "Finde alle Infos über alle Tiere sortiert nach ihrem Namen!",
       "Hint": "Gib alle Spalten aus. Schau im Lexikon nach, falls du etwas vergessen hast.",
       "UnlockedKeywords": [
         "DISTINCT"
@@ -150,6 +150,11 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
+          "Text": "Der Wert wurde damals von einem Begutachter des Königs festgelegt."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
           "Text": "Die Nummer ist wichtig, damit man das jeweilige Tier genau identifizieren kann."
         }
       ]
@@ -163,7 +168,7 @@
       "Task": "Finde alle Tiernamen!",
       "Hint": "Gib jeden Namen nur einmal aus.",
       "UnlockedKeywords": [
-        "LENGTH", "ASC", "DESC"
+        "LENGTH", "AS"
       ],
       "TableInfo": [
         {
@@ -215,8 +220,8 @@
       "Difficulty": 3,
       "Title": "Der Unruhestifter",
       "Description": "Manfred gerät in ernsthafte Schwierigkeiten. Kannst du ihm helfen seinen Hof zu retten?",
-      "Task": "Finde alle Tiere absteigend sortiert nach der Länge ihres Namens und alphabetisch nach Name!",
-      "Hint": "Gib alle Spalten aus. Sortiere erst nach Länge, dann nach dem Namen.",
+      "Task": "Finde alle Infos über alle Tiere, absteigend sortiert nach der Länge ihres Namens und alphabetisch nach Name!",
+      "Hint": "Gib alle Spalten aus. Sortiere erst nach Länge absteigend, dann nach dem Namen.",
       "UnlockedKeywords": [
         "LIKE"
       ],
@@ -307,11 +312,11 @@
     {
       "Difficulty": 4,
       "Title": "Überprüfungen",
-      "Description": "Die Stuerfahndung ist zu Besuch bei Manfred. Kannst du ihm helfen, dass er alles unbeschadet übersteht?",
-      "Task": "Finde alle Tiere, deren Name mit 'A' beginnt",
-      "Hint": "Gib alle Spalten aus. Schau im Lexikon nach, wenn du etwas nachlesen musst.",
+      "Description": "Die Stuerfahndung ist zu Besuch bei Manfred. Kannst du ihm helfen, damit er alles unbeschadet übersteht?",
+      "Task": "Finde alle Infos über alle Tiere, deren Name mit 'A' beginnt!",
+      "Hint": "Gib alle Spalten aus. Benutze '%' und schau im Lexikon nach, wenn du etwas nachlesen musst.",
       "UnlockedKeywords": [
-        "BETWEEN", "AND", "OR"
+        "BETWEEN", "AND", "OR", "NOT"
       ],
       "TableInfo": [
         {
@@ -319,7 +324,7 @@
           "Spalten": "nummer, name, tierart, wert"
         }
       ],
-      "OrderedResult": true,
+      "OrderedResult": false,
       "AlterTable": false,
       "ResultQueries": [
         "select * from tiere where name like 'A%'"
@@ -388,6 +393,387 @@
           "Text": "Ich weiß es nicht... Meine Frau Anna hat allen Tieren Namen gegeben."
         }
       ]
+    },
+    {
+      "Difficulty": 5,
+      "Title": "Königliche Abgaben",
+      "Description": "Der Steuerfahnder macht Manfred weiter Probleme. Bei weiteren Verstößen verliert er vielleicht den Hof!",
+      "Task": "Finde alle Infos über alle Tiere, deren Wert zwischen 400 und 600 liegt!",
+      "Hint": "Gib alle Spalten aus. Schau im Lexikon nach, wenn du etwas nachlesen musst.",
+      "UnlockedKeywords": [
+        "SUM", "AVG", "COUNT"
+      ],
+      "TableInfo": [
+        {
+          "Tabelle": "tiere",
+          "Spalten": "nummer, name, tierart, wert"
+        }
+      ],
+      "OrderedResult": false,
+      "AlterTable": false,
+      "ResultQueries": [
+        "select * from tiere where wert between 400 and 600"
+      ],
+      "Intro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Also Manfred, wie du sicher weißt, sind auch bald wieder die königlichen Abgaben fällig."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Aufgrund der aktuell wirtschaftlich schlechten Situation mussten die Abgaben erhöht werden."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Wie bitte?? Wie soll ein einfacher Bauer denn das noch bezahlen?"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Die Gesetze des Königs verlangen die Abgabe eines Tieres, dessen Wert zwischen 400 und 600 Talern liegt."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Schon wieder so ein Schwachsinn..."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Zweifelst du etwa an der Autorität des Königs?!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "N-Nein natürlich nicht!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Na dann los. Zeig mir bitte einmal alle Tiere, die in Frage kommen!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "ok lass mich überlegen..."
+        }
+      ],
+      "Outro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Danke username!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Soso, darauf kommen wir dann später zurück. Eins der Tiere muss ich leider mitnehmen."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Aber bitte nicht Miss Piggy!!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Mal sehen."
+        }
+      ]
+    },
+
+
+    {
+      "Difficulty": 6,
+      "Title": "Es geht immer nur ums Geld",
+      "Description": "Der Steuerfahnder will noch mehr über die Finanzen des Bauers erfahren. Hoffentlich ist er bald wieder verschwunden, damit die Suche nach der Prinzessin endlich weitergehen kann.",
+      "Task": "Finde den Gesamtwert aller Tiere",
+      "Hint": "Schau im Lexikon nach, wenn du etwas nachlesen musst.",
+      "UnlockedKeywords": [
+        "GROUP BY", "ROUND"
+      ],
+      "TableInfo": [
+        {
+          "Tabelle": "tiere",
+          "Spalten": "nummer, name, tierart, wert"
+        }
+      ],
+      "OrderedResult": false,
+      "AlterTable": false,
+      "ResultQueries": [
+        "select sum(wert) from tiere"
+      ],
+      "Intro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ich hoffe wir haben die köngliche Steuerprüfung bald überstanden..."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Ein paar Dinge gilt es noch zu klären."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Ich benötige einen Gesamtüberblick über den Wert deiner Tiere."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Zeig mir dazu bitte den Gesamtwert deiner Tiere."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Das ist sicher kein Problem."
+        }
+      ],
+      "Outro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Danke username!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Interessant. Von wegen armer Bauer..."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Hey, bei solch hohen Abgaben die ganze Zeit ist das gar nicht so viel."
+        }
+      ]
+    },
+
+    {
+      "Difficulty": 7,
+      "Title": "Ein schwieriges Problem",
+      "Description": "Der Steuerfahnder stellt Manfred vor härtere Aufgaben. Kannst du ihm dabei helfen?",
+      "Task": "Finde den durchschnittlichen Wert pro Tierart, gerundet nach 2 Nachkommastellen! Gib jeweils die Tierart und den Durchschnittswert aus.",
+      "Hint": "Gruppiere nach der Tierart und verwende eine passende Aggregatsfunktion. Schau im Lexikon nach, wenn du etwas nachlesen musst.",
+      "UnlockedKeywords": [
+        "HAVING"
+      ],
+      "TableInfo": [
+        {
+          "Tabelle": "tiere",
+          "Spalten": "nummer, name, tierart, wert"
+        }
+      ],
+      "OrderedResult": false,
+      "AlterTable": false,
+      "ResultQueries": [
+        "select tierart, round(avg(wert), 2) from tiere group by tierart"
+      ],
+      "Intro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "So, ein paar Dinge noch und dann ist die Steuerprüfung vorbei."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Das hört man doch gerne."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Bis jetzt sieht es doch alles ganz gut aus. Also machen wir weiter."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Als nächstes bedarf es nach Informationen über den durchschnittlichen Wert deiner Tiere."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Ich muss mir notieren, wie hoch der Durchschnittswert deiner Tierarten ist."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Bei zu hohen Abweichungen der königlichen Normwerte muss eine erneute Wertprüfung vollzogen werden."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ich bin sicher, dass alles in Ordnung ist."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Bitte einmal die Durchschnittswerte pro Tierart. Ach ja und bitte auf 2 Nachkommastellen gerundet.",
+          "HTML": "Bitte einmal die <b> Durchschnittswerte pro Tierart </b>. Ach ja und bitte <b> auf 2 Nachkommastellen gerundet </b>."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "username bekommt das bestimmt hin!"
+        }
+      ],
+      "Outro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Sehr gut gemacht!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Danke für die Info. Das sieht in der Tat OK aus."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Ach übrigens... Was will username denn eigentlich hier?"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "username ist auf der Suche nach der entführten Prinzessin."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Das ist natürlich eine gute Sache."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Vielleicht kann ich, wenn wir hier fertig sind versteht sich, dabei behilflich sein."
+        }
+      ]
+    },
+
+
+    {
+      "Difficulty": 8,
+      "Title": "So viele Duplikate",
+      "Description": "Der Steuerfahnder bietet dir ebenfalls seine Hilfe an. Er reist viel über das Land und kann dir bestimmt bei der Suche nach der Prinzessin weiterhelfen.",
+      "Task": "Finde alle Tiernamen, die mehr als einmal vergeben wurden! Gib jeweils den Namen und die zugehörige Anzahl an Tieren mit diesem Namen aus.",
+      "Hint": "Gruppiere nach dem Tiernamen und verwende eine passende Aggregatsfunktion. Vergiss das Filtern danach nicht.",
+      "UnlockedKeywords": [],
+      "UnlockedCategories": ["Sub-Queries", "Joins"],
+      "TableInfo": [
+        {
+          "Tabelle": "tiere",
+          "Spalten": "nummer, name, tierart, wert"
+        }
+      ],
+      "OrderedResult": false,
+      "AlterTable": false,
+      "ResultQueries": [
+        "select name, count(*) as Anzahl from tiere group by name having Anzahl > 1"
+      ],
+      "Intro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Als nächstes geht es nochmal um die Namensgebung der Tiere."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Da gab es ein paar Probleme bezügliche mehrfachen Benennungen."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Daran ist meine Frau Anna Schuld!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Keine Sorge. Das lässt sich alles klären."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Zwecks Übersichtlichkeit königlicher Dokumente ist es unabdingbar, dass jeder Name der Tiere auf deinem Hof nicht mehr als 2 Mal vorkommt."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Also bitte zeig' mir doch noch einmal die Namen der Tiere."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Oh das ist gar kein Problen! Dazu brauche ich keine Hilfe!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Nich so schnell!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Bitte zeig' mir nur die Tiernamen, die mehr als einmal vorkommen und wie oft sie vorkommen.",
+          "HTML": "Bitte zeig' mir nur die Tiernamen, die <b> mehr als einmal </b> vorkommen und <b> wie oft </b> sie vorkommen."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Oje..."
+        }
+      ],
+      "Outro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "username, langsam wirst du richtig gut!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Du kannst mir zwar noch lange nicht das Wasser reichen, aber..."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Wie bitte? username erledigt doch hier alles!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Eh naja also... das stimmt."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Also gut. Ich denke ich bin dir was schuldig username."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Du solltest den Schmied Samuel aufsuchen. Er kann dir bestimmt helfen, die Prinzessin zu finden!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Meine Aufgabe hier ist noch nicht beendet."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Am besten richte ich alle weiteren Fragen an username."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Komm' dazu doch bitte einfach in mein Büro."
+        }
+      ]
     }
   ],
 
@@ -405,80 +791,48 @@
 
 
 
-  "Komplexe Queries": [
+  "Sub-Queries": [
     {
-      "Difficulty": 0,
-      "Title": "Quest 1 - Ankunft auf dem Bauernhof",
-      "Description": "Der Bauer Manfred lebt schon seit vielen Jahren auf seinem Bauernhof und hat jede Menge zu tun. Bei ihm kannst du deine SQL-Grundlagen verbessern und er kann dir bestimmt bei der Suche nach der Prinzessin weiterhelfen.",
-      "Task": "Finde alle Tiere sortiert nach ihrem Namen!",
-      "Hint": "Test Hint",
+      "Difficulty": 1,
+      "Title": "Ein erster Überblick",
+      "Description": "Der Bauer Manfred hat noch viele Aufgaben für dich. Was ist es diesmal?",
+      "Task": "Finde alle Infos über alle Tiere sortiert nach ihrem Namen!",
+      "Hint": "Gib alle Spalten aus. Schau im Lexikon nach, falls du etwas vergessen hast.",
       "UnlockedKeywords": [
-        "INNER JOIN",
-        "OUTER JOIN"
+        "DISTINCT"
       ],
       "TableInfo": [
         {
           "Tabelle": "tiere",
-          "Spalten": "Nummer, Name, Tierart, Wert"
+          "Spalten": "nummer, name, tierart, wert"
         }
       ],
       "OrderedResult": true,
       "AlterTable": false,
       "ResultQueries": [
-        "select * from tiere order by name",
-        "select name from tiere order by name"
+        "select * from tiere order by name"
       ],
       "Intro": [
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Servus! Ich bin Manfred."
+          "Text": "So dann lass uns doch mit dem Training beginnen!"
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Ich hab' gehört du suchst nach der Prinzessin?"
+          "Text": "Es gibt hier eine Menge Tiere auf dem Hof."
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Ich glaub' die ist hier vorbeigekommen."
+          "Text": "Ich hab ein bisschen den Überblick verloren..."
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Hah! Wär' ich etwas jünger, würd' ich glatt mit auf die Suche gehen!"
-        },
-        {
-          "Picture": "Bauer.png",
-          "Position": "left",
-          "Text": "Aber da war ein ziemlich übel aussehender Kerl dabei."
-        },
-        {
-          "Picture": "Bauer.png",
-          "Position": "left",
-          "Text": "Bevor du gehst, solltest du dich erst vorbereiten und deine SQL Fähigkeiten verbessern."
-        },
-        {
-          "Picture": "Bauer.png",
-          "Position": "left",
-          "Text": "Das trifft sich doch gut! Hilf mir doch bitte ein bisschen auf dem Hof aus."
-        },
-        {
-          "Picture": "Bauer.png",
-          "Position": "left",
-          "Text": "Wenn alles erledigt ist, sag' ich dir auch wohin die Prinzessin verschwunden ist."
-        },
-        {
-          "Picture": "Bauer.png",
-          "Position": "left",
-          "Text": "Ich hab' hier ne Menge Tiere auf dem Hof und hab ein bisschen den Überblick verloren."
-        },
-        {
-          "Picture": "Bauer.png",
-          "Position": "left",
-          "Text": "Zeig mir doch mal bitte alle meine Tiere, aber nach Namen sortiert!",
-          "HTML": "Zeig mir doch mal bitte alle meine Tiere, aber <b> nach Namen sortiert! </b>"
+          "Text": "Zeig mir doch mal bitte alle Tiere, sortiert nach ihrem Namen!",
+          "HTML": "Zeig mir doch mal bitte alle Tiere, <b>sortiert nach ihrem Namen</b>!"
         }
       ],
       "Outro": [
@@ -490,7 +844,17 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Hier gibt es bestimmt noch mehr zu tun..."
+          "Text": "Wie du siehst, hat jedes Tier eine Nummer, einen Namen, eine Tierart und einen Wert."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Der Wert wurde damals von einem Begutachter des Königs festgelegt."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Die Nummer ist wichtig, damit man das jeweilige Tier genau identifizieren kann."
         }
       ]
     }

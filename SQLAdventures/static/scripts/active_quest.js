@@ -5,6 +5,7 @@ function loadQuestProcedure(data, username) {
     let outroCounter = 0
     let currentTalkerPos
     let hasUnlockedKeywords = false
+    let failCounter = 0
 
     $(document).ready(function () {
 
@@ -185,6 +186,13 @@ function loadQuestProcedure(data, username) {
                                         }
                                     }
                                 }
+                                // if task is not solved after 3 tries -> give hint
+                                if (!taskFinished) {
+                                    failCounter++
+                                    if (failCounter > 2) {
+                                        $("#Hint").css('display', 'block')
+                                    }
+                                }
                             },
                             error: function (error) {
                                 console.log(error)
@@ -211,7 +219,7 @@ function loadQuestProcedure(data, username) {
                         $('#SQLSubmitButton').removeClass('disabled')
                         if (isLastOne && !taskFinished) {
                             // intro is finished -> enable user input
-                            $('#Task').html('<h4> Aufgabe: ' + data['Task'] + '</h4>').css('visibility', 'visible')
+                            $('#Task').css('visibility', 'visible')
                             editor.setOption('placeholder', 'SQL Code hier eintippen...')
                             editor.setOption('readOnly', false)
                             $('#SQLSubmitButton').text('SQL abschicken!')

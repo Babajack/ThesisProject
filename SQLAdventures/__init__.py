@@ -47,14 +47,24 @@ def create_app(test_config=None):
     def index():
 
         # -- set user stats for testing --
-        # user_db = db.get_user_db()
+        user_db = db.get_user_db()
         #
-        # user_db.execute('update user set Simple = 5 where id = ?', (g.user['id'],))
+        user_db.execute('update user set Selects = 20 where id = ?', (g.user['id'],))
+        db.add_completed_quest(g.user['id'], "Selects0")
+        db.add_completed_quest(g.user['id'], "Selects1")
+        db.add_completed_quest(g.user['id'], "Selects2")
+        db.add_completed_quest(g.user['id'], "Selects3")
+        db.add_completed_quest(g.user['id'], "Selects4")
+        db.add_completed_quest(g.user['id'], "Selects5")
+        db.add_completed_quest(g.user['id'], "Selects6")
+        db.add_completed_quest(g.user['id'], "Selects7")
+        #db.add_completed_quest(g.user['id'], "Selects8")
+        #db.add_completed_quest(g.user['id'], "Selects9")
         # user_db.commit()
-        db.add_user_keywords(g.user['id'], ['DISTINCT', 'LENGTH', 'DESC', 'ASC', 'LIKE', 'BETWEEN',
-                                            'AND', 'SUM', 'ASG', 'COUNT', 'GROUP BY', 'ROUND',
-                                            'HAVING', 'JOIN', 'INNER JOIN', 'RIGHT JOIN', 'LEFT JOIN',
-                                            'CROSS JOIN', 'SEMI JOIN'])
+        # db.add_user_keywords(g.user['id'], ['DISTINCT', 'LENGTH', 'DESC', 'ASC', 'LIKE', 'BETWEEN',
+        #                                     'AND', 'SUM', 'ASG', 'COUNT', 'GROUP BY', 'ROUND',
+        #                                     'HAVING', 'JOIN', 'INNER JOIN', 'RIGHT JOIN', 'LEFT JOIN',
+        #                                     'CROSS JOIN', 'SEMI JOIN'])
         # --------------------------------
 
         return render_template('index.html')

@@ -14,7 +14,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/addon/display/placeholder.min.js"
             integrity="sha512-RO2holrH2sTvI9eanK0s+luhPF+J7sdzmk0lMosgrSaUSEjRUfyFiSaERSXHPcIJfQNqeVermdLvQRqUe4sSIQ=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='scripts/lexicon.js') }}"></script>
+    <script>
+        // init the code editor to display examples
+        let example1
+        let example2
+        $(document).ready(function () {
+            $.getScript('/static/scripts/load-custom-sql-keywords.js', function () {
+                example1 = CodeMirror.fromTextArea(document.getElementById("example1"), {
+                    lineNumbers: true,
+                    mode: "text/x-sqlite",
+                    matchBrackets: true,
+                    readOnly: 'nocursor'
+                });
+                example2 = CodeMirror.fromTextArea(document.getElementById("example2"), {
+                    lineNumbers: true,
+                    mode: "text/x-sqlite",
+                    matchBrackets: true,
+                    readOnly: 'nocursor'
+                });
+            })
+        })
+    </script>
 
 {% endblock %}
 
@@ -24,48 +44,41 @@
             {% for keyword in keywords %}
                 {% if keyword in lexicon %}
                     <button type="button" id="{{ keyword|replace(" ", "") }}" class="col-12 btn p-1 mt-2"
-                            style="background-color: darkgray">
+                            style="background-color: lightgray">
                         <b> {{ keyword }} </b>
                     </button>
 
                     <script>
                         $(document).ready(function () {
                             $("#{{ keyword|replace(" ", "") }}").click(function () {
-                                $('.btn-group-vertical button').css('background-color', 'darkgray')
+                                $('.btn-group-vertical button').css('background-color', 'lightgray')
                                 $(this).css('background-color', 'lightslategray')
                                 $("#Details").show();
                                 $("#DetailsTitle").html('{{ keyword }}');
                                 let html = "{{ lexicon[keyword]['Description']|safe }}"
                                 $("#DetailsDescription").html(html);
-                                // add example
 
-                                $.getScript('/static/scripts/load-custom-sql-keywords.js', function () {
+                                // show the belonging examples
+                                {% if 'Example1' in lexicon[keyword] %}
+                                    let value1 = "{{ lexicon[keyword]['Example1']|safe }}"
+                                    example1.setValue(value1)
+                                    $(example1.getWrapperElement()).show()
+                                    example1.refresh()
+                                {% else %}
+                                    $(example1.getWrapperElement()).hide()
+                                {% endif %}
 
-                                    {% if 'Example1' in lexicon[keyword] %}
-                                        let example1 = CodeMirror.fromTextArea(document.getElementById("example1"), {
-                                            lineNumbers: true,
-                                            mode: "text/x-sqlite",
-                                            matchBrackets: true,
-                                            readOnly: 'nocursor'
-                                        });
-                                        let value = "{{ lexicon[keyword]['Example1']|safe }}"
-                                        example1.setValue(value)
-                                        $('#example1').css('visibility', 'visible')
-                                    {% endif %}
+                                {% if 'Example2' in lexicon[keyword] %}
+                                    let value2 = "{{ lexicon[keyword]['Example2']|safe }}"
+                                    example2.setValue(value2)
+                                    $(example2.getWrapperElement()).show()
+                                    example2.refresh()
+                                {% else %}
+                                    $(example2.getWrapperElement()).hide()
+                                {% endif %}
+                            })
 
-                                    {#{% if 'Example1' in lexicon[keyword] %}
-                                        let example2 = CodeMirror.fromTextArea(document.getElementById("example2"), {
-                                            lineNumbers: true,
-                                            mode: "text/x-sqlite",
-                                            matchBrackets: true,
-                                            readOnly: 'nocursor'
-                                        });
-                                        example2.setValue('{{ lexicon[keyword]['Example2']|safe }}')
-                                        $('#example2').css('visibility', 'visible')
-                                    {% endif %}#}
-                                })
 
-                            });
                         });
                     </script>
 
@@ -108,14 +121,14 @@
                     <hr class="col-12"/>
 
 
-                        <div class="col-6">
-                            <label for="example1"></label>
-                            <textarea id="example1" style="visibility: hidden"></textarea>
-                        </div>
-                        <div class="col-6">
-                            <label for="example2"></label>
-                            <textarea id="example2" style="visibility: hidden"></textarea>
-                        </div>
+                    <div class="col-6">
+                        <label for="example1"></label>
+                        <textarea id="example1" style="visibility: hidden"></textarea>
+                    </div>
+                    <div class="col-6">
+                        <label for="example2"></label>
+                        <textarea id="example2" style="visibility: hidden"></textarea>
+                    </div>
 
                 </div>
             </div>

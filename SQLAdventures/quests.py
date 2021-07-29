@@ -11,7 +11,6 @@ bp = Blueprint('quests', __name__, url_prefix='/quests')
 @bp.route('/questbook', methods=['GET', 'POST'])
 @auth.login_required
 def questbook():
-
     # find the quest file
     quest_data = os.path.join(current_app.static_folder, 'data', 'quests.json')
     with open(quest_data, encoding='utf-8') as quest_data:
@@ -80,10 +79,11 @@ def validate_query():
         # TODO wrap error
         return jsonify({'Error': str(err.args)})
 
+    quest_data = session.get('quest_data')
     # check for correct result
-    if session.get('quest_data') is not None:
+    if quest_data is not None:
         # check for possible result queries if user found an accepted result
-        for query in session.get('quest_data')['ResultQueries']:
+        for query in quest_data['ResultQueries']:
             expected_result = [dict(row) for row in
                                db.get_player_db(g.user['username']).execute(query).fetchall()]
 
@@ -93,7 +93,7 @@ def validate_query():
             if len(expected_result) != len(result):
                 is_correct = False
             # check if order is important
-            elif session.get('quest_data')['OrderedResult']:
+            elif quest_data['OrderedResult']:
                 for i in range(len(expected_result)):
                     for expected_value in expected_result[i].values():
                         if expected_value not in result[i].values():
@@ -118,16 +118,26 @@ def validate_query():
 
             if is_correct:
                 # check if user unlocked a new keyword
-                keywords = session.get('quest_data')['UnlockedKeywords']
+                keywords = quest_data['UnlockedKeywords'] if 'UnlockedKeywords' in session.get(
+                    'quest_data') else []
                 if keywords:
-                    if db.add_user_keywords(user_id, keywords):
-                        result.append({'result': True, 'unlocked': keywords})
+                    new_keywords = db.add_user_keywords(user_id, keywords)
+                    if new_keywords:
+                        # quest with new unlocked keywords
+                        result.append({'result': True, 'unlocked': new_keywords})
                     else:
+                        # quest with already unlocked keywords
                         result.append({'result': True})
+                else:
+                    # quest without unlockable keywords
+                    result.append({'result': True})
 
                 # check if user completed a new quest and increased his level
                 if db.add_completed_quest(user_id, session.get('quest_id')):
                     db.increase_category_level(user_id, session.get('quest_id').rstrip('0123456789'))
+                    if 'UnlockedCategories' in quest_data:
+                        for category in quest_data['UnlockedCategories']:
+                            db.increase_category_level(user_id, category)
 
                 return jsonify(result)
 
