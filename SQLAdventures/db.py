@@ -61,6 +61,14 @@ def init_player_db(username: str):
         db.executescript(f.read().decode('utf8'))
 
 
+# init the db of the current player
+def update_player_db_1(username: str):
+    db = get_player_db(username)
+
+    with current_app.open_resource('player_schema_update_1.sql') as f:
+        db.executescript(f.read().decode('utf8'))
+
+
 # register the command to init the db from command line
 @click.command('init-user-db')
 @with_appcontext

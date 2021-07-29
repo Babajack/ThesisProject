@@ -18,3 +18,4 @@ build/
 .idea
 /start_server_debugger.bat
 /init-db.bat
+/SQLAdventures/static/images/vorgaben_koko.txt

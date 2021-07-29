@@ -81,5 +81,20 @@
   "AS": {
     "Description": "Mit dem <b style='color:#708'>AS</b> Begriff können den Zeilen temporär neue Namen gegeben werden. <b style='color:#708'>AS</b> wird meistens verwendet, damit die Ergebnistabelle mit eventuell unleserlichen Spalten (z.B. durch Funktionen) übersichtlicher wird.",
     "Example1": "SELECT COUNT(*) AS Anzahl \\nFROM tabelle_name"
+  },
+  "IN": {
+    "Description": "Mit dem <b style='color:#708'>IN</b> Operator können mehrere Werte als Liste in einer <b style='color:#708'>WHERE</b> Klausel kombiniert werden. Somit können mehrere <b style='color:#708'>OR</b> Verknüpfungen leichter ausgedrückt werden. Außerdem lässt sich <b style='color:#708'>IN</b> auch gut in Sub-Queries verwenden.",
+    "Example1": "SELECT land, einwohnerzahl \\nFROM erde \\nWHERE land IN ('Deutschland', 'Griechenland', 'Spanien')",
+    "Example2": "SELECT * \\nFROM erde \\nWhere land IN \\n(SELECT land FROM europa)"
+  },
+  "SUB-QUERIES": {
+    "Description": "Eine Sub-Query (Unterabfrage) ist eine Abfrage in einer Abfrage. Manchmal können Aufgabenstellungen mehrere Abfragen verlangen, weil zum Beispiel zusätzliche Einschränkungen gefordert sind, die in nur einer Abfrage nicht zu bewältigen sind. Sub-Queries müssen immer in Klammern stehen.",
+    "Example1": "SELECT land \\nFROM europa \\nWHERE einwohnerzahl > \\n(SELECT einwohnerzahl \\nFROM europa \\nWHERE land = 'Deutschland') \\n /* Es werden alle Länder Europas ausgegeben, \\nderen Einwohnerzahl größer als die von Deutschland ist. */",
+    "Example2": "SELECT land \\nFROM erde \\nWHERE einwohnerzahl > \\n(SELECT einwohnerzahl \\nFROM europa \\nWHERE land = 'Deutschland') \\n /* Es werden alle Länder der Erde ausgegeben, \\nderen Einwohnerzahl größer als die von Deutschland ist. */"
+  },
+  "y": {
+    "Description": "Mit dem <b style='color:#708'>HAVING</b> Begriff",
+    "Example1": "SELECT land, ROUND(flaeche) \\nFROM erde",
+    "Example2": "SELECT land, ROUND(flaeche, 2) \\nFROM erde"
   }
 }

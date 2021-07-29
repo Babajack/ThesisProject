@@ -6,7 +6,7 @@
 {% macro createQuestbook() %}
     <div class="accordion pt-4" id="questbook">
         {% for category in g.user.keys() %}
-            {% if category in user_categories %}
+            {% if category in user_categories and g.user[category] > 0 %}
                 <div class="card" style="background-color: lightgray">
                     <div class="card-header">
                         <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"

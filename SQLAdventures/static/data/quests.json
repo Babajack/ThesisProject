@@ -1,7 +1,7 @@
 {
   "Selects": [
     {
-      "Difficulty": 0,
+      "Difficulty": 1,
       "Title": "Ankunft auf dem Bauernhof",
       "Description": "Der Bauer Manfred lebt schon seit vielen Jahren auf seinem Bauernhof und hat jede Menge zu tun. Bei ihm kannst du deine SQL-Grundlagen verbessern und er kann dir bestimmt bei der Suche nach der Prinzessin weiterhelfen.",
       "Task": "Finde alle Infos über das Tier mit dem Namen Berta!",
@@ -94,7 +94,7 @@
     },
 
     {
-      "Difficulty": 1,
+      "Difficulty": 2,
       "Title": "Ein erster Überblick",
       "Description": "Der Bauer Manfred hat noch viele Aufgaben für dich. Was ist es diesmal?",
       "Task": "Finde alle Infos über alle Tiere sortiert nach ihrem Namen!",
@@ -155,14 +155,15 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Die Nummer ist wichtig, damit man das jeweilige Tier genau identifizieren kann."
+          "Text": "Die Nummer ist wichtig, damit man das jeweilige Tier genau identifizieren kann. Man nennt das den Primärschlüssel",
+          "HTML": "Die Nummer ist wichtig, damit man das jeweilige Tier genau identifizieren kann. Man nennt das den <b> Primärschlüssel </b>"
         }
       ]
     },
 
 
     {
-      "Difficulty": 2,
+      "Difficulty": 3,
       "Title": "Zu viele Informationen",
       "Description": "Manfred zeigt dir weitere wichtige SQL Tricks auf deinem Weg zur Prinzessin.",
       "Task": "Finde alle Tiernamen!",
@@ -217,7 +218,7 @@
 
 
     {
-      "Difficulty": 3,
+      "Difficulty": 4,
       "Title": "Der Unruhestifter",
       "Description": "Manfred gerät in ernsthafte Schwierigkeiten. Kannst du ihm helfen seinen Hof zu retten?",
       "Task": "Finde alle Infos über alle Tiere, absteigend sortiert nach der Länge ihres Namens und alphabetisch nach Name!",
@@ -310,7 +311,7 @@
 
 
     {
-      "Difficulty": 4,
+      "Difficulty": 5,
       "Title": "Überprüfungen",
       "Description": "Die Stuerfahndung ist zu Besuch bei Manfred. Kannst du ihm helfen, damit er alles unbeschadet übersteht?",
       "Task": "Finde alle Infos über alle Tiere, deren Name mit 'A' beginnt!",
@@ -395,7 +396,7 @@
       ]
     },
     {
-      "Difficulty": 5,
+      "Difficulty": 6,
       "Title": "Königliche Abgaben",
       "Description": "Der Steuerfahnder macht Manfred weiter Probleme. Bei weiteren Verstößen verliert er vielleicht den Hof!",
       "Task": "Finde alle Infos über alle Tiere, deren Wert zwischen 400 und 600 liegt!",
@@ -487,7 +488,7 @@
 
 
     {
-      "Difficulty": 6,
+      "Difficulty": 7,
       "Title": "Es geht immer nur ums Geld",
       "Description": "Der Steuerfahnder will noch mehr über die Finanzen des Bauers erfahren. Hoffentlich ist er bald wieder verschwunden, damit die Suche nach der Prinzessin endlich weitergehen kann.",
       "Task": "Finde den Gesamtwert aller Tiere",
@@ -553,7 +554,7 @@
     },
 
     {
-      "Difficulty": 7,
+      "Difficulty": 8,
       "Title": "Ein schwieriges Problem",
       "Description": "Der Steuerfahnder stellt Manfred vor härtere Aufgaben. Kannst du ihm dabei helfen?",
       "Task": "Finde den durchschnittlichen Wert pro Tierart, gerundet nach 2 Nachkommastellen! Gib jeweils die Tierart und den Durchschnittswert aus.",
@@ -656,12 +657,12 @@
 
 
     {
-      "Difficulty": 8,
+      "Difficulty": 9,
       "Title": "So viele Duplikate",
       "Description": "Der Steuerfahnder bietet dir ebenfalls seine Hilfe an. Er reist viel über das Land und kann dir bestimmt bei der Suche nach der Prinzessin weiterhelfen.",
       "Task": "Finde alle Tiernamen, die mehr als einmal vergeben wurden! Gib jeweils den Namen und die zugehörige Anzahl an Tieren mit diesem Namen aus.",
       "Hint": "Gruppiere nach dem Tiernamen und verwende eine passende Aggregatsfunktion. Vergiss das Filtern danach nicht.",
-      "UnlockedKeywords": [],
+      "UnlockedKeywords": ["Sub-Queries", "JOIN"],
       "UnlockedCategories": ["Sub-Queries", "Joins"],
       "TableInfo": [
         {
@@ -809,6 +810,7 @@
       ],
       "OrderedResult": true,
       "AlterTable": false,
+      "NeededKeywords": ["SELECT", "SELECT"],
       "ResultQueries": [
         "select * from tiere order by name"
       ],

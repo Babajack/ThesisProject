@@ -26,4 +26,3 @@ VALUES ('Berta', 'Kuh', 1500),
        ('Anna', 'Schwein', 250),
        ('Doris', 'Schwein', 400),
        ('Alice', 'Schaf', 200);
-

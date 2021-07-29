@@ -57,6 +57,8 @@ def validate_query():
     keywords = user_input['keywords']
     query = user_input['query']
     user_id = g.user['id']
+    quest_data = session.get('quest_data')
+    # quest_data = user_input['quest_data']
 
     # check for valid SQL
 
@@ -64,6 +66,15 @@ def validate_query():
     # for keyword in keywords:
     #     if keyword.upper() not in db.get_user_keywords(user_id):
     #         return jsonify({'Error': '<b style="color:#708">' + keyword + '</b>' + ' ist noch nicht freigeschaltet!'})
+
+    # check for needed keywords
+    if 'NeededKeywords' in quest_data:
+        for neededKeyword in quest_data['NeededKeywords']:
+            if neededKeyword in keywords:
+                keywords.remove(neededKeyword)
+            else:
+                return jsonify({'Error': 'Für diese Aufgabe musst du ' + ' und '.join(
+                    quest_data['NeededKeywords']) + ' verwenden!'})
 
     # validate sql
     import sqlite3
@@ -75,11 +86,10 @@ def validate_query():
             return jsonify({'Error': 'Die Ergebnistabelle ist leer!'})
 
     # check for errors
-    except sqlite3.Error as err:
-        # TODO wrap error
-        return jsonify({'Error': str(err.args)})
+    except Exception as err:
+        # TODO maybe wrap error
+        return jsonify({'Error': str(err)})
 
-    quest_data = session.get('quest_data')
     # check for correct result
     if quest_data is not None:
         # check for possible result queries if user found an accepted result
@@ -118,8 +128,7 @@ def validate_query():
 
             if is_correct:
                 # check if user unlocked a new keyword
-                keywords = quest_data['UnlockedKeywords'] if 'UnlockedKeywords' in session.get(
-                    'quest_data') else []
+                keywords = quest_data['UnlockedKeywords'] if 'UnlockedKeywords' in quest_data else []
                 if keywords:
                     new_keywords = db.add_user_keywords(user_id, keywords)
                     if new_keywords:
@@ -138,6 +147,8 @@ def validate_query():
                     if 'UnlockedCategories' in quest_data:
                         for category in quest_data['UnlockedCategories']:
                             db.increase_category_level(user_id, category)
+                        if quest_data['UnlockedCategories'] == ["Sub-Queries", "Joins"]:
+                            db.update_player_db_1(g.user['username'])
 
                 return jsonify(result)
 

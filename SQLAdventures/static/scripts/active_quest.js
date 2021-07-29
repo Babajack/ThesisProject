@@ -102,7 +102,7 @@ function loadQuestProcedure(data, username) {
                         $.ajax({
                             type: 'POST',
                             url: '/quests/query',
-                            data: JSON.stringify({query: editor.getValue(), keywords: keywords}),
+                            data: JSON.stringify({query: editor.getValue(), keywords: keywords/*, quest_data: data*/}),
                             contentType: "application/json",
                             dataType: 'json',
                             success: function (resultData) {
@@ -112,7 +112,7 @@ function loadQuestProcedure(data, username) {
                                 if ('Error' in resultData) {
                                     // display error
                                     $("#feedback").css('visibility', 'visible')
-                                        .css('background-color', 'red')
+                                        .css('background-color', '#ff3333')
                                         .html(resultData['Error'])
                                 } else {
 

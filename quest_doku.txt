@@ -13,16 +13,11 @@
 
 ideen:
 - select einträge mit max und min wert (subquery)
-select * from tiere
-where wert = (select max(wert) from tiere)
-or wert = (select min(wert) from tiere)
+select * from tierewhere wert = (select max(wert) from tiere) or wert = (select min(wert) from tiere)
 
-- select wert summe von schwein und kuh
-select sum(wert) from tiere
-where tierart='Schwein'
-or tierart = 'Kuh'
+- select einträge wo wert größer ist als der wert des tieres mit der größten nummer
+select * from tiere where wert > (select wert from tiere where nummer = (select max(nummer) from tiere))
 
-- select wert summe von schwein und kuh
-select sum(wert) from tiere
-where tierart='Schwein'
-or tierart = 'Kuh'
+- 
+select * from besitzer where id in (select besitzer_id from tiere)
+
