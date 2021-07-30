@@ -17,7 +17,8 @@ function loadQuestProcedure(data, username) {
                 lineNumbers: true,
                 mode: "text/x-sqlite",
                 matchBrackets: true,
-                readOnly: 'nocursor'
+                readOnly: 'nocursor',
+                autoCloseBrackets: true
             });
 
             // load first sequence

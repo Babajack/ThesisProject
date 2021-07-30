@@ -15,6 +15,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/addon/display/placeholder.min.js"
             integrity="sha512-RO2holrH2sTvI9eanK0s+luhPF+J7sdzmk0lMosgrSaUSEjRUfyFiSaERSXHPcIJfQNqeVermdLvQRqUe4sSIQ=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.2/addon/edit/matchbrackets.min.js"
+            integrity="sha512-03Ei8A+mDhwF6O/CmXM47U4A9L7TobAxMbPV2Wn5cEbY76lngHQRyvvmnqhJ8IthfoxrRqmtoBxQCxOC7AOeKw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.2/addon/edit/closebrackets.min.js"
+            integrity="sha512-cCnOU69ESswPmMV3f9TR7WgctoJZliqGbJ8WeLn0VlUrngSsmtVopRf6OG/epbURGfNmY4RY6RzZ/mWkPQ/onw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='scripts/active_quest.js') }}"></script>
     <script type="text/javascript">
         loadQuestProcedure({{ quest_data|tojson|safe }}, {{ g.user.username|tojson|safe }})
@@ -34,7 +40,8 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul id="navbar-buttons" class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="{{ url_for('lexicon.lexicon', menu=False) }}"> Lexikon <img src="https://img.icons8.com/ios-glyphs/20/000000/external-link.png" alt=""/> </a>
+                        <a class="nav-link" target="_blank" href="{{ url_for('lexicon.lexicon', menu=False) }}"> Lexikon
+                            <img src="https://img.icons8.com/ios-glyphs/20/000000/external-link.png" alt=""/> </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('quests.quest') }}"> Neustarten </a>
@@ -124,7 +131,8 @@
         </div>
     </div>
 
-    <div class="modal fade" id="unlocked-keywords_modal" tabindex="-1" role="dialog" aria-labelledby="unlocked-keywords_modal"
+    <div class="modal fade" id="unlocked-keywords_modal" tabindex="-1" role="dialog"
+         aria-labelledby="unlocked-keywords_modal"
          aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">

@@ -54,12 +54,12 @@
     "Example2": "SELECT COUNT(*) \\nFROM europa"
   },
   "AVG": {
-    "Description": "Mit der <b style='color:#708'>AVG</b> Aggregatsfunktion wird der Durchschnittswert der gefundenen numerischen Spalte ausgegeben.",
+    "Description": "Mit der <b style='color:#708'>AVG</b> Aggregatsfunktion wird der Durchschnittswert der angegebenen numerischen Spalte ausgegeben.",
     "Example1": "SELECT AVG(einwohnerzahl) \\nFROM europa \\nWHERE land LIKE '%land'",
     "Example2": "SELECT AVG(einwohnerzahl) \\nFROM europa"
   },
   "SUM": {
-    "Description": "Mit der <b style='color:#708'>SUM</b> Aggregatsfunktion wird die Summe der gefundenen numerischen Spalte ausgegeben.",
+    "Description": "Mit der <b style='color:#708'>SUM</b> Aggregatsfunktion wird die Summe der angegebenen numerischen Spalte ausgegeben.",
     "Example1": "SELECT SUM(einwohnerzahl) \\nFROM europa \\nWHERE land LIKE '%land'",
     "Example2": "SELECT SUM(einwohnerzahl) \\nFROM europa"
   },
@@ -90,7 +90,17 @@
   "SUB-QUERIES": {
     "Description": "Eine Sub-Query (Unterabfrage) ist eine Abfrage in einer Abfrage. Manchmal können Aufgabenstellungen mehrere Abfragen verlangen, weil zum Beispiel zusätzliche Einschränkungen gefordert sind, die in nur einer Abfrage nicht zu bewältigen sind. Sub-Queries müssen immer in Klammern stehen.",
     "Example1": "SELECT land \\nFROM europa \\nWHERE einwohnerzahl > \\n(SELECT einwohnerzahl \\nFROM europa \\nWHERE land = 'Deutschland') \\n /* Es werden alle Länder Europas ausgegeben, \\nderen Einwohnerzahl größer als die von Deutschland ist. */",
-    "Example2": "SELECT land \\nFROM erde \\nWHERE einwohnerzahl > \\n(SELECT einwohnerzahl \\nFROM europa \\nWHERE land = 'Deutschland') \\n /* Es werden alle Länder der Erde ausgegeben, \\nderen Einwohnerzahl größer als die von Deutschland ist. */"
+    "Example2": "SELECT land \\nFROM (SELECT * from europa) \\n/* Eine Sub-Query wird hier verwendet, um nur bestimmte Spalten \\naus einer Zwischentabelle zu erhalten */"
+  },
+  "MIN": {
+    "Description": "Mit der <b style='color:#708'>MIN</b> Aggregatsfunktion wird der kleinste Wert aus der angegebenen Spalte ausgegeben.",
+    "Example1": "SELECT MIN(einwohnerzahl) \\nFROM erde",
+    "Example2": "SELECT land, MIN(einwohnerzahl) \\nFROM erde"
+  },
+  "MAX": {
+    "Description": "Mit der <b style='color:#708'>MAX</b> Aggregatsfunktion wird der größte Wert aus der angegebenen Spalte ausgegeben.",
+    "Example1": "SELECT MAX(einwohnerzahl) \\nFROM erde",
+    "Example2": "SELECT land, MAX(einwohnerzahl) \\nFROM erde"
   },
   "y": {
     "Description": "Mit dem <b style='color:#708'>HAVING</b> Begriff",

@@ -219,7 +219,7 @@
 
     {
       "Difficulty": 4,
-      "Title": "Der Unruhestifter",
+      "Title": "Ein Gast auf dem Hof",
       "Description": "Manfred gerät in ernsthafte Schwierigkeiten. Kannst du ihm helfen seinen Hof zu retten?",
       "Task": "Finde alle Infos über alle Tiere, absteigend sortiert nach der Länge ihres Namens und alphabetisch nach Name!",
       "Hint": "Gib alle Spalten aus. Sortiere erst nach Länge absteigend, dann nach dem Namen.",
@@ -261,12 +261,12 @@
         {
           "Picture": "Bauer.png",
           "Position": "right",
-          "Text": "Ist das hier der Hof von Manfred? Ich bin Dieter von der Steuerfahndung."
+          "Text": "Ist das hier der Hof von Manfred? Ich bin Dieter und muss im Namen des Königs die Höfe überprüfen."
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Oje! Ja ich bin Manfred und das ist mein Hof. Was gibt es denn?"
+          "Text": "Ja ich bin Manfred und das ist mein Hof. Was gibt es denn?"
         },
         {
           "Picture": "Bauer.png",
@@ -312,7 +312,7 @@
 
     {
       "Difficulty": 5,
-      "Title": "Überprüfungen",
+      "Title": "Namensprüfungen",
       "Description": "Die Stuerfahndung ist zu Besuch bei Manfred. Kannst du ihm helfen, damit er alles unbeschadet übersteht?",
       "Task": "Finde alle Infos über alle Tiere, deren Name mit 'A' beginnt!",
       "Hint": "Gib alle Spalten aus. Benutze '%' und schau im Lexikon nach, wenn du etwas nachlesen musst.",
@@ -398,7 +398,7 @@
     {
       "Difficulty": 6,
       "Title": "Königliche Abgaben",
-      "Description": "Der Steuerfahnder macht Manfred weiter Probleme. Bei weiteren Verstößen verliert er vielleicht den Hof!",
+      "Description": "Der Prüfer macht Manfred weiter Probleme. Bei weiteren Verstößen verliert er vielleicht den Hof!",
       "Task": "Finde alle Infos über alle Tiere, deren Wert zwischen 400 und 600 liegt!",
       "Hint": "Gib alle Spalten aus. Schau im Lexikon nach, wenn du etwas nachlesen musst.",
       "UnlockedKeywords": [
@@ -490,7 +490,7 @@
     {
       "Difficulty": 7,
       "Title": "Es geht immer nur ums Geld",
-      "Description": "Der Steuerfahnder will noch mehr über die Finanzen des Bauers erfahren. Hoffentlich ist er bald wieder verschwunden, damit die Suche nach der Prinzessin endlich weitergehen kann.",
+      "Description": "Der Prüfer will noch mehr über die Finanzen des Bauers erfahren. Hoffentlich ist er bald wieder verschwunden, damit die Suche nach der Prinzessin endlich weitergehen kann.",
       "Task": "Finde den Gesamtwert aller Tiere",
       "Hint": "Schau im Lexikon nach, wenn du etwas nachlesen musst.",
       "UnlockedKeywords": [
@@ -511,7 +511,7 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Ich hoffe wir haben die köngliche Steuerprüfung bald überstanden..."
+          "Text": "Ich hoffe wir haben die köngliche Überprüfung bald überstanden..."
         },
         {
           "Picture": "Bauer.png",
@@ -556,11 +556,11 @@
     {
       "Difficulty": 8,
       "Title": "Ein schwieriges Problem",
-      "Description": "Der Steuerfahnder stellt Manfred vor härtere Aufgaben. Kannst du ihm dabei helfen?",
+      "Description": "Der Prüfer stellt Manfred vor härtere Aufgaben. Kannst du ihm dabei helfen?",
       "Task": "Finde den durchschnittlichen Wert pro Tierart, gerundet nach 2 Nachkommastellen! Gib jeweils die Tierart und den Durchschnittswert aus.",
       "Hint": "Gruppiere nach der Tierart und verwende eine passende Aggregatsfunktion. Schau im Lexikon nach, wenn du etwas nachlesen musst.",
       "UnlockedKeywords": [
-        "HAVING"
+        "HAVING", "MIN", "MAX"
       ],
       "TableInfo": [
         {
@@ -577,7 +577,7 @@
         {
           "Picture": "Bauer.png",
           "Position": "right",
-          "Text": "So, ein paar Dinge noch und dann ist die Steuerprüfung vorbei."
+          "Text": "So, ein paar Dinge noch und dann ist die Überprüfung vorbei."
         },
         {
           "Picture": "Bauer.png",
@@ -659,7 +659,7 @@
     {
       "Difficulty": 9,
       "Title": "So viele Duplikate",
-      "Description": "Der Steuerfahnder bietet dir ebenfalls seine Hilfe an. Er reist viel über das Land und kann dir bestimmt bei der Suche nach der Prinzessin weiterhelfen.",
+      "Description": "Der Prüfer bietet dir ebenfalls seine Hilfe an. Er reist viel über das Land und kann dir bestimmt bei der Suche nach der Prinzessin weiterhelfen.",
       "Task": "Finde alle Tiernamen, die mehr als einmal vergeben wurden! Gib jeweils den Namen und die zugehörige Anzahl an Tieren mit diesem Namen aus.",
       "Hint": "Gruppiere nach dem Tiernamen und verwende eine passende Aggregatsfunktion. Vergiss das Filtern danach nicht.",
       "UnlockedKeywords": ["Sub-Queries", "JOIN"],
@@ -752,27 +752,37 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Also gut. Ich denke ich bin dir was schuldig username."
+          "Text": "Also gut. Ich denke ich bin dir was schuldig, username."
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Du solltest den Schmied Samuel aufsuchen. Er kann dir bestimmt helfen, die Prinzessin zu finden!"
+          "Text": "Du solltest den Schmied Samuel aufsuchen. Du findest ihn im Questbuch im Bereich Joins."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Der Schmied kennt sich nämlich gut mit SQL Joins aus. Dort kannst du dir weitere wichtige SQL-Kenntnisse aneignen."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Wenn du die Prinzessin retten willst, musst du gut vorbereitet sein!"
         },
         {
           "Picture": "Bauer.png",
           "Position": "right",
-          "Text": "Meine Aufgabe hier ist noch nicht beendet."
+          "Text": "Die Überprüfung ist noch nicht abgeschlossen."
         },
         {
           "Picture": "Bauer.png",
           "Position": "right",
-          "Text": "Am besten richte ich alle weiteren Fragen an username."
+          "Text": "Ich richte meine weiteren Fragen an username."
         },
         {
           "Picture": "Bauer.png",
           "Position": "right",
-          "Text": "Komm' dazu doch bitte einfach in mein Büro."
+          "Text": "Bei mir kannst du einiges über Sub-Queries lernen. Geh' dazu einfach ins Questbuch zu Sub-Queries."
         }
       ]
     }
@@ -795,70 +805,596 @@
   "Sub-Queries": [
     {
       "Difficulty": 1,
-      "Title": "Ein erster Überblick",
-      "Description": "Der Bauer Manfred hat noch viele Aufgaben für dich. Was ist es diesmal?",
-      "Task": "Finde alle Infos über alle Tiere sortiert nach ihrem Namen!",
-      "Hint": "Gib alle Spalten aus. Schau im Lexikon nach, falls du etwas vergessen hast.",
-      "UnlockedKeywords": [
-        "DISTINCT"
-      ],
+      "Title": "Der Prüfer",
+      "Description": "Der Prüfer von Manfred's Hof setzt seine Überprüfungen mit deiner Hilfe fort. In diesem Bereich lernst du wichtige Themen bezüglich Sub-Queries. Wenn du in dieser Kategorie und bei den Joins (Schmied) mindestens 7 Aufgaben gelöst hast, kannst du dich dem Entführer der Prinzessin stellen.",
+      "Task": "Finde alle Infos über alle Tiere mit dem Besitzer 'Jacky' 'Sparrow'!",
+      "Hint": "Verwende eine Sub-Query, um die id des Besitzers zu finden.",
+      "UnlockedKeywords": [],
       "TableInfo": [
         {
           "Tabelle": "tiere",
-          "Spalten": "nummer, name, tierart, wert"
+          "Spalten": "nummer, name, tierart, wert, besitzer_id"
+        },
+        {
+          "Tabelle": "besitzer",
+          "Spalten": "id, vorname, nachname, alter, geschlecht"
         }
       ],
-      "OrderedResult": true,
+      "OrderedResult": false,
       "AlterTable": false,
       "NeededKeywords": ["SELECT", "SELECT"],
       "ResultQueries": [
-        "select * from tiere order by name"
+        "select * from tiere where besitzer_id = (select id from besitzer where vorname = 'Jacky' and nachname = 'Sparrow')"
       ],
       "Intro": [
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "So dann lass uns doch mit dem Training beginnen!"
+          "Text": "Hallo, username."
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Es gibt hier eine Menge Tiere auf dem Hof."
+          "Text": "Schön, dass du mir weiter behilflich bist, denn es gilt noch einiges herauszufinden."
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Ich hab ein bisschen den Überblick verloren..."
+          "Text": "Was bisher noch nicht erwähnt wurde: die Tiere haben alle einen Besitzer."
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Zeig mir doch mal bitte alle Tiere, sortiert nach ihrem Namen!",
-          "HTML": "Zeig mir doch mal bitte alle Tiere, <b>sortiert nach ihrem Namen</b>!"
+          "Text": "Zwar leben die Tiere auf dem Bauernhof, aber eigentlich gehöhren sie zu bekannten Persönlichkeiten im Königshaus."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Es gibt eine tabelle besitzer, in der die jeweiligen Besitzer aufgeführt sind.",
+          "HTML": "Es gibt eine tabelle <b> besitzer </b>, in der die jeweiligen Besitzer aufgeführt sind."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Die Besitzer haben eine eindeutige id (Primärschlüssel), einen vornamen, nachnamen, ein alter und ein geschlecht",
+          "HTML": "Die Besitzer haben eine eindeutige <b> id </b> (Primärschlüssel), einen <b> vornamen </b>, <b> nachnamen </b>, ein <b> alter </b> und ein <b> geschlecht </b>"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ich habe dir dazu die Tabelle tiere mit einer entsprechenden besitzer_id ergänzt.",
+          "HTML": "Ich habe dir dazu die Tabelle <b> tiere </b> mit einer entsprechenden <b> besitzer_id </b> ergänzt."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Die besitzer_id der tabelle tiere entspricht dabei der jeweiligen id in der tabelle besitzer."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Die besitzer_id nennt man hier den Fremdschlüssel."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "So, nun zu deiner ersten Aufgabe dazu."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ich muss alle Tiere finden, die dem Besitzer Jacky Sparrow gehören.",
+          "HTML": "Ich muss alle Tiere finden, die dem Besitzer <b>Jacky Sparrow</b> gehören."
         }
       ],
       "Outro": [
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Sehr gut gemacht!"
+          "Text": "Wunderbar!"
+        }
+      ]
+    },
+
+
+    {
+      "Difficulty": 2,
+      "Title": "Nur das Beste",
+      "Description": "Der Prüfer muss weitere Details über die Tiere und deren Besitzer erfahren. Durch die Bewältigung einer weiteren Aufgabe kommst du dem Erretten der Prinzessin ein Stück näher.",
+      "Task": "Finde alle Infos über alle Tiere, deren Wert größer ist als der Durchschnittswert aller Tiere! Sortiere nach dem Wert.",
+      "Hint": "Verwende eine Sub-Query, um den Durchschnittswert zu finden.",
+      "UnlockedKeywords": [],
+      "TableInfo": [
+        {
+          "Tabelle": "tiere",
+          "Spalten": "nummer, name, tierart, wert, besitzer_id"
+        },
+        {
+          "Tabelle": "besitzer",
+          "Spalten": "id, vorname, nachname, alter, geschlecht"
+        }
+      ],
+      "OrderedResult": true,
+      "AlterTable": false,
+      "NeededKeywords": ["SELECT", "SELECT"],
+      "ResultQueries": [
+        "select * from tiere where wert > (select avg(wert) from tiere) order by wert"
+      ],
+      "Intro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Deine nächste Aufgabe wartet bereits."
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Wie du siehst, hat jedes Tier eine Nummer, einen Namen, eine Tierart und einen Wert."
+          "Text": "Wir hatten ja schon einmal über den Wert der Tiere gesprochen."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Es geht aber auch immer nur ums Geld!"
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Der Wert wurde damals von einem Begutachter des Königs festgelegt."
+          "Text": "Ich agiere auf Anweisung des Königs. Die Ordnung muss sichergestellt sein!"
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Die Nummer ist wichtig, damit man das jeweilige Tier genau identifizieren kann."
+          "Text": "Ich muss wissen, welche Tiere über dem Durchschnittswert liegen."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Gib bitte alle Infos über die Tiere aus und sortiere nach dem Wert!",
+          "HTML": "Gib bitte alle Infos über die Tiere aus und <b>sortiere</b> nach dem Wert!"
+        }
+      ],
+      "Outro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Gute Arbeit!"
+        }
+      ]
+    },
+
+
+    {
+      "Difficulty": 2,
+      "Title": "Besitzer ohne Besitz",
+      "Description": "Es werden ein paar kleine Überraschungen aufgedeckt. Mit deiner Hilfe können Unklarheiten auf Manfred's Hof bereinigt werden.",
+      "Task": "Finde alle Infos über alle Besitzer, die ein Tier besitzen!",
+      "Hint": "Verwende eine Sub-Query, um die besitzer_id zu finden.",
+      "UnlockedKeywords": [],
+      "TableInfo": [
+        {
+          "Tabelle": "tiere",
+          "Spalten": "nummer, name, tierart, wert, besitzer_id"
+        },
+        {
+          "Tabelle": "besitzer",
+          "Spalten": "id, vorname, nachname, alter, geschlecht"
+        }
+      ],
+      "OrderedResult": false,
+      "AlterTable": false,
+      "NeededKeywords": ["SELECT", "SELECT"],
+      "ResultQueries": [
+        "select * from besitzer where id in (select besitzer_id from tiere)"
+      ],
+      "Intro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "So, weiter geht's."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Mir ist etwas aufgefallen..."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Es scheint, als wäre mir ein Fehler unterlaufen."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Das man sowas noch erleben darf."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Ich bin ja schon still..."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Es scheint mir so, als ob nicht alle Besitzer aus der Tabelle auch wirklch ein Tier besitzen."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Wir brauchen Klarheit."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Bitte zeig mir doch einmal alle Besitzer, die auch wirklich ein Tier besitzen."
+        }
+      ],
+      "Outro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Sieht gut aus."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Vielen Dank für die Hilfe."
+        }
+      ]
+    },
+
+
+    {
+      "Difficulty": 2,
+      "Title": "Spezielle Frage",
+      "Description": "Der Prüfer stellt weitere Fragen zu den Besitzern der Tiere. Das SQL Training ist eine große Hilfe für die anstehende Auseinandersetzung mit dem Entführer der Prinzessin.",
+      "Task": "Finde alle Infos über alle Besitzer, deren Vorname länger ist, als die Länge des Vornamens des Besitzers mit der id 2!",
+      "Hint": "Verwende eine Sub-Query, um die Länge des Vornamens des Besitzers 2 zu finden.",
+      "UnlockedKeywords": [],
+      "TableInfo": [
+        {
+          "Tabelle": "tiere",
+          "Spalten": "nummer, name, tierart, wert, besitzer_id"
+        },
+        {
+          "Tabelle": "besitzer",
+          "Spalten": "id, vorname, nachname, alter, geschlecht"
+        }
+      ],
+      "OrderedResult": false,
+      "AlterTable": false,
+      "NeededKeywords": ["SELECT", "SELECT"],
+      "ResultQueries": [
+        "select * from besitzer where length(vorname) > (select length(vorname) from besitzer where id = 2)"
+      ],
+      "Intro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Hm in der nächsten Frage meines Berichtes, den ich auszufüllen habe, geht es um etwas spezielles."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Der Besitzer mit der id 2 ist hier wichtig."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "In den Gesetzen heißt es, dass ich alle Besitzer notieren muss, deren Vornamen eine gewisse Länge haben."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Und zwar brauche ich alle Besitzer, deren Vorname länger ist, als die Länge des Vornamens von Besitzer mit id 2.",
+          "HTML": "Und zwar brauche ich alle Besitzer, deren Vorname <b>länger</b> ist, als die Länge des Vornamens von Besitzer mit <b>id 2</b>."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Das schafft username bestimmt!"
+        }
+      ],
+      "Outro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Gut gemacht!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Wieso muss so eine Information denn bitte in den Bericht??"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Das Überschreitet meinen Zuständigkeitsbereich."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Ich weiß auch nicht genau, wer sich so etwas ausdenkt."
+        }
+      ]
+    },
+
+
+
+    {
+      "Difficulty": 2,
+      "Title": "Große Nummer",
+      "Description": "Die nächste Aufgabe wartet bereits auf dich. Kannst du dem Prüfer erneut die passenden Informationen liefern?",
+      "Task": "Finde alle Infos über alle Tiere, deren Wert größer ist, als der Wert des Tieres mit der größten Nummer!",
+      "Hint": "Vorschlag: Verwende zwei Sub-Queries - für die größte Nummer und für den Wert des Tieres mit dieser Nummer.",
+      "UnlockedKeywords": [],
+      "TableInfo": [
+        {
+          "Tabelle": "tiere",
+          "Spalten": "nummer, name, tierart, wert, besitzer_id"
+        },
+        {
+          "Tabelle": "besitzer",
+          "Spalten": "id, vorname, nachname, alter, geschlecht"
+        }
+      ],
+      "OrderedResult": false,
+      "AlterTable": false,
+      "NeededKeywords": ["SELECT", "SELECT"],
+      "ResultQueries": [
+        "select * from tiere where wert > (select wert from tiere where nummer = (select max(nummer) from tiere))"
+      ],
+      "Intro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "So, nun wird es etwas kniffliger."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ich brauche als nächstes folgende Information:"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Welche Tiere haben einen höheren Wert, als das Tier, das die größte Nummer hat?",
+          "HTML": "Welche Tiere haben einen <b> höheren </b> Wert, als das Tier, das die <b> größte Nummer </b> hat?"
+        }
+      ],
+      "Outro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Gut gemacht!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Das hätte ich natürlich auch hinbekommen!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Davon bin ich überzeugt..."
+        }
+      ]
+    },
+
+
+    {
+      "Difficulty": 2,
+      "Title": "Schon wieder doppelte Namen",
+      "Description": "In der nächsten Aufgabe wird erneut dein Wissen auf die Probe gestellt. Mal sehen, wie viele Fragen der Prüfer noch hat.",
+      "Task": "Finde alle Infos über alle Tiere, deren Name mehr als einmal vorkommt!",
+      "Hint": "Verwende eine Sub-Query, um die gesuchten Namen der Tiere zu finden. Du kannst auch mehrere Sub-Queries verwenden.",
+      "UnlockedKeywords": [],
+      "TableInfo": [
+        {
+          "Tabelle": "tiere",
+          "Spalten": "nummer, name, tierart, wert, besitzer_id"
+        },
+        {
+          "Tabelle": "besitzer",
+          "Spalten": "id, vorname, nachname, alter, geschlecht"
+        }
+      ],
+      "OrderedResult": false,
+      "AlterTable": false,
+      "NeededKeywords": ["SELECT", "SELECT"],
+      "ResultQueries": [
+        "select * from tiere where name in (select name from tiere group by name having count(name) > 1)"
+      ],
+      "Intro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Es gibt noch mehr zu klären."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Wann ist denn endlich alles geprüft?"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Sobald meine Unterlagen vollständig sind. Das wird sicher nicht mehr lange dauern."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Natürlich nicht..."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ich muss nochmal bei den Tiernamen nachhaken."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Es gab dort ja einige Namen, die mehrmals vorkamen."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Zeig mir bitte noch einmal alle Tiere, deren Namen mehrmals vorkommen."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ich möchte die kompletten Einträge der Tiere mit diesen Namen sehen."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Gar kein Problem!"
+        }
+      ],
+      "Outro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Sehr gut!"
+        }
+      ]
+    },
+
+
+    {
+      "Difficulty": 2,
+      "Title": "Der Große und der Kleine",
+      "Description": "Die Prüfung des Hofes geht weiter. Mit genügend Übung kannst du dich bestimmt bald dem Entführer entgegenstellen.",
+      "Task": "Finde alle Infos über die zwei Tiere mit dem größten und dem kleinsten Wert!",
+      "Hint": "Verwende eine Sub-Query, um den größten und kleinsten Wert zu finden.",
+      "UnlockedKeywords": [],
+      "TableInfo": [
+        {
+          "Tabelle": "tiere",
+          "Spalten": "nummer, name, tierart, wert, besitzer_id"
+        },
+        {
+          "Tabelle": "besitzer",
+          "Spalten": "id, vorname, nachname, alter, geschlecht"
+        }
+      ],
+      "OrderedResult": false,
+      "AlterTable": false,
+      "NeededKeywords": ["SELECT", "SELECT"],
+      "ResultQueries": [
+        "select * from tiere where wert = (select max(wert) from tiere) or wert = (select min(wert) from tiere)"
+      ],
+      "Intro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ein paar Dinge stehen noch auf meinem Plan."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Als Nächstes interessieren mich die Tiere mit dem größten und dem kleinsten Wert."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Zeig mir also bitte die Einträge der Tiere mit dem größten und dem kleinsten Wert.",
+          "HTML": "Zeig mir also bitte die Einträge der Tiere mit dem <b> größten </b> und dem <b> kleinsten </b> Wert."
+        }
+      ],
+      "Outro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Das sieht gut aus!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "So langsam wirst du zum echten SQL-Profi!"
+        }
+      ]
+    },
+
+
+    {
+      "Difficulty": 2,
+      "Title": "Lange Namen",
+      "Description": "Der Prüfer stellt eine weitere Frage. Kannst du auch diese beantworten?",
+      "Task": "Finde alle Infos über alle Tiere des Besitzers mit dem längsten Nachnamen!",
+      "Hint": "Vorschlag: Verwende zwei Sub-queries - für den längsten Nachnamen und für die id des Besitzers mit diesem Nachnamen.",
+      "UnlockedKeywords": [],
+      "TableInfo": [
+        {
+          "Tabelle": "tiere",
+          "Spalten": "nummer, name, tierart, wert, besitzer_id"
+        },
+        {
+          "Tabelle": "besitzer",
+          "Spalten": "id, vorname, nachname, alter, geschlecht"
+        }
+      ],
+      "OrderedResult": false,
+      "AlterTable": false,
+      "NeededKeywords": ["SELECT", "SELECT"],
+      "ResultQueries": [
+        "select * from tiere where besitzer_id = (select id from (select id, max(length(nachname)) from besitzer))"
+      ],
+      "Intro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "So, ich hätte noch eine weitere Bitte."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "In den Dokumenten des Königs steht, dass der Besitzer mit dem längsten Nachnamen nur maximal drei Tiere besitzen darf."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Schon wieder so ein komisches Gesetz..."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Es geht hierbei wohl darum, weniger Schreibarbeit zu haben."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Die Berichte haben nur begrenzt Platz zur Verfügung."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Also, bitte einmal alle Tiereinträge des Besitzers mit dem <b>längsten Nachnamen</b>."
+        }
+      ],
+      "Outro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Danke!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Mehr Überprüfungen habe ich vorerst nicht."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Wenn du noch nicht beim Schmied warst, dann solltest du ihn noch besuchen."
         }
       ]
     }
+
+
+
+
+
+
   ]
 }

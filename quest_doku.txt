@@ -11,13 +11,30 @@
 - delete tier zwischen 400 und 600, update tiername anna, 
 
 
-ideen:
-- select einträge mit max und min wert (subquery)
+ideen (subquery):
+- select einträge mit max und min wert
 select * from tierewhere wert = (select max(wert) from tiere) or wert = (select min(wert) from tiere)
 
 - select einträge wo wert größer ist als der wert des tieres mit der größten nummer
 select * from tiere where wert > (select wert from tiere where nummer = (select max(nummer) from tiere))
 
-- 
+- select alle besitzer die ein tier besitzen -> nicht alle haben eins
 select * from besitzer where id in (select besitzer_id from tiere)
+
+- select alle besitzer deren vorname länger ist, als der vorname des besitzers mit id = 2
+select * from besitzer where length(vorname) > (select length(vorname) from besitzer where id = 2)
+
+- select alle tiere (alle infos) deren name mehr als einmal vorkommt
+select * from tiere where name in (select name from (select name, count(name) from tiere group by name having count(name) > 1))
+
+- select alle tiere deren wert größer ist als der durchschn. wert
+select * from tiere where wert > (select avg(wert) from tiere)
+
+
+
+
+
+ideen (joins):
+
+
 

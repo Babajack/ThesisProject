@@ -54,7 +54,7 @@ def quest():
 def validate_query():
     # request = query and highlighted-sql-keywords
     user_input = request.get_json()
-    keywords = user_input['keywords']
+    keywords = [word.upper() for word in user_input['keywords']]
     query = user_input['query']
     user_id = g.user['id']
     quest_data = session.get('quest_data')
@@ -70,9 +70,11 @@ def validate_query():
     # check for needed keywords
     if 'NeededKeywords' in quest_data:
         for neededKeyword in quest_data['NeededKeywords']:
-            if neededKeyword in keywords:
+            if neededKeyword.upper() in keywords:
                 keywords.remove(neededKeyword)
             else:
+                if quest_data['NeededKeywords'] == ['SELECT', 'SELECT']:
+                    return jsonify({'Error': 'Für diese Aufgabe musst du eine Sub-Query verwenden!'})
                 return jsonify({'Error': 'Für diese Aufgabe musst du ' + ' und '.join(
                     quest_data['NeededKeywords']) + ' verwenden!'})
 
@@ -149,6 +151,9 @@ def validate_query():
                             db.increase_category_level(user_id, category)
                         if quest_data['UnlockedCategories'] == ["Sub-Queries", "Joins"]:
                             db.update_player_db_1(g.user['username'])
+                    # check if user unlocked final questline TODO check
+                    if g.user['Sub-Queries'] > 7 and g.user['Joins'] > 7 and g.user['Komplexe Queries'] == 0:
+                        db.increase_category_level(user_id, 'Komplexe Queries')
 
                 return jsonify(result)
 
