@@ -11,14 +11,14 @@
       ],
       "TableInfo": [
         {
-          "Tabelle": "tiere",
+          "Tabelle": "tier",
           "Spalten": "nummer, name, tierart, wert"
         }
       ],
       "OrderedResult": true,
       "AlterTable": false,
       "ResultQueries": [
-        "select * from tiere where name = 'Berta'"
+        "select * from tier where name = 'Berta'"
       ],
       "Intro": [
         {
@@ -55,7 +55,7 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Bevor du gehst, solltest du dich erst vorbereiten und deine SQL Fähigkeiten verbessern."
+          "Text": "Bevor du gehst, solltest du dich also erst vorbereiten und deine SQL Fähigkeiten verbessern."
         },
         {
           "Picture": "Bauer.png",
@@ -70,8 +70,24 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Aber zuallererst: Wo ist denn meine Berta?",
-          "HTML": "Aber zuallererst: Wo ist denn meine <b>Berta</b>?"
+          "Text": "Es gibt hier eine Tabelle tier, in der alle Tiere stehen, die hier auf meinem Hof leben.",
+          "HTML": "Es gibt hier eine Tabelle <b>tier</b>, in der alle Tiere stehen, die hier auf meinem Hof leben."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Wenn du Schwierigkeiten hast, dann geh' am besten kurz in das Lexikon."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Also gut, dann fangen wir doch gleich an!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ich suche mein Lieblingstier. Wo ist denn meine Berta?",
+          "HTML": "Ich suche mein Lieblingstier. Wo ist denn meine <b>Berta</b>?"
         }
       ],
       "Outro": [
@@ -104,14 +120,14 @@
       ],
       "TableInfo": [
         {
-          "Tabelle": "tiere",
+          "Tabelle": "tier",
           "Spalten": "nummer, name, tierart, wert"
         }
       ],
       "OrderedResult": true,
       "AlterTable": false,
       "ResultQueries": [
-        "select * from tiere order by name"
+        "select * from tier order by name"
       ],
       "Intro": [
         {
@@ -132,8 +148,8 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Zeig mir doch mal bitte alle Tiere, sortiert nach ihrem Namen!",
-          "HTML": "Zeig mir doch mal bitte alle Tiere, <b>sortiert nach ihrem Namen</b>!"
+          "Text": "Zeig'mir doch mal bitte alle Tiere, sortiert nach ihrem Namen!",
+          "HTML": "Zeig'mir doch mal bitte alle Tiere, <b>sortiert nach ihrem Namen</b>!"
         }
       ],
       "Outro": [
@@ -155,8 +171,8 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Die Nummer ist wichtig, damit man das jeweilige Tier genau identifizieren kann. Man nennt das den Primärschlüssel",
-          "HTML": "Die Nummer ist wichtig, damit man das jeweilige Tier genau identifizieren kann. Man nennt das den <b> Primärschlüssel </b>"
+          "Text": "Die Nummer ist wichtig, damit man das jeweilige Tier genau identifizieren kann. Man nennt das den Primärschlüssel.",
+          "HTML": "Die Nummer ist wichtig, damit man das jeweilige Tier genau identifizieren kann. Man nennt das den <b> Primärschlüssel </b>."
         }
       ]
     },
@@ -173,14 +189,14 @@
       ],
       "TableInfo": [
         {
-          "Tabelle": "tiere",
+          "Tabelle": "tier",
           "Spalten": "nummer, name, tierart, wert"
         }
       ],
       "OrderedResult": false,
       "AlterTable": false,
       "ResultQueries": [
-        "select distinct name from tiere"
+        "select distinct name from tier"
       ],
       "Intro": [
         {
@@ -196,8 +212,8 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Zeig mir doch mal bitte alle Namen, die ich meinen Tieren gegeben habe!",
-          "HTML": "Zeig mir doch mal bitte alle <b>Namen</b>, die ich meinen Tieren gegeben habe!"
+          "Text": "Zeig' mir doch mal bitte alle Namen, die ich meinen Tieren gegeben habe!",
+          "HTML": "Zeig' mir doch mal bitte alle <b>Namen</b>, die ich meinen Tieren gegeben habe!"
         },
         {
           "Picture": "Bauer.png",
@@ -228,14 +244,14 @@
       ],
       "TableInfo": [
         {
-          "Tabelle": "tiere",
+          "Tabelle": "tier",
           "Spalten": "nummer, name, tierart, wert"
         }
       ],
       "OrderedResult": true,
       "AlterTable": false,
       "ResultQueries": [
-        "select * from tiere order by length(name) desc, name"
+        "select * from tier order by length(name) desc, name"
       ],
       "Intro": [
         {
@@ -321,14 +337,14 @@
       ],
       "TableInfo": [
         {
-          "Tabelle": "tiere",
+          "Tabelle": "tier",
           "Spalten": "nummer, name, tierart, wert"
         }
       ],
       "OrderedResult": false,
       "AlterTable": false,
       "ResultQueries": [
-        "select * from tiere where name like 'A%'"
+        "select * from tier where name like 'A%'"
       ],
       "Intro": [
         {
@@ -406,14 +422,14 @@
       ],
       "TableInfo": [
         {
-          "Tabelle": "tiere",
+          "Tabelle": "tier",
           "Spalten": "nummer, name, tierart, wert"
         }
       ],
       "OrderedResult": false,
       "AlterTable": false,
       "ResultQueries": [
-        "select * from tiere where wert between 400 and 600"
+        "select * from tier where wert between 400 and 600"
       ],
       "Intro": [
         {
@@ -454,7 +470,7 @@
         {
           "Picture": "Bauer.png",
           "Position": "right",
-          "Text": "Na dann los. Zeig mir bitte einmal alle Tiere, die in Frage kommen!"
+          "Text": "Na dann los. Zeig' mir bitte einmal alle Tiere, die in Frage kommen!"
         },
         {
           "Picture": "Bauer.png",
@@ -498,14 +514,14 @@
       ],
       "TableInfo": [
         {
-          "Tabelle": "tiere",
+          "Tabelle": "tier",
           "Spalten": "nummer, name, tierart, wert"
         }
       ],
       "OrderedResult": false,
       "AlterTable": false,
       "ResultQueries": [
-        "select sum(wert) from tiere"
+        "select sum(wert) from tier"
       ],
       "Intro": [
         {
@@ -526,7 +542,7 @@
         {
           "Picture": "Bauer.png",
           "Position": "right",
-          "Text": "Zeig mir dazu bitte den Gesamtwert deiner Tiere."
+          "Text": "Zeig' mir dazu bitte den Gesamtwert deiner Tiere."
         },
         {
           "Picture": "Bauer.png",
@@ -564,14 +580,14 @@
       ],
       "TableInfo": [
         {
-          "Tabelle": "tiere",
+          "Tabelle": "tier",
           "Spalten": "nummer, name, tierart, wert"
         }
       ],
       "OrderedResult": false,
       "AlterTable": false,
       "ResultQueries": [
-        "select tierart, round(avg(wert), 2) from tiere group by tierart"
+        "select tierart, round(avg(wert), 2) from tier group by tierart"
       ],
       "Intro": [
         {
@@ -666,14 +682,14 @@
       "UnlockedCategories": ["Sub-Queries", "Joins"],
       "TableInfo": [
         {
-          "Tabelle": "tiere",
+          "Tabelle": "tier",
           "Spalten": "nummer, name, tierart, wert"
         }
       ],
       "OrderedResult": false,
       "AlterTable": false,
       "ResultQueries": [
-        "select name, count(*) as Anzahl from tiere group by name having Anzahl > 1"
+        "select name, count(*) as Anzahl from tier group by name having Anzahl > 1"
       ],
       "Intro": [
         {
@@ -757,12 +773,12 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Du solltest den Schmied Samuel aufsuchen. Du findest ihn im Questbuch im Bereich Joins."
+          "Text": "Du solltest den Lagermeister Samuel aufsuchen. Du findest ihn im Questbuch im Bereich Joins."
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Der Schmied kennt sich nämlich gut mit SQL Joins aus. Dort kannst du dir weitere wichtige SQL-Kenntnisse aneignen."
+          "Text": "Der Lagermeister kennt sich nämlich gut mit SQL Joins aus. Dort kannst du dir weitere wichtige SQL-Kenntnisse aneignen."
         },
         {
           "Picture": "Bauer.png",
@@ -772,7 +788,7 @@
         {
           "Picture": "Bauer.png",
           "Position": "right",
-          "Text": "Die Überprüfung ist noch nicht abgeschlossen."
+          "Text": "Die Überprüfung ist aber noch nicht abgeschlossen."
         },
         {
           "Picture": "Bauer.png",
@@ -806,25 +822,25 @@
     {
       "Difficulty": 1,
       "Title": "Der Prüfer",
-      "Description": "Der Prüfer von Manfred's Hof setzt seine Überprüfungen mit deiner Hilfe fort. In diesem Bereich lernst du wichtige Themen bezüglich Sub-Queries. Wenn du in dieser Kategorie und bei den Joins (Schmied) mindestens 7 Aufgaben gelöst hast, kannst du dich dem Entführer der Prinzessin stellen.",
+      "Description": "Der Prüfer von Manfred's Hof setzt seine Überprüfungen mit deiner Hilfe fort. In diesem Bereich lernst du wichtige Themen bezüglich Sub-Queries. Wenn du in dieser Kategorie und bei den Joins (Lagermeister) jeweils mindestens 7 Aufgaben gelöst hast, kannst du dich dem Entführer der Prinzessin stellen.",
       "Task": "Finde alle Infos über alle Tiere mit dem Besitzer 'Jacky' 'Sparrow'!",
       "Hint": "Verwende eine Sub-Query, um die id des Besitzers zu finden.",
       "UnlockedKeywords": [],
       "TableInfo": [
         {
-          "Tabelle": "tiere",
+          "Tabelle": "tier",
           "Spalten": "nummer, name, tierart, wert, besitzer_id"
         },
         {
           "Tabelle": "besitzer",
-          "Spalten": "id, vorname, nachname, alter, geschlecht"
+          "Spalten": "id, vorname, nachname, geschlecht"
         }
       ],
       "OrderedResult": false,
       "AlterTable": false,
       "NeededKeywords": ["SELECT", "SELECT"],
       "ResultQueries": [
-        "select * from tiere where besitzer_id = (select id from besitzer where vorname = 'Jacky' and nachname = 'Sparrow')"
+        "select * from tier where besitzer_id = (select id from besitzer where vorname = 'Jacky' and nachname = 'Sparrow')"
       ],
       "Intro": [
         {
@@ -856,19 +872,19 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Die Besitzer haben eine eindeutige id (Primärschlüssel), einen vornamen, nachnamen, ein alter und ein geschlecht",
-          "HTML": "Die Besitzer haben eine eindeutige <b> id </b> (Primärschlüssel), einen <b> vornamen </b>, <b> nachnamen </b>, ein <b> alter </b> und ein <b> geschlecht </b>"
+          "Text": "Die Besitzer haben eine eindeutige id (Primärschlüssel), einen vornamen, nachnamen und ein geschlecht.",
+          "HTML": "Die Besitzer haben eine eindeutige <b> id </b> (Primärschlüssel), einen <b> vornamen </b>, <b> nachnamen </b> und ein <b> geschlecht </b>."
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Ich habe dir dazu die Tabelle tiere mit einer entsprechenden besitzer_id ergänzt.",
-          "HTML": "Ich habe dir dazu die Tabelle <b> tiere </b> mit einer entsprechenden <b> besitzer_id </b> ergänzt."
+          "Text": "Ich habe dir zusätzlich die Tabelle tier mit einer entsprechenden besitzer_id ergänzt.",
+          "HTML": "Ich habe dir zusätzlich die Tabelle <b> tier </b> mit einer entsprechenden <b> besitzer_id </b> ergänzt."
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Die besitzer_id der tabelle tiere entspricht dabei der jeweiligen id in der tabelle besitzer."
+          "Text": "Die besitzer_id der tabelle tier entspricht dabei der jeweiligen id in der tabelle besitzer."
         },
         {
           "Picture": "Bauer.png",
@@ -906,19 +922,19 @@
       "UnlockedKeywords": [],
       "TableInfo": [
         {
-          "Tabelle": "tiere",
+          "Tabelle": "tier",
           "Spalten": "nummer, name, tierart, wert, besitzer_id"
         },
         {
           "Tabelle": "besitzer",
-          "Spalten": "id, vorname, nachname, alter, geschlecht"
+          "Spalten": "id, vorname, nachname, geschlecht"
         }
       ],
       "OrderedResult": true,
       "AlterTable": false,
       "NeededKeywords": ["SELECT", "SELECT"],
       "ResultQueries": [
-        "select * from tiere where wert > (select avg(wert) from tiere) order by wert"
+        "select * from tier where wert > (select avg(wert) from tier) order by wert"
       ],
       "Intro": [
         {
@@ -972,19 +988,19 @@
       "UnlockedKeywords": [],
       "TableInfo": [
         {
-          "Tabelle": "tiere",
+          "Tabelle": "tier",
           "Spalten": "nummer, name, tierart, wert, besitzer_id"
         },
         {
           "Tabelle": "besitzer",
-          "Spalten": "id, vorname, nachname, alter, geschlecht"
+          "Spalten": "id, vorname, nachname, geschlecht"
         }
       ],
       "OrderedResult": false,
       "AlterTable": false,
       "NeededKeywords": ["SELECT", "SELECT"],
       "ResultQueries": [
-        "select * from besitzer where id in (select besitzer_id from tiere)"
+        "select * from besitzer where id in (select besitzer_id from tier)"
       ],
       "Intro": [
         {
@@ -1025,7 +1041,7 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Bitte zeig mir doch einmal alle Besitzer, die auch wirklich ein Tier besitzen."
+          "Text": "Bitte Zeig' mir doch einmal alle Besitzer, die auch wirklich ein Tier besitzen."
         }
       ],
       "Outro": [
@@ -1052,12 +1068,12 @@
       "UnlockedKeywords": [],
       "TableInfo": [
         {
-          "Tabelle": "tiere",
+          "Tabelle": "tier",
           "Spalten": "nummer, name, tierart, wert, besitzer_id"
         },
         {
           "Tabelle": "besitzer",
-          "Spalten": "id, vorname, nachname, alter, geschlecht"
+          "Spalten": "id, vorname, nachname, geschlecht"
         }
       ],
       "OrderedResult": false,
@@ -1129,19 +1145,19 @@
       "UnlockedKeywords": [],
       "TableInfo": [
         {
-          "Tabelle": "tiere",
+          "Tabelle": "tier",
           "Spalten": "nummer, name, tierart, wert, besitzer_id"
         },
         {
           "Tabelle": "besitzer",
-          "Spalten": "id, vorname, nachname, alter, geschlecht"
+          "Spalten": "id, vorname, nachname, geschlecht"
         }
       ],
       "OrderedResult": false,
       "AlterTable": false,
       "NeededKeywords": ["SELECT", "SELECT"],
       "ResultQueries": [
-        "select * from tiere where wert > (select wert from tiere where nummer = (select max(nummer) from tiere))"
+        "select * from tier where wert > (select wert from tier where nummer = (select max(nummer) from tier))"
       ],
       "Intro": [
         {
@@ -1190,19 +1206,19 @@
       "UnlockedKeywords": [],
       "TableInfo": [
         {
-          "Tabelle": "tiere",
+          "Tabelle": "tier",
           "Spalten": "nummer, name, tierart, wert, besitzer_id"
         },
         {
           "Tabelle": "besitzer",
-          "Spalten": "id, vorname, nachname, alter, geschlecht"
+          "Spalten": "id, vorname, nachname, geschlecht"
         }
       ],
       "OrderedResult": false,
       "AlterTable": false,
       "NeededKeywords": ["SELECT", "SELECT"],
       "ResultQueries": [
-        "select * from tiere where name in (select name from tiere group by name having count(name) > 1)"
+        "select * from tier where name in (select name from tier group by name having count(name) > 1)"
       ],
       "Intro": [
         {
@@ -1238,7 +1254,7 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Zeig mir bitte noch einmal alle Tiere, deren Namen mehrmals vorkommen."
+          "Text": "Zeig' mir bitte noch einmal alle Tiere, deren Namen mehrmals vorkommen."
         },
         {
           "Picture": "Bauer.png",
@@ -1270,19 +1286,19 @@
       "UnlockedKeywords": [],
       "TableInfo": [
         {
-          "Tabelle": "tiere",
+          "Tabelle": "tier",
           "Spalten": "nummer, name, tierart, wert, besitzer_id"
         },
         {
           "Tabelle": "besitzer",
-          "Spalten": "id, vorname, nachname, alter, geschlecht"
+          "Spalten": "id, vorname, nachname, geschlecht"
         }
       ],
       "OrderedResult": false,
       "AlterTable": false,
       "NeededKeywords": ["SELECT", "SELECT"],
       "ResultQueries": [
-        "select * from tiere where wert = (select max(wert) from tiere) or wert = (select min(wert) from tiere)"
+        "select * from tier where wert = (select max(wert) from tier) or wert = (select min(wert) from tier)"
       ],
       "Intro": [
         {
@@ -1298,8 +1314,8 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Zeig mir also bitte die Einträge der Tiere mit dem größten und dem kleinsten Wert.",
-          "HTML": "Zeig mir also bitte die Einträge der Tiere mit dem <b> größten </b> und dem <b> kleinsten </b> Wert."
+          "Text": "Zeig' mir also bitte die Einträge der Tiere mit dem größten und dem kleinsten Wert.",
+          "HTML": "Zeig' mir also bitte die Einträge der Tiere mit dem <b> größten </b> und dem <b> kleinsten </b> Wert."
         }
       ],
       "Outro": [
@@ -1319,6 +1335,92 @@
 
     {
       "Difficulty": 2,
+      "Title": "Einteilungen",
+      "Description": "Die nächste Aufgabe des Prüfers steht bevor. Diesmal gilt es, gewisse Einteilungen vorzunehmen.",
+      "Task": "Finde die Anzahl an Tierbesitzern pro Geschlecht! Gib jeweils das Geschlecht und die Anzahl an Besitzern mit diesem Geschlecht aus.",
+      "Hint": "Verwende eine Sub-Query, um die besitzer_id zu finden.",
+      "UnlockedKeywords": [],
+      "TableInfo": [
+        {
+          "Tabelle": "tier",
+          "Spalten": "nummer, name, tierart, wert, besitzer_id"
+        },
+        {
+          "Tabelle": "besitzer",
+          "Spalten": "id, vorname, nachname, geschlecht"
+        }
+      ],
+      "OrderedResult": false,
+      "AlterTable": false,
+      "NeededKeywords": ["SELECT", "SELECT"],
+      "ResultQueries": [
+        "select geschlecht, count(*) from besitzer where id in (select besitzer_id from tier) group by geschlecht"
+      ],
+      "Intro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Da bist du ja wieder, username!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Es kam eine Eilmeldung des Königs herein. Es handelt sich dabei um ein kürzlich beschlossenes Gesetz."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Was das wohl sein mag..."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Keine Sorge. Wir prüfen zunächst, ob der Hof das Gesetz erfüllt."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Das Gesetz besagt:"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Es muss mindestens drei weibliche Tierbesitzer pro Hof geben."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Nun gut. Dann zeig' mir doch einfach mal, wie viele Tierbesitzer es pro Geschlecht gibt!",
+          "HTML": "Nun gut. Dann zeig' mir doch einfach mal, <b>wie viele Tierbesitzer</b> es <b>pro Geschlecht</b> gibt!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "So so... Drei weibliche Besitzer brauchen wir also."
+        }
+      ],
+      "Outro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Oh, wir erfüllen dieses Gesetz bereits!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "In der Tat."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Gute Arbeit!"
+        }
+      ]
+    },
+
+
+    {
+      "Difficulty": 2,
       "Title": "Lange Namen",
       "Description": "Der Prüfer stellt eine weitere Frage. Kannst du auch diese beantworten?",
       "Task": "Finde alle Infos über alle Tiere des Besitzers mit dem längsten Nachnamen!",
@@ -1326,19 +1428,19 @@
       "UnlockedKeywords": [],
       "TableInfo": [
         {
-          "Tabelle": "tiere",
+          "Tabelle": "tier",
           "Spalten": "nummer, name, tierart, wert, besitzer_id"
         },
         {
           "Tabelle": "besitzer",
-          "Spalten": "id, vorname, nachname, alter, geschlecht"
+          "Spalten": "id, vorname, nachname, geschlecht"
         }
       ],
       "OrderedResult": false,
       "AlterTable": false,
       "NeededKeywords": ["SELECT", "SELECT"],
       "ResultQueries": [
-        "select * from tiere where besitzer_id = (select id from (select id, max(length(nachname)) from besitzer))"
+        "select * from tier where besitzer_id = (select id from (select id, max(length(nachname)) from besitzer))"
       ],
       "Intro": [
         {
@@ -1386,12 +1488,741 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Wenn du noch nicht beim Schmied warst, dann solltest du ihn noch besuchen."
+          "Text": "Wenn du noch nicht beim Lagermeister warst, dann solltest du ihn noch besuchen."
         }
       ]
     }
+  ],
 
 
+
+
+
+
+
+
+
+
+
+  "Joins": [
+    {
+      "Difficulty": 1,
+      "Title": "Der Lagermeister",
+      "Description": "Mit dem Hinweis des Bauern Manfred begibst du dich also zum Lagermeister Samuel. Der Lagermeister hat Kontakt zu vielen veschiedenen Personen im ganzen Land und hat daher bestimmt den ein oder anderen Tipp für dich, was deine SQL-Kenntnisse und das Finden der Prinzessin angeht. Hier lernst du wichtige Dinge über Joins. Wenn du in dieser Kategorie und bei den Sub-Queries (Prüfer) jeweils mindestens 7 Aufgaben gelöst hast, kannst du dich dem Entführer der Prinzessin stellen.",
+      "Task": "Erstelle eine Liste der Ausrüstung mit den jeweiligen Besitzern! Gib Typ und Name der Waffe, sowie Vorname und Nachname des Besitzers aus.",
+      "Hint": "Verwende einen Join der Tabellen ausruestung und besitzer.",
+      "UnlockedKeywords": ["LEFT JOIN"],
+      "TableInfo": [
+        {
+          "Tabelle": "ausruestung",
+          "Spalten": "id, typ, name, besitzer_id"
+        },
+        {
+          "Tabelle": "besitzer",
+          "Spalten": "id, vorname, nachname, geschlecht"
+        }
+      ],
+      "OrderedResult": false,
+      "AlterTable": false,
+      "NeededKeywords": ["JOIN"],
+      "ResultQueries": [
+        "select typ, name, vorname, nachname from ausruestung a join besitzer b on a.besitzer_id = b.id"
+      ],
+      "Intro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Guten Tag! Ich bin der Lagermeister Samuel. Wie kann ich helfen?"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Oh die Prinzessin suchst du also ja?"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Und du musst die SQL-Aufgaben des Entführers lösen, um sie zu befreien, sobald du sie gefunden hast?"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Das klingt ja sehr aufregend! Nur leider hab ich hier viel zu tun und habe keine Zeit, um dir zu helfen."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Hm, aber du kannst mir bei der Lagerverwaltung helfen und im Gegenzug helfe ich dir bei der Suche."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Hier muss nämlich wieder Ordnung geschaffen werden, was die Ausrüstung meiner Kunden angeht."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Also gut, wenn du Übung in SQL-Joins brauchst, dann bist du hier sowieso richtig!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Hier geht es nämlich um Ausrüstung und deren Besitzer. Dazu müssen die beiden Tabellen zusammengeführt werden, damit wir zu passenden Ergebnissen kommen."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Dann zeig' mir doch mal was du kannst! Aber zuerst ein paar Infos für dich:"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Es gibt eine tabelle besitzer, in der die jeweiligen Besitzer aufgeführt sind.",
+          "HTML": "Es gibt eine tabelle <b> besitzer </b>, in der die jeweiligen Besitzer aufgeführt sind."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Die Besitzer haben eine eindeutige id (Primärschlüssel), einen vornamen, nachnamen und ein geschlecht.",
+          "HTML": "Die Besitzer haben eine eindeutige <b> id </b> (Primärschlüssel), einen <b> vornamen </b>, <b> nachnamen </b> und ein <b> geschlecht </b>."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Dann gibt es noch die Tabelle ausruestung, in der ein paar Ausrüstungsgegenstände sind, die den Besitzern gehören.",
+          "HTML": "Dann gibt es noch die Tabelle <b>ausruestung</b>, in der ein paar Ausrüstungsgegenstände sind, die den Besitzern gehören."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Die Ausrüstung hat jeweils eine eindeutige id (Primärschlüssel), einen typ, einen namen und eine besitzer_id.",
+          "HTML": "Die Ausrüstung hat jeweils eine eindeutige <b>id</b> (Primärschlüssel), einen <b>typ</b>, einen <b>namen</b> und eine <b>besitzer_id</b>."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Die besitzer_id (Fremdschlüssel) der tabelle ausruestung entspricht dabei der jeweiligen id in der tabelle besitzer.",
+          "HTML": "Die <b>besitzer_id</b> (Fremdschlüssel) der tabelle <b>ausruestung</b> entspricht dabei der jeweiligen <b>id</b> in der tabelle <b>besitzer</b>."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "So. Mal sehen ob du das schaffst:"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ich brauche eine vollständige Liste der Ausrüstung und deren Besitzer!"
+        }
+      ],
+      "Outro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Gar nicht mal schlecht."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Wie dir sicher aufgefallen ist, verwalte ich nur äußerst exquisite Ausrüstung."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Außerdem hat nicht jeder aus der Tabelle besitzer eine Ausrüstung. Die Liste der Besitzer ist irgendeine alte Liste des Königs."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Naja jedenfalls helfe ich dir beim SQL Training und wenn du genügend Aufgaben erledigt hast, dann sehen wir weiter."
+        }
+      ]
+    },
+
+
+    {
+      "Difficulty": 2,
+      "Title": "Zu den Waffen",
+      "Description": "Der Lagermeister hat dir also auch Hilfe beim SQL-Training und der Suche nach der Prinzessin versprochen. Natürlich musst du dafür zuerst ein paar Dinge für ihn erledigen.",
+      "Task": "Erstelle eine Liste der Schwerter mit den jeweiligen Besitzern. Gib den Typ der Waffe und den Vor- und Nachnamen des Besitzers aus.",
+      "Hint": "Verwende einen Join der Tabellen ausruestung und besitzer.",
+      "UnlockedKeywords": [],
+      "TableInfo": [
+        {
+          "Tabelle": "ausruestung",
+          "Spalten": "id, typ, name, besitzer_id"
+        },
+        {
+          "Tabelle": "besitzer",
+          "Spalten": "id, vorname, nachname, geschlecht"
+        }
+      ],
+      "OrderedResult": false,
+      "AlterTable": false,
+      "NeededKeywords": ["JOIN"],
+      "ResultQueries": [
+        "select typ, vorname, nachname from ausruestung a join besitzer b on a.besitzer_id = b.id where typ = 'Schwert'"
+      ],
+      "Intro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Hallo username."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Es gibt etwas dringendes zu erledigen:"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Für den kommenden Krieg des Königs werden alle Schwertkämpfer einberufen."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ich weiß, dass es unter meinen Kunden auch ein paar fähige Kämpfer gibt, bei denen ich mich jetzt melden muss."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Hier kommst du ins Spiel:"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Zeig' mir doch mal eine Liste mit den Kämpfern, die ein Schwert ihr Eigen nennen!"
+        }
+      ],
+      "Outro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Hm das sind ja nur zwei..."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Aber in Ordnung. Danke für die Hilfe."
+        }
+      ]
+    },
+
+
+    {
+      "Difficulty": 2,
+      "Title": "Verdachtsfälle",
+      "Description": "Eine weitere Aufgabe des Lagermeisters erwartet dich. Er hat noch so einiges zu erledigen.",
+      "Task": "Finde alle Infos über die Ausrüstung von 'Froduard' 'Beutlin'!",
+      "Hint": "Verwende einen Join der Tabellen ausruestung und besitzer. Gib alle Spalten von Tabelle ausruestung aus.",
+      "UnlockedKeywords": [],
+      "TableInfo": [
+        {
+          "Tabelle": "ausruestung",
+          "Spalten": "id, typ, name, besitzer_id"
+        },
+        {
+          "Tabelle": "besitzer",
+          "Spalten": "id, vorname, nachname, geschlecht"
+        }
+      ],
+      "OrderedResult": false,
+      "AlterTable": false,
+      "NeededKeywords": ["JOIN"],
+      "ResultQueries": [
+        "select typ, vorname, nachname from ausruestung a join besitzer b on a.besitzer_id = b.id where typ = 'Schwert'"
+      ],
+      "Intro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ich habe einen Hinweis über einen meiner Kunden bekommen."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ein 'Froduard' 'Beutlin' soll verdächtige Ausrüstung besitzen."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ich kann nicht riskieren, dass in es in meiner Lagerverwaltung dubiose Gegenstände gibt."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ich muss mir also die Gegenstände des Verdächtigen einmal kurz ansehen."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Zeig' mir doch mal, was dieser 'Froduard' 'Beutlin' alles besitzt!",
+          "HTML": "Zeig' mir doch mal, was dieser <b>'Froduard' 'Beutlin'</b> alles besitzt!"
+        }
+      ],
+      "Outro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Hm da scheint nichts Ungewögnliches zu sein..."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Aber was ist das für ein Ring? Der sieht aber schön aus."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ehh danke für deine Hilfe, username. Deine Aufgabe hier ist erledigt."
+        }
+      ]
+    },
+
+
+
+    {
+      "Difficulty": 2,
+      "Title": "Eigenartige Namen",
+      "Description": "Die nächste Aufgabe des Lagermeisters behandelt die Namen der Ausrüstungsgegenstände. Kannst du ihm bei der Suche helfen?",
+      "Task": "Finde die Anzahl der Besitzer, die Ausrüstung mit einem 'e' im Namen haben! Gib nur die Anzahl aus.",
+      "Hint": "Verwende einen Join der Tabellen ausruestung und besitzer und verwende LIKE.",
+      "UnlockedKeywords": [],
+      "TableInfo": [
+        {
+          "Tabelle": "ausruestung",
+          "Spalten": "id, typ, name, besitzer_id"
+        },
+        {
+          "Tabelle": "besitzer",
+          "Spalten": "id, vorname, nachname, geschlecht"
+        }
+      ],
+      "OrderedResult": false,
+      "AlterTable": false,
+      "NeededKeywords": ["JOIN"],
+      "ResultQueries": [
+        "select count(distinct b.id) from ausruestung a join besitzer b on a.besitzer_id = b.id where name like '%e%'"
+      ],
+      "Intro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Wie du sicher schon bemerkt hast, hat so ziemlich jede Ausrüstung einen eigenen Namen."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Wie soll man als Lagermeister denn hier noch den Durchblick haben?"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Und dann muss ich für meinen Lagerbericht auch noch so seltsame Details beantworten."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Dazu muss ich wissen, wie viele Besitzer eine Ausrüstung mit einem 'e' im Namen besitzen.",
+          "HTML": "Dazu muss ich wissen, wie viele Besitzer eine Ausrüstung mit einem <b>'e'</b> im Namen besitzen."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Kannst du dich darum kümmern?"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Aber denk daran, jeden Besitzer nur einmal zu zählen!"
+        }
+      ],
+      "Outro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Das sieht gut aus!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Danke für die Hilfe."
+        }
+      ]
+    },
+
+
+
+    {
+      "Difficulty": 2,
+      "Title": "Die Gechlechterfrage",
+      "Description": "Der Lagermeister hat eine weitere Aufgabe für dich. Wenn du ihm ausreichend geholfen hast, kann er dich vielleicht zur Prinzessin führen.",
+      "Task": "Finde die Anzahl an Ausrüstungsbesitzern pro Geschlecht! Gib jeweils Geschlecht und die Anzahl der Besitzer aus.",
+      "Hint": "Verwende einen Join der Tabellen ausruestung und besitzer mit geeigneter Gruppierung.",
+      "UnlockedKeywords": [],
+      "TableInfo": [
+        {
+          "Tabelle": "ausruestung",
+          "Spalten": "id, typ, name, besitzer_id"
+        },
+        {
+          "Tabelle": "besitzer",
+          "Spalten": "id, vorname, nachname, geschlecht"
+        }
+      ],
+      "OrderedResult": false,
+      "AlterTable": false,
+      "NeededKeywords": ["JOIN"],
+      "ResultQueries": [
+        "select geschlecht, count(*) from ausruestung a join besitzer b on a.besitzer_id = b.id group by geschlecht"
+      ],
+      "Intro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ah username, gut, dass du hier bist!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Es wurde neulich ein neues Gesetz vom König verabschiedet."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Dabei geht es um den Besitz von Ausrüstung."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Es steht geschrieben:"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Es muss mindestens drei weibliche Ausrüstungsbesitzer pro Lagerverwaltung geben."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Haben wir das erfüllt?"
+        }
+      ],
+      "Outro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ah ja sehr gut."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Dann hat ja alles seine Ordnung."
+        }
+      ]
+    },
+
+
+    {
+      "Difficulty": 2,
+      "Title": "Wie mein Name an der Tür",
+      "Description": "In der nächsten Aufgabe des Lagermeisters geht es um die Gesamtlängen der Name. Kannst du die Aufgabe lösen?",
+      "Task": "Finde alle Vor- und Nachnamen der Ausrüstungsbesitzer, sowie die Gesamtlänge aller Namen ihrer Gegenstände! Sortiere absteigend nach der Gesamtlänge.",
+      "Hint": "Verwende einen Join der Tabellen ausruestung und besitzer mit geeigneter Gruppierung. Summiere die Längen der Ausrüstungsnamen.",
+      "UnlockedKeywords": [],
+      "TableInfo": [
+        {
+          "Tabelle": "ausruestung",
+          "Spalten": "id, typ, name, besitzer_id"
+        },
+        {
+          "Tabelle": "besitzer",
+          "Spalten": "id, vorname, nachname, geschlecht"
+        }
+      ],
+      "OrderedResult": true,
+      "AlterTable": false,
+      "NeededKeywords": ["JOIN"],
+      "ResultQueries": [
+        "select vorname, nachname, sum(length(name)) as summe from ausruestung a join besitzer b on a.besitzer_id = b.id group by b.id order by summe desc"
+      ],
+      "Intro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "So, wollen wir doch mal sehen, was du noch so drauf hast."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Hier gibt es noch eine spezielle Frage für meinen Lagerbericht."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ich bin gespannt, ob du das hinbekommst."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Was ist die Gesamtlänge der Namen der Ausrüstungen pro Besitzer?"
+        }
+      ],
+      "Outro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Sehr gut! Du hast den Dreh raus."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Erledige 7 meiner Aufgaben und ich helfe dir weiter."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Warst du übrigens schon beim Prüfer?"
+        }
+      ]
+    },
+
+
+    {
+      "Difficulty": 2,
+      "Title": "Besuch",
+      "Description": "Der Lagermeister bekommt Besuch. Worum es wohl diesmal geht?",
+      "Task": "Finde den Vornahmen, Nachnamen und die Anzahl an Ausrüstung pro Person in der Besitzerliste!",
+      "Hint": "Verwende einen Left Join der Tabellen besitzer und ausruestung mit geeigneter Gruppierung.",
+      "UnlockedKeywords": [],
+      "TableInfo": [
+        {
+          "Tabelle": "ausruestung",
+          "Spalten": "id, typ, name, besitzer_id"
+        },
+        {
+          "Tabelle": "besitzer",
+          "Spalten": "id, vorname, nachname, geschlecht"
+        }
+      ],
+      "OrderedResult": false,
+      "AlterTable": false,
+      "NeededKeywords": ["JOIN"],
+      "ResultQueries": [
+        "select vorname, nachname, count(a.id) as anzahl from besitzer b left join ausruestung a on a.besitzer_id = b.id group by b.id"
+      ],
+      "Intro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Guten Tag!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Hehehe!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Oh wir haben einen Kunden!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Hehehe, ich komme im Auftrag des ähh... Köings. Ja genau des Königs. Das ist die Wahrheit."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Er muss wissen, wie viel Ausrüstung jede Person aus der Besitzerliste hat."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ok, ich verstehe. username, kannst du das übernehmen?"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Hehehe, es müssen alle Personen aus der Besitzerliste angezeigt werden, auch diese, die keine Ausrüstung besitzen."
+        }
+      ],
+      "Outro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "So, hier bitte die Liste."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Hehehe, verdammt das ist ja sogar korrekt..."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Ich muss los..."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Hey, Sie haben ihre Liste nicht mitgenommen!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Und schon ist er weg. Was war das denn?"
+        }
+      ]
+    },
+
+
+
+    {
+      "Difficulty": 2,
+      "Title": "Immer diese Namen",
+      "Description": "Eine weitere Aufgabe wartet bereits auf dich. Der Lagermeister wird dir bestimmt bald bei der Suche nach der Prinzessin weiterhelfen.",
+      "Task": "Finde alle Ausrüstungsnamen, die länger als der Nachname ihres Besitzers sind! Gib jeweils den Ausrüstungsnamen und den Nachnamen des Besitzers aus.",
+      "Hint": "Verwende einen Join der Tabellen ausruestung und besitzer.",
+      "UnlockedKeywords": [],
+      "TableInfo": [
+        {
+          "Tabelle": "ausruestung",
+          "Spalten": "id, typ, name, besitzer_id"
+        },
+        {
+          "Tabelle": "besitzer",
+          "Spalten": "id, vorname, nachname, geschlecht"
+        }
+      ],
+      "OrderedResult": false,
+      "AlterTable": false,
+      "NeededKeywords": ["JOIN"],
+      "ResultQueries": [
+        "select name, nachname from ausruestung a join besitzer b on a.besitzer_id = b.id where length(name) > length(nachname)"
+      ],
+      "Intro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "username, es gibt etwas zu tun."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Der nächste Lagerbericht wird bald fällig und ich komme hier nicht weiter."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ich muss wissen, bei welchen Ausrüstungsbesitzern der Ausrüstungsname länger ist als der Nachname des Besitzers."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Kannst du mir dabei helfen?"
+        }
+      ],
+      "Outro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Vielen Dank!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Du bist mir wirklich eine große Hilfe."
+        }
+      ]
+    },
+
+
+    {
+      "Difficulty": 2,
+      "Title": "Listenduplikate",
+      "Description": "Der Lagerverwalter hat eine weitere Aufgabe zu bewältigen.",
+      "Task": "Finde alle Infos über alle Personen aus der tabelle besitzer, deren Vorname mehr als einmal vorkommt!",
+      "Hint": "Verwende einen Join der Tabellen besitzer und besitzer.",
+      "UnlockedKeywords": [],
+      "TableInfo": [
+        {
+          "Tabelle": "ausruestung",
+          "Spalten": "id, typ, name, besitzer_id"
+        },
+        {
+          "Tabelle": "besitzer",
+          "Spalten": "id, vorname, nachname, geschlecht"
+        }
+      ],
+      "OrderedResult": false,
+      "AlterTable": false,
+      "NeededKeywords": ["JOIN"],
+      "ResultQueries": [
+        "select name, nachname from ausruestung a join besitzer b on a.besitzer_id = b.id where length(name) > length(nachname)"
+      ],
+      "Intro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ok, ich habe neulich erneut meine Liste durchgesehen."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Da ist mir aufgefallen, dass es manche Vornamen mehrmals in der Liste gibt."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ich möchte mir das nochmal genauer ansehen."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Meine Kunden schätzen es, wenn ich sie beim Vornamen anspreche und etwas über sie weiß."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Damit ich dort niemanden verwechsle und auch den Überblick habe, muss ich mir alle Personen auf der Besitzerliste nochmal anschauen."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Mich interessieren aber erstmal nur die Personen, deren Vorname mehrmals vorkommt."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ob die Person eine Ausrüstung hat, ist egal. Alle Kunden zählen."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Hilf mir bitte dabei."
+        }
+      ],
+      "Outro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Danke!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Warst du übrigens schon beim Prüfer?"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Wenn du genügend Aufgaben absolviert hast, dann kannst du dich dem Entführer entgegenstellen."
+        }
+      ]
+    }
 
 
 

@@ -61,10 +61,10 @@ def create_app(test_config=None):
         #db.add_completed_quest(g.user['id'], "Selects8")
         #db.add_completed_quest(g.user['id'], "Selects9")
         # user_db.commit()
-        # db.add_user_keywords(g.user['id'], ['DISTINCT', 'LENGTH', 'DESC', 'ASC', 'LIKE', 'BETWEEN',
-        #                                     'AND', 'SUM', 'ASG', 'COUNT', 'GROUP BY', 'ROUND',
-        #                                     'HAVING', 'JOIN', 'INNER JOIN', 'RIGHT JOIN', 'LEFT JOIN',
-        #                                     'CROSS JOIN', 'SEMI JOIN'])
+        db.add_user_keywords(g.user['id'], ['DISTINCT', 'LENGTH', 'DESC', 'ASC', 'LIKE', 'BETWEEN',
+                                            'AND', 'SUM', 'ASG', 'COUNT', 'GROUP BY', 'ROUND',
+                                            'HAVING', 'JOIN', 'INNER JOIN', 'RIGHT JOIN', 'LEFT JOIN',
+                                            'CROSS JOIN', 'SEMI JOIN'])
         # --------------------------------
 
         return render_template('index.html')

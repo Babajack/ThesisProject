@@ -5,10 +5,9 @@ CREATE TABLE user (
   username TEXT UNIQUE NOT NULL,
   password TEXT NOT NULL,
   Selects INTEGER DEFAULT 1,
-  Joins INTEGER DEFAULT 0,
   'Sub-Queries' INTEGER DEFAULT 0,
-  'Mengen-Operationen' INTEGER DEFAULT 0,
+  Joins INTEGER DEFAULT 0,
   'Komplexe Queries' INTEGER DEFAULT 0,
-  Keywords VARCHAR DEFAULT '["SELECT", "FROM", "WHERE"]',
+  Keywords VARCHAR DEFAULT '["SELECT", "FROM", "WHERE", "ON", "INNER"]',
   CompletedQuests VARCHAR DEFAULT '[]'
 );

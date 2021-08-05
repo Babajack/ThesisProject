@@ -59,7 +59,7 @@
     <div id="main-content" class="container-fluid">
         <div class="row justify-content-center">
             <div id="Task" class="col-6 jumbotron p-4 mt-4" style="visibility: hidden">
-                <h4> Aufgabe: {{ quest_data['Task'] }} </h4>
+                <h4> Aufgabe: {{ quest_data['Task']|safe }} </h4>
                 <h6 id="Hint" style="display: none"> Hinweis: {{ quest_data['Hint'] }} </h6>
             </div>
         </div>

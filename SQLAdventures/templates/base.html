@@ -52,9 +52,6 @@
                     <li class="nav-item {% block quests_active %}{% endblock %}">
                         <a class="nav-link" href=" {{ url_for('quests.questbook') }} ">Quests</a>
                     </li>
-                    <li class="nav-item {% block profile_active %}{% endblock %}">
-                        <a class="nav-link" href="#">Profil</a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('auth.logout') }}">Ausloggen</a>
                     </li>

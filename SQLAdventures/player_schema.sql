@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS tiere;
+DROP TABLE IF EXISTS tier;
 
-CREATE TABLE tiere
+CREATE TABLE tier
 (
     nummer  INTEGER PRIMARY KEY AUTOINCREMENT,
     name    TEXT    NOT NULL,
@@ -8,7 +8,7 @@ CREATE TABLE tiere
     wert   INTEGER NOT NULL
 );
 
-INSERT INTO tiere (name, tierart, wert)
+INSERT INTO tier (name, tierart, wert)
 VALUES ('Berta', 'Kuh', 1500),
        ('Emma', 'Huhn', 10),
        ('Tina', 'Huhn', 9),

@@ -12,29 +12,61 @@
 
 
 ideen (subquery):
-- select einträge mit max und min wert
-select * from tierewhere wert = (select max(wert) from tiere) or wert = (select min(wert) from tiere)
+2.6 - select einträge mit max und min wert
+select * from tier where wert = (select max(wert) from tier) or wert = (select min(wert) from tier)
 
-- select einträge wo wert größer ist als der wert des tieres mit der größten nummer
-select * from tiere where wert > (select wert from tiere where nummer = (select max(nummer) from tiere))
+2.4 - select einträge wo wert größer ist als der wert des tieres mit der größten nummer
+select * from tier where wert > (select wert from tier where nummer = (select max(nummer) from tier))
 
-- select alle besitzer die ein tier besitzen -> nicht alle haben eins
-select * from besitzer where id in (select besitzer_id from tiere)
+2.2 - select alle besitzer die ein tier besitzen -> nicht alle haben eins
+select * from besitzer where id in (select besitzer_id from tier)
 
-- select alle besitzer deren vorname länger ist, als der vorname des besitzers mit id = 2
+2.3 - select alle besitzer deren vorname länger ist, als der vorname des besitzers mit id = 2
 select * from besitzer where length(vorname) > (select length(vorname) from besitzer where id = 2)
 
-- select alle tiere (alle infos) deren name mehr als einmal vorkommt
-select * from tiere where name in (select name from (select name, count(name) from tiere group by name having count(name) > 1))
+2.5 - select alle tiere deren name mehr als einmal vorkommt
+select * from tier where name in (select name from tier group by name having count(name) > 1)
 
-- select alle tiere deren wert größer ist als der durchschn. wert
-select * from tiere where wert > (select avg(wert) from tiere)
+2.1 - select alle tiere deren wert größer ist als der durchschn. wert
+select * from tier where wert > (select avg(wert) from tier) order by wert
 
+2.0 - select alle tiere vom besitzer 'Jacky' 'Sparrow'
+select * from tier where besitzer_id = (select id from besitzer where vorname = 'Jacky' and nachname = 'Sparrow')
 
+2.8 - select alle tiere des besitzers mit dem längsten nachnamen
+select * from tier where besitzer_id = (select id from (select id, max(length(nachname)) from besitzer))
 
+2.7 - Finde die Anzahl an Tierbesitzern pro Geschlecht
+select geschlecht, count(*) from besitzer where id in (select besitzer_id from tier) group by geschlecht
 
 
 ideen (joins):
 
+3.0- Erstelle eine List der Ausrüstung mit den jeweiligen Besitzern! Gib Typ und Name der Waffe, sowie Vorname und Nachname des Besitzers aus.
+select typ, name, vorname, nachname from ausruestung a join besitzer b on a.besitzer_id = b.id
+
+3.8- Finde alle Infos über alle Besitzer, deren Vorname mehr als einmal vorkommt!
+select * from besitzer a join besitzer b on a.vorname = b.vorname and not a.id = b.id
+
+3.2- Finde alle Infos über die Ausrüstung von 'Froduard' 'Beutlin'!
+select a.* from ausruestung a join besitzer b on a.besitzer_id = b.id where b.vorname = 'Froduard' and b.nachname = 'Beutlin'
+
+3.6- Finde den Vornahmen, Nachnamen und die Anzahl an Ausrüstung pro Besitzer inklusive der Besitzer ohne Ausrüstung!
+select vorname, nachname, count(a.id) as anzahl from besitzer b left join ausruestung a on a.besitzer_id = b.id group by b.id
+
+3.3- Finde die Anzahl der Besitzer, die Ausrüstung mit einem 'e' im Namen haben!
+select count(distinct b.id) from ausruestung a join besitzer b on a.besitzer_id = b.id where name like '%e%'
+
+3.7- Finde alle Besitzer, die einen kürzeren Nachnamen als den Namen ihrer Ausrüstung haben! Gib Vor- und Nachnamen der Besitzer aus.
+select name, length(name), nachname, length(nachname) from ausruestung a join besitzer b on a.besitzer_id = b.id where length(name) > length(nachname)
+
+3.5- Finde alle Vor- und Nachnamen der Besitzer, sowie die Gesamtlänge aller Namen ihrer Gegenstände! Sortiere nach der Gesamtlänge.
+select vorname, nachname, sum(length(name)) as summe from ausruestung a join besitzer b on a.besitzer_id = b.id group by b.id order by summe desc
+
+3.4- Finde die Anzahl an Ausrüstungsbesitzern pro Geschlecht!
+select geschlecht, count(*) from ausruestung a join besitzer b on a.besitzer_id = b.id group by geschlecht
+
+3.1- Erstelle eine komplette Liste der Ausrüstung mit den jeweiligen Besitzern, die ein Schwert haben!
+select typ, vorname, nachname from ausruestung a join besitzer b on a.besitzer_id = b.id where typ = 'Schwert'
 
 

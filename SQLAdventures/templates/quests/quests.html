@@ -43,8 +43,8 @@
                         $('.card-body button').css('background-color', 'darkgray')
                         $(this).css('background-color', 'lightslategray')
                         $("#Details").show();
-                        $("#DetailsTitle").text('{{ questfile[category][i]['Title'] }}');
-                        $("#DetailsDescription").text('{{ questfile[category][i]['Description'] }}');
+                        $("#DetailsTitle").html('{{ questfile[category][i]['Title'] }}');
+                        $("#DetailsDescription").html('{{ questfile[category][i]['Description'] }}');
                         $("#QuestSubmitButton").val('{{ category + i|string }}')
 
                     });

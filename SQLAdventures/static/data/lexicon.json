@@ -19,7 +19,7 @@
     "Example2": "SELECT land \\nFROM europa \\nORDER BY einwohnerzahl DESC"
   },
   "LENGTH": {
-    "Description": "Mit der <b style='color:#708'>LENGTH</b> Funktion wird die Länge eines Strings berechnet.",
+    "Description": "Mit der <b style='color:#708'>LENGTH</b> Funktion wird die Länge eines Wortes (Strings) berechnet.",
     "Example1": "SELECT land, LENGTH(land) \\nFROM europa",
     "Example2": "SELECT land \\nFROM europa \\nWHERE LENGTH(land) > 10"
   },
@@ -89,7 +89,7 @@
   },
   "SUB-QUERIES": {
     "Description": "Eine Sub-Query (Unterabfrage) ist eine Abfrage in einer Abfrage. Manchmal können Aufgabenstellungen mehrere Abfragen verlangen, weil zum Beispiel zusätzliche Einschränkungen gefordert sind, die in nur einer Abfrage nicht zu bewältigen sind. Sub-Queries müssen immer in Klammern stehen.",
-    "Example1": "SELECT land \\nFROM europa \\nWHERE einwohnerzahl > \\n(SELECT einwohnerzahl \\nFROM europa \\nWHERE land = 'Deutschland') \\n /* Es werden alle Länder Europas ausgegeben, \\nderen Einwohnerzahl größer als die von Deutschland ist. */",
+    "Example1": "SELECT land \\nFROM europa \\nWHERE einwohnerzahl > \\n(SELECT einwohnerzahl \\nFROM europa \\nWHERE land = 'Deutschland') \\n/* Es werden alle Länder Europas ausgegeben, \\nderen Einwohnerzahl größer als die von Deutschland ist. */",
     "Example2": "SELECT land \\nFROM (SELECT * from europa) \\n/* Eine Sub-Query wird hier verwendet, um nur bestimmte Spalten \\naus einer Zwischentabelle zu erhalten */"
   },
   "MIN": {
@@ -102,9 +102,14 @@
     "Example1": "SELECT MAX(einwohnerzahl) \\nFROM erde",
     "Example2": "SELECT land, MAX(einwohnerzahl) \\nFROM erde"
   },
-  "y": {
-    "Description": "Mit dem <b style='color:#708'>HAVING</b> Begriff",
-    "Example1": "SELECT land, ROUND(flaeche) \\nFROM erde",
-    "Example2": "SELECT land, ROUND(flaeche, 2) \\nFROM erde"
+  "JOIN": {
+    "Description": "Mit dem (INNER) <b style='color:#708'>JOIN</b> Begriff können Tabellen miteinander kombiniert werden. Dabei wird mittels <b style='color:#708'>ON</b> eine Bedingung für den Join definiert. Sobald diese Bedingung für zwei Zeilen aus den Tabellen erfüllt ist, werden beide Zeile miteinander kombiniert und bilden eine Zeile der Ergebnistabelle. Beispiel: Eine Tabelle <i>europa</i> (mit allen Ländern Europas) hat eine Spalte <i>land</i> und eine Tabelle <i>währung</i> (eine Zuordnung von Land und Währung) hat auch eine Spalte <i>land</i>. Dann können alle Spalten aus den jeweiligen Tabellen gejoint werden, wo das Land übereinstimmt.",
+    "Example1": "SELECT * \\nFROM europa JOIN währung ON europa.land = währung.land \\n/* Ein JOIN der Tabellen währung und europa \\nbasierend auf dem land. \\n\\nDie Tabellenreferenzierung erfolgt durch \\ntabelle_name.spalte_name*/",
+    "Example2": "SELECT e.land, w.währungscode \\nFROM erde e JOIN währung w ON e.land = w.land \\n/* Die Tabellennamen können auch abgekürzt werden. \\n\\nIm SELECT muss die jeweilige Spalte genau \\nidentifizierbar sein. \\nwürde dort nur 'land' stehen, gibt es einen Fehler, \\ndenn es ist nicht klar, aus welcher Tabelle gelesen werden soll. */"
+  },
+  "LEFT JOIN": {
+    "Description": "Mit dem <b style='color:#708'>LEFT JOIN</b> Begriff können Tabellen miteinander kombiniert werden. Beim <b style='color:#708'>LEFT JOIN</b> wird die Tabelle auf der linken Seite immer kommplett auch in der Ergebnistabelle sein. Die Tabelle auf der rechten Seite wird in der Ergebnistabelle nur dort Einträge haben, wo gejoint werden kann (wenn nicht, dann steh dort NULL). Der <b style='color:#708'>LEFT JOIN</b> ist also nützlich, wenn man beim Join keine Daten einer bestimmten Tabelle in der Ergebnistabelle verlieren will. Im Gegensatz dazu, werden beim einfachen (INNER) <b style='color:#708'>JOIN</b> nur die Zeilen angezeigt, bei denen die festgelegte Bedingung für beide Seiten erfüllt ist.",
+    "Example1": "SELECT * \\nFROM europa LEFT JOIN währung ON europa.land = währung.land \\n/* Wenn hier die Tabelle währung nicht alle Länder aus europa \\nin der Tabelle stehen hätte, dann würden diese fehlenden Länder \\nbeim (INNER) JOIN nicht in der Ergebnistabelle auftauchen. */",
+    "Example2": "SELECT e.land, w.währungscode \\nFROM erde e LEFT JOIN währung w ON e.land = w.land \\n/* Bei fehlendem Eintrag in der Tabelle währung \\nwird bei w.währungscode dann NULL stehen */"
   }
 }

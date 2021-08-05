@@ -1,15 +1,15 @@
-DROP TABLE IF EXISTS tiere;
+DROP TABLE IF EXISTS tier;
 
-CREATE TABLE tiere
+CREATE TABLE tier
 (
-    nummer  INTEGER PRIMARY KEY AUTOINCREMENT,
-    name    TEXT    NOT NULL,
-    tierart TEXT    NOT NULL,
-    wert   INTEGER NOT NULL,
+    nummer      INTEGER PRIMARY KEY AUTOINCREMENT,
+    name        TEXT    NOT NULL,
+    tierart     TEXT    NOT NULL,
+    wert        INTEGER NOT NULL,
     besitzer_id INTEGER NOT NULL
 );
 
-INSERT INTO tiere (name, tierart, wert, besitzer_id)
+INSERT INTO tier (name, tierart, wert, besitzer_id)
 VALUES ('Berta', 'Kuh', 1500, 1),
        ('Emma', 'Huhn', 10, 2),
        ('Tina', 'Huhn', 9, 1),
@@ -33,22 +33,42 @@ DROP TABLE IF EXISTS besitzer;
 
 CREATE TABLE besitzer
 (
-    id  INTEGER PRIMARY KEY AUTOINCREMENT,
+    id         INTEGER PRIMARY KEY AUTOINCREMENT,
     vorname    TEXT    NOT NULL,
-    nachname TEXT    NOT NULL,
-    "alter"   INTEGER NOT NULL,
-    geschlecht TEXT NOT NULL
+    nachname   TEXT    NOT NULL,
+    geschlecht TEXT    NOT NULL
 );
 
-INSERT INTO besitzer (vorname, nachname, "alter", geschlecht)
-VALUES ('Hannes', 'Solo', 25, 'männlich'),
-       ('Jacky', 'Sparrow', 38, 'weiblich'),
-       ('Anna', 'Von Arrendelle', 38, 'weiblich'),
-       ('Froduard', 'Beutlin', 18, 'männlich'),
-       ('Jim', 'Knopfer', 21, 'männlich'),
-       ('Gandalfus', '', 71, 'männlich'),
-       ('Ariel', 'Stark', 18, 'weiblich'),
-       ('Sansaria', 'Stark', 26, 'weiblich'),
-       ('Ariel', '', 28, 'weiblich'),
-       ('Harald', 'Potter', 36, 'männlich'),
-       ('Rocky', 'Balbo', 49, 'männlich');
+INSERT INTO besitzer (vorname, nachname, geschlecht)
+VALUES ('Hannes', 'Solo', 'männlich'),
+       ('Jacky', 'Sparrow', 'weiblich'),
+       ('Anna', 'Von Arrendelle', 'weiblich'),
+       ('Froduard', 'Beutlin', 'männlich'),
+       ('Jim', 'Knopfer', 'männlich'),
+       ('Gandalfus', '', 'männlich'),
+       ('Ariel', 'Stark', 'weiblich'),
+       ('Sansaria', 'Stark', 'weiblich'),
+       ('Ariel', '', 'weiblich'),
+       ('Harald', 'Potter', 'männlich'),
+       ('Rocky', 'Balbo', 'männlich');
+
+
+DROP TABLE IF EXISTS ausruestung;
+
+CREATE TABLE ausruestung
+(
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    typ         TEXT    NOT NULL,
+    name         TEXT    NOT NULL,
+    besitzer_id INTEGER NOT NULL
+);
+
+INSERT INTO ausruestung (typ, name, besitzer_id)
+VALUES ('Pistole', 'Jacky''s Pistole', 2),
+       ('Piratenhut', 'Dreispitz', 2),
+       ('Kettenhemd', 'Mithrilrüstung', 4),
+       ('Schwert', 'Nadel', 7),
+       ('Schwert', 'Stich', 4),
+       ('Ring', 'Der eine Ring', 4),
+       ('Zauberstab', 'Elderstab', 10),
+       ('Boxhandschuhe', '', 11);
