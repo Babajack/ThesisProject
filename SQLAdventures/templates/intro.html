@@ -3,6 +3,8 @@
 
 {% block head %}
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/intro.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='scripts/intro.js') }}"></script>
+    <script type="text/javascript"> loadIntro({{ g.user['username']|tojson }}) </script>
 {% endblock %}
 
 {% block body %}
@@ -13,9 +15,8 @@
                 <h1 class="mt-5" style="color: white">Willkommen bei SQL Adventures!</h1>
             </div>
         </div>
-        <div id="main-row" class="row justify-content-center align-items-center"
-             style="height: calc(100vh - 56px - 48px - 104px)">
-            <div class="col-5 text-center">
+        <div id="main-row" class="row justify-content-center align-items-end">
+            <div class="col-7 text-center">
                 <div class="container">
                     <div class="row align-items-end">
                         <div class="col-8">
@@ -27,7 +28,7 @@
                                  alt="">
                         </div>
                         <div class="col-4 mb-3">
-                            <button id="SQLSubmitButton" name="SQLSubmitButton" type="submit"
+                            <button id="ContinueButton" name="ContinueButton" type="submit"
                                     class="btn"
                                     style="font-size: 30px; font-weight: bold; background-color: #343a40; color: white">
                                 Weiter

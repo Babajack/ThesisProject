@@ -2,7 +2,7 @@
 	position: relative;
 	background: #FFFFFF;
 	border-radius: .4em;
-    font-size: large;
+    font-size: x-large;
 }
 
 .speech-bubble:after {
@@ -25,5 +25,5 @@
 }
 
 #main-row {
-    height: calc(100vh - 56px - 48px - 104px);
+    height: calc(60vh);
 }
