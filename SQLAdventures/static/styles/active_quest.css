@@ -2,7 +2,6 @@
 	position: relative;
 	background: #FFFFFF;
 	border-radius: .4em;
-    font-size: large;
 }
 
 .speech-bubble:after {
@@ -15,7 +14,7 @@
 	border: 28px solid transparent;
 	border-top-color: #FFFFFF;
 	border-bottom: 0;
-	border-left: 0;
+	border-right: 0;
 	margin-left: -14px;
 	margin-bottom: -28px;
 }

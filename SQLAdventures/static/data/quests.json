@@ -838,7 +838,7 @@
       ],
       "OrderedResult": false,
       "AlterTable": false,
-      "NeededKeywords": ["SELECT", "SELECT"],
+      "NeededKeywords": [],
       "ResultQueries": [
         "select * from tier where besitzer_id = (select id from besitzer where vorname = 'Jacky' and nachname = 'Sparrow')"
       ],
@@ -1524,7 +1524,7 @@
       ],
       "OrderedResult": false,
       "AlterTable": false,
-      "NeededKeywords": ["JOIN"],
+      "NeededKeywords": [],
       "ResultQueries": [
         "select typ, name, vorname, nachname from ausruestung a join besitzer b on a.besitzer_id = b.id"
       ],
@@ -1787,7 +1787,7 @@
       "Title": "Eigenartige Namen",
       "Description": "Die nächste Aufgabe des Lagermeisters behandelt die Namen der Ausrüstungsgegenstände. Kannst du ihm bei der Suche helfen?",
       "Task": "Finde die Anzahl der Besitzer, die Ausrüstung mit einem 'e' im Namen haben! Gib nur die Anzahl aus.",
-      "Hint": "Verwende einen Join der Tabellen ausruestung und besitzer und verwende LIKE.",
+      "Hint": "Verwende einen Join der Tabellen ausruestung und besitzer. Du kannst COUNT und DISTINCT kombinieren.",
       "UnlockedKeywords": [],
       "TableInfo": [
         {
@@ -2223,9 +2223,83 @@
         }
       ]
     }
+  ],
 
 
 
 
+
+
+
+
+
+
+
+
+
+  "Komplexe Queries": [
+
+    {
+      "Difficulty": 1,
+      "Title": "Immer diese Namen",
+      "Description": "Eine weitere Aufgabe wartet bereits auf dich. Der Lagermeister wird dir bestimmt bald bei der Suche nach der Prinzessin weiterhelfen.",
+      "Task": "Finde alle Ausrüstungsnamen, die länger als der Nachname ihres Besitzers sind! Gib jeweils den Ausrüstungsnamen und den Nachnamen des Besitzers aus.",
+      "Hint": "Verwende einen Join der Tabellen ausruestung und besitzer.",
+      "UnlockedKeywords": [],
+      "TableInfo": [
+        {
+          "Tabelle": "ausruestung",
+          "Spalten": "id, typ, name, besitzer_id"
+        },
+        {
+          "Tabelle": "besitzer",
+          "Spalten": "id, vorname, nachname, geschlecht"
+        },
+        {
+          "Tabelle": "tier",
+          "Spalten": "nummer, name, tierart, wert, besitzer_id"
+        }
+      ],
+      "OrderedResult": false,
+      "AlterTable": false,
+      "NeededKeywords": [],
+      "ResultQueries": [
+        "select name, nachname from ausruestung a join besitzer b on a.besitzer_id = b.id where length(name) > length(nachname)"
+      ],
+      "Intro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "username, es gibt etwas zu tun."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Der nächste Lagerbericht wird bald fällig und ich komme hier nicht weiter."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Ich muss wissen, bei welchen Ausrüstungsbesitzern der Ausrüstungsname länger ist als der Nachname des Besitzers."
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Kannst du mir dabei helfen?"
+        }
+      ],
+      "Outro": [
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Vielen Dank!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Du bist mir wirklich eine große Hilfe."
+        }
+      ]
+    }
   ]
 }

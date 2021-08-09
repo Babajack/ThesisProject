@@ -50,33 +50,33 @@
   },
   "COUNT": {
     "Description": "Mit der <b style='color:#708'>COUNT</b> Aggregatsfunktion wird die Anzahl der gefundenen Reihen ausgegeben.",
-    "Example1": "SELECT COUNT(land) \\nFROM europa \\nWHERE einwohnerzahl<5000000",
-    "Example2": "SELECT COUNT(*) \\nFROM europa"
+    "Example1": "SELECT COUNT(land) AS Anzahl \\nFROM europa \\nWHERE einwohnerzahl<5000000",
+    "Example2": "SELECT COUNT(*) AS Anzahl \\nFROM europa"
   },
   "AVG": {
     "Description": "Mit der <b style='color:#708'>AVG</b> Aggregatsfunktion wird der Durchschnittswert der angegebenen numerischen Spalte ausgegeben.",
-    "Example1": "SELECT AVG(einwohnerzahl) \\nFROM europa \\nWHERE land LIKE '%land'",
-    "Example2": "SELECT AVG(einwohnerzahl) \\nFROM europa"
+    "Example1": "SELECT AVG(einwohnerzahl) AS avg_einwohner \\nFROM europa \\nWHERE land LIKE '%land'",
+    "Example2": "SELECT AVG(einwohnerzahl) AS avg_einwohner  \\nFROM europa"
   },
   "SUM": {
     "Description": "Mit der <b style='color:#708'>SUM</b> Aggregatsfunktion wird die Summe der angegebenen numerischen Spalte ausgegeben.",
-    "Example1": "SELECT SUM(einwohnerzahl) \\nFROM europa \\nWHERE land LIKE '%land'",
-    "Example2": "SELECT SUM(einwohnerzahl) \\nFROM europa"
+    "Example1": "SELECT SUM(einwohnerzahl) AS Summe \\nFROM europa \\nWHERE land LIKE '%land'",
+    "Example2": "SELECT SUM(einwohnerzahl) AS Summe \\nFROM europa"
   },
   "GROUP BY": {
     "Description": "Mit dem <b style='color:#708'>GROUP BY</b> Begriff werden Reihen nach einer gewählten Spalte gruppiert. <b style='color:#708'>GROUP BY</b> wird dabei meistens in Kombination mit einer Aggregatsfunktion wie z.B. <b style='color:#708'>COUNT</b> benutzt, um hier eine Anzahl pro Gruppierung auszudrücken wie beispielsweise die Anzahl der Länder pro Kontinent.",
-    "Example1": "SELECT kontinent, COUNT(land) \\nFROM erde \\nGROUP BY kontinent \\nORDER BY kontinent",
-    "Example2": "SELECT kontinent, SUM(einwohnerzahl) \\nFROM erde \\nGROUP BY kontinent"
+    "Example1": "SELECT kontinent, COUNT(land) AS Anzahl_Länder \\nFROM erde \\nGROUP BY kontinent \\nORDER BY kontinent",
+    "Example2": "SELECT kontinent, SUM(einwohnerzahl) AS Summe_Einwohnerzahl \\nFROM erde \\nGROUP BY kontinent"
   },
   "ROUND": {
     "Description": "Mit der <b style='color:#708'>ROUND</b> Funktion können Werte gerundet werden. Dabei kann angegeben werden, auf wie viele Nachkommastellen gerundet werden soll. Standartmäßig wird auf 0 Nachkommastellen gerundet.",
-    "Example1": "SELECT land, ROUND(flaeche) \\nFROM erde",
-    "Example2": "SELECT land, ROUND(flaeche, 2) \\nFROM erde"
+    "Example1": "SELECT land, ROUND(flaeche) AS fläche \\nFROM erde",
+    "Example2": "SELECT land, ROUND(flaeche, 2) AS fläche \\nFROM erde"
   },
   "HAVING": {
     "Description": "Mit dem <b style='color:#708'>HAVING</b> Begriff können Daten nach einer Aggregation und Gruppierung nochmal gefiltert werden. <b style='color:#708'>HAVING</b> verhält sich dabei ähnlich wie eine <b style='color:#708'>WHERE</b> Klausel.",
-    "Example1": "SELECT kontinent, COUNT(land) \\nFROM erde \\nGROUP BY kontinent \\nHAVING COUNT(land) < 15 \\nORDER BY kontinent",
-    "Example2": "SELECT kontinent, SUM(einwohnerzahl) \\nFROM erde \\nGROUP BY kontinent \\nHAVING SUM(einwohnerzahl) > 2000000000"
+    "Example1": "SELECT kontinent, COUNT(land) AS Anzahl_Länder \\nFROM erde \\nGROUP BY kontinent \\nHAVING COUNT(land) < 15 \\nORDER BY kontinent",
+    "Example2": "SELECT kontinent, SUM(einwohnerzahl) AS Summe_Länder \\nFROM erde \\nGROUP BY kontinent \\nHAVING SUM(einwohnerzahl) > 2000000000"
   },
   "AS": {
     "Description": "Mit dem <b style='color:#708'>AS</b> Begriff können den Zeilen temporär neue Namen gegeben werden. <b style='color:#708'>AS</b> wird meistens verwendet, damit die Ergebnistabelle mit eventuell unleserlichen Spalten (z.B. durch Funktionen) übersichtlicher wird.",
@@ -103,7 +103,7 @@
     "Example2": "SELECT land, MAX(einwohnerzahl) \\nFROM erde"
   },
   "JOIN": {
-    "Description": "Mit dem (INNER) <b style='color:#708'>JOIN</b> Begriff können Tabellen miteinander kombiniert werden. Dabei wird mittels <b style='color:#708'>ON</b> eine Bedingung für den Join definiert. Sobald diese Bedingung für zwei Zeilen aus den Tabellen erfüllt ist, werden beide Zeile miteinander kombiniert und bilden eine Zeile der Ergebnistabelle. Beispiel: Eine Tabelle <i>europa</i> (mit allen Ländern Europas) hat eine Spalte <i>land</i> und eine Tabelle <i>währung</i> (eine Zuordnung von Land und Währung) hat auch eine Spalte <i>land</i>. Dann können alle Spalten aus den jeweiligen Tabellen gejoint werden, wo das Land übereinstimmt.",
+    "Description": "Mit dem (INNER) <b style='color:#708'>JOIN</b> Begriff können Tabellen miteinander kombiniert werden. Dabei wird mittels <b style='color:#708'>ON</b> eine Bedingung für den Join definiert. Sobald diese Bedingung für zwei Zeilen aus den Tabellen erfüllt ist, werden beide Zeile miteinander kombiniert und bilden eine Zeile der Ergebnistabelle. Beispiel: Eine Tabelle <i>europa</i> (mit allen Ländern Europas) hat eine Spalte <i>land</i> und eine Tabelle <i>währung</i> (eine Zuordnung von Land und Währung) hat auch eine Spalte <i>land</i>. Dann können alle Spalten aus den jeweiligen Tabellen gejoint werden, wo das Land übereinstimmt. Gibt man keine Bedingung mittels <b style='color:#708'>ON</b> as, dann werden alle Zeilen miteinander kombiniert.",
     "Example1": "SELECT * \\nFROM europa JOIN währung ON europa.land = währung.land \\n/* Ein JOIN der Tabellen währung und europa \\nbasierend auf dem land. \\n\\nDie Tabellenreferenzierung erfolgt durch \\ntabelle_name.spalte_name*/",
     "Example2": "SELECT e.land, w.währungscode \\nFROM erde e JOIN währung w ON e.land = w.land \\n/* Die Tabellennamen können auch abgekürzt werden. \\n\\nIm SELECT muss die jeweilige Spalte genau \\nidentifizierbar sein. \\nwürde dort nur 'land' stehen, gibt es einen Fehler, \\ndenn es ist nicht klar, aus welcher Tabelle gelesen werden soll. */"
   },
@@ -111,5 +111,10 @@
     "Description": "Mit dem <b style='color:#708'>LEFT JOIN</b> Begriff können Tabellen miteinander kombiniert werden. Beim <b style='color:#708'>LEFT JOIN</b> wird die Tabelle auf der linken Seite immer kommplett auch in der Ergebnistabelle sein. Die Tabelle auf der rechten Seite wird in der Ergebnistabelle nur dort Einträge haben, wo gejoint werden kann (wenn nicht, dann steh dort NULL). Der <b style='color:#708'>LEFT JOIN</b> ist also nützlich, wenn man beim Join keine Daten einer bestimmten Tabelle in der Ergebnistabelle verlieren will. Im Gegensatz dazu, werden beim einfachen (INNER) <b style='color:#708'>JOIN</b> nur die Zeilen angezeigt, bei denen die festgelegte Bedingung für beide Seiten erfüllt ist.",
     "Example1": "SELECT * \\nFROM europa LEFT JOIN währung ON europa.land = währung.land \\n/* Wenn hier die Tabelle währung nicht alle Länder aus europa \\nin der Tabelle stehen hätte, dann würden diese fehlenden Länder \\nbeim (INNER) JOIN nicht in der Ergebnistabelle auftauchen. */",
     "Example2": "SELECT e.land, w.währungscode \\nFROM erde e LEFT JOIN währung w ON e.land = w.land \\n/* Bei fehlendem Eintrag in der Tabelle währung \\nwird bei w.währungscode dann NULL stehen */"
+  },
+  "WEITERE TIPPS": {
+    "Description": "Joins und Subqueries lassen sich beliebig miteinander kombinieren. Eine Kombination ist besonders nützlich, wenn zum Beispiel Zwischenergebnisse berechnet und dann zusammengeführt werden sollen.",
+    "Example1": "SELECT * FROM \\n(SELECT land, SUM(einwohnerzahl) AS einw_2000 \\nFROM europa2000 GROUP BY land) AS tabelle1 \\nJOIN \\n(SELECT land, SUM(einwohnerzahl) AS einw_2020 \\nFROM europa2020 GROUP BY land) AS tabelle2 \\nON tabelle1.land = tabelle2.land",
+    "Example2": "/* \\nIn der nebenstehenden Query gibt es zwei Tabellen \\n(europa2020 und europa2000), welche Daten vom Jahr 2020 und 2000 enthalten. \\nZiel ist es, die Einwohnerzahlen pro Land zu vergleichen. \\nDazu werden die Zwischenergebnisse berechnet und dann gejoint. \\nDie Zwischenergebnisse haben dabei jeweils den Namen \\ntabelle1 und tabelle2 erhalten, damit man sie später referenzieren kann, \\num die Join Bedingung festzulegen. \\n*/"
   }
 }

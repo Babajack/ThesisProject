@@ -66,9 +66,12 @@ CREATE TABLE ausruestung
 INSERT INTO ausruestung (typ, name, besitzer_id)
 VALUES ('Pistole', 'Jacky''s Pistole', 2),
        ('Piratenhut', 'Dreispitz', 2),
+       ('Lokomotive', 'Emma', 5),
        ('Kettenhemd', 'Mithrilrüstung', 4),
        ('Schwert', 'Nadel', 7),
        ('Schwert', 'Stich', 4),
+       ('Anstecker', 'Stern', 5),
        ('Ring', 'Der eine Ring', 4),
        ('Zauberstab', 'Elderstab', 10),
-       ('Boxhandschuhe', '', 11);
+       ('Boxhandschuhe', '', 11),
+       ('Pistole', 'Laserpistole', 1);

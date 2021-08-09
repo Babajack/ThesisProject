@@ -67,17 +67,6 @@ def validate_query():
     #     if keyword.upper() not in db.get_user_keywords(user_id):
     #         return jsonify({'Error': '<b style="color:#708">' + keyword + '</b>' + ' ist noch nicht freigeschaltet!'})
 
-    # check for needed keywords
-    if 'NeededKeywords' in quest_data:
-        for neededKeyword in quest_data['NeededKeywords']:
-            if neededKeyword.upper() in keywords:
-                keywords.remove(neededKeyword)
-            else:
-                if quest_data['NeededKeywords'] == ['SELECT', 'SELECT']:
-                    return jsonify({'Error': 'Für diese Aufgabe musst du eine Sub-Query verwenden!'})
-                return jsonify({'Error': 'Für diese Aufgabe musst du ' + ' und '.join(
-                    quest_data['NeededKeywords']) + ' verwenden!'})
-
     # validate sql
     import sqlite3
     try:
@@ -91,6 +80,22 @@ def validate_query():
     except Exception as err:
         # TODO maybe wrap error
         return jsonify({'Error': str(err)})
+
+    # check for needed Keywords
+    if 'NeededKeywords' in quest_data:
+        # check if quest needs join or sub-query -> final part
+        if quest_data['NeededKeywords'] == ['SELECT', 'SELECT', 'JOIN']:
+            if keywords.count('SELECT') < 2 or 'JOIN' not in keywords:
+                return jsonify({'Error': 'Für diese Aufgabe musst du eine Sub-Query oder einen Join verwenden!'})
+
+        for neededKeyword in quest_data['NeededKeywords']:
+            if neededKeyword.upper() in keywords:
+                keywords.remove(neededKeyword)
+            else:
+                if quest_data['NeededKeywords'] == ['SELECT', 'SELECT']:
+                    return jsonify({'Error': 'Für diese Aufgabe musst du eine Sub-Query verwenden!'})
+                return jsonify({'Error': 'Für diese Aufgabe musst du ' + ' und '.join(
+                    quest_data['NeededKeywords']) + ' verwenden!'})
 
     # check for correct result
     if quest_data is not None:
