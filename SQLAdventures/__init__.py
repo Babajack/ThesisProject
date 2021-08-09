@@ -1,9 +1,8 @@
 import os
-from flask import Flask, render_template, g, url_for, request
+from flask import Flask, render_template, g, url_for, request, redirect
 
 
 def create_app(test_config=None):
-
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
     player_db_path = app.instance_path + "\\players\\"
@@ -45,6 +44,11 @@ def create_app(test_config=None):
     @app.route('/')
     @auth.login_required
     def index():
+        return redirect(url_for('quests.questbook'))
+
+    @app.route('/intro')
+    @auth.login_required
+    def intro():
 
         # -- set user stats for testing --
         user_db = db.get_user_db()
@@ -61,7 +65,7 @@ def create_app(test_config=None):
                                             'CROSS JOIN', 'SEMI JOIN', 'WEITERE TIPPS'])
         # --------------------------------
 
-        return render_template('index.html')
+        return render_template('intro.html')
 
     from SQLAdventures import lexicon
     app.register_blueprint(lexicon.bp)

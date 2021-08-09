@@ -47,7 +47,7 @@ def register():
             # create new database file for new player
             init_player_db(user['username'])
 
-            return redirect(url_for('index'))
+            return redirect(url_for('intro'))
 
     return render_template('auth/register.html', error=error)
 
@@ -69,7 +69,7 @@ def login():
         if error is None:
             session.clear()
             session['user_id'] = user['id']
-            return redirect(url_for('index'))
+            return redirect(url_for('quests.questbook'))
 
         flash(error)
 
@@ -79,7 +79,7 @@ def login():
 @bp.route('/logout')
 def logout():
     session.clear()
-    return redirect(url_for('index'))
+    return redirect(url_for('auth.login'))
 
 
 @bp.before_app_request
