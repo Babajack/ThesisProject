@@ -62,10 +62,10 @@ def validate_query():
 
     # check for valid SQL
 
-    # validate keywords TODO uncomment!!
-    # for keyword in keywords:
-    #     if keyword.upper() not in db.get_user_keywords(user_id):
-    #         return jsonify({'Error': '<b style="color:#708">' + keyword + '</b>' + ' ist noch nicht freigeschaltet!'})
+    # validate keywords
+    for keyword in keywords:
+        if keyword.upper() not in db.get_user_keywords(user_id):
+            return jsonify({'Error': '<b style="color:#708">' + keyword + '</b>' + ' ist noch nicht freigeschaltet!'})
 
     # validate sql
     import sqlite3

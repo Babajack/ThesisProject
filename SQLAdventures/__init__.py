@@ -12,8 +12,8 @@ def create_app(test_config=None):
         PLAYER_DATABASE=player_db_path,
         JSON_SORT_KEYS=False,
         JSON_AS_ASCII=False,
-        USER_CATEGORIES=['Tutorial', 'Selects', 'Joins',
-                         'Sub-Queries', 'Mengen-Operationen', 'Komplexe Queries']
+        USER_CATEGORIES=['Selects', 'Sub-Queries',
+                         'Joins', 'Komplexe Queries']
     )
 
     if test_config is None:
@@ -51,18 +51,18 @@ def create_app(test_config=None):
     def intro():
 
         # -- set user stats for testing --
-        user_db = db.get_user_db()
+        # user_db = db.get_user_db()
         #
-        user_db.execute('update user set Selects = 20 where id = ?', (g.user['id'],))
-        user_db.execute('update user set Joins = 20 where id = ?', (g.user['id'],))
-        user_db.execute('update user set "Sub-Queries" = 20 where id = ?', (g.user['id'],))
-        user_db.execute('update user set "Komplexe Queries" = 20 where id = ?', (g.user['id'],))
-        user_db.commit()
+        # user_db.execute('update user set Selects = 20 where id = ?', (g.user['id'],))
+        # user_db.execute('update user set Joins = 20 where id = ?', (g.user['id'],))
+        # user_db.execute('update user set "Sub-Queries" = 20 where id = ?', (g.user['id'],))
+        # #user_db.execute('update user set "Komplexe Queries" = 20 where id = ?', (g.user['id'],))
         # user_db.commit()
-        db.add_user_keywords(g.user['id'], ['DISTINCT', 'LENGTH', 'DESC', 'ASC', 'LIKE', 'BETWEEN',
-                                            'AND', 'SUM', 'ASG', 'COUNT', 'GROUP BY', 'ROUND',
-                                            'HAVING', 'JOIN', 'INNER JOIN', 'RIGHT JOIN', 'LEFT JOIN',
-                                            'CROSS JOIN', 'SEMI JOIN', 'WEITERE TIPPS'])
+        # # user_db.commit()
+        # db.add_user_keywords(g.user['id'], ['DISTINCT', 'LENGTH', 'DESC', 'ASC', 'LIKE', 'BETWEEN',
+        #                                     'AND', 'SUM', 'ASG', 'COUNT', 'GROUP BY', 'ROUND',
+        #                                     'HAVING', 'JOIN', 'INNER JOIN', 'RIGHT JOIN', 'LEFT JOIN',
+        #                                     'CROSS JOIN', 'SEMI JOIN', 'WEITERE TIPPS'])
         # --------------------------------
 
         return render_template('intro.html')
