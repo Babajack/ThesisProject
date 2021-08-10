@@ -1,4 +1,5 @@
 import json
+import os
 import sqlite3
 from typing import Union
 
@@ -9,6 +10,8 @@ from flask.cli import with_appcontext
 
 # open a connection to the user db
 def get_user_db() -> sqlite3.Connection:
+    if not os.path.exists(os.path.join(current_app.instance_path, 'user_db.sqlite')):
+        init_user_db()
     if 'user_db' not in g:
         g.user_db = sqlite3.connect(
             current_app.config['USER_DATABASE'],
@@ -47,7 +50,11 @@ def close_player_db(e=None):
 
 # init the user db (only used from command line to create the database)
 def init_user_db():
-    db = get_user_db()
+    db = sqlite3.connect(
+            current_app.config['USER_DATABASE'],
+            detect_types=sqlite3.PARSE_DECLTYPES
+        )
+    db.row_factory = sqlite3.Row
 
     with current_app.open_resource('schema.sql') as f:
         db.executescript(f.read().decode('utf8'))

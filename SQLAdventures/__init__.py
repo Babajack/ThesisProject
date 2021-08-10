@@ -4,11 +4,11 @@ from flask import Flask, render_template, g, url_for, request, redirect
 
 def create_app():
     # create and configure the app
-    app = Flask(__name__, instance_relative_config=True)
-    player_db_path = app.instance_path + "\\players\\"
-    app.config.from_mapping(
+    my_app = Flask(__name__, instance_relative_config=True)
+    player_db_path = my_app.instance_path + "\\players\\"
+    my_app.config.from_mapping(
         SECRET_KEY='b\x17p\x0f\x9e\xae\xe4\x81n\xc5&\xd9\xbb \xf0\x81b',
-        USER_DATABASE=os.path.join(app.instance_path, 'user_db.sqlite'),
+        USER_DATABASE=os.path.join(my_app.instance_path, 'user_db.sqlite'),
         PLAYER_DATABASE=player_db_path,
         JSON_SORT_KEYS=False,
         JSON_AS_ASCII=False,
@@ -18,7 +18,7 @@ def create_app():
 
     # ensure the instance folder exists
     try:
-        os.makedirs(app.instance_path)
+        os.makedirs(my_app.instance_path)
     except OSError:
         pass
 
@@ -29,17 +29,17 @@ def create_app():
 
     # init the db
     from SQLAdventures import db
-    db.init_app(app)
+    db.init_app(my_app)
 
     from SQLAdventures import auth
-    app.register_blueprint(auth.bp)
+    my_app.register_blueprint(auth.bp)
 
-    @app.route('/')
+    @my_app.route('/')
     @auth.login_required
     def index():
         return redirect(url_for('quests.questbook'))
 
-    @app.route('/intro')
+    @my_app.route('/intro')
     @auth.login_required
     def intro():
 
@@ -61,12 +61,12 @@ def create_app():
         return render_template('intro.html')
 
     from SQLAdventures import lexicon
-    app.register_blueprint(lexicon.bp)
+    my_app.register_blueprint(lexicon.bp)
 
     from SQLAdventures import quests
-    app.register_blueprint(quests.bp)
+    my_app.register_blueprint(quests.bp)
 
-    return app
+    return my_app
 
 
 app = create_app()
