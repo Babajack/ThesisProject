@@ -53,8 +53,15 @@ function loadIntro(username) {
                     document.getElementById('bubble').innerHTML = text
                     $('#ContinueButton').removeClass('disabled')
                     if (isLastOne) {
-                        // intro is finished -> enable user input
-                        $('#ContinueButton').hide()
+                        $('#ContinueButton').css('background-color', 'green').text('Zum Questbuch').click(function () {
+                            $.ajax({
+                                url: '/quests/questbook',
+                                type: 'GET',
+                                success: function (data) {
+                                    window.location.href = this.url
+                                }
+                            });
+                        })
                     }
                     return
                 }

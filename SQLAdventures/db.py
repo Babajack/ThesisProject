@@ -103,10 +103,14 @@ def get_user_keywords(user_id: int) -> list[str]:
 def add_user_keywords(user_id: int, unlocked_keywords_list: list[str]) -> list[str]:
     current = get_user_keywords(user_id)
     new_keywords = []
-    # example: unlocked_keywords_list = ["INNER JOIN", "LEFT OUTER JOIN"]
+    # example: unlocked_keywords_list = ["JOIN", "LEFT JOIN"]
     for keywords_elem in unlocked_keywords_list:
         if keywords_elem not in current:
             current.append(keywords_elem.upper())
+            if ' ' in keywords_elem:
+                for single_keyword in keywords_elem.split():
+                    if single_keyword not in current:
+                        current.append(single_keyword)
             new_keywords.append(keywords_elem.upper())
     if new_keywords:
         #current.sort()

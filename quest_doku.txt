@@ -1,12 +1,12 @@
-0select * from tiere where name = 'Berta'
-1select * from tiere order by name -> order by desc asc
-2select distinct name from tiere oder by name -> distinct
-3select * from tiere order by length(name) desc, name -> length 
-4select * from tiere where name like 'A%' -> like
-5select * from tiere where wert between 400 and 600 -> between and or not
-6select sum(wert) from tiere -> sum avg count
-7select round(avg(wert), 2) from tiere group by tierart -> group by round
-8select name, count(*) as Anzahl from tiere group by name having Anzahl > 1 -> having
+0 select * from tier where name = 'Berta'
+1 select * from tier order by name -> order by desc asc
+2 select distinct name from tier -> distinct
+3 select * from tier order by length(name) desc, name -> length 
+4 select * from tier where name like 'A%' -> like
+5 select * from tier where wert between 400 and 600 -> between and or not
+6 select sum(wert) from tier -> sum avg count
+7 select tierart, round(avg(wert), 2) from tier group by tierart-> group by round
+8 select name, count(*) as Anzahl from tier group by name having Anzahl > 1 -> having
 
 - delete tier zwischen 400 und 600, update tiername anna, 
 

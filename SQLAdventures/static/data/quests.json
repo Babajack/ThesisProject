@@ -65,7 +65,7 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Wenn alles erledigt ist, sag' ich dir auch wohin die Prinzessin verschwunden ist."
+          "Text": "Wenn alles erledigt ist, sag' ich dir auch, wohin die Prinzessin verschwunden ist."
         },
         {
           "Picture": "Bauer.png",
@@ -172,7 +172,7 @@
           "Picture": "Bauer.png",
           "Position": "left",
           "Text": "Die Nummer ist wichtig, damit man das jeweilige Tier genau identifizieren kann. Man nennt das den Primärschlüssel.",
-          "HTML": "Die Nummer ist wichtig, damit man das jeweilige Tier genau identifizieren kann. Man nennt das den <b> Primärschlüssel </b>."
+          "HTML": "Die Nummer ist wichtig, damit man das jeweilige Tier genau identifizieren kann. Man nennt das den <b>Primärschlüssel</b>."
         }
       ]
     },
@@ -825,7 +825,7 @@
       "Description": "Der Prüfer von Manfred's Hof setzt seine Überprüfungen mit deiner Hilfe fort. In diesem Bereich lernst du wichtige Themen bezüglich Sub-Queries. Wenn du in dieser Kategorie und bei den Joins (Lagermeister) jeweils mindestens 7 Aufgaben gelöst hast, kannst du dich dem Entführer der Prinzessin stellen.",
       "Task": "Finde alle Infos über alle Tiere mit dem Besitzer 'Jacky' 'Sparrow'!",
       "Hint": "Verwende eine Sub-Query, um die id des Besitzers zu finden.",
-      "UnlockedKeywords": [],
+      "UnlockedKeywords": ["IN"],
       "TableInfo": [
         {
           "Tabelle": "tier",
@@ -908,6 +908,11 @@
           "Picture": "Bauer.png",
           "Position": "left",
           "Text": "Wunderbar!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Wenn du mindestens 7 meiner Aufgaben löst und beim Lagermeister warst, werde ich dir bei der Suche nach der Prinzessin helfen."
         }
       ]
     },
@@ -974,6 +979,11 @@
           "Picture": "Bauer.png",
           "Position": "left",
           "Text": "Gute Arbeit!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "left",
+          "Text": "Bis zum nächsten Mal!"
         }
       ]
     },
@@ -2161,7 +2171,7 @@
       "AlterTable": false,
       "NeededKeywords": ["JOIN"],
       "ResultQueries": [
-        "select name, nachname from ausruestung a join besitzer b on a.besitzer_id = b.id where length(name) > length(nachname)"
+        "select * from besitzer a join besitzer b on a.vorname = b.vorname and not a.id = b.id"
       ],
       "Intro": [
         {
