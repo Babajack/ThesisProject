@@ -73,17 +73,17 @@ select typ, vorname, nachname from ausruestung a join besitzer b on a.besitzer_i
 
 ideen (komplex):
 
-- Erstelle eine komplette Liste der Vor- und Nachnamen der Besitzer mit der jeweiligen Anzahl an Ausrüstung und Tieren, die sie besitzen.
+5- Erstelle eine komplette Liste der Vor- und Nachnamen der Besitzer mit der jeweiligen Anzahl an Ausrüstung und Tieren, die sie besitzen.
 select * from (select vorname, nachname, count(a.besitzer_id) as anz_a from besitzer b left join ausruestung a on b.id = a.besitzer_id group by vorname, nachname) t1 join (select vorname, nachname, count(t.besitzer_id) as anz_t from besitzer b left join tier t on b.id = t.besitzer_id group by vorname, nachname) t2 on t1.vorname = t2.vorname and t1.nachname = t2.nachname
 
-- Finde alle Infos über alle Besitzer, die sowohl ein Tier als auch eine Ausrüstung besitzen.
+1- Finde alle Infos über alle Besitzer, die sowohl ein Tier als auch eine Ausrüstung besitzen.
 select * from besitzer where id in (select a.besitzer_id from ausruestung a join tier t on a.besitzer_id = t.besitzer_id)
 
-- Finde alle Infos über alle Besitzer, die entweder ein Schwert, eine Pistole oder ein Huhn haben. Hint: disctinct
+2- Finde alle Infos über alle Besitzer, die entweder ein Schwert, eine Pistole oder ein Huhn haben. Hint: disctinct
 select distinct b.* from besitzer b join ausruestung a on a.besitzer_id = b.id join tier t on b.id = t.besitzer_id where typ = 'Schwert' or typ = 'Pistole' or tierart = 'Huhn'
 
-- Finde die Ausrüstung des Besitzers, der das Tier mit dem höchsten Wert besitzt. Gib Typ und Name der Ausrüstung, sowie Vor- und Nachname des Besitzers aus.
+3- Finde die Ausrüstung des Besitzers, der das Tier mit dem höchsten Wert besitzt. Gib Typ und Name der Ausrüstung, sowie Vor- und Nachname des Besitzers aus.
 select a.typ, a.name, b.vorname, b.nachname from ausruestung a join besitzer b on a.besitzer_id = b.id where besitzer_id = (select besitzer_id from tier where wert = (select max(wert) from tier))
 
-- Finde alle Infos über die Ausrüstung, die dem Besitzer mit dem höchsten Gesamtwert an Tieren gehört
+4- Finde alle Infos über die Ausrüstung, die dem Besitzer mit dem höchsten Gesamtwert an Tieren gehört
 select * from ausruestung where besitzer_id = (select id from (select id, max(summe) from (select id, sum(wert) as summe from besitzer b join tier t on b.id = t.besitzer_id group by id)))
