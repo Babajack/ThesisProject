@@ -67,3 +67,6 @@ def create_app():
     app.register_blueprint(quests.bp)
 
     return app
+
+
+app = create_app()
