@@ -1,1 +1,1 @@
-web: gunicorn SQLAdventures:__init__:create_app
+web: gunicorn SQLAdventures:create_app
