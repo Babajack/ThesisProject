@@ -1955,7 +1955,8 @@
       "AlterTable": false,
       "NeededKeywords": ["JOIN"],
       "ResultQueries": [
-        "select vorname, nachname, sum(length(name)) as summe from ausruestung a join besitzer b on a.besitzer_id = b.id group by b.id order by summe desc"
+        "select vorname, nachname, sum(length(name)) as summe from ausruestung a join besitzer b on a.besitzer_id = b.id group by b.id order by summe desc",
+        "select vorname, nachname, sum(length(name)) as summe from ausruestung a join besitzer b on a.besitzer_id = b.id group by b.vorname order by summe desc"
       ],
       "Intro": [
         {
