@@ -113,7 +113,7 @@
       "Difficulty": 2,
       "Title": "Ein erster Überblick",
       "Description": "Der Bauer Manfred hat noch viele Aufgaben für dich. Was ist es diesmal?",
-      "Task": "Finde alle Infos über alle Tiere sortiert nach ihrem Namen!",
+      "Task": "Finde alle Infos über alle Tiere aufsteigend sortiert nach ihrem Namen!",
       "Hint": "Gib alle Spalten aus. Schau im Lexikon nach, falls du etwas vergessen hast.",
       "UnlockedKeywords": [
         "DISTINCT"
@@ -1741,7 +1741,7 @@
       "AlterTable": false,
       "NeededKeywords": ["JOIN"],
       "ResultQueries": [
-        "select typ, vorname, nachname from ausruestung a join besitzer b on a.besitzer_id = b.id where typ = 'Schwert'"
+        "select a.* from ausruestung a join besitzer b on a.besitzer_id = b.id where b.vorname = 'Froduard' and b.nachname = 'Beutlin'"
       ],
       "Intro": [
         {
