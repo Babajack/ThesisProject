@@ -142,6 +142,7 @@ function loadQuestProcedure(data, username) {
 
                                     // update the screen
                                     $("#response").html(table)
+                                    $("#response-container").css("overflow-y", "scroll")
 
                                     // display if result is correct or not
                                     if (resultData[resultData.length - 1].hasOwnProperty('result')) {
@@ -220,7 +221,7 @@ function loadQuestProcedure(data, username) {
                         $('#SQLSubmitButton').removeClass('disabled')
                         if (isLastOne && !taskFinished) {
                             // intro is finished -> enable user input
-                            $('#Task').css('visibility', 'visible')
+                            $('#Task').css('display', 'block')
                             editor.setOption('placeholder', 'SQL Code hier eintippen...')
                             editor.setOption('readOnly', false)
                             $('#SQLSubmitButton').text('SQL abschicken!')

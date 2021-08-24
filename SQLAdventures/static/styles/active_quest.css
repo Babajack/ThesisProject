@@ -1,44 +1,69 @@
 .speech-bubble {
-	position: relative;
-	background: #FFFFFF;
-	border-radius: .4em;
-	font-size: x-large;
+    position: relative;
+    background: #FFFFFF;
+    border-radius: .4em;
+    font-size: 1.4rem;
 }
 
 .speech-bubble:after {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	width: 0;
-	height: 0;
-	border: 28px solid transparent;
-	border-top-color: #FFFFFF;
-	border-bottom: 0;
-	border-right: 0;
-	margin-left: -14px;
-	margin-bottom: -28px;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 28px solid transparent;
+    border-top-color: #FFFFFF;
+    border-bottom: 0;
+    border-right: 0;
+    margin-left: -14px;
+    margin-bottom: -28px;
 }
 
 .CodeMirror {
-	height: 180px;
+    height: 180px;
 }
 
-.CodeMirror pre.CodeMirror-placeholder { color: #999; }
+.CodeMirror pre.CodeMirror-placeholder {
+    color: #999;
+}
 
 img {
-	/*max-width: 300px !important;*/
+    /*max-width: 300px !important;*/
 }
 
 body {
-	/*padding-bottom: 200px;*/
-	/*height: 100%;*/
+    /*padding-bottom: 200px;*/
+    /*height: 100%;*/
 }
 
-#main-content {
+/*#main-content {
 	height: calc(100vh - 56px - 252px);
 }
 
 #main-row {
 	height: calc(100vh - 56px - 252px - 180px);
+}*/
+
+/*#main-content {
+	height: calc(100vh - 56px);
 }
+
+#main-row {
+	height: calc(100vh - 56px - 252px);
+}
+*/
+
+#response-container {
+    max-height: 50vh;
+    overflow-y: auto;
+}
+
+html, body {
+    height: calc(100vh - 56px);
+}
+
+.flex-fill {
+    flex: 1;
+}
+

@@ -56,45 +56,48 @@
 {% endblock %}
 
 {% block body %}
-    <div id="main-content" class="container-fluid">
-        <div class="row justify-content-center">
-            <div id="Task" class="col-9 col-md-6 jumbotron p-md-4 mt-4" style="visibility: hidden">
-                <h4> Aufgabe: {{ quest_data['Task']|safe }} </h4>
-                <h6 id="Hint" style="display: none"> Hinweis: {{ quest_data['Hint'] }} </h6>
-            </div>
-        </div>
-        <div id="main-row" class="row">
-            <div class="col-md-3 col-6 text-center align-self-end">
-                <div id="bubble-left" class="speech-bubble p-2 mb-3 mx-5" style="display: none">
+    <div id="main-content" class="container-fluid d-flex h-100 flex-column">
+
+        <div id="main-row" class="row flex-fill d-flex justify-content-start justify-content-center">
+            <div class="col-lg-3 col-6 order-1 text-center align-self-end pt-2">
+                <div id="bubble-left" class="speech-bubble p-xl-2 mb-xl-3 mx-xl-5" style="display: none">
                     text-left
                 </div>
                 <img id="image-left" class="img-fluid" src="" style="display: none"
                      alt="">
             </div>
-            <div class="col-md-6 col-12 m-0 p-0" style="height: 100%; overflow-y: auto">
-                <div id="response" style="background: #FFFFFF">
 
+            <div id="Task" class="col-lg-6 col-9 order-lg-2 order-3 mt-4" style="display: none">
+                <div class="jumbotron">
+                    <h4> <b> Aufgabe: {{ quest_data['Task']|safe }} </b> </h4>
+                    <h6 id="Hint" style="display: none"> Hinweis: {{ quest_data['Hint'] }} </h6>
+                </div>
+                <div id="response-container">
+                    <div id="response" style="background: #FFFFFF">
+
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3 col-6 text-center align-self-end">
-                <div id="bubble-right" class="speech-bubble p-2 mb-3 mx-5" style="display: none">
+
+
+            <div class="col-lg-3 col-6 order-lg-3 order-2 text-center align-self-end pt-2">
+                <div id="bubble-right" class="speech-bubble p-xl-2 mb-xl-3 mx-xl-5" style="display: none">
                     text-right
                 </div>
                 <img id="image-right" class="img-fluid" src="" style="display: none"
                      alt="">
             </div>
         </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row justify-content-center">
+
+        <div class="row justify-content-center pt-3">
             <div class="col-6">
                 <div id="feedback" class="jumbotron p-1 m-0"
                      style="visibility: hidden; font-weight: bold; text-align: center"> feedback-text
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-3 mt-auto">
+        <div class="row justify-content-center">
+            <div class="col-lg-3 col-sm-6 col-11 order-lg-1 order-2 mt-auto">
                 <div id="TableInfo" style="background-color: #FFFFFF; display: none">
                     <table class="table table-striped">
                         <thead>
@@ -115,13 +118,13 @@
                     </table>
                 </div>
             </div>
-            <div class="col-6 align-self-end mb-3">
+            <div class="col-lg-6 col-11 order-lg-2 order-1 align-self-end mb-3">
                 <form>
                     <label for="code"></label>
                     <textarea id="code" name="code" placeholder="weiter klicken..."></textarea>
                 </form>
             </div>
-            <div class="col-3 align-self-end mb-3">
+            <div class="col-lg-3 col-sm-6 col-11 order-lg-3 order-2 align-self-end mb-3">
                 <button id="SQLSubmitButton" name="SQLSubmitButton" type="submit"
                         class="btn"
                         style="font-size: 30px; font-weight: bold; background-color: #343a40; color: white">
