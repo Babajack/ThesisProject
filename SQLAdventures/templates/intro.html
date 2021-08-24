@@ -11,32 +11,30 @@
     <!-- Page Content -->
     <div id="main-container" class="container-fluid">
         <div class="row mb-5">
-            <div class="col-lg-12 text-center">
+            <div class="col-12 text-center">
                 <h1 class="mt-5" style="color: white">Willkommen bei SQL Adventures!</h1>
             </div>
         </div>
         <div id="main-row" class="row justify-content-center align-items-end">
-            <div class="col-7 text-center">
-                <div class="container">
-                    <div class="row align-items-end">
-                        <div class="col-8">
-                            <div id="bubble" class="speech-bubble p-2 mb-3 mx-5">
-                                text
-                            </div>
-                            <img id="image" class="img-fluid"
-                                 src="{{ url_for('static', filename='/images/Bauer.png') }}"
-                                 alt="">
-                        </div>
-                        <div class="col-4 mb-3">
-                            <button id="ContinueButton" name="ContinueButton" type="submit"
-                                    class="btn"
-                                    style="font-size: 30px; font-weight: bold; background-color: #343a40; color: white">
-                                Weiter
-                            </button>
-                        </div>
+
+
+                <div class="col-lg-4 col-sm-8 col-12 text-center">
+                    <div id="bubble" class="speech-bubble p-2 mb-3 mx-5">
+                        text
                     </div>
+                    <img id="image" class="img-fluid"
+                         src="{{ url_for('static', filename='/images/Bauer.png') }}"
+                         alt="">
                 </div>
-            </div>
+                <div class="col-lg-2 col-4 mb-3">
+                    <button id="ContinueButton" name="ContinueButton" type="submit"
+                            class="btn"
+                            style="font-size: 30px; font-weight: bold; background-color: #343a40; color: white">
+                        Weiter
+                    </button>
+                </div>
+
+
         </div>
     </div>
 

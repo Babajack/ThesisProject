@@ -58,25 +58,25 @@
 {% block body %}
     <div id="main-content" class="container-fluid">
         <div class="row justify-content-center">
-            <div id="Task" class="col-6 jumbotron p-4 mt-4" style="visibility: hidden">
+            <div id="Task" class="col-9 col-md-6 jumbotron p-md-4 mt-4" style="visibility: hidden">
                 <h4> Aufgabe: {{ quest_data['Task']|safe }} </h4>
                 <h6 id="Hint" style="display: none"> Hinweis: {{ quest_data['Hint'] }} </h6>
             </div>
         </div>
         <div id="main-row" class="row">
-            <div class="col-3 text-center align-self-end">
+            <div class="col-md-3 col-6 text-center align-self-end">
                 <div id="bubble-left" class="speech-bubble p-2 mb-3 mx-5" style="display: none">
                     text-left
                 </div>
                 <img id="image-left" class="img-fluid" src="" style="display: none"
                      alt="">
             </div>
-            <div class="col-6 m-0 p-0" style="height: 100%; overflow-y: auto">
+            <div class="col-md-6 col-12 m-0 p-0" style="height: 100%; overflow-y: auto">
                 <div id="response" style="background: #FFFFFF">
 
                 </div>
             </div>
-            <div class="col-3 text-center align-self-end">
+            <div class="col-md-3 col-6 text-center align-self-end">
                 <div id="bubble-right" class="speech-bubble p-2 mb-3 mx-5" style="display: none">
                     text-right
                 </div>

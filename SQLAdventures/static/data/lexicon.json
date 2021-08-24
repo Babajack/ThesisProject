@@ -15,7 +15,7 @@
   },
   "ORDER BY": {
     "Description": "Mit dem <b style='color:#708'>ORDER BY</b> Begriff können Daten sortiert werden. Mit <b style='color:#708'>ASC</b> wird aufsteigend und mit <b style='color:#708'>DESC</b> absteigend sortiert. Wird die Sortierungsreihenfolge nicht festgelegt, wird aufsteigend sortiert.",
-    "Example1": "SELECT land \\nFROM europa \\nORDER BY einwohnerzahl",
+    "Example1": "SELECT land \\nFROM europa \\nORDER BY einwohnerzahl, land ASC \\n/* sortiere erst nach einwohnerzahl, \\n dann nach land */",
     "Example2": "SELECT land \\nFROM europa \\nORDER BY einwohnerzahl DESC"
   },
   "LENGTH": {

@@ -103,17 +103,17 @@
 {% block body %}
     <div class="container-fluid">
         <div class="row">
-            <div class="col-3" style="max-height: calc(100vh - 56px - 100px)">
+            <div class="col-md-4 col-12" style="max-height: calc(100vh - 56px - 100px)">
                 <h1 class="pt-4" style="text-align: center; color: white"> Lexikon </h1>
                 {{ createLexicon() }}
             </div>
 
 
-            <div id="Details" class="col-9" style="display: none">
+            <div id="Details" class="col-md-8 col-12" style="display: none">
 
                 <h1 class="pt-4" style="text-align: center; color: white; visibility: hidden"> Lexicondetails </h1>
 
-                <div class="row jumbotron mx-5 mt-5 justify-content-center">
+                <div class="row jumbotron mx-1 mt-5 justify-content-center">
                     <h3 id="DetailsTitle" class="col-12" style="text-align: center"> Title </h3>
                     <hr class="col-12"/>
 
@@ -121,11 +121,11 @@
                     <hr class="col-12"/>
 
 
-                    <div class="col-6">
+                    <div class="col-xl-6 col-12">
                         <label for="example1"></label>
                         <textarea id="example1" style="visibility: hidden"></textarea>
                     </div>
-                    <div class="col-6">
+                    <div class="col-xl-6 col-12">
                         <label for="example2"></label>
                         <textarea id="example2" style="visibility: hidden"></textarea>
                     </div>

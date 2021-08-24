@@ -52,12 +52,8 @@
 </nav>
 
 <div class="container" style="height: calc(100vh - 56px);">
-    <div class="row align-items-center h-100">
-        <div class="jumbotron col-4">
-            {% block form %} {% endblock %}
-        </div>
-        <div class="col-1"></div>
-        <div class="col-7">
+    <div class="row align-items-center h-100 p-4">
+        <div class="col-lg-7 col-md-12">
             <div class="row jumbotron">
                 <div class="col-12 mb-4">
                     <h3>Was ist SQL Adventures?</h3>
@@ -67,7 +63,7 @@
                     Löse verschiedene Rätsel und helfe den Bewohnern des Landes, um den Bösewicht zu besiegen! </span>
                 </div>
                 <div class="col-6">
-                    <img class="float-right" src="{% block image_url %}{% endblock %}" alt="">
+                    <img class="img-fluid float-right" src="{% block image_url %}{% endblock %}" alt="">
                 </div>
                 <div class="col-6">
                     <div class="speech-bubble p-2 mb-3 float-left">
@@ -75,6 +71,10 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="jumbotron col-lg-4 col-md-12">
+            {% block form %} {% endblock %}
         </div>
     </div>
 </div>
