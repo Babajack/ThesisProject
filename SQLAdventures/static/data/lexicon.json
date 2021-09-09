@@ -1,120 +1,118 @@
 {
   "SELECT": {
-    "Description": "Mit dem <b style='color:#708'>SELECT</b> Begriff können Daten aus einer Datenbank ausgewählt und angezeigt werden. Dabei muss zuerst festgelegt werden, welche Spalten angezeigt werden sollen. Danach kann mit Hilfe des <b style='color:#708'>FROM</b> Begriffs definiert werden, von welcher Tabelle die Daten gelesen werden sollen. Mit <b style='color:#708'>SELECT</b> * werden alle verfügbaren Spalten angezeigt.",
-    "Example1": "SELECT spalte1, spalte2 \\nFROM tabelle_name",
-    "Example2": "SELECT * \\nFROM tabelle_name"
+    "Description": "Mit dem <b style='color:#708'>SELECT</b> Befehl können Daten aus einer Datenbank ausgewählt und angezeigt werden. Dabei muss zuerst festgelegt werden, welche Spalten angezeigt werden sollen. Danach kann mit Hilfe des <b style='color:#708'>FROM</b> Befehls definiert werden, von welcher Tabelle die Daten gelesen werden sollen. Mit <b style='color:#708'>SELECT</b> * werden alle verfügbaren Spalten angezeigt.",
+    "Example1": "SELECT spalte1, spalte2 \\nFROM tabelle_name\\n/* Es wird spalte1 und spalte2 aus tabelle_name ausgegeben. */",
+    "Example2": "SELECT * \\nFROM tabelle_name\\n/* Es werden alle Spalten von tabelle_name ausgegeben. */"
   },
   "WHERE": {
-    "Description": "Mit dem <b style='color:#708'>WHERE</b> Begriff können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
-    "Example1": "SELECT land \\nFROM europa \\nWHERE einwohnerzahl < 500000",
-    "Example2": "SELECT land \\nFROM europa \\nWHERE land='Deutschland'"
+    "Description": "Mit dem <b style='color:#708'>WHERE</b> Befehl können Daten gefiltert werden. Somit werden z.B. beim <b style='color:#708'>SELECT</b> nur die Reihen ausgegeben, die eine bestimmte Bedingung erfüllen.",
+    "Example1": "SELECT land \\nFROM europa \\nWHERE einwohnerzahl < 5000000\\n/* Es werden nur die Länder Europas ausgegeben, deren Einwohnerzahl kleiner als 5000000 ist. */",
+    "Example2": "SELECT land \\nFROM europa \\nWHERE land='Deutschland'\\n/* Es wird nur Deutschland ausgegeben. */"
   },
   "DISTINCT": {
-    "Description": "Der <b style='color:#708'>SELECT DISTINCT</b> Begriff wird verwendet, um identische Werte nur einmal anzeigen zu lassen. Damit wird erreicht, dass man die unterschiedlichen Werte sieht und somit keine doppelten Einträge hat.",
-    "Example1": "SELECT DISTINCT stadt \\nFROM europa \\nWHERE land='Deutschland'"
+    "Description": "Der <b style='color:#708'>SELECT DISTINCT</b> Befehl wird verwendet, um identische Werte nur einmal anzeigen zu lassen. Damit wird erreicht, dass man die unterschiedlichen Werte sieht und somit keine doppelten Einträge hat.",
+    "Example1": "SELECT DISTINCT stadt_name \\nFROM deutschland\\n/* Jeder stadt_name von Städten in Deutschland wird nur einmal ausgegeben. */"
   },
   "ORDER BY": {
-    "Description": "Mit dem <b style='color:#708'>ORDER BY</b> Begriff können Daten sortiert werden. Mit <b style='color:#708'>ASC</b> wird aufsteigend und mit <b style='color:#708'>DESC</b> absteigend sortiert. Wird die Sortierungsreihenfolge nicht festgelegt, wird aufsteigend sortiert.",
-    "Example1": "SELECT land \\nFROM europa \\nORDER BY einwohnerzahl, land ASC \\n/* sortiere erst nach einwohnerzahl, \\n dann nach land */",
-    "Example2": "SELECT land \\nFROM europa \\nORDER BY einwohnerzahl DESC"
+    "Description": "Mit dem <b style='color:#708'>ORDER BY</b> Befehl können Daten sortiert werden. Mit <b style='color:#708'>ASC</b> wird aufsteigend (ASC = engl. ascending) und mit <b style='color:#708'>DESC</b> absteigend (DESC = engl. descending) sortiert. Wird die Sortierungsreihenfolge nicht festgelegt, wird aufsteigend sortiert.",
+    "Example1": "SELECT land \\nFROM europa \\nORDER BY einwohnerzahl, land ASC\\n/* Sortiere erst aufsteigend nach Einwohnerzahl, dann aufsteigend nach Land. */",
+    "Example2": "SELECT land \\nFROM europa \\nORDER BY einwohnerzahl DESC\\n/* Sortiere absteigend nach Einwohnerzahl. */"
   },
   "LENGTH": {
     "Description": "Mit der <b style='color:#708'>LENGTH</b> Funktion wird die Länge eines Wortes (Strings) berechnet.",
-    "Example1": "SELECT land, LENGTH(land) \\nFROM europa",
-    "Example2": "SELECT land \\nFROM europa \\nWHERE LENGTH(land) > 10"
+    "Example1": "SELECT land, LENGTH(land) \\nFROM europa\\n/* Es werden land und Länge des Landes (Anzahl Buchstaben) ausgegeben. */",
+    "Example2": "SELECT land \\nFROM europa \\nWHERE LENGTH(land) > 10\\n/* Es werden alle Länder ausgegeben, deren Länge (Anzahl der Buchstaben) größer als 10 ist. */"
   },
   "LIKE": {
-    "Description": "Mit dem <b style='color:#708'>LIKE</b> Begriff kann mit einer <b style='color:#708'>WHERE</b> Klausel nach bestimmten Mustern gefiltert werden. Somit werden z.B. nur die Werte ausgegeben, die dieses Muster erfüllen. Als Muster muss ein Wort verwendet werden, wobei ein '<b>%</b>' und/oder ein '<b>_</b>' eingebaut werden kann. Das %-Zeichen steht hierbei für eine beliebig lange Kombination von Buchstaben (inklusive 0 Buchstaben). Das _-Zeichen steht für genau einen beliebigen Buchstaben.",
-    "Example1": "SELECT land \\nFROM europa \\nWHERE land LIKE '%land' \\n/* Es werden alle Länder ausgegeben, die mit -land enden. */",
-    "Example2": "SELECT land \\nFROM europa \\nWHERE land LIKE '___land' \\n/* Es werden alle Länder ausgegeben, \\ndie drei Buchstaben haben und dann auf -land enden. */"
+    "Description": "Mit dem <b style='color:#708'>LIKE</b> Befehl kann mit einer <b style='color:#708'>WHERE</b> Klausel nach bestimmten Mustern gefiltert werden. Somit werden z.B. nur die Werte ausgegeben, die dieses Muster erfüllen. Als Muster muss ein Wort verwendet werden, wobei ein '<b>%</b>' und/oder ein '<b>_</b>' eingebaut werden kann. Das %-Zeichen steht hierbei für eine beliebig lange Kombination von Buchstaben (inklusive 0 Buchstaben). Das _-Zeichen steht für genau einen beliebigen Buchstaben.",
+    "Example1": "SELECT land \\nFROM europa \\nWHERE land LIKE '%land' \\n/* Es werden alle Länder ausgegeben, die auf -land enden. */",
+    "Example2": "SELECT land \\nFROM europa \\nWHERE land LIKE '___land' \\n/* Es werden alle Länder ausgegeben, die drei Buchstaben haben und dann auf -land enden. */"
   },
   "BETWEEN": {
-    "Description": "Mit dem <b style='color:#708'>BETWEEN</b> Begriff werden nur Daten in einem festgelegten Bereich selektiert. Dazu werden Start und Ende des Bereichs gewählt. Dabei sind Start-Wert und End-Wert inklusiv. Alternativ lässt sich <b style='color:#708'>BETWEEN</b> auch durch eine Kombination von >= und <= ausdrücken.",
-    "Example1": "SELECT land \\nFROM europa \\nWHERE einwohnerzahl BETWEEN 1000000 AND 2000000",
-    "Example2": "SELECT land \\nFROM europa \\nWHERE einwohnerzahl >= 1000000 AND einwohnerzahl <= 2000000"
+    "Description": "Mit dem <b style='color:#708'>BETWEEN</b> Befehl werden nur Daten in einem festgelegten Bereich selektiert. Dazu werden Start und Ende des Bereichs gewählt. Dabei sind Start-Wert und End-Wert inklusiv. Alternativ lässt sich <b style='color:#708'>BETWEEN</b> auch durch eine Kombination von >= und <= ausdrücken.",
+    "Example1": "SELECT land \\nFROM europa \\nWHERE einwohnerzahl BETWEEN 1000000 AND 2000000\\n/* Es werden alle Länder ausgegeben, deren Einwohnerzahl zwischen 1000000 und 2000000 liegt (inklusiv). */",
+    "Example2": "SELECT land \\nFROM europa \\nWHERE einwohnerzahl >= 1000000 AND einwohnerzahl <= 2000000\\n/* Es werden alle Länder ausgegeben, deren Einwohnerzahl zwischen 1000000 und 2000000 liegt (inklusiv). */"
   },
   "AND": {
-    "Description": "Der <b style='color:#708'>AND</b> Operator kann in einer <b style='color:#708'>WHERE</b> Klausel verwendet werde, um Bedingungen zu verknüpfen. Hier werden nur die Reihen angezeigt, bei denen alle durch <b style='color:#708'>AND</b> verbundene Bedingungen wahr sind.",
-    "Example1": "SELECT spalte1 \\nFROM tabelle_name \\nWHERE bedingung1 AND bedingung2 AND bedingung3",
-    "Example2": "SELECT * \\nFROM europa \\nWHERE land LIKE '%land' AND einwohnerzahl > 10000000"
+    "Description": "Der <b style='color:#708'>AND</b> Operator kann in einer <b style='color:#708'>WHERE</b> Klausel verwendet werden, um Bedingungen zu verknüpfen. Hier werden nur die Reihen angezeigt, bei denen alle durch <b style='color:#708'>AND</b> verbundene Bedingungen wahr sind.",
+    "Example1": "SELECT spalte1 \\nFROM tabelle_name \\nWHERE bedingung1 AND bedingung2 AND bedingung3\\n/* Daten von spalte1 werden ausgegeben, wenn bedingung1 und bedingung2 und bedingung3 erfüllt ist. */",
+    "Example2": "SELECT land \\nFROM europa \\nWHERE land LIKE '%land' AND einwohnerzahl > 10000000\\n/* Es werden alle Länder ausgegeben, die auf -land enden und deren Einwohnerzahl größer als 10000000 ist. */"
   },
   "OR": {
-    "Description": "Der <b style='color:#708'>OR</b> Operator kann in einer <b style='color:#708'>WHERE</b> Klausel verwendet werde, um Bedingungen zu verknüpfen. Hier werden nur die Reihen angezeigt, bei denen mindestens eine durch <b style='color:#708'>OR</b> verbundene Bedingungen wahr ist.",
-    "Example1": "SELECT spalte1 \\nFROM tabelle_name \\nWHERE bedingung1 OR bedingung2 OR bedingung3",
-    "Example2": "SELECT * \\nFROM europa \\nWHERE land LIKE '%land' OR einwohnerzahl > 10000000"
+    "Description": "Der <b style='color:#708'>OR</b> Operator kann in einer <b style='color:#708'>WHERE</b> Klausel verwendet werden, um Bedingungen zu verknüpfen. Hier werden nur die Reihen angezeigt, bei denen mindestens eine durch <b style='color:#708'>OR</b> verbundene Bedingungen wahr ist.",
+    "Example1": "SELECT spalte1 \\nFROM tabelle_name \\nWHERE bedingung1 OR bedingung2 OR bedingung3\\n/* Daten von spalte1 werden ausgegeben, wenn bedingung1 oder bedingung2 oder bedingung3 erfüllt ist. */",
+    "Example2": "SELECT land \\nFROM europa \\nWHERE land LIKE '%land' OR einwohnerzahl > 10000000\\n/* Es werden alle Länder ausgegeben, die auf -land enden oder deren Einwohnerzahl größer als 10000000 ist. */"
   },
   "NOT": {
-    "Description": "Der <b style='color:#708'>NOT</b> Operator kann in einer <b style='color:#708'>WHERE</b> Klausel verwendet werde, um Bedingungen zu negieren. Hier werden nur die Reihen angezeigt, bei denen die durch <b style='color:#708'>NOT</b> verbundene Bedingungen <b> nicht </b> wahr ist.",
-    "Example1": "SELECT spalte1 \\nFROM tabelle_name \\nWHERE NOT bedingung1",
-    "Example2": "SELECT * \\nFROM europa \\nWHERE land NOT LIKE '%land'"
+    "Description": "Der <b style='color:#708'>NOT</b> Operator kann in einer <b style='color:#708'>WHERE</b> Klausel verwendet werden, um Bedingungen zu negieren. Hier werden nur die Reihen angezeigt, bei denen die durch <b style='color:#708'>NOT</b> verbundene Bedingung <b> nicht </b> wahr ist.",
+    "Example1": "SELECT spalte1 \\nFROM tabelle_name \\nWHERE NOT bedingung1\\n/* Daten von spalte1 werden ausgegeben, wenn bedingung1 nicht erfüllt ist. */",
+    "Example2": "SELECT land \\nFROM europa \\nWHERE land NOT LIKE '%land'\\n/* Es werden alle Länder ausgegeben, die nicht auf -land enden. */"
   },
   "COUNT": {
     "Description": "Mit der <b style='color:#708'>COUNT</b> Aggregatsfunktion wird die Anzahl der gefundenen Reihen ausgegeben.",
-    "Example1": "SELECT COUNT(land) AS Anzahl \\nFROM europa \\nWHERE einwohnerzahl<5000000",
-    "Example2": "SELECT COUNT(*) AS Anzahl \\nFROM europa"
+    "Example1": "SELECT COUNT(land) \\nFROM europa \\nWHERE einwohnerzahl<5000000\\n/* Es wird die Anzahl der Länder ausgegeben, deren Einwohnerzahl kleiner als 5000000 ist. */",
+    "Example2": "SELECT COUNT(*) AS Anzahl \\nFROM europa\\n/* Es wird die Anzahl an Reihen der Tabelle europa ausgegeben. Die Umbenennung in Anzahl dient der besseren Lesbarkeit. */"
   },
   "AVG": {
     "Description": "Mit der <b style='color:#708'>AVG</b> Aggregatsfunktion wird der Durchschnittswert der angegebenen numerischen Spalte ausgegeben.",
-    "Example1": "SELECT AVG(einwohnerzahl) AS avg_einwohner \\nFROM europa \\nWHERE land LIKE '%land'",
-    "Example2": "SELECT AVG(einwohnerzahl) AS avg_einwohner  \\nFROM europa"
+    "Example1": "SELECT AVG(einwohnerzahl) \\nFROM europa \\nWHERE land LIKE '%land'\\n/* Es wird die durchschnittliche Einwohnerzahl der Länder ausgegeben, die mit -land enden. */",
+    "Example2": "SELECT AVG(einwohnerzahl) AS avg_einwohner  \\nFROM europa\\n/* Es wird die durchschnittliche Einwohnerzahl aller Länder ausgegeben. Die Umbenennung in avg_einwohner dient der besseren Lesbarkeit. */"
   },
   "SUM": {
     "Description": "Mit der <b style='color:#708'>SUM</b> Aggregatsfunktion wird die Summe der angegebenen numerischen Spalte ausgegeben.",
-    "Example1": "SELECT SUM(einwohnerzahl) AS Summe \\nFROM europa \\nWHERE land LIKE '%land'",
-    "Example2": "SELECT SUM(einwohnerzahl) AS Summe \\nFROM europa"
+    "Example1": "SELECT SUM(einwohnerzahl) \\nFROM europa \\nWHERE land LIKE '%land'\\n/* Es wird die summierte Einwohnerzahl der Länder ausgegeben, die mit -land enden. */",
+    "Example2": "SELECT SUM(einwohnerzahl) AS Summe \\nFROM europa\\n/* Es wird die summierte Einwohnerzahl aller Länder ausgegeben. Die Umbenennung in Summe dient der besseren Lesbarkeit. */"
   },
   "GROUP BY": {
-    "Description": "Mit dem <b style='color:#708'>GROUP BY</b> Begriff werden Reihen nach einer gewählten Spalte gruppiert. <b style='color:#708'>GROUP BY</b> wird dabei meistens in Kombination mit einer Aggregatsfunktion wie z.B. <b style='color:#708'>COUNT</b> benutzt, um hier eine Anzahl pro Gruppierung auszudrücken wie beispielsweise die Anzahl der Länder pro Kontinent.",
-    "Example1": "SELECT kontinent, COUNT(land) AS Anzahl_Länder \\nFROM erde \\nGROUP BY kontinent \\nORDER BY kontinent",
-    "Example2": "SELECT kontinent, SUM(einwohnerzahl) AS Summe_Einwohnerzahl \\nFROM erde \\nGROUP BY kontinent"
+    "Description": "Mit dem <b style='color:#708'>GROUP BY</b> Befehl werden Reihen nach einer gewählten Spalte gruppiert. <b style='color:#708'>GROUP BY</b> wird dabei meistens in Kombination mit einer Aggregatsfunktion wie z.B. <b style='color:#708'>COUNT</b> benutzt, um hier eine Anzahl pro Gruppierung auszudrücken, wie beispielsweise die Anzahl der Länder pro Kontinent.",
+    "Example1": "SELECT kontinent, COUNT(land) AS Anzahl_Länder \\nFROM erde \\nGROUP BY kontinent \\nORDER BY Anzahl_Länder\\n/* Es werden Kontinent und Anzahl der Länder pro Kontinent ausgegeben. Es wird aufsteigend nach Anzahl der Länder sortiert. */",
+    "Example2": "SELECT kontinent, SUM(einwohnerzahl) AS Summe_Einwohnerzahl \\nFROM erde \\nGROUP BY kontinent\\n/* Es werden Kontinent und Summe der Einwohnerzahlen der Länder pro Kontinent ausgegeben. */"
   },
   "ROUND": {
-    "Description": "Mit der <b style='color:#708'>ROUND</b> Funktion können Werte gerundet werden. Dabei kann angegeben werden, auf wie viele Nachkommastellen gerundet werden soll. Standartmäßig wird auf 0 Nachkommastellen gerundet.",
-    "Example1": "SELECT land, ROUND(flaeche) AS fläche \\nFROM erde",
-    "Example2": "SELECT land, ROUND(flaeche, 2) AS fläche \\nFROM erde"
+    "Description": "Mit der <b style='color:#708'>ROUND</b> Funktion können Werte gerundet werden. Dabei kann angegeben werden, auf wie viele Nachkommastellen gerundet werden soll. Standardmäßig wird auf 0 Nachkommastellen gerundet.",
+    "Example1": "SELECT land, ROUND(flaeche) AS fläche \\nFROM erde\\n/* Es werden Land und dazugehörige Fläche, gerundet auf 0 Nachkommastellen, ausgegeben. */",
+    "Example2": "SELECT land, ROUND(flaeche, 2) AS fläche \\nFROM erde\\n/* Es werden Land und dazugehörige Fläche, gerundet auf 2 Nachkommastellen, ausgegeben. */"
   },
   "HAVING": {
-    "Description": "Mit dem <b style='color:#708'>HAVING</b> Begriff können Daten nach einer Aggregation und Gruppierung nochmal gefiltert werden. <b style='color:#708'>HAVING</b> verhält sich dabei ähnlich wie eine <b style='color:#708'>WHERE</b> Klausel.",
-    "Example1": "SELECT kontinent, COUNT(land) AS Anzahl_Länder \\nFROM erde \\nGROUP BY kontinent \\nHAVING COUNT(land) < 15 \\nORDER BY kontinent",
-    "Example2": "SELECT kontinent, SUM(einwohnerzahl) AS Summe_Länder \\nFROM erde \\nGROUP BY kontinent \\nHAVING SUM(einwohnerzahl) > 2000000000"
+    "Description": "Mit dem <b style='color:#708'>HAVING</b> Befehl können Daten nach einer Aggregation und Gruppierung nochmal gefiltert werden. <b style='color:#708'>HAVING</b> verhält sich dabei ähnlich wie eine <b style='color:#708'>WHERE</b> Klausel.",
+    "Example1": "SELECT kontinent, COUNT(land) AS Anzahl_Länder \\nFROM erde \\nGROUP BY kontinent \\nHAVING COUNT(land) < 15 \\nORDER BY kontinent\\n/* Es werden Kontinent und Anzahl der Länder pro Kontinent ausgegeben, aber nur, wenn sie weniger als 15 Länder haben. Es wird aufsteigend nach Anzahl der Länder sortiert. */",
+    "Example2": "SELECT kontinent, SUM(einwohnerzahl) AS Summe_Länder \\nFROM erde \\nGROUP BY kontinent \\nHAVING SUM(einwohnerzahl) > 2000000000\\n/* Es werden Kontinent und Summe der Einwohnerzahlen pro Kontinent ausgegeben, aber nur, wenn sie mehr als 2000000000 Einwohnerzahlen haben. */"
   },
   "AS": {
-    "Description": "Mit dem <b style='color:#708'>AS</b> Begriff können den Zeilen temporär neue Namen gegeben werden. <b style='color:#708'>AS</b> wird meistens verwendet, damit die Ergebnistabelle mit eventuell unleserlichen Spalten (z.B. durch Funktionen) übersichtlicher wird.",
-    "Example1": "SELECT COUNT(*) AS Anzahl \\nFROM tabelle_name"
+    "Description": "Mit dem <b style='color:#708'>AS</b> Befehl können den Zeilen temporär neue Namen gegeben werden. <b style='color:#708'>AS</b> wird meistens verwendet, damit die Ergebnistabelle mit eventuell unleserlichen Spalten (z.B. durch Funktionen) übersichtlicher wird.",
+    "Example1": "SELECT COUNT(*) AS Anzahl \\nFROM tabelle_name\\n/* Die Spalte COUNT(*) wird mit dem Namen Anzahl ausgegeben. */"
   },
   "IN": {
     "Description": "Mit dem <b style='color:#708'>IN</b> Operator können mehrere Werte als Liste in einer <b style='color:#708'>WHERE</b> Klausel kombiniert werden. Somit können mehrere <b style='color:#708'>OR</b> Verknüpfungen leichter ausgedrückt werden. Außerdem lässt sich <b style='color:#708'>IN</b> auch gut in Sub-Queries verwenden.",
-    "Example1": "SELECT land, einwohnerzahl \\nFROM erde \\nWHERE land IN ('Deutschland', 'Griechenland', 'Spanien')",
-    "Example2": "SELECT * \\nFROM erde \\nWhere land IN \\n(SELECT land FROM europa)"
+    "Example1": "SELECT land, einwohnerzahl \\nFROM erde \\nWHERE land IN ('Deutschland', 'Griechenland', 'Spanien')\\n/* Es werden Deutschland, Griechenland und Spanien, sowie deren Einwohnerzahlen ausgegeben. */",
+    "Example2": "SELECT * \\nFROM erde \\nWhere land IN \\n(SELECT land FROM europa)\\n/* Es werden alle Reihen der Tabelle erde ausgegeben, wenn das entsprechende Land in Europa ist. */"
   },
   "SUB-QUERIES": {
     "Description": "Eine Sub-Query (Unterabfrage) ist eine Abfrage in einer Abfrage. Manchmal können Aufgabenstellungen mehrere Abfragen verlangen, weil zum Beispiel zusätzliche Einschränkungen gefordert sind, die in nur einer Abfrage nicht zu bewältigen sind. Sub-Queries müssen immer in Klammern stehen.",
-    "Example1": "SELECT land \\nFROM europa \\nWHERE einwohnerzahl > \\n(SELECT einwohnerzahl \\nFROM europa \\nWHERE land = 'Deutschland') \\n/* Es werden alle Länder Europas ausgegeben, \\nderen Einwohnerzahl größer als die von Deutschland ist. */",
-    "Example2": "SELECT land \\nFROM (SELECT * from europa) \\n/* Eine Sub-Query wird hier verwendet, um nur bestimmte Spalten \\naus einer Zwischentabelle zu erhalten */"
+    "Example1": "SELECT land \\nFROM europa \\nWHERE einwohnerzahl > \\n(SELECT einwohnerzahl \\nFROM europa \\nWHERE land = 'Deutschland') \\n/* Es werden alle Länder Europas ausgegeben, deren Einwohnerzahl größer als die von Deutschland ist. */",
+    "Example2": "SELECT land \\nFROM (SELECT * from europa) \\n/* Eine Sub-Query wird hier verwendet, um nur bestimmte Spalten aus einer Zwischentabelle zu erhalten. */"
   },
   "MIN": {
     "Description": "Mit der <b style='color:#708'>MIN</b> Aggregatsfunktion wird der kleinste Wert aus der angegebenen Spalte ausgegeben.",
-    "Example1": "SELECT MIN(einwohnerzahl) \\nFROM erde",
-    "Example2": "SELECT land, MIN(einwohnerzahl) \\nFROM erde"
+    "Example1": "SELECT MIN(einwohnerzahl) \\nFROM erde\\n/* Es wird die kleinste Einwohnerzahl der Tabelle erde ausgegeben. */"
   },
   "MAX": {
     "Description": "Mit der <b style='color:#708'>MAX</b> Aggregatsfunktion wird der größte Wert aus der angegebenen Spalte ausgegeben.",
-    "Example1": "SELECT MAX(einwohnerzahl) \\nFROM erde",
-    "Example2": "SELECT land, MAX(einwohnerzahl) \\nFROM erde"
+    "Example1": "SELECT MAX(einwohnerzahl) \\nFROM erde\\n/* Es wird die größte Einwohnerzahl der Tabelle erde ausgegeben. */"
   },
   "JOIN": {
-    "Description": "Mit dem (INNER) <b style='color:#708'>JOIN</b> Begriff können Tabellen miteinander kombiniert werden. Dabei wird mittels <b style='color:#708'>ON</b> eine Bedingung für den Join definiert. Sobald diese Bedingung für zwei Zeilen aus den Tabellen erfüllt ist, werden beide Zeile miteinander kombiniert und bilden eine Zeile der Ergebnistabelle. Beispiel: Eine Tabelle <i>europa</i> (mit allen Ländern Europas) hat eine Spalte <i>land</i> und eine Tabelle <i>währung</i> (eine Zuordnung von Land und Währung) hat auch eine Spalte <i>land</i>. Dann können alle Spalten aus den jeweiligen Tabellen gejoint werden, wo das Land übereinstimmt. Gibt man keine Bedingung mittels <b style='color:#708'>ON</b> as, dann werden alle Zeilen miteinander kombiniert.",
-    "Example1": "SELECT * \\nFROM europa JOIN währung ON europa.land = währung.land \\n/* Ein JOIN der Tabellen währung und europa \\nbasierend auf dem land. \\n\\nDie Tabellenreferenzierung erfolgt durch \\ntabelle_name.spalte_name*/",
-    "Example2": "SELECT e.land, w.währungscode \\nFROM erde e JOIN währung w ON e.land = w.land \\n/* Die Tabellennamen können auch abgekürzt werden. \\n\\nIm SELECT muss die jeweilige Spalte genau \\nidentifizierbar sein. \\nwürde dort nur 'land' stehen, gibt es einen Fehler, \\ndenn es ist nicht klar, aus welcher Tabelle gelesen werden soll. */"
+    "Description": "Mit dem (INNER) <b style='color:#708'>JOIN</b> Befehl können Tabellen miteinander kombiniert werden. Dabei wird mittels <b style='color:#708'>ON</b> eine Bedingung für den Join definiert. Sobald diese Bedingung für zwei Zeilen aus den Tabellen erfüllt ist, werden beide Zeile miteinander kombiniert und bilden eine Zeile der Ergebnistabelle. Beispiel: Eine Tabelle <i>europa</i> (mit allen Ländern Europas) hat eine Spalte <i>land</i> und eine Tabelle <i>währung</i> (eine Zuordnung von Land und Währung) hat auch eine Spalte <i>land</i>. Dann können alle Spalten aus den jeweiligen Tabellen gejoint werden, wo das Land übereinstimmt. Gibt man keine Bedingung mittels <b style='color:#708'>ON</b> as, dann werden alle Zeilen miteinander kombiniert.",
+    "Example1": "SELECT * \\nFROM europa JOIN währung ON europa.land = währung.land \\n/* Ein JOIN der Tabellen währung und europa basierend auf dem land. Die Tabellenreferenzierung erfolgt durch tabelle_name.spalte_name */",
+    "Example2": "SELECT e.land, w.währungscode \\nFROM erde e JOIN währung w ON e.land = w.land \\n/* Die Tabellennamen können auch abgekürzt werden. Im SELECT muss die jeweilige Spalte genau identifizierbar sein. würde dort nur 'land' stehen, gibt es einen Fehler, denn es ist nicht klar, aus welcher Tabelle gelesen werden soll. */"
   },
   "LEFT JOIN": {
-    "Description": "Mit dem <b style='color:#708'>LEFT JOIN</b> Begriff können Tabellen miteinander kombiniert werden. Beim <b style='color:#708'>LEFT JOIN</b> wird die Tabelle auf der linken Seite immer kommplett auch in der Ergebnistabelle sein. Die Tabelle auf der rechten Seite wird in der Ergebnistabelle nur dort Einträge haben, wo gejoint werden kann (wenn nicht, dann steh dort NULL). Der <b style='color:#708'>LEFT JOIN</b> ist also nützlich, wenn man beim Join keine Daten einer bestimmten Tabelle in der Ergebnistabelle verlieren will. Im Gegensatz dazu, werden beim einfachen (INNER) <b style='color:#708'>JOIN</b> nur die Zeilen angezeigt, bei denen die festgelegte Bedingung für beide Seiten erfüllt ist.",
-    "Example1": "SELECT * \\nFROM europa LEFT JOIN währung ON europa.land = währung.land \\n/* Wenn hier die Tabelle währung nicht alle Länder aus europa \\nin der Tabelle stehen hätte, dann würden diese fehlenden Länder \\nbeim (INNER) JOIN nicht in der Ergebnistabelle auftauchen. */",
-    "Example2": "SELECT e.land, w.währungscode \\nFROM erde e LEFT JOIN währung w ON e.land = w.land \\n/* Bei fehlendem Eintrag in der Tabelle währung \\nwird bei w.währungscode dann NULL stehen */"
+    "Description": "Mit dem <b style='color:#708'>LEFT JOIN</b> Befehl können Tabellen miteinander kombiniert werden. Beim <b style='color:#708'>LEFT JOIN</b> wird die Tabelle auf der linken Seite immer komplett auch in der Ergebnistabelle sein. Die Tabelle auf der rechten Seite wird in der Ergebnistabelle nur dort Einträge haben, wo gejoint werden kann (wenn nicht, dann steht dort NULL). Der <b style='color:#708'>LEFT JOIN</b> ist also nützlich, wenn man beim Join keine Daten einer bestimmten Tabelle in der Ergebnistabelle verlieren will. Im Gegensatz dazu, werden beim einfachen (INNER) <b style='color:#708'>JOIN</b> nur die Zeilen angezeigt, bei denen die festgelegte Bedingung für beide Seiten erfüllt ist.",
+    "Example1": "SELECT * \\nFROM europa LEFT JOIN währung ON europa.land = währung.land \\n/* Wenn hier die Tabelle währung nicht alle Länder aus europa in der Tabelle stehen hätte, dann würden diese fehlenden Länder beim (INNER) JOIN nicht in der Ergebnistabelle auftauchen. */",
+    "Example2": "SELECT e.land, w.währungscode \\nFROM erde e LEFT JOIN währung w ON e.land = w.land \\n/* Bei fehlendem Eintrag in der Tabelle währung wird bei w.währungscode dann NULL stehen */"
   },
   "WEITERE TIPPS": {
     "Description": "Joins und Subqueries lassen sich beliebig miteinander kombinieren. Eine Kombination ist besonders nützlich, wenn zum Beispiel Zwischenergebnisse berechnet und dann zusammengeführt werden sollen.",
     "Example1": "SELECT * FROM \\n(SELECT land, SUM(einwohnerzahl) AS einw_2000 \\nFROM europa2000 GROUP BY land) AS tabelle1 \\nJOIN \\n(SELECT land, SUM(einwohnerzahl) AS einw_2020 \\nFROM europa2020 GROUP BY land) AS tabelle2 \\nON tabelle1.land = tabelle2.land",
-    "Example2": "/* \\nIn der nebenstehenden Query gibt es zwei Tabellen \\n(europa2020 und europa2000), welche Daten vom Jahr 2020 und 2000 enthalten. \\nZiel ist es, die Einwohnerzahlen pro Land zu vergleichen. \\nDazu werden die Zwischenergebnisse berechnet und dann gejoint. \\nDie Zwischenergebnisse haben dabei jeweils den Namen \\ntabelle1 und tabelle2 erhalten, damit man sie später referenzieren kann, \\num die Join Bedingung festzulegen. \\n*/"
+    "Example2": "/* In der nebenstehenden Query gibt es zwei Tabellen (europa2020 und europa2000), welche Daten vom Jahr 2020 und 2000 enthalten. Ziel ist es, die Einwohnerzahlen pro Land zu vergleichen. Dazu werden die Zwischenergebnisse berechnet und dann gejoint. Die Zwischenergebnisse haben dabei jeweils den Namen tabelle1 und tabelle2 erhalten, damit man sie später referenzieren kann, um die Join Bedingung festzulegen. */"
   }
 }

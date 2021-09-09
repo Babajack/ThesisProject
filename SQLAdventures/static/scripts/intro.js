@@ -1,8 +1,8 @@
 function loadIntro(username) {
     $(document).ready(function () {
         let introText = ['Hallo username! Klicke auf weiter oder auf mich, um fortzufahren.', 'Ich bin König Alfonso und ich brauche dringend deine Hilfe!', 'Meine geliebte Tochter, die Prinzessin, wurde entführt...',
-            'Du musst sie bitte wiederfinden!', 'Sie wurde von einem bösen SQL Mafioso entführt und ich kann sie nicht finden.',
-            'Dieser Mafioso ist ein echter SQL Rätselmeister und du musst gut vorbereitet sein.', 'Am besten gehst du zuerst zum Bauern Manfred. Du findest ihn oben im Menü unter "Quests".',
+            'Du musst sie bitte wiederfinden!', 'Sie wurde von einem bösen SQL-Mafioso entführt und ich kann sie nicht finden.',
+            'Dieser Mafioso ist ein echter SQL-Rätselmeister und du musst gut vorbereitet sein.', 'Am besten gehst du zuerst zum Bauern Manfred. Du findest ihn oben im Menü unter "Quests".',
             'Wenn du Hilfe brauchst, schau erst einmal im "Lexikon" vorbei.', 'Ich wünsche dir viel Spaß!']
 
         let skipped = false

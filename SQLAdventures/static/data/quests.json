@@ -2,8 +2,8 @@
   "Selects": [
     {
       "Difficulty": 1,
-      "Title": "Ankunft auf dem Bauernhof",
-      "Description": "Der Bauer Manfred lebt schon seit vielen Jahren auf seinem Bauernhof und hat jede Menge zu tun. Bei ihm kannst du deine SQL-Grundlagen verbessern und er kann dir bestimmt bei der Suche nach der Prinzessin weiterhelfen.",
+      "Title": "Ankunft auf dem Bauernhof (1/9)",
+      "Description": "Der Bauer Manfred lebt schon seit vielen Jahren auf seinem Bauernhof und hat dort viel zu tun. Bei ihm kannst du deine SQL-Grundlagen verbessern und er kann dir bestimmt bei der Suche nach der Prinzessin weiterhelfen.",
       "Task": "Finde alle Infos über das Tier mit dem Namen Berta!",
       "Hint": "Gib alle Spalten aus. Schau im Lexikon nach, falls du etwas vergessen hast.",
       "UnlockedKeywords": [
@@ -35,17 +35,17 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Ich hab' gehört du suchst nach der Prinzessin?"
+          "Text": "Ich habe gehört, du suchst nach der Prinzessin?"
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Ich glaub' die ist hier vorbeigekommen."
+          "Text": "Ich glaube, die ist hier vorbeigekommen."
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Hah! Wär' ich etwas jünger, würd' ich glatt mit auf die Suche gehen!"
+          "Text": "Hah! Wäre ich etwas jünger, würde ich glatt mit auf die Suche gehen!"
         },
         {
           "Picture": "Bauer.png",
@@ -55,7 +55,7 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Bevor du gehst, solltest du dich also erst vorbereiten und deine SQL Fähigkeiten verbessern."
+          "Text": "Bevor du gehst, solltest du dich also erst vorbereiten und deine SQL-Fähigkeiten verbessern."
         },
         {
           "Picture": "Bauer.png",
@@ -65,7 +65,7 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Wenn alles erledigt ist, sag' ich dir auch, wohin die Prinzessin verschwunden ist."
+          "Text": "Wenn alles erledigt ist, sage ich dir auch, wohin die Prinzessin verschwunden ist."
         },
         {
           "Picture": "Bauer.png",
@@ -99,7 +99,7 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Ahh da ist sie ja! Danke für deine Hilfe."
+          "Text": "Ahh, da ist sie ja! Danke für deine Hilfe."
         },
         {
           "Picture": "Bauer.png",
@@ -111,7 +111,7 @@
 
     {
       "Difficulty": 2,
-      "Title": "Ein erster Überblick",
+      "Title": "Ein erster Überblick (2/9)",
       "Description": "Der Bauer Manfred hat noch viele Aufgaben für dich. Was ist es diesmal?",
       "Task": "Finde alle Infos über alle Tiere aufsteigend sortiert nach ihrem Namen!",
       "Hint": "Gib alle Spalten aus. Schau im Lexikon nach, falls du etwas vergessen hast.",
@@ -133,7 +133,7 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "So dann lass uns doch mit dem Training beginnen!"
+          "Text": "So, dann lass uns doch mit dem Training beginnen!"
         },
         {
           "Picture": "Bauer.png",
@@ -143,13 +143,13 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Ich hab ein bisschen den Überblick verloren..."
+          "Text": "Ich habe ein bisschen den Überblick verloren..."
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Zeig'mir doch mal bitte alle Tiere, sortiert nach ihrem Namen!",
-          "HTML": "Zeig'mir doch mal bitte alle Tiere, <b>sortiert nach ihrem Namen</b>!"
+          "Text": "Zeig' mir doch mal bitte alle Tiere, sortiert nach ihrem Namen!",
+          "HTML": "Zeig' mir doch mal bitte alle Tiere, <b>sortiert nach ihrem Namen</b>!"
         }
       ],
       "Outro": [
@@ -180,8 +180,8 @@
 
     {
       "Difficulty": 3,
-      "Title": "Zu viele Informationen",
-      "Description": "Manfred zeigt dir weitere wichtige SQL Tricks auf deinem Weg zur Prinzessin.",
+      "Title": "Zu viele Informationen (3/9)",
+      "Description": "Manfred zeigt dir weitere wichtige SQL-Tricks auf deinem Weg zur Prinzessin.",
       "Task": "Finde alle Tiernamen!",
       "Hint": "Gib jeden Namen nur einmal aus.",
       "UnlockedKeywords": [
@@ -207,7 +207,7 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Hm ich glaube, du musst noch ein paar weitere Begriffe kennenlernen, bevor du die Prinzessin finden kannst."
+          "Text": "Hm, ich glaube, du musst noch ein paar weitere SQL-Befehle kennenlernen, bevor du die Prinzessin finden kannst."
         },
         {
           "Picture": "Bauer.png",
@@ -235,8 +235,8 @@
 
     {
       "Difficulty": 4,
-      "Title": "Ein Gast auf dem Hof",
-      "Description": "Manfred gerät in ernsthafte Schwierigkeiten. Kannst du ihm helfen seinen Hof zu retten?",
+      "Title": "Ein Gast auf dem Hof (4/9)",
+      "Description": "Manfred gerät in ernsthafte Schwierigkeiten. Kannst du ihm helfen, seinen Hof zu retten?",
       "Task": "Finde alle Infos über alle Tiere, absteigend sortiert nach der Länge ihres Namens und alphabetisch nach Name!",
       "Hint": "Gib alle Spalten aus. Sortiere erst nach Länge absteigend, dann nach dem Namen.",
       "UnlockedKeywords": [
@@ -265,9 +265,9 @@
           "Text": "Oh? Da ist jemand an der Tür?"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
-          "Text": "Ist das hier der Hof A-38?"
+          "Text": "Ist das hier der Hof mit der Nummer A38?"
         },
         {
           "Picture": "Bauer.png",
@@ -275,17 +275,17 @@
           "Text": "Wie bitte?"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Ist das hier der Hof von Manfred? Ich bin Dieter und muss im Namen des Königs die Höfe überprüfen."
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Ja ich bin Manfred und das ist mein Hof. Was gibt es denn?"
+          "Text": "Ja, ich bin Manfred und das ist mein Hof. Was gibt es denn?"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Ich mache eine komplette Prüfung und schaue, ob Sie den landesweiten Gesetzen des Königs entsprechen!"
         },
@@ -295,31 +295,31 @@
           "Text": "A-Aber hier hat doch alles seine Ordnung."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
-          "Text": "Das werden wir sehen. Bitte zeigen Sie mir zunächst alle Tiere, aber bitte sortieren Sie nach der Länge des Namens. Und alphabetisch sortieren bitte."
+          "Text": "Das werden wir sehen. Bitte zeigen Sie mir zunächst alle Tiere, aber bitte sortieren Sie absteigend nach der Länge des Namens. Und danach alphabetisch sortieren bitte."
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Ich brauche hilfe!"
+          "Text": "Ich brauche deine Hilfe, username!"
         }
       ],
       "Outro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Soso, das sind ja einige Tiere."
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Danke username!"
+          "Text": "Danke, username!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
-          "Text": "Es muss einiges geprüft werden!"
+          "Text": "Es müssen gleich noch weitere Dinge geprüft werden!"
         }
       ]
     },
@@ -328,7 +328,7 @@
 
     {
       "Difficulty": 5,
-      "Title": "Namensprüfungen",
+      "Title": "Namensprüfungen (5/9)",
       "Description": "Die Stuerfahndung ist zu Besuch bei Manfred. Kannst du ihm helfen, damit er alles unbeschadet übersteht?",
       "Task": "Finde alle Infos über alle Tiere, deren Name mit 'A' beginnt!",
       "Hint": "Gib alle Spalten aus. Benutze '%' und schau im Lexikon nach, wenn du etwas nachlesen musst.",
@@ -348,7 +348,7 @@
       ],
       "Intro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "So, es gibt noch ein paar Dinge, die geprüft werden müssen."
         },
@@ -358,12 +358,12 @@
           "Text": "Was denn noch?"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Nur nicht so ungeduldig. Hier muss alles seine Ordnung haben. Und ich prüfe dies."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Im Gesetzbuch des Königs steht, dass jeder Bauernhof nur 4 Tiere mit einem A als Anfangsbuchstaben im Namen haben darf."
         },
@@ -373,7 +373,7 @@
           "Text": "Was ist denn das für ein Gesetz??"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Ich mache die Gesetze nicht. Ich muss mir aber die Tiere einzeln ansehen."
         },
@@ -383,26 +383,26 @@
           "Text": "username, kannst du mir helfen?"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
-          "Text": "Also? Welche Tiere mit A als Anfangsbuchstaben im Namen?"
+          "Text": "Also? Welche Tiere haben ein A als Anfangsbuchstaben im Namen?"
         }
       ],
       "Outro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Oh! Das ist ein Tier zu viel. Das kommt auf meine Liste."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Hier werden wir später ein paar Änderungen vornehmen müssen!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
-          "Text": "Wieso gibt es hier eigentlich so viele Anna's?"
+          "Text": "Wieso gibt es hier eigentlich so viele Annas?"
         },
         {
           "Picture": "Bauer.png",
@@ -413,8 +413,8 @@
     },
     {
       "Difficulty": 6,
-      "Title": "Königliche Abgaben",
-      "Description": "Der Prüfer macht Manfred weiter Probleme. Bei weiteren Verstößen verliert er vielleicht den Hof!",
+      "Title": "Königliche Abgaben (6/9)",
+      "Description": "Der Prüfer macht Manfred weiter Probleme. Bei weiteren Verstößen verliert er im schlimmsten Fall den Hof!",
       "Task": "Finde alle Infos über alle Tiere, deren Wert zwischen 400 und 600 liegt!",
       "Hint": "Gib alle Spalten aus. Schau im Lexikon nach, wenn du etwas nachlesen musst.",
       "UnlockedKeywords": [
@@ -433,12 +433,12 @@
       ],
       "Intro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Also Manfred, wie du sicher weißt, sind auch bald wieder die königlichen Abgaben fällig."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Aufgrund der aktuell wirtschaftlich schlechten Situation mussten die Abgaben erhöht werden."
         },
@@ -448,7 +448,7 @@
           "Text": "Wie bitte?? Wie soll ein einfacher Bauer denn das noch bezahlen?"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Die Gesetze des Königs verlangen die Abgabe eines Tieres, dessen Wert zwischen 400 und 600 Talern liegt."
         },
@@ -458,34 +458,34 @@
           "Text": "Schon wieder so ein Schwachsinn..."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Zweifelst du etwa an der Autorität des Königs?!"
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "N-Nein natürlich nicht!"
+          "Text": "N-Nein, natürlich nicht!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Na dann los. Zeig' mir bitte einmal alle Tiere, die in Frage kommen!"
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "ok lass mich überlegen..."
+          "Text": "OK, lass mich überlegen..."
         }
       ],
       "Outro": [
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Danke username!"
+          "Text": "Danke, username!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Soso, darauf kommen wir dann später zurück. Eins der Tiere muss ich leider mitnehmen."
         },
@@ -495,7 +495,7 @@
           "Text": "Aber bitte nicht Miss Piggy!!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Mal sehen."
         }
@@ -505,7 +505,7 @@
 
     {
       "Difficulty": 7,
-      "Title": "Es geht immer nur ums Geld",
+      "Title": "Es geht immer nur ums Geld (7/9)",
       "Description": "Der Prüfer will noch mehr über die Finanzen des Bauers erfahren. Hoffentlich ist er bald wieder verschwunden, damit die Suche nach der Prinzessin endlich weitergehen kann.",
       "Task": "Finde den Gesamtwert aller Tiere",
       "Hint": "Schau im Lexikon nach, wenn du etwas nachlesen musst.",
@@ -527,20 +527,20 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Ich hoffe wir haben die köngliche Überprüfung bald überstanden..."
+          "Text": "Ich hoffe, wir haben die königliche Überprüfung bald überstanden..."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Ein paar Dinge gilt es noch zu klären."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Ich benötige einen Gesamtüberblick über den Wert deiner Tiere."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Zeig' mir dazu bitte den Gesamtwert deiner Tiere."
         },
@@ -554,10 +554,10 @@
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Danke username!"
+          "Text": "Danke, username!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Interessant. Von wegen armer Bauer..."
         },
@@ -571,7 +571,7 @@
 
     {
       "Difficulty": 8,
-      "Title": "Ein schwieriges Problem",
+      "Title": "Ein schwieriges Problem (8/9)",
       "Description": "Der Prüfer stellt Manfred vor härtere Aufgaben. Kannst du ihm dabei helfen?",
       "Task": "Finde den durchschnittlichen Wert pro Tierart, gerundet nach 2 Nachkommastellen! Gib jeweils die Tierart und den Durchschnittswert aus.",
       "Hint": "Gruppiere nach der Tierart und verwende eine passende Aggregatsfunktion. Schau im Lexikon nach, wenn du etwas nachlesen musst.",
@@ -591,7 +591,7 @@
       ],
       "Intro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "So, ein paar Dinge noch und dann ist die Überprüfung vorbei."
         },
@@ -601,22 +601,22 @@
           "Text": "Das hört man doch gerne."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Bis jetzt sieht es doch alles ganz gut aus. Also machen wir weiter."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Als nächstes bedarf es nach Informationen über den durchschnittlichen Wert deiner Tiere."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Ich muss mir notieren, wie hoch der Durchschnittswert deiner Tierarten ist."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Bei zu hohen Abweichungen der königlichen Normwerte muss eine erneute Wertprüfung vollzogen werden."
         },
@@ -626,10 +626,10 @@
           "Text": "Ich bin sicher, dass alles in Ordnung ist."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Bitte einmal die Durchschnittswerte pro Tierart. Ach ja und bitte auf 2 Nachkommastellen gerundet.",
-          "HTML": "Bitte einmal die <b> Durchschnittswerte pro Tierart </b>. Ach ja und bitte <b> auf 2 Nachkommastellen gerundet </b>."
+          "HTML": "Bitte einmal die <b>Durchschnittswerte pro Tierart</b>. Ach ja und bitte <b> auf 2 Nachkommastellen gerundet </b>."
         },
         {
           "Picture": "Bauer.png",
@@ -644,12 +644,12 @@
           "Text": "Sehr gut gemacht!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Danke für die Info. Das sieht in der Tat OK aus."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Ach übrigens... Was will username denn eigentlich hier?"
         },
@@ -659,12 +659,12 @@
           "Text": "username ist auf der Suche nach der entführten Prinzessin."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Das ist natürlich eine gute Sache."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Vielleicht kann ich, wenn wir hier fertig sind versteht sich, dabei behilflich sein."
         }
@@ -674,7 +674,7 @@
 
     {
       "Difficulty": 9,
-      "Title": "So viele Duplikate",
+      "Title": "So viele Duplikate (9/9)",
       "Description": "Der Prüfer bietet dir ebenfalls seine Hilfe an. Er reist viel über das Land und kann dir bestimmt bei der Suche nach der Prinzessin weiterhelfen.",
       "Task": "Finde alle Tiernamen, die mehr als einmal vergeben wurden! Gib jeweils den Namen und die zugehörige Anzahl an Tieren mit diesem Namen aus.",
       "Hint": "Gruppiere nach dem Tiernamen und verwende eine passende Aggregatsfunktion. Vergiss das Filtern danach nicht.",
@@ -693,47 +693,47 @@
       ],
       "Intro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Als nächstes geht es nochmal um die Namensgebung der Tiere."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Da gab es ein paar Probleme bezügliche mehrfachen Benennungen."
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Daran ist meine Frau Anna Schuld!"
+          "Text": "Daran ist meine Frau Anna schuld!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Keine Sorge. Das lässt sich alles klären."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
-          "Text": "Zwecks Übersichtlichkeit königlicher Dokumente ist es unabdingbar, dass jeder Name der Tiere auf deinem Hof nicht mehr als 2 Mal vorkommt."
+          "Text": "Zwecks Übersichtlichkeit königlicher Dokumente ist es unabdingbar, dass jeder Name der Tiere auf deinem Hof nicht mehr als zweimal vorkommt."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Also bitte zeig' mir doch noch einmal die Namen der Tiere."
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Oh das ist gar kein Problen! Dazu brauche ich keine Hilfe!"
+          "Text": "Oh, das ist gar kein Problem! Dazu brauche ich keine Hilfe!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
-          "Text": "Nich so schnell!"
+          "Text": "Nicht so schnell!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Bitte zeig' mir nur die Tiernamen, die mehr als einmal vorkommen und wie oft sie vorkommen.",
           "HTML": "Bitte zeig' mir nur die Tiernamen, die <b> mehr als einmal </b> vorkommen und <b> wie oft </b> sie vorkommen."
@@ -756,19 +756,19 @@
           "Text": "Du kannst mir zwar noch lange nicht das Wasser reichen, aber..."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Wie bitte? username erledigt doch hier alles!"
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Eh naja also... das stimmt."
+          "Text": "Eh, naja, also... das stimmt."
         },
         {
           "Picture": "Bauer.png",
           "Position": "left",
-          "Text": "Also gut. Ich denke ich bin dir was schuldig, username."
+          "Text": "Also gut. Ich denke, ich bin dir was schuldig, username."
         },
         {
           "Picture": "Bauer.png",
@@ -786,17 +786,17 @@
           "Text": "Wenn du die Prinzessin retten willst, musst du gut vorbereitet sein!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Die Überprüfung ist aber noch nicht abgeschlossen."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Ich richte meine weiteren Fragen an username."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Bei mir kannst du einiges über Sub-Queries lernen. Geh' dazu einfach ins Questbuch zu Sub-Queries."
         }
@@ -822,7 +822,7 @@
     {
       "Difficulty": 1,
       "Title": "Der Prüfer",
-      "Description": "Der Prüfer von Manfred's Hof setzt seine Überprüfungen mit deiner Hilfe fort. In diesem Bereich lernst du wichtige Themen bezüglich Sub-Queries. Wenn du in dieser Kategorie und bei den Joins (Lagermeister) jeweils mindestens 7 Aufgaben gelöst hast, kannst du dich dem Entführer der Prinzessin stellen.",
+      "Description": "Der Prüfer von Manfreds Hof setzt seine Überprüfungen mit deiner Hilfe fort. In diesem Bereich lernst du wichtige Themen bezüglich Sub-Queries. Wenn du in dieser Kategorie und bei den Joins (Lagermeister) jeweils mindestens 7 Aufgaben gelöst hast, kannst du dich dem Entführer der Prinzessin stellen.",
       "Task": "Finde alle Infos über alle Tiere mit dem Besitzer 'Jacky' 'Sparrow'!",
       "Hint": "Verwende eine Sub-Query, um die id des Besitzers zu finden.",
       "UnlockedKeywords": ["IN"],
@@ -844,60 +844,60 @@
       ],
       "Intro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Hallo, username."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Schön, dass du mir weiter behilflich bist, denn es gilt noch einiges herauszufinden."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Was bisher noch nicht erwähnt wurde: die Tiere haben alle einen Besitzer."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
-          "Text": "Zwar leben die Tiere auf dem Bauernhof, aber eigentlich gehöhren sie zu bekannten Persönlichkeiten im Königshaus."
+          "Text": "Zwar leben die Tiere auf dem Bauernhof, aber eigentlich gehören sie zu bekannten Persönlichkeiten im Königshaus."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Es gibt eine tabelle besitzer, in der die jeweiligen Besitzer aufgeführt sind.",
-          "HTML": "Es gibt eine tabelle <b> besitzer </b>, in der die jeweiligen Besitzer aufgeführt sind."
+          "HTML": "Es gibt eine tabelle <b>besitzer</b>, in der die jeweiligen Besitzer aufgeführt sind."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Die Besitzer haben eine eindeutige id (Primärschlüssel), einen vornamen, nachnamen und ein geschlecht.",
-          "HTML": "Die Besitzer haben eine eindeutige <b> id </b> (Primärschlüssel), einen <b> vornamen </b>, <b> nachnamen </b> und ein <b> geschlecht </b>."
+          "HTML": "Die Besitzer haben eine eindeutige <b>id</b> (Primärschlüssel), einen <b>vornamen</b>, <b>nachnamen</b> und ein <b>geschlecht</b>."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Ich habe dir zusätzlich die Tabelle tier mit einer entsprechenden besitzer_id ergänzt.",
-          "HTML": "Ich habe dir zusätzlich die Tabelle <b> tier </b> mit einer entsprechenden <b> besitzer_id </b> ergänzt."
+          "HTML": "Ich habe dir zusätzlich die Tabelle <b>tier</b> mit einer entsprechenden <b> besitzer_id </b> ergänzt."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
-          "Text": "Die besitzer_id der tabelle tier entspricht dabei der jeweiligen id in der tabelle besitzer."
+          "Text": "Die besitzer_id der tabelle tier entspricht dabei der jeweiligen id in der Tabelle besitzer."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Die besitzer_id nennt man hier den Fremdschlüssel."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "So, nun zu deiner ersten Aufgabe dazu."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Ich muss alle Tiere finden, die dem Besitzer Jacky Sparrow gehören.",
           "HTML": "Ich muss alle Tiere finden, die dem Besitzer <b>Jacky Sparrow</b> gehören."
@@ -905,12 +905,12 @@
       ],
       "Outro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Wunderbar!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Wenn du mindestens 7 meiner Aufgaben löst und beim Lagermeister warst, werde ich dir bei der Suche nach der Prinzessin helfen."
         }
@@ -922,7 +922,7 @@
       "Difficulty": 2,
       "Title": "Nur das Beste",
       "Description": "Der Prüfer muss weitere Details über die Tiere und deren Besitzer erfahren. Durch die Bewältigung einer weiteren Aufgabe kommst du dem Erretten der Prinzessin ein Stück näher.",
-      "Task": "Finde alle Infos über alle Tiere, deren Wert größer ist als der Durchschnittswert aller Tiere! Sortiere nach dem Wert.",
+      "Task": "Finde alle Infos über alle Tiere, deren Wert größer ist als der Durchschnittswert aller Tiere! Sortiere absteigend nach dem Wert.",
       "Hint": "Verwende eine Sub-Query, um den Durchschnittswert zu finden.",
       "UnlockedKeywords": [],
       "TableInfo": [
@@ -939,16 +939,16 @@
       "AlterTable": false,
       "NeededKeywords": ["SELECT", "SELECT"],
       "ResultQueries": [
-        "select * from tier where wert > (select avg(wert) from tier) order by wert"
+        "select * from tier where wert > (select avg(wert) from tier) order by wert DESC"
       ],
       "Intro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Deine nächste Aufgabe wartet bereits."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Wir hatten ja schon einmal über den Wert der Tiere gesprochen."
         },
@@ -958,30 +958,35 @@
           "Text": "Es geht aber auch immer nur ums Geld!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Ich agiere auf Anweisung des Königs. Die Ordnung muss sichergestellt sein!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Ich muss wissen, welche Tiere über dem Durchschnittswert liegen."
         },
         {
           "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "Kein Problem für username!"
+        },
+        {
+          "Picture": "Pruefer.png",
           "Position": "left",
-          "Text": "Gib bitte alle Infos über die Tiere aus und sortiere nach dem Wert!",
-          "HTML": "Gib bitte alle Infos über die Tiere aus und <b>sortiere</b> nach dem Wert!"
+          "Text": "Gib bitte alle Infos über die Tiere aus und sortiere absteigend nach dem Wert!",
+          "HTML": "Gib bitte alle Infos über die Tiere aus und <b>sortiere</b> absteigend nach dem Wert!"
         }
       ],
       "Outro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Gute Arbeit!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Bis zum nächsten Mal!"
         }
@@ -992,7 +997,7 @@
     {
       "Difficulty": 2,
       "Title": "Besitzer ohne Besitz",
-      "Description": "Es werden ein paar kleine Überraschungen aufgedeckt. Mit deiner Hilfe können Unklarheiten auf Manfred's Hof bereinigt werden.",
+      "Description": "Es werden ein paar kleine Überraschungen aufgedeckt. Mit deiner Hilfe können Unklarheiten auf Manfreds Hof bereinigt werden.",
       "Task": "Finde alle Infos über alle Besitzer, die ein Tier besitzen!",
       "Hint": "Verwende eine Sub-Query, um die besitzer_id zu finden.",
       "UnlockedKeywords": [],
@@ -1014,24 +1019,24 @@
       ],
       "Intro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "So, weiter geht's."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Mir ist etwas aufgefallen..."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Es scheint, als wäre mir ein Fehler unterlaufen."
         },
         {
           "Picture": "Bauer.png",
           "Position": "right",
-          "Text": "Das man sowas noch erleben darf."
+          "Text": "Dass man sowas noch erleben darf."
         },
         {
           "Picture": "Bauer.png",
@@ -1039,19 +1044,19 @@
           "Text": "Ich bin ja schon still..."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
-          "Text": "Es scheint mir so, als ob nicht alle Besitzer aus der Tabelle auch wirklch ein Tier besitzen."
+          "Text": "Es scheint mir so, als ob nicht alle Besitzer aus der Tabelle auch wirklich ein Tier besitzen."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Wir brauchen Klarheit."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
-          "Text": "Bitte Zeig' mir doch einmal alle Besitzer, die auch wirklich ein Tier besitzen."
+          "Text": "Bitte zeig' mir doch einmal alle Besitzer, die auch wirklich ein Tier besitzen."
         }
       ],
       "Outro": [
@@ -1061,7 +1066,7 @@
           "Text": "Sieht gut aus."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Vielen Dank für die Hilfe."
         }
@@ -1072,7 +1077,7 @@
     {
       "Difficulty": 2,
       "Title": "Spezielle Frage",
-      "Description": "Der Prüfer stellt weitere Fragen zu den Besitzern der Tiere. Das SQL Training ist eine große Hilfe für die anstehende Auseinandersetzung mit dem Entführer der Prinzessin.",
+      "Description": "Der Prüfer stellt weitere Fragen zu den Besitzern der Tiere. Das SQL-Training ist eine große Hilfe für die anstehende Auseinandersetzung mit dem Entführer der Prinzessin.",
       "Task": "Finde alle Infos über alle Besitzer, deren Vorname länger ist, als die Länge des Vornamens des Besitzers mit der id 2!",
       "Hint": "Verwende eine Sub-Query, um die Länge des Vornamens des Besitzers 2 zu finden.",
       "UnlockedKeywords": [],
@@ -1094,22 +1099,22 @@
       ],
       "Intro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
-          "Text": "Hm in der nächsten Frage meines Berichtes, den ich auszufüllen habe, geht es um etwas spezielles."
+          "Text": "Hm, in der nächsten Frage meines Berichtes, den ich auszufüllen habe, geht es um etwas Spezielles."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Der Besitzer mit der id 2 ist hier wichtig."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "In den Gesetzen heißt es, dass ich alle Besitzer notieren muss, deren Vornamen eine gewisse Länge haben."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Und zwar brauche ich alle Besitzer, deren Vorname länger ist, als die Länge des Vornamens von Besitzer mit id 2.",
           "HTML": "Und zwar brauche ich alle Besitzer, deren Vorname <b>länger</b> ist, als die Länge des Vornamens von Besitzer mit <b>id 2</b>."
@@ -1122,7 +1127,7 @@
       ],
       "Outro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Gut gemacht!"
         },
@@ -1132,9 +1137,9 @@
           "Text": "Wieso muss so eine Information denn bitte in den Bericht??"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
-          "Text": "Das Überschreitet meinen Zuständigkeitsbereich."
+          "Text": "Das überschreitet meinen Zuständigkeitsbereich."
         },
         {
           "Picture": "Bauer.png",
@@ -1171,17 +1176,17 @@
       ],
       "Intro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "So, nun wird es etwas kniffliger."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Ich brauche als nächstes folgende Information:"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Welche Tiere haben einen höheren Wert, als das Tier, das die größte Nummer hat?",
           "HTML": "Welche Tiere haben einen <b> höheren </b> Wert, als das Tier, das die <b> größte Nummer </b> hat?"
@@ -1199,7 +1204,7 @@
           "Text": "Das hätte ich natürlich auch hinbekommen!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Davon bin ich überzeugt..."
         }
@@ -1232,7 +1237,7 @@
       ],
       "Intro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Es gibt noch mehr zu klären."
         },
@@ -1242,7 +1247,7 @@
           "Text": "Wann ist denn endlich alles geprüft?"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Sobald meine Unterlagen vollständig sind. Das wird sicher nicht mehr lange dauern."
         },
@@ -1252,22 +1257,22 @@
           "Text": "Natürlich nicht..."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Ich muss nochmal bei den Tiernamen nachhaken."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Es gab dort ja einige Namen, die mehrmals vorkamen."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Zeig' mir bitte noch einmal alle Tiere, deren Namen mehrmals vorkommen."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Ich möchte die kompletten Einträge der Tiere mit diesen Namen sehen."
         },
@@ -1291,7 +1296,7 @@
       "Difficulty": 2,
       "Title": "Der Große und der Kleine",
       "Description": "Die Prüfung des Hofes geht weiter. Mit genügend Übung kannst du dich bestimmt bald dem Entführer entgegenstellen.",
-      "Task": "Finde alle Infos über die zwei Tiere mit dem größten und dem kleinsten Wert!",
+      "Task": "Finde alle Infos über die Tiere mit dem größten und dem kleinsten Wert!",
       "Hint": "Verwende eine Sub-Query, um den größten und kleinsten Wert zu finden.",
       "UnlockedKeywords": [],
       "TableInfo": [
@@ -1312,17 +1317,17 @@
       ],
       "Intro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Ein paar Dinge stehen noch auf meinem Plan."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Als Nächstes interessieren mich die Tiere mit dem größten und dem kleinsten Wert."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Zeig' mir also bitte die Einträge der Tiere mit dem größten und dem kleinsten Wert.",
           "HTML": "Zeig' mir also bitte die Einträge der Tiere mit dem <b> größten </b> und dem <b> kleinsten </b> Wert."
@@ -1330,7 +1335,7 @@
       ],
       "Outro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Das sieht gut aus!"
         },
@@ -1347,7 +1352,7 @@
       "Difficulty": 2,
       "Title": "Einteilungen",
       "Description": "Die nächste Aufgabe des Prüfers steht bevor. Diesmal gilt es, gewisse Einteilungen vorzunehmen.",
-      "Task": "Finde die Anzahl an Tierbesitzern pro Geschlecht! Gib jeweils das Geschlecht und die Anzahl an Besitzern mit diesem Geschlecht aus.",
+      "Task": "Finde die Anzahl an Besitzern pro Geschlecht, die ein Tier haben! Gib jeweils das Geschlecht und die Anzahl an Besitzern mit diesem Geschlecht aus.",
       "Hint": "Verwende eine Sub-Query, um die besitzer_id zu finden.",
       "UnlockedKeywords": [],
       "TableInfo": [
@@ -1368,12 +1373,12 @@
       ],
       "Intro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Da bist du ja wieder, username!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Es kam eine Eilmeldung des Königs herein. Es handelt sich dabei um ein kürzlich beschlossenes Gesetz."
         },
@@ -1383,22 +1388,22 @@
           "Text": "Was das wohl sein mag..."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Keine Sorge. Wir prüfen zunächst, ob der Hof das Gesetz erfüllt."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Das Gesetz besagt:"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Es muss mindestens drei weibliche Tierbesitzer pro Hof geben."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Nun gut. Dann zeig' mir doch einfach mal, wie viele Tierbesitzer es pro Geschlecht gibt!",
           "HTML": "Nun gut. Dann zeig' mir doch einfach mal, <b>wie viele Tierbesitzer</b> es <b>pro Geschlecht</b> gibt!"
@@ -1416,12 +1421,12 @@
           "Text": "Oh, wir erfüllen dieses Gesetz bereits!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "In der Tat."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Gute Arbeit!"
         }
@@ -1454,12 +1459,12 @@
       ],
       "Intro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "So, ich hätte noch eine weitere Bitte."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "In den Dokumenten des Königs steht, dass der Besitzer mit dem längsten Nachnamen nur maximal drei Tiere besitzen darf."
         },
@@ -1469,34 +1474,35 @@
           "Text": "Schon wieder so ein komisches Gesetz..."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Es geht hierbei wohl darum, weniger Schreibarbeit zu haben."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Die Berichte haben nur begrenzt Platz zur Verfügung."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
-          "Text": "Also, bitte einmal alle Tiereinträge des Besitzers mit dem <b>längsten Nachnamen</b>."
+          "Text": "Also, bitte einmal alle Tiereinträge des Besitzers mit dem längsten Nachnamen.",
+          "HTML": "Also, bitte einmal alle Tiereinträge des Besitzers mit dem <b>längsten Nachnamen</b>."
         }
       ],
       "Outro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Danke!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
-          "Text": "Mehr Überprüfungen habe ich vorerst nicht."
+          "Text": "Sieht gut aus."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Wenn du noch nicht beim Lagermeister warst, dann solltest du ihn noch besuchen."
         }
@@ -1519,7 +1525,7 @@
       "Difficulty": 1,
       "Title": "Der Lagermeister",
       "Description": "Mit dem Hinweis des Bauern Manfred begibst du dich also zum Lagermeister Samuel. Der Lagermeister hat Kontakt zu vielen veschiedenen Personen im ganzen Land und hat daher bestimmt den ein oder anderen Tipp für dich, was deine SQL-Kenntnisse und das Finden der Prinzessin angeht. Hier lernst du wichtige Dinge über Joins. Wenn du in dieser Kategorie und bei den Sub-Queries (Prüfer) jeweils mindestens 7 Aufgaben gelöst hast, kannst du dich dem Entführer der Prinzessin stellen.",
-      "Task": "Erstelle eine Liste der Ausrüstung mit den jeweiligen Besitzern! Gib Typ und Name der Waffe, sowie Vorname und Nachname des Besitzers aus.",
+      "Task": "Erstelle eine Liste der Ausrüstung mit den jeweiligen Besitzern! Gib Typ und Name der Ausrüstung, sowie Vorname und Nachname des Besitzers aus.",
       "Hint": "Verwende einen Join der Tabellen ausruestung und besitzer.",
       "UnlockedKeywords": ["LEFT JOIN"],
       "TableInfo": [
@@ -1540,111 +1546,111 @@
       ],
       "Intro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Guten Tag! Ich bin der Lagermeister Samuel. Wie kann ich helfen?"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
-          "Text": "Oh die Prinzessin suchst du also ja?"
+          "Text": "Oh, die Prinzessin suchst du also, ja?"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Und du musst die SQL-Aufgaben des Entführers lösen, um sie zu befreien, sobald du sie gefunden hast?"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Das klingt ja sehr aufregend! Nur leider hab ich hier viel zu tun und habe keine Zeit, um dir zu helfen."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Hm, aber du kannst mir bei der Lagerverwaltung helfen und im Gegenzug helfe ich dir bei der Suche."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Hier muss nämlich wieder Ordnung geschaffen werden, was die Ausrüstung meiner Kunden angeht."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Also gut, wenn du Übung in SQL-Joins brauchst, dann bist du hier sowieso richtig!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Hier geht es nämlich um Ausrüstung und deren Besitzer. Dazu müssen die beiden Tabellen zusammengeführt werden, damit wir zu passenden Ergebnissen kommen."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
-          "Text": "Dann zeig' mir doch mal was du kannst! Aber zuerst ein paar Infos für dich:"
+          "Text": "Dann zeig' mir doch mal, was du kannst! Aber zuerst ein paar Infos für dich:"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Es gibt eine tabelle besitzer, in der die jeweiligen Besitzer aufgeführt sind.",
           "HTML": "Es gibt eine tabelle <b> besitzer </b>, in der die jeweiligen Besitzer aufgeführt sind."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Die Besitzer haben eine eindeutige id (Primärschlüssel), einen vornamen, nachnamen und ein geschlecht.",
           "HTML": "Die Besitzer haben eine eindeutige <b> id </b> (Primärschlüssel), einen <b> vornamen </b>, <b> nachnamen </b> und ein <b> geschlecht </b>."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
-          "Text": "Dann gibt es noch die Tabelle ausruestung, in der ein paar Ausrüstungsgegenstände sind, die den Besitzern gehören.",
-          "HTML": "Dann gibt es noch die Tabelle <b>ausruestung</b>, in der ein paar Ausrüstungsgegenstände sind, die den Besitzern gehören."
+          "Text": "Dann gibt es noch die Tabelle ausruestung, in der ein paar Gegenstände sind, die den Besitzern gehören.",
+          "HTML": "Dann gibt es noch die Tabelle <b>ausruestung</b>, in der ein paar Gegenstände sind, die den Besitzern gehören."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Die Ausrüstung hat jeweils eine eindeutige id (Primärschlüssel), einen typ, einen namen und eine besitzer_id.",
           "HTML": "Die Ausrüstung hat jeweils eine eindeutige <b>id</b> (Primärschlüssel), einen <b>typ</b>, einen <b>namen</b> und eine <b>besitzer_id</b>."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Die besitzer_id (Fremdschlüssel) der tabelle ausruestung entspricht dabei der jeweiligen id in der tabelle besitzer.",
           "HTML": "Die <b>besitzer_id</b> (Fremdschlüssel) der tabelle <b>ausruestung</b> entspricht dabei der jeweiligen <b>id</b> in der tabelle <b>besitzer</b>."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
-          "Text": "So. Mal sehen ob du das schaffst:"
+          "Text": "So. Mal sehen, ob du das schaffst:"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Ich brauche eine vollständige Liste der Ausrüstung und deren Besitzer!"
         }
       ],
       "Outro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Gar nicht mal schlecht."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Wie dir sicher aufgefallen ist, verwalte ich nur äußerst exquisite Ausrüstung."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Außerdem hat nicht jeder aus der Tabelle besitzer eine Ausrüstung. Die Liste der Besitzer ist irgendeine alte Liste des Königs."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
-          "Text": "Naja jedenfalls helfe ich dir beim SQL Training und wenn du genügend Aufgaben erledigt hast, dann sehen wir weiter."
+          "Text": "Naja, jedenfalls helfe ich dir beim SQL Training und wenn du genügend Aufgaben erledigt hast, dann sehen wir weiter."
         }
       ]
     },
@@ -1675,44 +1681,44 @@
       ],
       "Intro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Hallo username."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Es gibt etwas dringendes zu erledigen:"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Für den kommenden Krieg des Königs werden alle Schwertkämpfer einberufen."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Ich weiß, dass es unter meinen Kunden auch ein paar fähige Kämpfer gibt, bei denen ich mich jetzt melden muss."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Hier kommst du ins Spiel:"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Zeig' mir doch mal eine Liste mit den Kämpfern, die ein Schwert ihr Eigen nennen!"
         }
       ],
       "Outro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
-          "Text": "Hm das sind ja nur zwei..."
+          "Text": "Hm, das sind ja nur zwei..."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Aber in Ordnung. Danke für die Hilfe."
         }
@@ -1745,27 +1751,27 @@
       ],
       "Intro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Ich habe einen Hinweis über einen meiner Kunden bekommen."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Ein 'Froduard' 'Beutlin' soll verdächtige Ausrüstung besitzen."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Ich kann nicht riskieren, dass in es in meiner Lagerverwaltung dubiose Gegenstände gibt."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Ich muss mir also die Gegenstände des Verdächtigen einmal kurz ansehen."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Zeig' mir doch mal, was dieser 'Froduard' 'Beutlin' alles besitzt!",
           "HTML": "Zeig' mir doch mal, was dieser <b>'Froduard' 'Beutlin'</b> alles besitzt!"
@@ -1773,19 +1779,19 @@
       ],
       "Outro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
-          "Text": "Hm da scheint nichts Ungewögnliches zu sein..."
+          "Text": "Hm, da scheint nichts Ungewöhnliches zu sein..."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Aber was ist das für ein Ring? Der sieht aber schön aus."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
-          "Text": "Ehh danke für deine Hilfe, username. Deine Aufgabe hier ist erledigt."
+          "Text": "Ehh, danke für deine Hilfe, username. Deine Aufgabe hier ist erledigt."
         }
       ]
     },
@@ -1796,7 +1802,7 @@
       "Difficulty": 2,
       "Title": "Eigenartige Namen",
       "Description": "Die nächste Aufgabe des Lagermeisters behandelt die Namen der Ausrüstungsgegenstände. Kannst du ihm bei der Suche helfen?",
-      "Task": "Finde die Anzahl der Besitzer, die Ausrüstung mit einem 'e' im Namen haben! Gib nur die Anzahl aus.",
+      "Task": "Finde die Anzahl der Besitzer, die Ausrüstung mit einem 'e' im Namen haben! Gib nur die Anzahl aus und zähle jeden Besitzer nur einmal.",
       "Hint": "Verwende einen Join der Tabellen ausruestung und besitzer. Du kannst COUNT und DISTINCT kombinieren.",
       "UnlockedKeywords": [],
       "TableInfo": [
@@ -1817,45 +1823,45 @@
       ],
       "Intro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Wie du sicher schon bemerkt hast, hat so ziemlich jede Ausrüstung einen eigenen Namen."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Wie soll man als Lagermeister denn hier noch den Durchblick haben?"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Und dann muss ich für meinen Lagerbericht auch noch so seltsame Details beantworten."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Dazu muss ich wissen, wie viele Besitzer eine Ausrüstung mit einem 'e' im Namen besitzen.",
           "HTML": "Dazu muss ich wissen, wie viele Besitzer eine Ausrüstung mit einem <b>'e'</b> im Namen besitzen."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Kannst du dich darum kümmern?"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Aber denk daran, jeden Besitzer nur einmal zu zählen!"
         }
       ],
       "Outro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Das sieht gut aus!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Danke für die Hilfe."
         }
@@ -1889,44 +1895,44 @@
       ],
       "Intro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
-          "Text": "Ah username, gut, dass du hier bist!"
+          "Text": "Ah, username, gut, dass du hier bist!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Es wurde neulich ein neues Gesetz vom König verabschiedet."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Dabei geht es um den Besitz von Ausrüstung."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Es steht geschrieben:"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Es muss mindestens drei weibliche Ausrüstungsbesitzer pro Lagerverwaltung geben."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Haben wir das erfüllt?"
         }
       ],
       "Outro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
-          "Text": "Ah ja sehr gut."
+          "Text": "Ah ja, sehr gut."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Dann hat ja alles seine Ordnung."
         }
@@ -1960,39 +1966,39 @@
       ],
       "Intro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "So, wollen wir doch mal sehen, was du noch so drauf hast."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Hier gibt es noch eine spezielle Frage für meinen Lagerbericht."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Ich bin gespannt, ob du das hinbekommst."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Was ist die Gesamtlänge der Namen der Ausrüstungen pro Besitzer?"
         }
       ],
       "Outro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Sehr gut! Du hast den Dreh raus."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Erledige 7 meiner Aufgaben und ich helfe dir weiter."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Warst du übrigens schon beim Prüfer?"
         }
@@ -2025,64 +2031,64 @@
       ],
       "Intro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Guten Tag!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "right",
           "Text": "Hehehe!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
-          "Text": "Oh wir haben einen Kunden!"
+          "Text": "Oh, wir haben einen Kunden!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "right",
-          "Text": "Hehehe, ich komme im Auftrag des ähh... Köings. Ja genau des Königs. Das ist die Wahrheit."
+          "Text": "Hehehe, ich komme im Auftrag des ähh... Königs. Ja, genau des Königs. Das ist die Wahrheit."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "right",
           "Text": "Er muss wissen, wie viel Ausrüstung jede Person aus der Besitzerliste hat."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Ok, ich verstehe. username, kannst du das übernehmen?"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "right",
           "Text": "Hehehe, es müssen alle Personen aus der Besitzerliste angezeigt werden, auch diese, die keine Ausrüstung besitzen."
         }
       ],
       "Outro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "So, hier bitte die Liste."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "right",
-          "Text": "Hehehe, verdammt das ist ja sogar korrekt..."
+          "Text": "Hehehe, verdammt, das ist ja sogar korrekt..."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "right",
           "Text": "Ich muss los..."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Hey, Sie haben ihre Liste nicht mitgenommen!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Und schon ist er weg. Was war das denn?"
         }
@@ -2116,29 +2122,29 @@
       ],
       "Intro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "username, es gibt etwas zu tun."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Der nächste Lagerbericht wird bald fällig und ich komme hier nicht weiter."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Ich muss wissen, bei welchen Ausrüstungsbesitzern der Ausrüstungsname länger ist als der Nachname des Besitzers."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Kannst du mir dabei helfen?"
         }
       ],
       "Outro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Vielen Dank!"
         },
@@ -2176,49 +2182,49 @@
       ],
       "Intro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Ok, ich habe neulich erneut meine Liste durchgesehen."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Da ist mir aufgefallen, dass es manche Vornamen mehrmals in der Liste gibt."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Ich möchte mir das nochmal genauer ansehen."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Meine Kunden schätzen es, wenn ich sie beim Vornamen anspreche und etwas über sie weiß."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Damit ich dort niemanden verwechsle und auch den Überblick habe, muss ich mir alle Personen auf der Besitzerliste nochmal anschauen."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Mich interessieren aber erstmal nur die Personen, deren Vorname mehrmals vorkommt."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Ob die Person eine Ausrüstung hat, ist egal. Alle Kunden zählen."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Hilf mir bitte dabei."
         }
       ],
       "Outro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "Danke!"
         },
@@ -2256,7 +2262,7 @@
       "Description": "Der Bauer, der Prüfer und der Lagermeister haben dir ihre Hilfe bei der Suche nach der Prinzessin angeboten. Mit ihrer Hilfe kannst du dich dem Bösewicht stellen.",
       "Task": "Finde alle Infos über alle Besitzer, die sowohl ein Tier als auch eine Ausrüstung besitzen!",
       "Hint": "Verwende eine Kombination von Sub-Query und Join.",
-      "UnlockedKeywords": [],
+      "UnlockedKeywords": ["WEITERE TIPPS"],
       "TableInfo": [
         {
           "Tabelle": "ausruestung",
@@ -2279,7 +2285,7 @@
       ],
       "Intro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "left",
           "Text": "username! Es gibt Neuigkeiten!"
         },
@@ -2289,17 +2295,17 @@
           "Text": "Wir haben den Ort gefunden, wo der Entführer sich versteckt!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "left",
           "Text": "Komm am besten gleich mit!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Hehehe"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Du hast mich gefunden! Ich bin beeindruckt."
         },
@@ -2309,84 +2315,89 @@
           "Text": "Wo ist die Prinzessin??"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
-          "Text": "Tja sie ist nicht hier! Ich habe sie in meinem Unterschlupf versteckt."
+          "Text": "Tja, sie ist nicht hier! Ich habe sie in meinem Unterschlupf versteckt."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Lass sie wieder frei!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Das könnt ihr vergessen!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
-          "Text": "Hmm ich habe Lust auf ein Spiel. Machen wir folgendes:"
+          "Text": "Hmm, ich habe Lust auf ein Spiel. Machen wir folgendes:"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Wenn alle meine Rätsel gelöst werden, dann lasse ich sie frei."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Ich habe dich beobachtet, username!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Ich habe gesehen, wie du all' diese Aufgaben lösen konntest."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Aber bei mir wird das nicht so einfach."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Hier kommt mein erstes Rätsel:"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Je mehr man davon wegnimmt, desto größer wird es. Was ist es?"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
-          "Text": "Hehehe kleiner Scherz."
+          "Text": "Hehehe, kleiner Scherz."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Die richtige Aufgabe lautet:"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Zeig mir alle Besitzer, die Tier und Ausrüstung ihr Eigen nennen! Aber keine doppelten Einträge!"
+        },
+        {
+          "Picture": "Bauer.png",
+          "Position": "right",
+          "Text": "username bekommt das hin!"
         }
       ],
       "Outro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Verdammt, das ist richtig..."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Aber weißt du auch die Lösung des anderen Rätsels? Je mehr man davon wegnimmt, desto größer wird es. Was ist es? Ich verrate es dir:"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Es ist das Loch! Hehehe!"
         },
@@ -2396,7 +2407,7 @@
           "Text": "Sehr gut!!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Hehehe, das nächste Rätsel wird viel schwerer!"
         }
@@ -2409,7 +2420,7 @@
       "Difficulty": 2,
       "Title": "Die Befreiung - Teil 2",
       "Description": "Der Bösewicht wurde gefunden, aber er verrät nicht, wo er die Prinzessin versteckt hat. Du musst wohl erst sein Spiel mitspielen.",
-      "Task": "Finde alle Infos über alle Besitzer, die entweder ein Schwert, eine Pistole oder ein Huhn haben",
+      "Task": "Finde alle Infos über alle Besitzer, die ein Schwert, eine Pistole oder ein Huhn haben",
       "Hint": "Verwende DISTINCT.",
       "UnlockedKeywords": [],
       "TableInfo": [
@@ -2430,68 +2441,68 @@
       "AlterTable": false,
       "NeededKeywords": [],
       "ResultQueries": [
-        "select distinct b.* from besitzer b join ausruestung a on a.besitzer_id = b.id join tier t on b.id = t.besitzer_id where typ = 'Schwert' or typ = 'Pistole' or tierart = 'Huhn'"
+        "SELECT * FROM besitzer WHERE id IN (SELECT DISTINCT besitzer_id FROM ausruestung WHERE typ = 'Schwert' OR typ = 'Pistole') OR id IN (SELECT DISTINCT besitzer_id FROM tier WHERE tierart = 'Huhn')"
       ],
       "Intro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Hehehe"
         },
         {
-          "Picture": "Bauer.png",
-          "Position": "right",
+          "Picture": "Mafioso.png",
+          "Position": "left",
           "Text": "Willkommen zum nächsten Rätsel!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Das schaffst du nie:"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Alle Tage geh ich aus, bleibe dennoch stets zu Haus. Was bin ich?"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
-          "Text": "Hehehe ich kanns nicht lassen."
+          "Text": "Hehehe, ich kanns nicht lassen."
         },
         {
-          "Picture": "Bauer.png",
-          "Position": "right",
-          "Text": "Ok ok hier die Aufgabe:"
+          "Picture": "Mafioso.png",
+          "Position": "left",
+          "Text": "OK, OK, hier die Aufgabe:"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Finde die Besitzer, die Schwert, Pistole oder Huhn haben!"
         }
       ],
       "Outro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Hehehe ok das war leicht."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Aber wie sieht es mit der anderen Lösung aus?"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": " Alle Tage geh ich aus, bleibe dennoch stets zu Haus. Und weißt du was es ist? Die Lösung gibt's gleich."
         },
         {
-          "Picture": "Bauer.png",
-          "Position": "right",
+          "Picture": "Mafioso.png",
+          "Position": "left",
           "Text": "Hehehe es ist die Schnecke!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Bis zum nächsten Mal!"
         }
@@ -2529,69 +2540,69 @@
       ],
       "Intro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Hehehe, da bist du ja wieder."
         },
         {
-          "Picture": "Bauer.png",
-          "Position": "right",
+          "Picture": "Mafioso.png",
+          "Position": "left",
           "Text": "Bereit für das nächste Rätsel?"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Das schaffst du nie:"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Sitzt einer auf dem Dach und raucht, der weder Pfeif' noch Tabak braucht. Was ist es?"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Die Lösung gibt es später."
         },
         {
-          "Picture": "Bauer.png",
-          "Position": "right",
+          "Picture": "Mafioso.png",
+          "Position": "left",
           "Text": "Hehehe"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Welche Ausrüstung hat der Besitzer mit dem teuersten Tier?"
         }
       ],
       "Outro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Mist, wieder richtig."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Es gibt noch zwei weitere Rätsel! Dann kannst du von mir aus die Prinzessin mitnehmen!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Sie mag meine Rätsel sowieso nicht..."
         },
         {
-          "Picture": "Bauer.png",
-          "Position": "right",
+          "Picture": "Mafioso.png",
+          "Position": "left",
           "Text": "Ach ja der Spruch. Den hab ich ja fast vergessen."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": " Sitzt einer auf dem Dach und raucht, der weder Pfeif' noch Tabak braucht. Und weißt du es?"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Es ist natürlich der Schornstein!"
         }
@@ -2629,69 +2640,64 @@
       ],
       "Intro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Pah, so langsam verliere ich die Lust daran."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Kann ja nicht sein, dass ich es dir so einfach mache."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Weiter gehts:"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Im Sommer sieht mich keiner an, im Winter liebt mich jedermann."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Hehehe ich liebe Rätsel!"
         },
         {
-          "Picture": "Bauer.png",
-          "Position": "right",
+          "Picture": "Mafioso.png",
+          "Position": "left",
           "Text": "Nagut, hier die vorletzte Aufgabe:"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Finde die Ausrüstung, die dem reichsten Besitzer gehört!"
         }
       ],
       "Outro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Hm so langsam wird es eng."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Erstmal der Spruch:"
         },
         {
-          "Picture": "Bauer.png",
-          "Position": "left",
-          "Text": "Sie mag meine Rätsel sowieso nicht..."
-        },
-        {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Im Sommer sieht mich keiner an, im Winter liebt mich jedermann. Und was ist es?"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Es ist die Heizung! Hehehe!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Bereit für die letzte Aufgabe?"
         },
@@ -2735,74 +2741,79 @@
       ],
       "Intro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Diesmal hab ich eine echte Herausforderung für dich!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Hehehe, niemals schaffst du das!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Letzte Aufgabe:"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Zeig mir alle Personen und jeweils wie viele Tiere und Ausrüstung sie besitzen!"
         }
       ],
       "Outro": [
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Unfassbar, du hast es geschafft. Du hast alle meine Rätsel gelöst..."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Das hat bisher noch keiner geschafft."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Pruefer.png",
           "Position": "right",
           "Text": "Super gemacht!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Lagermeister.png",
           "Position": "right",
           "Text": "Jetzt rück die Prinzessin raus!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Mafioso.png",
           "Position": "left",
           "Text": "Ist ja gut... Ich hab sie in meiner Hütte eingesperrt..."
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Prinzessin.png",
           "Position": "left",
           "Text": "Oh ich bin frei! Vielen Dank!"
         },
         {
           "Picture": "Bauer.png",
           "Position": "right",
-          "Text": "Das hast du super gemacht!"
+          "Text": "Das hast du super gemacht, username!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Prinzessin.png",
+          "Position": "left",
+          "Text": "Endlich habe ich meinen Prinzen gefunden!"
+        },
+        {
+          "Picture": "Koenig.png",
           "Position": "right",
           "Text": "Danke username! Ich schulde dir größten Dank!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Koenig.png",
           "Position": "right",
           "Text": "Herzlichen Glückwunsch! Du hast das Spiel durchgespielt!"
         },
         {
-          "Picture": "Bauer.png",
+          "Picture": "Koenig.png",
           "Position": "right",
           "Text": "Bleib wachsam! Vielleicht gibt es bald noch mehr!"
         }

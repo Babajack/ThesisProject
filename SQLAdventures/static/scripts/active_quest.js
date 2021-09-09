@@ -18,7 +18,8 @@ function loadQuestProcedure(data, username) {
                 mode: "text/x-sqlite",
                 matchBrackets: true,
                 readOnly: 'nocursor',
-                autoCloseBrackets: true
+                autoCloseBrackets: true,
+                lineWrapping: true
             });
 
             // load first sequence

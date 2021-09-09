@@ -28,6 +28,10 @@
     color: #999;
 }
 
+.CodeMirror-wrap pre {
+    word-break: break-word;
+}
+
 img {
     /*max-width: 300px !important;*/
 }

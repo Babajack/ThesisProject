@@ -156,10 +156,7 @@ def validate_query():
                             db.increase_category_level(user_id, category)
                         if quest_data['UnlockedCategories'] == ["Sub-Queries", "Joins"]:
                             db.update_player_db_1(g.user['username'])
-                    # check if user unlocked final questline TODO check
-                    sub = g.user['Sub-Queries']
-                    join = g.user['Joins']
-                    complex_q = g.user['Komplexe Queries']
+                    # check if user unlocked final questline
                     if g.user['Sub-Queries'] >= 7 and g.user['Joins'] >= 7 and g.user['Komplexe Queries'] == 0:
                         db.increase_category_level(user_id, 'Komplexe Queries')
 
