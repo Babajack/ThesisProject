@@ -2516,7 +2516,7 @@
       "Title": "Die Befreiung - Teil 3",
       "Description": "Der Bösewicht scheint ein Rätselfanatiker zu sein. Seine nächste Aufgabe wartet bereits auf dich.",
       "Task": "Finde die Ausrüstung des Besitzers, der das Tier mit dem höchsten Wert besitzt. Gib Typ und Name der Ausrüstung, sowie Vor- und Nachname des Besitzers aus.",
-      "Hint": "Verwende eine Kombination von Sub-Query und Join.",
+      "Hint": "Verwende eine Query, die den relevanten Besitzer findet, um dann dessen Ausrüstung und Namen zu finden.",
       "UnlockedKeywords": [],
       "TableInfo": [
         {
@@ -2616,7 +2616,7 @@
       "Title": "Die Befreiung - Teil 4",
       "Description": "Der Bösewicht hat dir verraten, dass er noch zwei weitere Aufgaben für dich hat. Jetzt hast du es fast geschafft.",
       "Task": "Finde alle Infos über die Ausrüstung, die dem Besitzer mit dem höchsten Gesamtwert an Tieren gehört.",
-      "Hint": "Verwende eine Kombination von Sub-Query und Join.",
+      "Hint": "Verwende eine Query, die den relevanten Besitzer findet, um dann dessen Ausrüstung zu finden.",
       "UnlockedKeywords": [],
       "TableInfo": [
         {
@@ -2717,7 +2717,7 @@
       "Title": "Die Befreiung - Teil 5",
       "Description": "Die letzte Aufgabe wartet auf dich. Bald ist die Prinzessin wieder in Sicherheit!",
       "Task": "Erstelle eine komplette Liste der Vor- und Nachnamen der Besitzer mit der jeweiligen Anzahl an Ausrüstung und Tieren, die sie besitzen.",
-      "Hint": "Verwende eine Kombination von Sub-Query und Left Join.",
+      "Hint": "Verwende eine Kombination von Sub-Query und Left Join. Vergiss nicht die Besitzer, die 0 Tiere oder Ausrüstung haben.",
       "UnlockedKeywords": [],
       "TableInfo": [
         {
