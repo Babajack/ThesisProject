@@ -1817,7 +1817,7 @@
       ],
       "OrderedResult": false,
       "AlterTable": false,
-      "NeededKeywords": ["JOIN"],
+      "NeededKeywords": [],
       "ResultQueries": [
         "select count(distinct b.id) from ausruestung a join besitzer b on a.besitzer_id = b.id where name like '%e%'"
       ],

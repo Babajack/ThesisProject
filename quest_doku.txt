@@ -12,8 +12,8 @@
 
 
 ideen (subquery):
-2.6 - select einträge mit max und min wert
-select * from tier where wert = (select max(wert) from tier) or wert = (select min(wert) from tier)
+2.0 - select alle tiere vom besitzer 'Jacky' 'Sparrow'
+select * from tier where besitzer_id = (select id from besitzer where vorname = 'Jacky' and nachname = 'Sparrow')
 
 2.4 - select einträge wo wert größer ist als der wert des tieres mit der größten nummer
 select * from tier where wert > (select wert from tier where nummer = (select max(nummer) from tier))
@@ -30,8 +30,8 @@ select * from tier where name in (select name from tier group by name having cou
 2.1 - select alle tiere deren wert größer ist als der durchschn. wert
 select * from tier where wert > (select avg(wert) from tier) order by wert
 
-2.0 - select alle tiere vom besitzer 'Jacky' 'Sparrow'
-select * from tier where besitzer_id = (select id from besitzer where vorname = 'Jacky' and nachname = 'Sparrow')
+2.6 - select einträge mit max und min wert
+select * from tier where wert = (select max(wert) from tier) or wert = (select min(wert) from tier)
 
 2.8 - select alle tiere des besitzers mit dem längsten nachnamen
 select * from tier where besitzer_id = (select id from (select id, max(length(nachname)) from besitzer))
@@ -80,7 +80,7 @@ select * from (select vorname, nachname, count(a.besitzer_id) as anz_a from besi
 select * from besitzer where id in (select a.besitzer_id from ausruestung a join tier t on a.besitzer_id = t.besitzer_id)
 
 2- Finde alle Infos über alle Besitzer, die entweder ein Schwert, eine Pistole oder ein Huhn haben. Hint: disctinct
-select distinct b.* from besitzer b join ausruestung a on a.besitzer_id = b.id join tier t on b.id = t.besitzer_id where typ = 'Schwert' or typ = 'Pistole' or tierart = 'Huhn'
+SELECT * FROM besitzer WHERE id IN (SELECT DISTINCT besitzer_id FROM ausruestung WHERE typ = 'Schwert' OR typ = 'Pistole') OR id IN (SELECT DISTINCT besitzer_id FROM tier WHERE tierart = 'Huhn')
 
 3- Finde die Ausrüstung des Besitzers, der das Tier mit dem höchsten Wert besitzt. Gib Typ und Name der Ausrüstung, sowie Vor- und Nachname des Besitzers aus.
 select a.typ, a.name, b.vorname, b.nachname from ausruestung a join besitzer b on a.besitzer_id = b.id where besitzer_id = (select besitzer_id from tier where wert = (select max(wert) from tier))
