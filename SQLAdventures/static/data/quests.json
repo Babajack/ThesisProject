@@ -2737,7 +2737,7 @@
       "AlterTable": false,
       "NeededKeywords": [],
       "ResultQueries": [
-        "select * from (select vorname, nachname, count(a.besitzer_id) as anz_a from besitzer b left join ausruestung a on b.id = a.besitzer_id group by vorname, nachname) t1 join (select vorname, nachname, count(t.besitzer_id) as anz_t from besitzer b left join tier t on b.id = t.besitzer_id group by vorname, nachname) t2 on t1.vorname = t2.vorname and t1.nachname = t2.nachname"
+        "select * from (select vorname, nachname, count(a.besitzer_id) as anz_a from besitzer b left join ausruestung a on b.id = a.besitzer_id group by vorname, nachname) t1 join (select vorname, nachname, count(t.besitzer_id) as anz_t from besitzer b left join tier t on b.id = t.besitzer_id group by vorname, nachname) t2 on t1.vorname = t2.vorname and t1.nachname = t2.nachname", "Select b.vorname, b.nachname, a.anz_a as Ausrüstung, t.anz_t as Tiere from besitzer b left join (Select besitzer_id, count(id) as  anz_a from ausruestung group by besitzer_id) a on a.besitzer_id = b.id left join (Select besitzer_id, count(name) as anz_t from tier group by besitzer_id) t on t.besitzer_id = b.id"
       ],
       "Intro": [
         {
