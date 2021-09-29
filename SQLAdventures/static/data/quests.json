@@ -329,7 +329,7 @@
     {
       "Difficulty": 5,
       "Title": "Namensprüfungen (5/9)",
-      "Description": "Die Stuerfahndung ist zu Besuch bei Manfred. Kannst du ihm helfen, damit er alles unbeschadet übersteht?",
+      "Description": "Die Steuerfahndung ist zu Besuch bei Manfred. Kannst du ihm helfen, damit er alles unbeschadet übersteht?",
       "Task": "Finde alle Infos über alle Tiere, deren Name mit 'A' beginnt!",
       "Hint": "Gib alle Spalten aus. Benutze '%' und schau im Lexikon nach, wenn du etwas nachlesen musst.",
       "UnlockedKeywords": [
@@ -866,8 +866,8 @@
         {
           "Picture": "Pruefer.png",
           "Position": "left",
-          "Text": "Es gibt eine tabelle besitzer, in der die jeweiligen Besitzer aufgeführt sind.",
-          "HTML": "Es gibt eine tabelle <b>besitzer</b>, in der die jeweiligen Besitzer aufgeführt sind."
+          "Text": "Es gibt eine Tabelle besitzer, in der die jeweiligen Besitzer aufgeführt sind.",
+          "HTML": "Es gibt eine Tabelle <b>besitzer</b>, in der die jeweiligen Besitzer aufgeführt sind."
         },
         {
           "Picture": "Pruefer.png",
@@ -884,7 +884,7 @@
         {
           "Picture": "Pruefer.png",
           "Position": "left",
-          "Text": "Die besitzer_id der tabelle tier entspricht dabei der jeweiligen id in der Tabelle besitzer."
+          "Text": "Die besitzer_id der Tabelle tier entspricht dabei der jeweiligen id in der Tabelle besitzer."
         },
         {
           "Picture": "Pruefer.png",
@@ -1593,8 +1593,8 @@
         {
           "Picture": "Lagermeister.png",
           "Position": "left",
-          "Text": "Es gibt eine tabelle besitzer, in der die jeweiligen Besitzer aufgeführt sind.",
-          "HTML": "Es gibt eine tabelle <b> besitzer </b>, in der die jeweiligen Besitzer aufgeführt sind."
+          "Text": "Es gibt eine Tabelle besitzer, in der die jeweiligen Besitzer aufgeführt sind.",
+          "HTML": "Es gibt eine Tabelle <b> besitzer </b>, in der die jeweiligen Besitzer aufgeführt sind."
         },
         {
           "Picture": "Lagermeister.png",
@@ -1617,8 +1617,8 @@
         {
           "Picture": "Lagermeister.png",
           "Position": "left",
-          "Text": "Die besitzer_id (Fremdschlüssel) der tabelle ausruestung entspricht dabei der jeweiligen id in der tabelle besitzer.",
-          "HTML": "Die <b>besitzer_id</b> (Fremdschlüssel) der tabelle <b>ausruestung</b> entspricht dabei der jeweiligen <b>id</b> in der tabelle <b>besitzer</b>."
+          "Text": "Die besitzer_id (Fremdschlüssel) der Tabelle ausruestung entspricht dabei der jeweiligen id in der Tabelle besitzer.",
+          "HTML": "Die <b>besitzer_id</b> (Fremdschlüssel) der Tabelle <b>ausruestung</b> entspricht dabei der jeweiligen <b>id</b> in der Tabelle <b>besitzer</b>."
         },
         {
           "Picture": "Lagermeister.png",
@@ -1763,7 +1763,7 @@
         {
           "Picture": "Lagermeister.png",
           "Position": "left",
-          "Text": "Ich kann nicht riskieren, dass in es in meiner Lagerverwaltung dubiose Gegenstände gibt."
+          "Text": "Ich kann nicht riskieren, dass es in meiner Lagerverwaltung dubiose Gegenstände gibt."
         },
         {
           "Picture": "Lagermeister.png",
@@ -2010,7 +2010,7 @@
       "Difficulty": 2,
       "Title": "Besuch",
       "Description": "Der Lagermeister bekommt Besuch. Worum es wohl diesmal geht?",
-      "Task": "Finde den Vornahmen, Nachnamen und die Anzahl an Ausrüstung pro Person in der Besitzerliste!",
+      "Task": "Finde den Vornamen, Nachnamen und die Anzahl an Ausrüstung pro Person in der Besitzerliste!",
       "Hint": "Verwende einen Left Join der Tabellen besitzer und ausruestung mit geeigneter Gruppierung.",
       "UnlockedKeywords": [],
       "TableInfo": [
@@ -2161,7 +2161,7 @@
       "Difficulty": 2,
       "Title": "Listenduplikate",
       "Description": "Der Lagerverwalter hat eine weitere Aufgabe zu bewältigen.",
-      "Task": "Finde alle Infos über alle Personen aus der tabelle besitzer, deren Vorname mehr als einmal vorkommt!",
+      "Task": "Finde alle Infos über alle Personen aus der Tabelle besitzer, deren Vorname mehr als einmal vorkommt!",
       "Hint": "Verwende einen Join der Tabellen besitzer und besitzer.",
       "UnlockedKeywords": [],
       "TableInfo": [
