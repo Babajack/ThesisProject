@@ -1,10 +1,9 @@
 import json
 import os
 import sqlite3
-from typing import Union
 
 import click
-from flask import current_app, g, session, Flask
+from flask import current_app, g, Flask
 from flask.cli import with_appcontext
 
 
